@@ -1,0 +1,350 @@
+/*  
+Theme Name: Web12/T47 
+Theme URI: http://jonathangabel.com/projects/t47
+Description: Custom theme for t47 project				
+Author: Jonathan Gabel
+Author URI: http://www.jonathangabel.com
+Tags: jonathan gabel, toki pona, t47, sitelen sitelen
+Version: v1.1
+Notes: 
+	Inner wrapper sets a left margin of 100px, 
+	<p> tags have no border so they can float next to pictures, 
+	all other tags have negative margins. 
+	
+	To test alignment with page grid add to colorwrapper:
+	background-image:url(../images/t47_tokipona/lessonGrid.png); background-repeat:repeat-y;
+
+colors:
+
+blue1	p			 	#0D1927
+blue4 	H2,H3,H4	   	#2A5176
+blue5 	a			   	#4383BF
+blue7	bkg				#9BCAE1  -tokipona "sky blue"
+blue8	H1				#B0E5FF
+blue9	menu-bkg		#F0F8FF  -tokipona "alice blue"
+
+offwhite colorWraper	#FFFFF0  -tokipona "ivory"
+
+lav		menu:hover		#F0EEFF  -tokipona "titan white"
+orange1 a:hover: 		#FFB444
+orange2 boarders		#FFDB77
+green 	accent			#D9FFA0
+
+yellow 	badge			#FFFF77	 -tokipona "pale yellow"
+brown2	badge			#603813
+brown5	badge			#A87C4F
+*/
+
+
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+
+body { color: #0D1927; background: #9BCAE1; }
+
+h1 a { color: #B0E5FF;}
+
+h1 a:hover { color: #E4DDD0;} 
+
+h2 { 
+	border-bottom: 3px solid #D9FFA0;
+	padding: 4px 0 5px 3px;
+}
+
+h2, h3, h4 {
+	background-color: transparent;
+	clear:both;
+	color: #56534E;-
+}
+
+p, ol.text li, ul.text li {
+	font-family: 'GarogierRegular', "Bookman Old Style", "Book Antiqua", Garamond, serif;
+	font-size: 1em; /* 16px */
+	letter-spacing: 0.15em;
+    line-height: 1.6em;
+}
+
+p { margin: 0 30px 10px 20px;}
+
+p em, em { 
+	font-family: 'GarogierRegular', "Bookman Old Style", "Book Antiqua", Garamond, serif;
+	color: #847F77;
+}
+
+ul, li { padding: 0;}
+
+ol.text li, ul.text li {margin: 0 100px 5px 60px;}
+
+a { color: #4383BF; }
+
+/* -------------------------	HEADER/NAV	 	------------------------ */
+
+nav ul li a {
+    background-color: #B0E5FF;
+    color: #4383BF;
+}
+
+nav ul li a:hover {
+	background-color: #FFFFF0;
+	color: #4383BF;
+}
+
+#search #field { 
+	background-image: url(/images/nav/t47nav2.png);
+}
+
+/* -------------------------	CONTENT WRAP ------------------------- */
+
+#contentWrap {
+	width: 820px;
+	background-repeat:repeat-y;  
+	background-color: #FFFFF0; 
+	border: 2px solid #FFDB77;
+	padding: 0 10px;
+	padding-bottom: 0;
+}
+
+
+/* -------------------------	INNER WRAPPER	------------------------- */
+
+/* if intro paragraph has both h2 and h3, use pageTop to float left of sidemenu */
+#intro h3 { float: left; }
+
+#intro p { clear: left; }
+
+#innerWrapper {	
+	clear: both;
+	background-color: #FFF;
+	padding: 10px 0 0 99px;															
+	border: 1px solid #D9FFA0;
+}
+
+#innerWrapper h2, #innerWrapper h3 { margin-left: -80px;}
+
+#innerWrapper h3, #innerWrapper h4 {
+	text-transform: none;
+	border: none;
+}
+
+#innerWrapper h4 { 
+	margin-left: -40px; 
+	padding-top: 10px;
+}
+
+#innerWrapper p { 
+	margin-left: 0; 
+}
+
+#innerWrapper ul, #innerWrapper ol, #innerWrapper li {
+		font-size: 1em; /* 16 px */
+		padding: 0;
+}
+
+/* -------------------------	IMAGES	---------------------------------------- */
+
+.pictureBlock { 
+	margin: 0 -11px 0 -110px; 
+	text-align: center;
+}
+
+.pictureBlock.acrossSix div {
+	float:left;
+	width: 80px;
+	padding: 0 30px;
+}
+
+.pictureBlock.acrossTen { margin-left: -100px; }
+
+.pictureBlock.acrossTen div {
+	float: left;
+	width: 80px;
+	padding: 0 1px;
+}
+
+.clear {clear: both; }	/* clear the side menu */
+
+#innerWrapper .pictureBlock p{
+	font-family: Consolas,'Lucida Console','DejaVu Sans Mono',monospace;
+	color: #847F77;
+	font-size: .6875em;
+	letter-spacing:normal;
+	text-align: center;
+	margin: 5px auto 15px !important; 	/* don't inherit 'lessonBlock p' left margin */
+	max-width: 140px;
+	line-height: normal;
+	padding: 0;
+}
+
+#innerWrapper .glyphBlock p {
+	color: #847F77;
+	font-family: Consolas,'Lucida Console','DejaVu Sans Mono',monospace;
+	margin: 5px 0 15px 0;
+	font-size: .8125em;
+}
+
+.pictureBlock.farRight div {
+	float: right;
+	margin-right: 70px;
+	margin-left: 40px;
+}
+
+.pictureBlock.midRight div {	/* float left from a 140px image */
+	float: right;
+	margin-right: 0px;
+	margin-left: 27px;
+}
+
+.pictureBlock.midRightPlus div {	
+	float: right;
+	margin-right: 40px;
+	margin-left: 27px;
+}
+
+.pictureBlock.farLeft div {
+	float: left;
+	margin-left: 70px;
+	margin-right: 40px;
+}
+
+.pictureBlock.midLeft div{	/* float left from a 140px image */ 
+	float: left;
+	margin-left: 0;
+	margin-right: 27px;
+}
+
+.pictureBlock.midLeftPlus div{	/* float left from a 100px image */
+	float: left;
+	margin-left: 40px;
+	margin-right: 27px;
+}
+
+/* --------------		gallery and dictionary images			----------------- */
+
+#slideViewer {
+	clear: both;
+	padding: 15px;
+}
+
+.phover { 
+	position:absolute;
+	left: 200px;
+	top: 185px;
+}
+
+/* ----------------		SIDE AND BOTTOM MENUS			------------------------- */
+
+#sideMenu {
+	margin: -2px -12px 20px 0px;
+	width: 125px;
+	float: right;
+}
+
+#sideMenu ul {
+	border-bottom: 2px solid #FFDB77;
+	margin: 0;
+}
+
+#sideMenu li, #bottomMenu li {
+ 	margin: 0;
+	letter-spacing:normal;
+	color: #F30;
+	border: 2px solid #FFDB77;
+	border-bottom: none;
+	height: 25px;
+	background: #F0F8FF url(/images/nav/t47nav.png) no-repeat left top;	
+}
+
+#sideMenu li:hover {
+	background-position: 0 -90px;
+	background-color: #F0EEFF;
+}
+
+#sideMenu a, #bottomMenu a {
+	display: block;
+	padding:3px 0 0 30px;
+	font-size: 1.125em ;
+	text-decoration: none;
+	color: #2A5176;
+	background-color: transparent;
+}
+
+#sideMenu a:hover, #bottomMenu a:hover {
+	color: #0D1927;
+	background-color: transparent;
+}
+
+#sideMenu li.sub { position: relative; }
+
+#sideMenu li.sub ul {
+	display: none;
+	width: 140px;
+	position: absolute; 
+	top: -1px; 
+	left: 100%;
+	margin: 0;
+}
+
+#sideMenu li.sub:hover ul {
+	display: block;
+}
+
+#sideMenu li.sub ul a {
+	background-position: 0 -30px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#sideMenu li.sub ul a:hover { background-position: 0 -120px; }
+
+
+
+#bottomMenu ul {
+	margin: 0 -10px 10px -10px;
+}
+
+#bottomMenu li {
+	float: left;
+	width: 209px;
+	border-bottom: 2px solid #FFDB77;
+	margin: -2px;
+	background: #F0F8FF url(/images/nav/t47nav.png) no-repeat left top;
+	background-position: 0 -60px;
+}
+
+#bottomMenu li.spacer {
+	border: none;
+	background-color: transparent;
+	background-image: none;
+	width: 426px;
+}
+
+#bottomMenu li.left { background-position: -4px -60px; }
+
+#bottomMenu li.right { background-position: 187px -30px; }
+
+#bottomMenu li.left:hover { background-position: -4px -150px; background-color: #F0EEFF; }
+
+#bottomMenu li.right:hover { background-position: 187px -120px; background-color: #F0EEFF;}
+
+#bottomMenu li.left a {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#bottomMenu li.right a {
+	padding-left: 10px;
+	text-align: left;
+}
+/* ------------		generated lists of pages & links	----------------- */
+
+.link-list a{color: #89C234;}
+
+.link-list a:hover {color: #FFB444;}
+
+/* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
+	
+footer p {
+    color: white;
+    line-height: 110%;
+    margin: 0 10px;
+    text-align: justify;
+	letter-spacing: .15em;
+}

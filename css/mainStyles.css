@@ -1,0 +1,148 @@
+/*  
+Theme Name: Web12
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+Tags: jonathan gabel, mainset
+notes: home-page and main-set pages style sheet
+*/
+
+
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+/* main set side menu and color theme */
+
+body { color: #E4DDD0; background: #0D1927;}
+
+#contentWrap { 
+	background-color: #162A3F;
+	border: none;
+}
+
+#innerWrapper { background-color: #1D3852;}
+
+h1 a { color: #2A5176; }
+
+h1 a:hover { color: #FFB444; }
+
+h2 { color: #E4DDD0; background-color: transparent}
+
+a, footer a { color: #59AEFF; }
+
+pre {	background-color: #2A5176; }
+
+/* -------------------------	NAVIGATION	 	------------------------ */
+
+nav ul li a,
+#mainSideNav ul li a { color: #4383BF; background-color: #2A5176;}
+
+nav ul li a:hover,
+#mainSideNav ul li a:hover { color: #162A3F; background-color: #59AEFF;}
+
+#mainSideNav { background-color: #162A3F;}
+
+#search #field { 
+	background-image: url(/images/nav/mainNav.png);
+}
+
+.meta { font-size: 1.125em; margin: -25px 20px 5px 0; }
+
+.status { 	
+	background-color: #2A5176; 
+	color: #FFFFCB;
+}
+
+/* ------------		generated lists of pages & links	----------------- */
+
+link-list ul.children a {
+	color: #59AEFF;		
+}
+
+ul.children ul.children a {
+	color: #4383BF;
+}
+
+link-list ul.index a:hover, ul.children ul.children a:hover {
+	color: #FFB444;
+}
+
+/* ----- student/course listings ------ */
+
+#innerWrapper ul.courses {
+	margin: 0;
+	padding: 0;
+}
+
+.course-link {
+	margin: 0 0 13px 0;
+	background-color: #162A3F;
+	overflow: hidden;
+}
+
+.dma105 .course-seal {
+	background-image: url(/images/nav/sealDma105.png);
+}
+
+.art125 .course-seal {
+	background-image: url(/images/nav/sealArt125.png);
+}
+
+.course-seal {
+	width: 55px;
+	height: 55px;
+	float: left;
+	background-repeat: no-repeat;
+}
+.courseHover {
+	background-color: #1D3852;
+}
+
+.dma105 .courseHover {
+	background-color: #780404;
+}
+
+.art125 .courseHover {
+	background-color: #4383BF;
+}
+
+#innerWrapper .courseHover a {
+	color: #FFB444;
+}
+
+.courseHover .course-seal {
+	background-position: 0 -100px ;	
+}
+
+.courseHover .course-seal {
+	background-position: 0 -100px ;	
+}
+
+#innerWrapper .course h2 {
+	padding: 13px 0 13px 13px;
+	margin: 0 0 0 55px;
+	border: none;
+}
+
+.course-pages {
+	clear: both;
+}
+
+.listDate {
+	font-family: consolas, monospace;
+	letter-spacing:normal;
+	float: right;
+	text-align: right;
+	color: #C8C2B6;
+	font-size: .75em;
+	padding-right:100px;
+}
+
+/* ----- END student/course listings ------ */
+
+.design-image {
+	float: left;
+	margin: 20px 30px 10px 0px;
+}
+
+

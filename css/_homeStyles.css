@@ -1,0 +1,219 @@
+/*  
+Theme Name: Web12
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1
+Tags: jonathan gabel, home, slides
+notes: home-page only elements. Basic intro styles are still 
+		handled by main.css
+*/
+
+
+/* STYLES FOR THE HOME PAGE ATTRIBUTES */
+
+
+
+
+
+
+h4{
+	color: #3B2314;
+}
+
+p {
+	color: #847F77;
+	font-size: .875em; /* 14px */
+}
+
+#leftArrow {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: -201px 0;
+	width: 18px;
+	height: 144px;
+	float: left;
+	margin-left: -6px;
+}
+
+#leftArrow:hover {
+	background-position: -301px 0;	
+}
+
+#rightArrow {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: -201px -200px;
+	width: 18px;
+	height: 144px;
+	float: left;
+}
+
+#rightArrow:hover {
+	background-position: -301px -200px;	
+}
+
+#cabinet {
+	width: 715px; /* total from: (3*233px + 2*8px) */
+	height: 144px;
+	overflow: hidden;
+	float: left;
+	position: relative;
+}
+
+#cabinet #rips {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+#carousel article {
+	position: relative;
+}
+
+#carousel article .rip {
+	position:absolute;
+	background-image: url(/images/nav/homeRip.png);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	width: 241px;
+	height: 144px;
+	bottom: 0px;
+	left: 0px;
+}
+
+#carousel {
+	width: 1200px;
+	margin-left: -241px;
+}
+
+#carousel .slide { 
+	float: left; 
+	width: 241px; /* 233px + 8px right margin */
+	height: 144px;
+	background-color: #FFFFF0; 
+}
+
+#carousel article {
+	background-image: url(/images/nav/slideMain.png);
+	width: 238;
+	height: 144px;
+	
+}
+
+
+#carousel .slideHover article {
+	background-position: 0 -200px;
+}
+
+#carousel .slideHover article a {
+	color: #FFB444;
+}
+
+#carousel .slide article h2 {
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	padding: 4px 8px 8px 8px;
+	color: #0D1927;
+}
+
+#carousel .slide article h3 {
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	padding: 4px 8px 8px 8px;
+	color: #0D1927;
+}
+
+#carousel .slide article h4{
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	color: #0D1927;
+	padding-left: 8px;
+}
+
+#carousel .slide article p {
+	padding: 0 13px 0 8px;
+	line-height: 15px;
+}
+
+#carousel .slide ul, #carousel .slide li {
+	margin: 0;
+	padding: -10px;
+}
+
+#carousel article.art125 {
+	background-image: url(/images/nav/slideArt125.png);	
+}
+
+#carousel article.dma105 {
+	background-image: url(/images/nav/slideDma105.png);	
+}
+
+#carousel article.lab {
+	background-image: url(/images/nav/slideLab.png);	
+}
+
+#carousel article.t47 {
+	background-image: url(/images/nav/slideT47.png);	
+}
+
+section {
+	clear: both;
+	padding: 21px;
+}
+
+section article {
+	background-color: #FFFFF0;
+	padding: 5px 8px 8px 13px;
+	border-bottom: 1px solid #999;
+}
+
+aside {
+	float: right;
+	width: 168px;	
+}
+
+aside article H5 {
+	padding-left: 0;
+	font-size: .75em;
+	color: #2A5176;
+	font-family: consolas,monospace;
+	
+}
+
+.scroll-pane {
+	height: 340px; /* 340 */
+	overflow: auto;
+}
+
+
+body.home aside H2 {
+	background-color: #2A5176;	
+	padding: 0;
+	text-align: center;
+	margin-bottom: 13px;
+}
+
+#pictureblock {
+	width: 610px;
+	height: 377px;
+	background-color: #0D1927;
+}
+
+#news {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: 0 -198px;
+	background-repeat: no-repeat;
+	display: block;	
+	color: #4383BF;
+	background-color: #2A5176;
+}
+
+aside h2 {
+	text-align: center;
+	padding-left: 0;
+}
+
+#news:hover {
+	background-position: 0 -298px;
+	background-color: #59AEFF;
+	color: #0D1927;
+	
+}
+

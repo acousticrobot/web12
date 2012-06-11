@@ -1,0 +1,232 @@
+/*  
+Theme Name: Web12/home
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+Tags: jonathan gabel, home, slides
+notes: home-page only elements. Home page also loads mainset.css
+*/
+
+
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+
+h3 {
+	font-size: 1.125em; /* 18 px */
+	text-transform: capitalize;
+}
+
+h4, h5 {
+	font-size: 1em; /* 16 px */
+	text-transform: capitalize;
+	padding: 0;
+}
+
+h4{ color: #3B2314;}
+
+p {
+	color: #847F77;
+	font-size: .875em; /* 14px */
+	line-height: 1em;
+	padding: 0;
+}
+
+ul, ol, li {
+	padding: 0;
+}
+
+/* -------------------------	CONTENT WRAP ------------------------- */
+
+#mainSideNav { padding-left: 0px; }
+
+
+
+
+/* -------------------------		CAROUSEL			------------------------- */
+
+#leftArrow {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: -201px 0;
+	width: 18px;
+	height: 144px;
+	float: left;
+	margin-left: -6px;
+}
+
+#leftArrow:hover {
+	background-position: -301px 0;	
+}
+
+#rightArrow {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: -201px -200px;
+	width: 18px;
+	height: 144px;
+	float: left;
+}
+
+#rightArrow:hover {
+	background-position: -301px -200px;	
+}
+
+#cabinet {
+	width: 715px; /* total from: (3*233px + 2*8px) */
+	height: 144px;
+	overflow: hidden;
+	float: left;
+	position: relative;
+}
+
+#carousel article {
+	position: relative;
+}
+
+#carousel article .rip {
+	position:absolute;
+	background-image: url(/images/nav/homeRip.png);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	width: 241px;
+	height: 144px;
+	bottom: 0px;
+	left: 0px;
+}
+
+#carousel {
+	width: 1200px;
+	margin-left: -241px;
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#carousel * {
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#carousel .slide { 
+	float: left; 
+	width: 241px; /* 233px + 8px right margin */
+	height: 144px;
+	background-color: #FFFFF0; 
+}
+
+#carousel article {
+	background-image: url(/images/nav/slideMain.png);
+	width: 238;
+	height: 144px;	
+}
+
+#carousel .slideHover article {
+	background-position: 0 -200px;
+}
+
+#carousel .slideHover article a {
+	color: #FFB444;
+}
+
+#carousel .slide article h2 {
+	padding: 10px 8px 6px 8px;
+	color: #0D1927;
+}
+
+#carousel .slide article h3 {
+	padding: 0px 8px 2px 8px;
+	color: #0D1927;
+}
+
+#carousel .slide article h4{
+	color: #0D1927;
+	padding-left: 8px;
+}
+
+#carousel .slide article p {
+	padding: 0 13px 0 8px;
+	line-height: 15px;
+}
+
+#carousel article.art125 {
+	background-image: url(/images/nav/slideArt125.png);	
+}
+
+#carousel article.dma105 {
+	background-image: url(/images/nav/slideDma105.png);	
+}
+
+#carousel article.lab {
+	background-image: url(/images/nav/slideLab.png);	
+}
+
+#carousel article.t47 {
+	background-image: url(/images/nav/slideT47.png);	
+}
+
+/* -------------------------		BELOW CAROUSEL			------------------------- */
+
+section {
+	clear: both;
+	padding: 21px;
+}
+
+#pictureblock {
+	width: 610px;
+	height: 377px;
+	background-color: #0D1927;
+}
+
+
+/* -------------------------		SCROLL PANE			------------------------- */
+
+aside {
+	float: right;
+	width: 168px;	
+}
+
+aside h2 {
+	text-align: center;
+	padding-left: 0;
+}
+
+#news {
+	background-image: url(/images/nav/homeNav.png);	
+	background-position: 0 -198px;
+	background-repeat: no-repeat;
+	display: block;	
+	color: #4383BF;
+	background-color: #2A5176;
+}
+
+#news:hover {
+	background-position: 0 -298px;
+	background-color: #59AEFF;
+	color: #0D1927;
+	
+}
+
+.scroll-pane {
+	height: 340px;
+	overflow: scroll;
+}
+
+aside article {
+	background-color: #FFFFF0;
+	padding: 5px 8px 8px 13px;
+	border-bottom: 1px solid #999;
+}
+
+article.status {
+	background-color: #FFFFF0;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 5px;
+	border-radius: 0;
+}
+
+.status-date, .status-category {
+	padding: 0 0 0 5px;
+}
+
+.status .status-content p {
+	clear: both;
+}
+

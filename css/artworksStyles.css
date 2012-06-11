@@ -1,0 +1,114 @@
+/*  
+Theme Name: Web12/artworks
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Tags: jonathan gabel, artworks, images
+
+*/
+
+body {
+	color: #AAAAAA;
+	background: #FBFBFB;
+}
+
+#contentWrap {
+	border: none;
+}
+
+h1 a { color: #EEEEEE;}
+
+h1 a:hover { color: #DDDDDD;} 
+
+
+h2, h3, h4 {
+	color: #AAAAAA;
+	background-color: transparent;
+}
+
+#innerWrapper h3, #innerWrapper h4 {
+	border: none;
+}
+
+a { color: #789CAE;}
+
+a:hover { color: #9BCAE1}
+
+.artmeta {
+	margin: 5px 0 5px 30px;
+}
+
+nav ul li a { 
+	color: #DDDDDD; 
+	background-color: #F7F7F7; 
+	border: 1px solid #F5F5F5;
+	margin: -1px;
+}
+
+nav ul li a:hover { 
+	color: #999999; 
+	background-color: #FFFFFF; 
+	border: 1px solid #DDDDDD;
+}
+
+#search #field { 
+	background-image: url(/images/nav/artworksNav.png);
+	margin: -1px;
+	height: 25px;
+}
+
+#contentWrap {
+	background-color: #FFFFFF; 
+	border: none;
+	padding: 3px;
+}
+
+#innerWrapper {	
+	background-color: #FFFFFF;
+	border: none;
+}
+
+	/* gallery styles */
+.gallery-links {
+	float: left;
+	padding:3px;
+}
+
+a.linkbutton {
+	display: block;
+	width: 150px; 
+	height: 150px; 
+	background-repeat: no-repeat;
+}
+		
+#photo {
+	width: 720px;
+	height: 540px;
+	clear: both;
+	position: relative;
+	margin: auto;
+}
+#photo img {
+	position: absolute;
+}
+#gallery {
+	clear: both;
+	width: 788px;
+	margin: auto;
+}
+	/* END gallery styles */
+
+
+
+
+footer p#breadcrumbs {
+	border-bottom: 1px solid #555555;
+}
+
+	
+footer p {
+    color: #555555;
+}
+
+footer a:hover { }
