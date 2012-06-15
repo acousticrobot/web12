@@ -1,19 +1,19 @@
 //--------------------- BEGIN FLYPAPER ---------------------//
-/*															*
-*			Namespace FLYPAPER								*
-*			abbreviated: fly								*
-*				v 0.3.5.3									*
-*															*
-* flypaper init() creates a drawing and animation context	*
-* using the paper.js library								*
-*															*
-* fly.init() includes:										*
-* all internal variables for style, size etc.				*
-* three layers: background, stage, and info					*
-*															*
-* - infoCtrlr() for info regarding all objects				*
-* - eventCtrlr() for pub/sub and event handling				* 
-*															*/
+/*
+*			Namespace FLYPAPER
+*			abbreviated: fly
+*				v 0.3.6
+*								
+* flypaper init() creates a drawing and animation context
+* using the paper.js library
+*	
+* fly.init() includes:
+* all internal variables for style, size etc.
+* three layers: background, stage, and info
+*	
+* - infoCtrlr() for info regarding all objects
+* - eventCtrlr() for pub/sub and event handling
+*
 //--------------------- BEGIN FLYPAPER --------------------//
 
 /* global paper */
@@ -26,21 +26,21 @@ if (typeof fly !== "object") {
 }
 
 //--------------------- BEGIN FLYPAPER INIT -----------------//
-/*															*
-*						FLYPAPER INIT v0.3.5				*
-*	inits the canvas for all drawing						*
-*	contains eventCtrlr and infoCtrlr						*
-*	accepts args: {											*
-*		width: canvas width									*
-*		height: canvas height								*
-*		}													*
-*															*/
+/*
+*						FLYPAPER INIT v0.3.6
+*	inits the canvas for all drawing
+*	contains eventCtrlr and infoCtrlr	
+*	accepts args: {	
+*		width: canvas width
+*		height: canvas height
+*		}			
+*/
 //--------------------- BEGIN FLYPAPER INIT ---------------//
 
 
 fly.init = function (args) {
-	fly.name = "flypaper paperscript namespace";
-	fly.version = "version 0.3.5";
+	fly.name = "flypaper";
+	fly.version = "0.3.6";
 	if (args === undefined) {
 		args = {};
 	};
@@ -90,13 +90,27 @@ fly.init = function (args) {
 		// after info layer is created we step
 		// back to this one for all drawing
 	fly.layers.frontstage = new paper.Layer();
+
 /*
 *	CONTROLLERS -- Init InfoController and EventController 
 */
+
 	fly.layers.info = new paper.Layer();
-								
+	
+	fly.info = function() {
+		// fly namespace is the first member of fly.infoCtrlr
+			var i = {};
+			i.name = fly.name;
+			i.version = { val: fly.version, type: "version"};
+			i.debug = { val: fly.debug, type: "bool" };
+			i.width = { val: fly.width, type: "val" };
+			i.height = { val: fly.height, type: "val" };
+			i.keys = {val: "[i]nfo, [s]elect, [r]otate", type: "string" };
+			return i;
+	};
+							
 	fly.eventCtrlr = (function () {
-	// v0.3.3
+	// v0.3.6
 	// eventCtrlr is the main pub/sub object, paper events
 	// all publish through it, objects listening for events
 	// SUBSCRIBE to events with: 
@@ -111,15 +125,16 @@ fly.init = function (args) {
 	// within flypaper.
 	  
 	// IMPORTANT! On-frame events must be initaited
-	// in the main javascript on window load. Use:
-	
+	// in the main javascript on window load. Use:	
 	// paper.view.onFrame = fu*c*ion(event) {
 	//		fly.eventCtrlr.publish("frame");
 	//	};
 
-
+	// TODO: frame beats needs better implementation
+	// should it be every x frames or every x ms ?
+	
 		var name = "eventCtrlr",
-			version = "0.3.3",
+			version = "0.3.6",
 			events = {},
 			beats = [], // register for beats (2,4,8, etc.)
 			beat = 1,
@@ -217,8 +232,8 @@ fly.init = function (args) {
 			var i = {
 				name: name,
 				v: { val: version, type: "version" },
-				beat: {val: beat, type: "val"},
-				beats: {val: beats, type: "array"},
+				// beatCount: {val: beat, type: "val"},
+				// beats: {val: beats, type: "array"},
 				errors: {val: errors.length, type: "val"}
 			};
 			var event;
@@ -260,7 +275,7 @@ fly.init = function (args) {
 	})();
 
 	fly.infoCtrlr = (function () {
-	// v 0.3.5.3
+	// v 0.3.6
 	// new objects can register as a member with infoCtrlr 
 	// by sending the request: fly.infocontroller.register(this);
 	// optional second boolean parameter display: (this,false)
@@ -272,9 +287,9 @@ fly.init = function (args) {
 	// fly.colors.info for a color for that type.
 			
 		var name = "infoCtrlr";
-		var version = "0.3.5";
-		var members = [];
-//		var members = [{obj:this,display:false}]; // "infoCtlr is member[0]"
+		var version = "0.3.6";
+		 // fly is members[0], infoCtlr is member[1] after infoCtrlr.init();
+		var members = [{obj:fly,display:false}];
 		var style = {};
 			style.c1 = fly.colors.info.title || 'black';
 			style.c2 = fly.colors.info.val || 'red';
@@ -299,13 +314,18 @@ fly.init = function (args) {
 			infoGroup.txt = new paper.Group();
 		var moving = false;
 			// time counter, eventually to base speed on environment
-		var time = {};
-			time.Ccur = 0;
-			time.average = 0;
-			time.fps = 0; // frames per second
-			time._c = 0; // time counter
-			time._t1 = 0; // time 1
-			time._t2 = 0; // time 2
+		var _time = {};
+			_time._c
+			_time.frame = 0;
+			_time.time = 0;
+			_time.fps = {curr:0,ave:0};
+
+			// time.Ccur = 0;
+			// time.average = 0;
+			// time.fps = 0; // frames per second
+			// time._c = 0; // time counter
+			// time._t1 = 0; // time 1
+			// time._t2 = 0; // time 2
 		var device = {}; // for device detection
 			device.isIpad = navigator.userAgent.match(/iPad/i) !== null;	
 			device.isMobile = (function () {
@@ -540,27 +560,24 @@ fly.init = function (args) {
 			};
 		}
 
-		function updateTime() {
-			if (time._c === 0) {
-				var _d = new Date();
-				time._t1 = _d.getTime();
-			} else if (time._c > 9) {
-				var _d = new Date();
-				time._t2 = _d.getTime();
-				time.Ccur = time._t2 - time._t1;
-				if (time.average === 0) {
-					time.average = time.Ccur;
-				};
-				time.average = Math.ceil((( 9 * time.average ) + time.Ccur ) / 10);
-				time.fps = 10000 / time.average;
-				time._c = 1;
-				time._t1 = time._t2;
+		//------------------- information collection ---------//
+		function time() {
+			return _time;
+		}
+		
+		function updateTime(args) {
+			// v 0.3.6
+			// args from frameUpdate {delta,time,count}
+			// if args is undefined, check paper onFrame is publishing: ("frame",event);
+			if (args === undefined) {
+				_time.frame++;
 				return;
 			};
-			time._c++;
+			_time.frame = args.count; // frames since start
+			_time.time = args.time; // seconds since start
+			_time.fps.ave = args.count / args.time;
+			_time.fps.curr = 1 / args.delta;
 		}
-
-//------------------- information collection ---------//
 		
 		function info(){
 		// for self-monitoring, also a model for member's info method 
@@ -569,18 +586,18 @@ fly.init = function (args) {
 			i.version = { val: version, type: "version"};
 			i.members = { val: members.length, type:"val"}
 			// i.width = { val: ibox.txtWidth.toFixed(2), type: "val" };
-			i.frame = { val: time._c, type: "val"};
-			i.fps = {val: time.fps.toFixed(2), type:"val"};
-			i.msPer10Frams = { val: time.average, type: "val"};
-			i.curr10frames = { val: time.Ccur, type: "val"};
-			i.moving = { val: moving, type: "bool" };
+			i.frame = { val: _time.frame, type: "val"};
+			i.time = { val: _time.time.toFixed(2), type: "val"};
+			i.fpsAve = { val: _time.fps.ave.toFixed(2), type: "val"};
+			i.fpsCurr = {val: _time.fps.curr.toFixed(2), type:"val"};
+			// i.moving = { val: moving, type: "bool" };
 			i.mobile = { val: device.isMobile, type: "bool"};
 			i.ipad = { val: device.isIpad, type: "bool"};
 			return i;
 		};
 				
 		function updateInfo(force){
-			// v 0.3.5.2
+			// v 0.3.6
 				//	gather most recent info 
 				//	from members with display = true 
 				//	use force === true on resistration or to update all
@@ -607,9 +624,8 @@ fly.init = function (args) {
 			};
 		}
 					
-		function update(){
-//			console.log("samiam");
-			updateTime();
+		function update(args){
+			updateTime(args);
 			
 					// only update panel if visible or visibility has changed
 			if (fly.layers.info.visible || ibox.visible) { 
@@ -636,7 +652,7 @@ fly.init = function (args) {
 				};
 				break;
 			case "frame" :
-				update();
+				update(args);
 				break;
 			case "mouse down" :
 				grab(args.point);
@@ -654,10 +670,13 @@ fly.init = function (args) {
 
 		return {
 			moving: function () { return moving; },
-			fps : function () { return time.fps; },
+// temp patch
+			fps : function () { return time.fps.ave; }, 
+//  temp patch 
 			isMobile :	function () {return device.isMobile},
 			isIpad : function () {return device.isIpad},
 			init: init,
+			time : time,
 			register: register,
 			deregister: deregister,
 			request: request,
@@ -718,15 +737,12 @@ fly.init = function (args) {
 
 //--------------------- END FLYPAPER INIT -----------------//
 
-//--------------------- FLYPAPER PERFORMANCE --------------//
-
-
 
 //------------- BEGIN FLYPAPER MATH AND MOTION ------------//
-/*															*
-*				Math and Motion	Methods						*
-*				v 0.3.4										*
-*															*/
+/*					
+*				Math and Motion	Methods
+*				v 0.3.6
+*/
 //------------- BEGIN FLYPAPER MATH AND MOTION ------------//
 
 fly.midpoint = function (p1,p2) {
@@ -749,13 +765,13 @@ fly.scatter = function (o,rect) {
 		var randPoint = new paper.Point(	// point at lower right corner
 			rect.width,rect.height
 		);
-		randLoc = randPoint.multiply(paper.Size.random()); // point within rect
+		var randLoc = randPoint.multiply(paper.Size.random()); // point within rect
 		o[i].position = rect.point.add(randLoc);
 	};
 };
 
 fly.randomizePt = function (point,delta,constrain) {
-	// v 0.3.5
+	// v 0.3.6
 	// adds variance delta to point
 	// constrain === "x" or "y" or default none
 	var c = constrain || "none";
@@ -774,7 +790,7 @@ fly.randomizePt = function (point,delta,constrain) {
 
 fly.eachCell = function (o,f) {
 	// call by object o to iterate through grid[x][y]
-	// call: fly.eachCell(this,function (x,y) { ... });
+	// call: fly.eachCell(this,function (o,x,y) { ... });
 	// "this" o must have this.cols and this.rows
 	for (var x=0; x < o.cols; x++) {
 		for (var y=0; y < o.rows; y++) {
@@ -784,7 +800,7 @@ fly.eachCell = function (o,f) {
 };
 
 fly.gridPlot = function (c,r,rectangle,dir) {
-	// v.0.3.5.3
+	// v.0.3.6
 	// returns an array of arrays of points
 	// c + 1 columns by r + 1 rows inside paper.rectangle r
 	// last column and row run along right and bottom edges
@@ -797,37 +813,27 @@ fly.gridPlot = function (c,r,rectangle,dir) {
 	};
 	var w = rect.bounds.width / c;
 	var h = rect.bounds.height / r;
-	if (dir) {
-		for (var x=0; x <= c; x++) {
-			for (var y=0; y <= r; y++) {
-				var pt = new paper.Point( rect.bounds.x + x * w,
-									rect.bounds.y + y * h);
-				switch (dir) {
-					case "down-right" :
-					case "right" :
-						points[c-x][y] = pt;
-						break;
-					case "up-left" :
-						points[x][r-y] = pt;
-						break;
-					case "up-right" :
-						points[c-x][r-y] = pt;
-						break;
-					case "down-left"  :
-					default :
-						points[x][y] = pt;
-				}
-			};
+	for (var x=0; x <= c; x++) {
+		for (var y=0; y <= r; y++) {
+			var pt = new paper.Point( rect.bounds.x + x * w,
+								rect.bounds.y + y * h);
+			switch (dir) {
+				case "down-right" :
+				case "right" :
+					points[c-x][y] = pt;
+					break;
+				case "up-left" :
+					points[x][r-y] = pt;
+					break;
+				case "up-right" :
+					points[c-x][r-y] = pt;
+					break;
+				case "down-left"  :
+				default :
+					points[x][y] = pt;
+			}
 		};
-	} else {
-		for (var x=0; x <= c; x++) {
-			for (var y=0; y <= r; y++) {
-				var pt = new paper.Point( rect.bounds.x + x * w,
-									rect.bounds.y + y * h);
-				points[c-x][r-y] = pt;
-			};
-		};
-	}
+	};
 	return points;
 };
 
@@ -845,11 +851,11 @@ fly.initArray = function (c,r) {
 };
 
 //--------------------- BEGIN Swing -----------------------//
-/*															*
-*				Motion: Swing								*
-*				v 0.3.3										*
-*	TODO: V0.3.4 using fly.infoCtrlr.fps()					*
-*															*/
+/*					
+*				Motion: Swing
+*				v 0.3.3
+*	TODO: V0.3.4 using fly.infoCtrlr.fps()
+*/
 //--------------------- BEGIN Swing -----------------------//
 
 fly.Swing = function (args){
@@ -857,7 +863,7 @@ fly.Swing = function (args){
 	this.name = args.name + " swing" || "swing";
 	this.version = "0.3.3";
 	this.maxR = args.maxRotation || 90;
-	this.decay = 1 + (args.decay/1000) || 1;
+	this.decay = 1 + (args.decay/1000) || 1; // damping
 	this.velocity = 3; // stays true to maxRot when gravity = 10, l = 1
 	this.angle = 0;
 	this.deg = 0;
@@ -929,22 +935,23 @@ fly.Swing.prototype.rotation = function () {
 
 
 //--------------------- BEGIN Scroll -----------------------//
-/*															*
-*				Motion: Scroll								*
-*				v 0.3.4										*
-*															*
-*	Handles scrolling and object in one direction:			*
-*		"left","right","up","down"							*
-*															*/
+/*					
+*				Motion: Scroll
+*				v 0.3.6
+*					
+*	Handles scrolling and object in one direction:
+*		"left","right","up","down"
+*/
 //--------------------- BEGIN Scroll -----------------------//
 
 fly.Scroll = function (args){
 	args = args || {};
 	this.name = args.name + " scroll" || "scroll";
-	this.version = "0.3.4";
+	this.version = "0.3.6";
 	this.position = args.position || new paper.Point(0,0);
 	this.direction = args.direction || "left";
-	this.speedFactor = args.speed !== undefined ? args.speed : 5;
+	this.speed = args.speed !== undefined ? args.speed : 5;
+	this.curSpeed = 0;
 	this.repeat = args.repeat || true;
 		// when the moving point in position (x or y) reaches resetAt
 		// this.reset is set to true, 
@@ -960,7 +967,8 @@ fly.Scroll.prototype.info = function (){
 	i.name = this.name;
 	i.version = { val: this.version, type: "version"};
 	i.position = { val: this.position, type: "val" };
-	i.speed = { val: this._speed, type: "val" };
+	i.speed = { val: this.speed, type: "val" };
+	i.curSpeed = {val: this.curSpeed, type: "val"};
 	i.direction = { val: this.direction, type:"val"};
 	i.repeat = {val: this.repeat, type:"bool"};
 	i.reset = {val: this.reset, type:"bool"};
@@ -974,42 +982,34 @@ fly.Scroll.prototype.register = function (display) {
 	};
 }			
 
-fly.Scroll.prototype.speed = function () {
-		// used to adjust animations based on frames per second
-		var fps = fly.infoCtrlr.fps();
-		if (fps === 0) {
-			return 0;
-		};
-		this._speed = this.speedFactor / fps;	
-		return this._speed;
-	};
-
-fly.Scroll.prototype.update = function () {
+fly.Scroll.prototype.update = function (args) {
+	this.curSpeed = args.delta * this.speed;
 	switch (this.direction) {
-	case "up" :
-		this.position.y.subtract(this.speed());
-		if (this.position.y < this.resetAt) {
-			this.reset = true;
-		};
-		break;
-	case "down" :
-		this.position.y.add(this.speed());		
-		if (this.position.y > this.resetAt) {
-			this.reset = true;
-		};
-		break;
-	case "right" :
-		this.position.x.subtract(this.speed());
-		if (this.position.x < this.resetAt) {
-			this.reset = true;
-		};
-		break;
-	default : // left
-		this.position.x += this.speed();
-		if (this.position.x > this.resetAt) {
-			this.reset = true;
-		};
-		break;
+		case "up" :
+			this.position.y -= this.curSpeed;
+			if (this.position.y < this.resetAt) {
+				this.reset = true;
+			};
+			break;
+		case "down" :
+			this.position.y += this.curSpeed;		
+			if (this.position.y > this.resetAt) {
+				this.reset = true;
+			};
+			break;
+		case "right" :
+			this.position.x -= this.curSpeed;
+			if (this.position.x < this.resetAt) {
+				this.reset = true;
+			};
+			break;
+		case "left":
+		default : // left
+			this.position.x += this.curSpeed;
+			if (this.position.x > this.resetAt) {
+				this.reset = true;
+			};
+			break;
 	}
 	if (this.reset === true) {
 		this.position = new paper.Point(this.resetPos);
@@ -1024,12 +1024,12 @@ fly.Scroll.prototype.reposition = function (point) {
 //------------- END SCROLL	 ------------------------------//
 
 //--------------------- BEGIN Bob -----------------------//
-/*															*
-*				Motion: Bob									*
-*				v 0.3.5										*
-*															*
-*	Moves and object up and down repeatedly					*
-*															*/
+/*					
+*				Motion: Bob
+*				v 0.3.6
+*					
+*	Moves and object up and down repeatedly
+*/
 //--------------------- BEGIN Bob -----------------------//
 
 fly.Bob = function (args){
@@ -1084,30 +1084,30 @@ fly.Bob.prototype.update = function (time) {
 
 
 //--------------------- BEGIN ANANDA ---------------------//
-/*															*
-*				abstract Class fly.Ananda					*
-*				v 0.3.5										*
-*															*
-* use as a drawing context and main handle for structures	* 
-* creates an object with and optional rectangle handle		*
-* methods:													*
-* - Communication with infoCtrlr & eventCtrlr				*	
-* - dragable												*
-*															*
-* takes one parameter: 'args' which can be:				*
-* 	a number (square size for handle),						*
-*	a string (name),										*	
-*	an array of numbers:									*
-		[s] same as number,								*
-		[w,h]:rect,										*
-*		[x,y,s], [x,y,w,h], larger object:					*
-*  {name:"name",handle:[...],...}							*	
-*															*/
+/*					
+*				abstract Class fly.Ananda
+*				v 0.3.6
+*					
+* use as a drawing context and main handle for structures 
+* creates an object with and optional rectangle handle
+* methods:			
+* - Communication with infoCtrlr & eventCtrlr	
+* - dragable		
+*					
+* takes one parameter: 'args' which can be:
+* 	a number (square size for handle),
+*	a string (name),	
+*	an array of numbers:
+		[s] same as number,
+		[w,h]:rect,
+*		[x,y,s], [x,y,w,h], larger object:
+*  {name:"name",handle:[...],...}	
+*/
 //--------------------- BEGIN ANANDA ---------------------//
 
 fly.Ananda = function () {
 	if (this.version === undefined) {
-		this.version = "0.3.5";
+		this.version = "0.3.6";
 	};
 	if (this.name === undefined) {
 		this.name = "Ananda ";
@@ -1170,7 +1170,7 @@ fly.Ananda.prototype.init = function (args){
 			return;
 		case 1 :	// use for size of square
 			iA.bld += a[0];
-			initFromNum(a);
+			initFromNum(a[0]);
 			return;
 		case 2 :	// use as width and height
 			iA.bld += a[0] + "." + a[1];
@@ -1267,8 +1267,7 @@ fly.Ananda.prototype.init = function (args){
 	this.buildRecord = iA.bld;
 	this.selectable = args.selectable !== undefined ? args.selectable : false;
 	this.dragable = args.dragable !== undefined ? args.dragable : true;
-	// this.speedFactor = args.speed !== undefined ? args.speed : 5;
-	// this._speed = this.speed();
+	this.rotatable = args.rotatable !== undefined ? args.rotatable : false;
 	this.moving = false;
 	this.group = new paper.Group();
 	if (iA.handle) {
@@ -1303,7 +1302,7 @@ fly.Ananda.prototype.anandaInfo = function () {
 		i.moving = { val: this.moving, type: "bool" };
 		i.selectable = { val: this.selectable, type: "bool" };
 		i.selected = { val: this.group.selected, type: "bool" };
-		i.speed = {val: this.speed, type:"val"};
+		i.rotatable = {val: this.rotatable, type:"val"};
 		// i.speed = {val: this.speed().toFixed(2), type:"val"};
 	};
 	return i;
@@ -1316,16 +1315,6 @@ fly.Ananda.prototype.register = function (display) {
 }			
 
 //---------- Ananda: animation -----------------------------//
-
-// fly.Ananda.prototype.speed = function () {
-//	// used to adjust animations based on frames per second
-//	var fps = fly.infoCtrlr.fps();
-//	if (fps === 0) {
-//		return 0;
-//	};
-//	this._speed = 10 * this.speedFactor / fps;
-//	return this._speed;
-// };
 
 fly.Ananda.prototype.updateHandle = function (rect) {
 		// replaces handle with one that is still dragable etc.
@@ -1389,8 +1378,10 @@ fly.Ananda.prototype.drop = function (event) {
 };
 
 fly.Ananda.prototype.rotate = function (deg) {
-	// deg = deg || 3;
-	// this.group.rotate(deg,this.handle.bounds.center);
+	if (this.rotatable) {
+		deg = deg || 3;
+		this.group.rotate(deg,this.handle.bounds.center);
+	};
 };
 
 fly.Ananda.prototype.update = function (args) {
@@ -1424,71 +1415,27 @@ fly.Ananda.prototype.eventCall = function (e,args) {
 //--------------------- END Ananda -------------------------//
 
 
-//--------------------- BEGIN StructTemplate --------------//
-/*															*
-*				Template for extending Ananda				*
-*				v 0.3.4										*
-*															*/
-//--------------------- BEGIN StructTemplate -------------//
-
-fly.StructTemplate = function (args){
-	this.version = "0.3.4";
-	var args = args || {};
-	
-	// if your sure args is an obj literal:
-	args.name = args.name || "Template";
-	// else
-	this.name = args.name || "Template";
-	this.style = args.style || 
-		{
-			fillColor: fly.colors.main[0],
-			strokeColor: fly.colors.main[1],
-			strokeWidth: 5
-		};
-	fly.Ananda.call(this);
-	this.init(args);
-	this.build();
-	this.register();
-};
-
-fly.StructTemplate.prototype = new fly.Ananda;
-
-fly.StructTemplate.prototype.constructor = fly.StructTemplate;
-
-fly.StructTemplate.prototype.build = function () {
-	// initial build here
-};
-
-fly.StructTemplate.prototype.info = function (){
-	// override Ananda info() to add other info,
-	var i = this.anandaInfo();
-	i.foo = {val: "foo", type:"val"};
-	return i;
-}
-
-//--------------------- END StructTemplate ----------------//
-
 //--------------------- BEGIN Pullbar ---------------------//
-/*															*
-*				v 0.3.3										*
-* Pullbar extends Ananda, creates grabbable handles			*
-*															*
-* adaptation of vektor.js from:							*
-* http://paperjs.org/tutorials/geometry/vector-geometry/	*
-*															*
-* args = {	fixLength:bool,fixAngle:bool,					*
-*			this.visible: bool,								*
-*			vectorCtr:point,								*
-*			vector:point,	// length from center			*
-*			handle: see ananda // creates pullBall size		*
-*			color: #e4141b  // any valid color val			*
-*		 }													*
-*															*
-*															*/
+/*					
+*				v 0.3.6
+* Pullbar extends Ananda, creates grabbable handles
+*					
+* adaptation of vektor.js from:
+* http://paperjs.org/tutorials/geometry/vector-geometry/
+*					
+* args = {	fixLength:bool,fixAngle:bool,
+*			this.visible: bool,
+*			vectorCtr:point,
+*			vector:point,	// length from center
+*			handle: see ananda // creates pullBall size
+*			color: #e4141b  // any valid color val
+*		 }			
+*					
+*/
 //--------------------- BEGIN Pullbar --------------------//
 
 fly.Pullbar = function (args){
-	this.version = "0.3.3";
+	this.version = "0.3.6";
 	var args = args || {};
 	args.name = args.name + " pullbar" || "pullbar";
 	if (args.handle === undefined) { 
@@ -1532,12 +1479,12 @@ fly.Pullbar.prototype.info = function (){
 		i.vectorPrevious = {val: this.vectorPrevious, type: "val"};
 	};
 	return i;
-	}
+}
 
 fly.Pullbar.prototype.register = function (display) {
 	display = display || false;
 	fly.infoCtrlr.register(this,display);
-	fly.eventCtrlr.subscribe(["mouse down","mouse drag", "mouse up"],this);
+	fly.eventCtrlr.subscribe(["mouse down","mouse drag", "mouse up", "s-key"],this);
 }			
 
 fly.Pullbar.prototype.toggleSelected = function (state) {
@@ -1648,6 +1595,3 @@ fly.Pullbar.prototype.drop = function (event) {
 };
 
 //--------------------- END Pullbar -----------------------//
-
-
-
