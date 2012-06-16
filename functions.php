@@ -42,18 +42,40 @@
 	add_action('init', 'removeHeadLinks');
 	remove_action('wp_head', 'wp_generator');
     
-		// Declare sidebar widget zone
-	if (function_exists('register_sidebar')) {
-		register_sidebar(array(
-			'name' => 'Sidebar Widgets',
-			'id'   => 'sidebar-widgets',
-			'description'   => 'These are widgets for the sidebar.',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2>',
-			'after_title'   => '</h2>'
-		));
+
+		// dynamic sidebar from: http://justintadlock.com/archives/2010/11/08/sidebars-in-wordpress
+	add_action( 'widgets_init', 'my_register_sidebars' );
+
+
+	function my_register_sidebars() {
+
+		/* Register the 'left' sidebar. */
+		register_sidebar(
+			array(
+				'id' => 'left',
+				'name' => __( 'Left' ),
+				'description' => __( 'Main left sidebar.' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			)
+		);
+
+		/* Register the 'left' sidebar. */
+		register_sidebar(
+			array(
+				'id' => 'right',
+				'name' => __( 'Right' ),
+				'description' => __( 'Main right sidebar.' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			)
+		);
 	}
+
 
 	if (function_exists('register_nav_menus')) {
 		register_nav_menus(array(
@@ -81,7 +103,7 @@
 		// include custom post types
 	include_once( TEMPLATEPATH . '/inc/posttypes.php');
 
-	function exclude_status() { //exclude status type 'post' from the query
+	function exclude_status() { //exclude 'status' type posts from the query
 		$args = array(
 			'tax_query' => array(
 				array(

@@ -15,6 +15,10 @@
 </footer>
 		
 	</div><!-- END pageWrap -->
+
+<?php get_sidebar('right')  ?>
+
+<?php get_sidebar('left')  ?>
 	
 	<?php 
 	

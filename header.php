@@ -76,6 +76,7 @@
 <body <?php echo $bodyID; ?> >
 		
 	<div id="pageWrap">
+		
 		<header>
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 			
@@ -86,6 +87,7 @@
 		</header>
 		
 		<div id="contentWrap">
+
 			
 <?php include (TEMPLATEPATH . '/inc/badge.php' );  ?>		
 			
