@@ -138,6 +138,7 @@ blockquote p {
 
 #pageWrap { 
 	width: 844px;
+	/* left margin tied to left sidebar*/
 	margin: 21px 0 0 160px;
 	float: left;
 }
@@ -365,21 +366,62 @@ ol.commentlist li.odd { background: #f6f6f6; }
 
 #sidebar-left {
 	float: left;
-	width: 140px;
 	height: 643px;
-	margin: 63px 0 0 -1220px;
-	background-color: #162A3F;
+	/*left margin tied to page wrap*/
+	margin: 63px 0 0 -1224px;
+/*	background-color: #0D1927;*/
+}
+
+#sidebar-left ul,ol,li {
+	padding: 0;
+}
+
+#sidebar-left .feature {
 	background-image: url(/images/nav/ripMain.png);
 	background-repeat: repeat-y;
+	background-position: -40px 0;	
+	width: 140px;
+	height: 90px;
+	padding-left: 10px;
 }
 
-#sidebar-left .seal{
-	width: 55px;
+#sidebar-left .feature:hover {
+	background-position: 0;		
+}
+
+.feature .seal{
+	width: 120px;
 	height: 55px;
+	background-repeat: no-repeat;
+	margin-top: 17px;
 	overflow: hidden;
-	margin: 10px;
+	float: left;
 }
 
+.feature .seal.Main{
+	background-image: url(/images/nav/sealMain.png);
+}
+.feature .seal.T47{
+	background-image: url(/images/nav/sealT47.png);
+}
+.feature .seal.Dma105{
+	background-image: url(/images/nav/sealDma105.png);
+}
+.feature .seal.Art125{
+	background-image: url(/images/nav/sealArt125.png);
+}
+
+.feature .seal:hover {
+	background-position: 0 -100px;
+} 
+
+.feature img {
+	opacity: 0;
+}
+
+.feature img:hover {
+	opacity: 1;
+}
 
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 

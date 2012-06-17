@@ -116,6 +116,12 @@ a.linkbutton:hover { background-position: 0 -200px; }
 	margin: auto;
 }
 
+/* ------------		left side bar	------------------------------------- */
+
+#sidebar-left .feature {
+	background-image: url(/images/nav/ripDma105.png);
+}
+
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
 footer p {

@@ -333,6 +333,14 @@ nav ul li a:hover {
 	padding-left: 10px;
 	text-align: left;
 }
+
+/* ------------		left side bar	------------------------------------- */
+
+#sidebar-left .feature {
+	background-image: url(/images/nav/ripT47.png);
+}
+
+
 /* ------------		generated lists of pages & links	----------------- */
 
 .link-list a{color: #89C234;}

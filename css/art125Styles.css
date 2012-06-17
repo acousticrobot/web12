@@ -84,6 +84,12 @@ h2 .meta, h3 .meta {
 	float: right;
 }
 
+/* ------------		left side bar	------------------------------------- */
+
+#sidebar-left .feature {
+	background-image: url(/images/nav/ripArt125.png);
+}
+
 /* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
 footer p#breadcrumbs { border-bottom: 1px solid #BC5908; }
