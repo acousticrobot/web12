@@ -398,19 +398,6 @@ ol.commentlist li.odd { background: #f6f6f6; }
 	float: left;
 }
 
-.feature .seal.Main{
-	background-image: url(/images/nav/sealMain.png);
-}
-.feature .seal.T47{
-	background-image: url(/images/nav/sealT47.png);
-}
-.feature .seal.Dma105{
-	background-image: url(/images/nav/sealDma105.png);
-}
-.feature .seal.Art125{
-	background-image: url(/images/nav/sealArt125.png);
-}
-
 .feature .seal:hover {
 	background-position: 0 -100px;
 } 

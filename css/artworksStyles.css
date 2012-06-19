@@ -95,12 +95,34 @@ a.linkbutton {
 #gallery {
 	clear: both;
 	width: 788px;
-	margin: auto;
+	margin: 10px auto;
 }
-	/* END gallery styles */
 
+.gallery-links {
+	opacity: .25;
+}
 
+.gallery-links:hover {
+	opacity: 1;
+}
 
+/* END gallery styles */
+
+#sidebar-left .feature {
+	background-image: url(/images/nav/ripArtworks.png);
+}
+
+.feature .seal{
+	opacity: .15;
+}
+
+.feature .seal:hover {
+	opacity: .75;
+}
+
+.feature .seal.artworks{
+	opacity: 1;
+}
 
 footer p#breadcrumbs {
 	border-bottom: 1px solid #555555;

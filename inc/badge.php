@@ -6,16 +6,18 @@
 */
 
 	$badgeID = get_custom_id(); // in functions.php
+	$class = "";
 	switch ($badgeID) {
 		case 'home':
-			$link = "";
-			$badge = 'home';
-			break;
 		case 'mainset':
 			the_post();
-			$badge = get_the_title();
-			$link = $badge;
+			$badge = 'mainset';
+			$link = "";
+			$class = get_the_title();
 			rewind_posts();
+			// for individual badges: 
+			//$link = $badge;
+			//$badge = get_the_title();
 			break;
 		case 'artworks':
 			$badge = 'artworks';
@@ -57,6 +59,8 @@
 	};
 ?>
 
-<div id="badge">
-	<a href="http://jonathangabel.com/<?php echo $link ?>"><img src="/images/nav/<?php echo $badge ?>Badge.png" alt="<?php the_title(); ?>"/></a>
+<div id="badge" class="<?php echo $class ?>">
+	<a href="/<?php echo $link ?>">
+		<img src="/images/nav/<?php echo $badge ?>Badge.png" alt="<?php the_title(); ?>"/>
+	</a>
 </div>

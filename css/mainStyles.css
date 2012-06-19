@@ -53,6 +53,29 @@ nav ul li a:hover,
 	color: #FFFFCB;
 }
 
+#badge {
+	background-position: 27px 27px;
+	background-repeat: no-repeat;
+}
+
+#badge.projects{
+	background-image:url(/images/nav/projectsIcon.png);
+}
+
+#badge.design{
+	background-image:url(/images/nav/designIcon.png);
+}
+
+#badge.students{
+	background-image:url(/images/nav/studentsIcon.png);
+}
+
+#badge:hover {
+	background-image: url(/images/nav/homeIconOn.png);
+	background-position: 27px 25px;
+}
+
+
 /* ------------		generated lists of pages & links	----------------- */
 
 link-list ul.children a {

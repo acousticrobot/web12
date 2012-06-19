@@ -1,10 +1,32 @@
-[C][] [N][] [P][] [S][]
+[B][] [C][] [N][] [P][] [S][]
+## [B]
+
+### Badges
+
+Badged are in inc/badge.php
+Mainset are all linked back to homepage.
 
 ## [C]
 
 ### Custom Fields
 
   * [nav-keys][nav-keys]: custom side navigation 
+
+### Custom Taxonomies
+
+#### Artworks
+
+? Where does the unique catalogue number go?  In a custom field ?
+
+  * year
+  * Dimensions
+  * Media (tags)
+  * Project
+  * Featured Image
+
+archive-artworks.php
+
+content-artworks.php
 
 ## [N]
 
@@ -18,8 +40,16 @@
 
 ##### Left Sidebar
 
-Static declaration of featured projects
+Static declaration of featured projects with links.  
 
+Structure:
+
+	div.feature => bkg. image of rip
+		div.seal{type} => bkg. image of seal{type}, 
+			a link to page{type} 
+				image of sealIcon{type} // mostly transparent overlay.
+
+seal image is an in-line style base on type.
 
 ##### Right Sidebar
 
@@ -66,6 +96,16 @@ examples:
 
 #### Projects Page
 
+#### Archive Page
+
+#### Posts Page
+
+#### Design Page
+
+Design page for content loaded within WordPress page.  All text is in markdown, images loaded with HTML a tags referencing /images/design/tag_thumb.img, dimensions 150 x 150.
+
+classes:
+  * design-image : floating thumbs
 
 ## [S]
 
@@ -89,4 +129,12 @@ example formatting within post entry:
 		file1*Title One*2,file2*Title Two[/galleria]
 	</div>
 	<div class = "clear"></div>
+
+so this:
+	
+		[galleria dir="/images/t29/" prefix="t29."]1**5[/galleria]
+
+produces:
+
+		/images/t29/t29.1_1_s.jpg ... /images/t29/t29.1_5_s.jpg
 

@@ -41,7 +41,17 @@ ul, ol, li {
 #mainSideNav { padding-left: 0px; }
 
 
+#badge {
+	background-image:url(/images/nav/homeIcon.png);
+	background-position: 27px 25px;
+	background-repeat: no-repeat;
+}
 
+#badge:hover {
+	background-image: url(/images/nav/homeIconOn.png);
+	background-position: 27px 25px;
+	background-repeat: no-repeat;
+}
 
 /* -------------------------		CAROUSEL			------------------------- */
 
