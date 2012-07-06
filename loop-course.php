@@ -2,7 +2,7 @@
 	/* 	Loop for listing course content. Lists pages first, then posts (inc. status posts)
 	*
 	*
-	*  Called by: mainset-students page, template-course pagesz
+	*  Called by: mainset-students page, template-course pages
 
 	*	------------------------------------------------------------------------------------
 	*	Pages must use custom-field 'course-keys' to list course contents

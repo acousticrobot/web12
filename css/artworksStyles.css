@@ -64,6 +64,12 @@ nav ul li a:hover {
 	padding: 3px;
 }
 
+#badge:hover {
+	background-image: url(/images/nav/artworksIconOn.png);
+	background-position: 28px 28px;
+	repeat: none;
+}
+
 #innerWrapper {	
 	background-color: #FFFFFF;
 	border: none;
@@ -80,6 +86,11 @@ a.linkbutton {
 	width: 150px; 
 	height: 150px; 
 	background-repeat: no-repeat;
+}
+
+p strong {
+    font-family: 'HattoriHanzoLight', Tahoma, Arial, Helvetica, sans-serif;
+    color: #847F77;
 }
 		
 #photo {
@@ -125,12 +136,15 @@ a.linkbutton {
 }
 
 footer p#breadcrumbs {
-	border-bottom: 1px solid #555555;
+	border-bottom: 1px solid #CCCCCC;
 }
 
+footer a {
+    color: #789CAE;
+}
 	
 footer p {
-    color: #555555;
+    color: #CCCCCC;
 }
 
 footer a:hover { }

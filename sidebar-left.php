@@ -14,10 +14,8 @@
 								); ?>
 
 		<!-- <h2>Featured:</h2> -->
-		
-		<?php foreach ($featured as $feature => $link ) :  ?>
-		
 		<ul>
+		<?php foreach ($featured as $feature => $link ) :  ?>
 			<li>
 				<div class="feature">
 					<div class="seal <?php echo $feature ?>" 
@@ -29,10 +27,8 @@
 					</div>
 				</div>
 			</li>
-		</ul>
-
 		<?php endforeach; ?>
-
+		</ul>
 
 
 	<?php endif; ?>

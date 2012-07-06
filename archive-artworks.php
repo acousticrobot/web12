@@ -9,8 +9,8 @@
 $templateID = 'artworks';
 
 get_header(); 
-	echo "samisin archive-artworks";
-get_template_part('loop');	
+
+get_template_part('loop','artworks');	
 
 get_footer(); 
 
