@@ -14,7 +14,10 @@
 	if(has_post_thumbnail()) {
 		the_post_thumbnail();
 	} else {
-		echo '<img class="wp-post-image" src="/images/nav/artworksBadge.png" alt="artwork" />';
+		$type = get_post_type( $post );
+		if ($type == 'artworks') {
+			echo '<img class="wp-post-image" src="/images/nav/artworksThumbnail.png" alt="artwork" />';
+		} else echo '<img class="wp-post-image" src="/images/nav/postThumbnail.png" alt="post" />';
 	}
 	?>
 	</a>
@@ -24,8 +27,6 @@
 	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
-
-	<?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?>
 
 	<?php edit_post_link('Edit this excerpt','',''); ?>
 
