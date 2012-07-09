@@ -33,9 +33,6 @@
 	<?php } ?>
 	
 
-	
-	<?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?>
-
 	<?php edit_post_link('Edit this artwork','','.'); ?>
 
 </div> <!-- innerWrapper  -->
