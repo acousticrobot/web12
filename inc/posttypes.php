@@ -234,7 +234,6 @@ function artwork_icons() {
 // http://wordpress.org/support/topic/custom-post-type-tagscategories-archive-page
 // http://designpx.com/tutorials/custom-post-types-author-archive/
 if (!is_admin()) { // admin having problems saving with this filter
-	echo foo;
 	add_filter('pre_get_posts', 'query_post_type');
 	function query_post_type($query) {
 		if ( $query->is_main_query() ) { // don't mess up the menu
