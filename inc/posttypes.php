@@ -1,4 +1,16 @@
 <?php
+	/*
+	*   Include: Custom Post Types	   
+	*	Included by: functions.php
+	*	Includes the following Custom Post Types:
+	* 	Artworks
+			dimensions
+			year
+			
+	*	Homeworks
+	*	
+	*   v 1.0
+	*/
 
 // Add new post type for artworks
 add_action('init', 'artwork_init');
@@ -28,12 +40,15 @@ function artwork_init()
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'menu_position' => 5,
-		'supports' => array('title','editor','thumbnail','excerpt','comments','custom-fields'), 
+		'supports' => array(
+			'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+		'taxonomies' =>array('category','post_tag'),		
 		'has_archive' => 'artworks'
 	); 
 	register_post_type('artworks',$args);
 }
 
+// Add new post type for homeworks
 add_action('init', 'homework_init');
 function homework_init() 
 {
@@ -226,3 +241,18 @@ function artwork_icons() {
 <?php }
 	
 ?>
+
+<?php
+// Make sure Artworks shows up in the category archive:
+// references:
+// http://www.billerickson.net/customize-the-wordpress-query/
+// http://wordpress.org/support/topic/custom-post-type-tagscategories-archive-page
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+	if ( $query->is_main_query() ) { // don't mess up the menu
+		if (is_category() || is_tag()) { 
+		    $query->set('post_type',array('post','artworks'));
+			return $query;
+		};
+	};
+}?>

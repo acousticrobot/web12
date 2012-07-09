@@ -1,3 +1,16 @@
+<?php 
+/*
+*	General Archive page
+*	
+*	
+*	v 1.0
+* 	for now, mimics a mainset page, should have it's own ID though
+*/
+
+$templateID = 'mainset';
+?>
+
+
 <?php get_header(); ?>
 
 <?php if (have_posts()) : ?>
@@ -38,7 +51,7 @@
 
 		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 
-		<?php get_template_part( 'loop', 'list'); ?>
+		<?php get_template_part( 'loop', 'archive'); ?>
 
 		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 	

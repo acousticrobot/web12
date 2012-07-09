@@ -3,7 +3,8 @@
 	*	Loop lists artworks
 	*	
 	*	called by: archive-artworks.php 
-	*	v1.0
+	*	v1.1
+	* 	Changes: Project custom taxonomy has been merged into "category" for simpler search results
 	*/
 
 
@@ -21,9 +22,12 @@
 
 	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	
-	<?php if (get_the_term_list( $post->ID, 'project' ) != null ) { ?>
-		<div class='artmeta'>Project: <?php echo get_the_term_list( $post->ID, 'project', '', ', ', '' ); ?></div>
-	<?php } ?>
+	<?php  $category = get_the_category(); 
+		if(($category[0]) && ($category[0]->cat_name != 'Uncategorized' ) ){
+			echo '<div class="artmeta">Project:<a  href="'.get_category_link($category[0]->term_id ).'">'
+				.$category[0]->cat_name.'</a></div>';
+		} ?>
+	
 	<?php if (get_the_term_list( $post->ID, 'jyear' ) != null ) { ?>
 		<div class='artmeta'>Year: <?php echo get_the_term_list( $post->ID, 'jyear', '', ', ', '' ); ?></div>
 	<?php } ?>
