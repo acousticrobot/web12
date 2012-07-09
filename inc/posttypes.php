@@ -29,6 +29,7 @@ function artwork_init()
 		'hierarchical' => false,
 		'menu_position' => 5,
 		'supports' => array('title','editor','thumbnail','excerpt','comments','custom-fields'), 
+		'taxonomies' =>array('category','post_tag'),		
 		'has_archive' => 'artworks'
 	); 
 	register_post_type('artworks',$args);
