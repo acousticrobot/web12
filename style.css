@@ -135,6 +135,9 @@ blockquote p {
 }
 
 /* -------------------------	PAGE WRAP		------------------------- */
+#outerWrap {
+    width: 1500px;
+}
 
 #pageWrap { 
 	width: 844px;
