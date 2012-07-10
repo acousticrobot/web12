@@ -74,7 +74,7 @@
 
 
 <body <?php echo $bodyID; ?> >
-		
+	<div id="outerWrap">		
 	<div id="pageWrap">
 		
 		<header>

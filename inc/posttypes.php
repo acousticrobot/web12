@@ -147,30 +147,7 @@ function web12_create_taxonomies() {
 		'query_var' => true,
 		'rewrite' => array('slug' => 'media' )
 	));
-	
-	// project (hierarchial)
-	$project_labels = array(
-		'name' => _x( 'project', 'taxonomy general name' ),
-		'singular_name' => _x( 'project', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search in projects' ),
-		'all_items' => __( 'All projects' ),
-		'most_used_items' => null,
-		'parent_item' => null,
-		'parent_item_colon' => null,
-		'edit_item' => __( 'Edit project' ), 
-		'update_item' => __( 'Update project' ),
-		'add_new_item' => __( 'Add new project' ),
-		'new_item_name' => __( 'New project' ),
-		'menu_name' => __( 'Project' ),
-	);
-	register_taxonomy('project',array('artworks'),array(
-		'hierarchical' => true,
-		'labels' => $project_labels,
-		'show_ui' => true,
-		'query_var' => true,
-		'rewrite' => array('slug' => 'project' )
-	));
-	
+		
 	// class (hierarchial)
 	$class_labels = array(
 		'name' => _x( 'Class', 'taxonomy general name' ),

@@ -1,9 +1,9 @@
 <?php
 /*
-*	fallback template -- taxonomy search
+*	Template for taxonomy searches
+*	Used for artworks: dimensions, year, media
 *	
-*	
-*	v1.0
+*	v1.1
 */
  get_header(); ?>
 

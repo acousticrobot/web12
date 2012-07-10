@@ -1,5 +1,7 @@
 </div><!-- END contentWrap -->
 
+
+
 <footer>
 	<?php if ( function_exists('yoast_breadcrumb') && !(is_home()) ) {
 		yoast_breadcrumb('<p id="breadcrumbs">','</p>');
@@ -13,23 +15,26 @@
 		}
 	?>
 </footer>
-		
-	</div><!-- END pageWrap -->
 
-<?php get_sidebar('right')  ?>
+</div><!-- END pageWrap -->
 
-<?php get_sidebar('left')  ?>
-	
-	<?php 
-	
-		$customID = get_custom_id();
-		if ($customID == "lab"){
-			$scripts = list_scriptkeys();
-			echo $scripts;
-		}
-		
-		
-		wp_footer(); ?>
+<?php
+	get_sidebar('right');
+
+	get_sidebar('left');  
+?>
+</div><!-- END outerWrap -->
+<?php 
+
+	$customID = get_custom_id();
+	if ($customID == "lab"){
+		$scripts = list_scriptkeys();
+		echo $scripts;
+	}
+			
+	wp_footer(); 
+
+?>
 	
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/googleAnalytics.js"></script>
 	

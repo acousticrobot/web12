@@ -6,7 +6,7 @@
 
 	<?php else : ?>
 
-		<!-- Create some custom HTML or call the_widget().  It's up to you. -->
+		<?php //Create some custom HTML or call the_widget().  It's up to you. ?>
 
 	<?php endif; ?>
 	
