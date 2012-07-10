@@ -75,7 +75,7 @@ add_action( 'init', 'web12_create_taxonomies', 0 );
 function web12_create_taxonomies() {
 	
 	// Year
-	$jyear_labels = array(
+	$year_made_labels = array(
 		'name' => _x( 'Year', 'taxonomy general name' ),
 		'singular_name' => _x( 'Year', 'taxonomy singular name' ),
 		'search_items' =>  __( 'Search in Years' ),
@@ -89,12 +89,12 @@ function web12_create_taxonomies() {
 		'new_item_name' => __( 'New Year' ),
 		'menu_name' => __( 'Year' ),
 	);
-	register_taxonomy('jyear',array('artworks'),array(
+	register_taxonomy('year_made',array('artworks'),array(
 		'hierarchical' => true,
-		'labels' => $jyear_labels,
+		'labels' => $year_made_labels,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array('slug' => 'jyear' )
+		'rewrite' => array('slug' => 'year_made' )
 	));
 
 	// dimensions (hierarchial)

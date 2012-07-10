@@ -1,65 +1,47 @@
-<?php 
+<?php
 /*
-*	fallback template -- search from search field
-*	
-*	
-*	v1.0
+*	Main Template for search results
+*
+* 	CALLED BY: 	TRIGGER: search form get method
+*	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
+*  	v 2.0	 
 */
+	$templateID = 'mainset'; // "search"; // --> alternate styling
 
-$templateID= "search";
+	// build pretty search terms, ex: "SEARCH RESULT FOR PAPER — 5 ARTICLES"
+	$allsearch = new WP_Query("s=$s&showposts=-1"); 
+	$key = wp_specialchars($s, 1); 
+	$count = $allsearch->post_count;
+	$search_terms = '<span class="search-terms">' . $key . '</span> &mdash; ' . $count . ' ' . 'articles';
+	wp_reset_query();
 
-get_header(); ?>
+?>
 
-	<?php if (have_posts()) : ?>
+<?php get_header(); ?>
+
+<h2>Search Result for <?php echo $search_terms ?></h2>
 		
-		<h2>Search Results</h2>		
+<nav id="mainSideNav">
+	<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>
+</nav> <!-- mainSideNav -->	
 
+<div id="innerWrapper">	
 
-		<nav id="mainSideNav">
-			<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>
-		</nav> <!-- mainSideNav -->	
-		
-		<div class="prev-next-links">
-			<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
-		</div>
-		
-		<div id="innerWrapper">	
+<?php 	
+	if (have_posts()) :  
+						
+	 	get_template_part( 'loop', 'archive'); 
+ 
+	else :  // does not have posts ?>
 
-		<?php while (have_posts()) : the_post(); ?>
+	<h3>No posts found.</h3>
+					
+<div id="innerWrapper">
 			
-			<?php if ( !has_post_format( 'status')) { // style as a regular post ?>
-
-				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-
-					<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></h2>
-
-					<article>
-						<?php // display intro_p for pages, excerpts for posts					
-							$excerpt = get_post_meta($post->ID, 'intro_p', true); 						
-							if ($excerpt != '') {
-								?><p><?php echo $excerpt; ?></p><?php					
-							} else the_excerpt();
-					?>
-					</article>
-			</div>
-
-		<?php } endwhile; ?>
-
-		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
-
-	<?php else : ?>
-
-		<h2>No posts found.</h2>
-			
-		<nav id="mainSideNav">
-			<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>
-		</nav> <!-- mainSideNav -->	
-		
-		<div id="innerWrapper">
-			
-	<?php endif; ?>
+<?php 
+	endif; 
+?>
 </div>  <!-- innerWrapper  -->
 
 <?php get_footer(); ?>
+

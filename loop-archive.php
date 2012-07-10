@@ -1,18 +1,22 @@
 <?php
-	/*
-	*	Loop lists thumbnail, title and excerpt, excludes status-posts
-	*	Adapted from loop-list.php (not DRY!)
-	*	called by: archive.php 
-	*	v1.0
-	*/
-?>
+/*
+*	Loop Name: Archive
+*	called by: 
+*
+* 	CALLED BY: 	archive, taxonomy, search
+*	CALLS TO:	inc/nav, content-archive, inc/nav
+*  	v 2.0	 
+*/
 
+	include (TEMPLATEPATH . '/inc/nav.php' ); 
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-<?php if ( !has_post_format( 'status')) { // style as a regular post ?>
+	if (have_posts()) : while (have_posts()) : the_post();
 	
-	<?php get_template_part( 'content','archive'); ?>
+		get_template_part( 'content','archive');
 
-<?php } endwhile; endif; ?>
+	endwhile; endif; 
+
+	include (TEMPLATEPATH . '/inc/nav.php' ); 
+
+?>
 	

@@ -17,9 +17,9 @@ body {
 	border: none;
 }
 
-h1 a { color: #EEEEEE;}
+h1 a { color: #DDDDDD;}
 
-h1 a:hover { color: #DDDDDD;} 
+h1 a:hover { color: #CCCCCC;} 
 
 
 h2, h3, h4 {
@@ -56,6 +56,13 @@ nav ul li a:hover {
 	background-image: url(/images/nav/artworksNav.png);
 	margin: -1px;
 	height: 25px;
+	width: 125px;
+}
+
+#search #field:hover { 
+	color: #999999; 
+	background-color: #FFFFFF; 
+	border: 1px solid #DDDDDD;
 }
 
 #contentWrap {
@@ -128,7 +135,7 @@ p strong {
 }
 
 .feature .seal:hover {
-	opacity: .75;
+	opacity: .55;
 }
 
 .feature .seal.artworks{

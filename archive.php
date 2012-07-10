@@ -1,13 +1,13 @@
-<?php 
+<?php
 /*
-*	General Archive page
-*	
-*	
-*	v 1.0
-* 	for now, mimics a mainset page, should have it's own ID though
+*	Main Template for archive
+*
+* 	CALLED BY: 	triggered by keywords in content 
+*	TRIGGER: 	Category, Date and Tag searches
+*	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
+*  	v 2.0	 
 */
-
-$templateID = 'mainset';
+	$templateID = 'mainset';
 ?>
 
 
@@ -51,15 +51,12 @@ $templateID = 'mainset';
 	
 	<div id="innerWrapper">
 
-		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
-
 		<?php get_template_part( 'loop', 'archive'); ?>
-
-		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 	
 	</div>  <!-- innerWrapper  -->
 	
 <?php else : ?>
+
 	<h2>Nothing found</h2>
 
 <?php endif; ?>

@@ -28,8 +28,8 @@
 				.$category[0]->cat_name.'</a></div>';
 		} ?>
 	
-	<?php if (get_the_term_list( $post->ID, 'jyear' ) != null ) { ?>
-		<div class='artmeta'>Year: <?php echo get_the_term_list( $post->ID, 'jyear', '', ', ', '' ); ?></div>
+	<?php if (get_the_term_list( $post->ID, 'year_made' ) != null ) { ?>
+		<div class='artmeta'>Year: <?php echo get_the_term_list( $post->ID, 'year_made', '', ', ', '' ); ?></div>
 	<?php } ?>
 	<?php if (get_the_term_list( $post->ID, 'dimensions' ) != null ) { ?>
 		<div class='artmeta'>Dimensions: <?php echo get_the_term_list( $post->ID, 'dimensions', '', ', ', '' ); ?></div>

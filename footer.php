@@ -1,6 +1,14 @@
+<?php 
+/*
+*	Name: footer.php
+*	
+* 	CALLED BY: 	All pages
+*	CALLS TO:	inc/t47copyright, sidebar-right.php, sidebar-left.php, custom scripts 
+*  	v 2.2	 
+*/
+?>
+
 </div><!-- END contentWrap -->
-
-
 
 <footer>
 	<?php if ( function_exists('yoast_breadcrumb') && !(is_home()) ) {

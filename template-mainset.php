@@ -1,14 +1,13 @@
 <?php
-	/*
-	*   Template Name: Main Set	
-	*   
-	*   
-	*	Called by: projects, rambles, students, archive, links, contact   
-	*   
-	*   v 1.0
-	*/
+/*
+*   Template Name: Main Set	
+*    
+*	Called by: projects, rambles, students, archive, links, contact   
+*   
+*   v 1.0
+*/
 
-	$templateID = 'mainset';
+$templateID = 'mainset';
 ?>
 
 <?php get_header(); ?>
