@@ -4,7 +4,7 @@
 	*	
 	*	called by: archive-artworks.php 
 	*	v1.1
-	* 	Changes: Project custom taxonomy has been merged into "category" for simpler search results
+	* 	Project custom taxonomy has been merged into "category" for simpler search results
 	*/
 
 

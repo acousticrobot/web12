@@ -150,6 +150,15 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 	clear: both;
 }
 
+.archive-date {
+	font-family: consolas, monospace;
+	letter-spacing:normal;
+	float: right;
+	text-align: right;
+	color: #C8C2B6;
+	font-size: .65em;
+}
+
 .listDate {
 	font-family: consolas, monospace;
 	letter-spacing:normal;
@@ -157,8 +166,9 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 	text-align: right;
 	color: #C8C2B6;
 	font-size: .75em;
-	padding-right:100px;
+	padding-right:20px;
 }
+
 
 /* ----- END student/course listings ------ */
 

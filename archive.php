@@ -44,7 +44,9 @@ $templateID = 'mainset';
 		    <?php
 		} ?>
 	
-
+	<nav id="mainSideNav">
+		<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>
+	</nav> <!-- mainSideNav -->	
 	
 	
 	<div id="innerWrapper">

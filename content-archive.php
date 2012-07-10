@@ -7,7 +7,7 @@
 	 */
 ?>
 
-<div class='excerpt clear'>
+<div class='excerpt clearLeft'>
 
 	<a href="<?php the_permalink(); ?>">
 	<?php 
@@ -24,7 +24,7 @@
 	
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	
-	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
+	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
 
