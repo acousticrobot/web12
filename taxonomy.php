@@ -1,9 +1,9 @@
 <?php
 /*
-*	fallback template -- taxonomy search
+*	Template for taxonomy searches
+*	Used for artworks: dimensions, year, media
 *	
-*	
-*	v1.0
+*	v1.1
 */
  get_header(); ?>
 
@@ -19,7 +19,6 @@
 				
 		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 
-		<?php query_posts( array('post_type' => array('artwork','posts'), 'cat' => $cat) ); ?>
 		<?php while (have_posts()) : the_post(); ?>
 			
 			<?php if ( !has_post_format( 'status')) { // style as a regular post ?>
