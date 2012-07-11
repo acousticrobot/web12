@@ -15,8 +15,8 @@
 		get_template_part( 'content','archive');
 
 	endwhile; endif; 
-
-	include (TEMPLATEPATH . '/inc/nav.php' ); 
-
 ?>
+<div class="clear"></div>
+
+<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 	
