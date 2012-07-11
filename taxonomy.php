@@ -1,11 +1,13 @@
 <?php
 /*
-*	Main Template for taxonomy searches
+*	Description: Main Template for taxonomy searches
 *
-* 	CALLED BY: 	TRIGGER: taxonomy key-word searches (artwork: dimensions, year_made, media)
+* 	CALLED BY: custom taxonomies
+*	TRIGGER: taxonomy key-word searches (artwork: dimensions, year_made, media)
 *	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
 *  	v 2.0	 
 */
+
 	$templateID = 'mainset';
 
 	$taxonomy = get_query_var( 'taxonomy' );

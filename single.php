@@ -1,11 +1,12 @@
 <?php 
-
-	/*
-	*	General template for single post entries
-	*	
-	*	Called by: posts, artworks, homeworks
-	*
-	*/
+/*
+*	Description: Main Template for single post entries
+*
+* 	CALLED BY: posts, artworks, homeworks
+*	TRIGGER: 
+*	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
+*  	v 2.0	 
+*/
 	
 the_post();
 $templateID = get_post_type();

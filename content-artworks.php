@@ -1,14 +1,13 @@
 <?php
-	/**
-	 * Displays 'artworks' custom-post-type content
-	 *
-	 * 	CALLED BY: 	loop.php --> single.php for custom-post-type artwork
-	 *	CALLS TO:	
-	 *  v 2.0	 
-	 */
+/**
+ * Displays 'artworks' custom-post-type content
+ *
+ * 	CALLED BY: 	loop.php --> single.php for custom-post-type artwork
+ *	TRIGGER: type 'artworks'
+ *	CALLS TO:	
+ *  v 2.0	 
+ */
 ?>
-
-
 
 <div id="innerWrapper">	
 
@@ -16,35 +15,7 @@
 	
 <h2><?php the_title(); ?></h2>
 	
-	
-<?php  // Artworks project taxonomy is covered by Category for better search results
-	$category = get_the_category(); 
-	
-	if(($category[0]) && ($category[0]->cat_name != 'Uncategorized' ) ){
-		echo '<div class="artmeta">Project:<a  href="'. get_category_link($category[0]->term_id ) .'">'
-				. $category[0]->cat_name.'</a></div>';
-	} 
-?>
-	
-<?php // Year is a reserved taxonomy name, 
-	if (get_the_term_list( $post->ID, 'year_made' ) != null ) { 
-?>		
-
-<div class='artmeta'>Year: <?php echo get_the_term_list( $post->ID, 'year_made', '', ', ', '' ); ?></div>
-
-<?php 
-	} 
-?>
-
-	<?php if (get_the_term_list( $post->ID, 'dimensions' ) != null ) { ?>
-		<div class='artmeta'>Dimensions: <?php echo get_the_term_list( $post->ID, 'dimensions', '', ', ', '' ); ?></div>
-	<?php } ?>
-	<?php if (get_the_term_list( $post->ID, 'media' ) != null ) { ?>
-		<div class='artmeta'>Media: <?php echo get_the_term_list( $post->ID, 'media', '', ', ', '' ); ?></div>
-	<?php } ?>
-	
-
-	<?php edit_post_link('Edit this artwork','','.'); ?>
-
+<?php get_template_part( 'content', 'artmeta' ); ?>	
+		
 </div> <!-- innerWrapper  -->
 

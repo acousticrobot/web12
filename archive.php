@@ -1,6 +1,6 @@
 <?php
 /*
-*	Main Template for archive
+*	Description: Main Archive Template
 *
 * 	CALLED BY: 	triggered by keywords in content 
 *	TRIGGER: 	Category, Date and Tag searches

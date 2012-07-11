@@ -13,10 +13,13 @@
 *		type paper also adds scripts as text/paperscript
 *
 *	Called by: header.php before wp_head()
-*	v1.5
-*
+*	
+*	TODO: Align with header/footer pattern for t47 & home which will be:
+*		TODO: changed to footer to drop scripts into bottom, add css into header.php
+*	TODO: Make flypaper friendly, and allow custom scripts elsewhere
 *	TODO: 	-add paper, but then add script as regular js
 *			-add canvas name other than ctx
+*	v1.5
 */
 ?>
 

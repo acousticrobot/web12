@@ -30,8 +30,7 @@
 
  	switch ($customID) {
  		case 'home':
- 			include (TEMPLATEPATH . '/inc/homeHead.php' );
- 			break;
+ 			include (TEMPLATEPATH . '/header-home.php' );
 		case 'mainset': 
 ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
@@ -43,7 +42,7 @@
 <?php
 			break;	
   		case 't47':
-  			include (TEMPLATEPATH . '/inc/t47head.php' );
+  			include (TEMPLATEPATH . '/header-t47.php' );
   			break;
 		case 'dma105': 
 		case 'homework dma105'?>
@@ -56,7 +55,7 @@
 <?php
 			break;
 		case 'lab':
-			include (TEMPLATEPATH . '/inc/labHead.php' );
+			include (TEMPLATEPATH . '/header-lab.php' );
 			set_scriptkeys();			
 			break;	
   		};	

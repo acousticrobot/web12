@@ -1,47 +1,37 @@
 <?php
-	/*
-	*	Loop lists artworks
-	*	
-	*	called by: archive-artworks.php 
-	*	v1.1
-	* 	Project custom taxonomy has been merged into "category" for simpler search results
-	*/
+/*
+*	Description: Artworks Loop Page -- lists artworks
+*
+* 	CALLED BY: 	archive-artworks 
+*	TRIGGER: 	call for custom type 'artworks'
+*	CALLS TO:	HEADER, taxonomies:(category, year_made, dimensions, media), FOOTER
+*	TODO: Once there are too many artworks?
+*  	v 2.0	   
+*/
 
+	include (TEMPLATEPATH . '/inc/nav.php' ); 	
 
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
-	
-	<a href="<?php the_permalink(); ?>">
-	<?php 
-	if(has_post_thumbnail()) {
-		the_post_thumbnail();
-	} else {
-		echo '<img class="wp-post-image" src="/images/nav/artworksThumbnail.png" alt="artwork" />';
-	}
-	?>
-	</a>
 
-	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+<article class="clearLeft">
 	
-	<?php  $category = get_the_category(); 
-		if(($category[0]) && ($category[0]->cat_name != 'Uncategorized' ) ){
-			echo '<div class="artmeta">Project:<a  href="'.get_category_link($category[0]->term_id ).'">'
-				.$category[0]->cat_name.'</a></div>';
-		} ?>
-	
-	<?php if (get_the_term_list( $post->ID, 'year_made' ) != null ) { ?>
-		<div class='artmeta'>Year: <?php echo get_the_term_list( $post->ID, 'year_made', '', ', ', '' ); ?></div>
-	<?php } ?>
-	<?php if (get_the_term_list( $post->ID, 'dimensions' ) != null ) { ?>
-		<div class='artmeta'>Dimensions: <?php echo get_the_term_list( $post->ID, 'dimensions', '', ', ', '' ); ?></div>
-	<?php } ?>
-	<?php if (get_the_term_list( $post->ID, 'media' ) != null ) { ?>
-		<div class='artmeta'><?php echo get_the_term_list( $post->ID, 'media', '', ', ', '' ); ?></div>
-	<?php } ?>
-	
+<a href="<?php the_permalink(); ?>"><?php
+ 
+		if(has_post_thumbnail()) {
+			the_post_thumbnail();
+		} else {
+			echo '<img class="wp-post-image" src="/images/nav/artworksThumbnail.png" alt="artwork" />';
+		}
+?></a>
 
-	<?php edit_post_link('Edit this artwork','','.'); ?>
+<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	
-	<div class='clear'></div>
-	<?php endwhile; endif;  ?>
+<?php get_template_part( 'content', 'artmeta' ); ?>	
+		
+</article>
+
+<?php 
+	endwhile; endif;  
+?>
 
 
