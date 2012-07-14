@@ -1,0 +1,483 @@
+/*   
+Theme Name: Web12
+Theme URI: hhttp://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+
+colors:
+blue9 	mainset bkg	 	#0D1927
+
+
+blue8	page: 			#162A3F
+
+blue7	H2-bkg:			#1D3852
+
+blue4 	main H1			#2A5176
+        single bkg
+
+blue5 	H2:				#4383BF
+blue6	hover			#59AEFF
+blue7					#9BCAE1
+blue8					#B0E5FF
+
+red (link): 			#93221A
+orange (hover): 		#FFB444
+page-white: 			#FFFFF0
+
+*/
+
+/* ------------------------		BEGIN @MEDIA SCREEN		------------------------- */
+
+@media screen {
+	
+/* -----------------------		RESET 			--------------------------------- */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+ letter-spacing:normal;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+q:before, q:after { content:''; }
+ol, ul, li { list-style-type: none }
+article, aside, figure, footer, header, nav, section  { display: block;}
+
+.clear { clear: both;}
+.clearLeft {clear: left;}
+
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+body {
+	color: #56534E;
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	background: #2A5176;
+}
+
+h1 {
+	font-size: 2.125em; /* 34 px */
+	letter-spacing: .16em;
+	margin: 0 0 13px 0;
+}
+h1 a { color: #1D3852 ; }
+h1 a:hover { color: #C5FF6D;}
+
+h2, h3, h4, h5 { 
+	letter-spacing: .075em;
+	text-transform: uppercase;
+	padding: 5px 0 5px 13px;
+}
+
+h2 { 
+	color: #162A3F; 
+	font-size: 1.3125em; /* 21 px */ 
+}
+
+h3 { font-size: 1.3125em; /* 21 px */ }
+
+h4, h5 { font-size: 1.125em; /* 18 px */ }
+
+p, li {
+	font-family: 'HattoriHanzoLight', Tahoma, Arial, Helvetica, sans-serif;
+	letter-spacing: .13em;
+	font-size: .9375em;
+}
+p {
+	line-height: 1.5em;
+	padding: 10px 20px;
+}
+p em {
+	font-family: 'HattoriHanzoLightItalic', Tahoma, Arial, Helvetica, sans-serif;
+	letter-spacing: .18em;
+}
+p strong { font-family: 'CicleGorditaItalic', Tahoma, Arial, Helvetica, sans-serif;}
+
+a {
+	text-decoration: none;
+	color: #4383BF;
+}
+a:hover { color: #FFB444;}
+
+ul, ol, li {
+		font-size: 1em; /* 16 px */
+		padding: 0 20px 8px 20px;
+}
+
+ol li {
+    list-style-type: decimal;
+	list-style-position: inside;
+}
+
+dl {
+	padding: 0 20px;
+}
+dt {
+	font-family: 'CicleGordita', Tahoma, Arial, Helvetica, sans-serif;
+	padding: 5px 5px 5px 20px;
+}
+
+pre {
+	padding: 10px 0 10px 40px;
+	background-color: #A7A097;
+}
+code {
+	font-family: consolas, monospace;
+	letter-spacing: .13em;
+	font-size: 1em;	
+}
+pre code {
+	color: #D9FFA0;
+}
+
+blockquote p {
+	padding: 10px 40px;
+	border: 1px solid white;
+	line-height: 1.2em;
+	text-align: justify;
+}
+
+/* -------------------------	PAGE WRAP		------------------------- */
+#outerWrap {
+    width: 1500px;
+}
+
+#pageWrap { 
+	width: 844px;
+	/* left margin tied to left sidebar*/
+	margin: 21px 0 0 160px;
+	float: left;
+}
+
+/* -------------------------	HEADER/NAV	 	------------------------ */
+nav ul, nav li { padding: 0;}
+
+    /* --- main nav link buttons ---- */
+nav ul li a {
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	color: #1D3852; 
+	background-color: #335C8F;
+	font-size: 1.3125em; /* 21 px */
+	line-height: 1.1em;
+	display: block;
+	padding-top: 1px;
+}
+nav ul li a:hover { 
+/*	color: #162A3F;*/
+	background-color: #FFFFCB;
+}
+header nav ul li {
+	float: left;
+	width: 144px;
+	margin: 0 8px 8px 0;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+#search { margin-top: -8px;}
+#search label {
+	visibility: hidden;
+	position: absolute;
+}
+#search #field {
+	width: 144px;
+	height: 24px;
+	margin: 0 8px 8px 0;
+	padding: 0 0 0 24px;
+	float: left;
+	background-image: url(/images/nav/genNav.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+#search input {
+	width: 116px;
+	background: transparent;
+	font-size: 1em; 
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	text-align: left;
+	letter-spacing: .1em;
+	border: 0;
+}
+#search #field:hover {
+	background-position: 0 -100px;	
+}
+
+/* -------------------------	CONTENT WRAP ------------------------- */
+
+#contentWrap {
+	width: 844px;
+	min-height: 610px;
+	background-color: #F1FFCB;/*#F8F1E3;*/
+	border: 1px solid #847F77;
+	clear: both;
+	position: relative;
+	float: left; /* surrounds floating elements */
+}
+
+#contentWrap > h2 { }
+
+.prev-next-links {  
+	padding: 0 0 5px 10px;
+	background-color: #F1FFCB;/*#F8F1E3;*/
+}
+
+.next-posts { float: left;}
+
+.prev-posts { margin: 0 0 0 125px;}
+
+#badge {
+	position: absolute;
+	top: -88px;
+	right: -34px;
+	z-index: 10;
+	background-repeat: no-repeat;
+}	
+#badge:hover {
+	top: -92px;
+	right: -36px;	
+}
+
+#mainSideNav {
+	float: right;
+	background-color: #F1FFCB;
+	padding-left: 20px;	
+}
+#mainSideNav ul li {
+	margin-bottom: 18px;
+}
+#mainSideNav ul li a {
+	padding: 2px 2px 2px 8px;
+	width: 79px; /* 89 - 10px padding */
+}
+
+/* -------------------------	INNER WRAPPER	------------------------- */
+
+#innerWrapper {	
+	background-color: white;
+	padding: 5px;	
+	min-height: 500px;														
+}
+
+.wp-post-image { /*featured image*/
+	float: left;
+	margin: 15px 30px 10px 12px;
+}
+
+#innerWrapper h1, #innerWrapper h2 {
+	font-size: 1.5em; /* 24 px */
+	border-top: 1px solid #999;
+	margin-top: 10px;
+}
+
+#innerWrapper h3 {	border-top: 1px solid #4383BF; }
+
+#innerWrapper *:first-child { border: none; }
+
+#innerWrapper h2 + h3 { border: none; }
+
+#innerWrapper h3 + p { padding-top: 5px }
+
+#innerWrapper h4, h5 { margin-left: 20px; }
+
+#innerWrapper h5 { color: #A7A097; }
+
+
+/* -----------------------		generated lists of pages & links	----------------- */
+
+.link-list * {
+	line-height: 1.5em;
+	font-size: 18px;
+	font-family: 'CicleFina',Tahoma, Arial, Helvetica, sans-serif;	
+}
+
+/* --------------------			meta and tag info		------------------------- */
+
+h2 .meta, h3 .meta {
+	float: right;
+	margin: 0 10px 0 110px;
+	font-size: .75em;
+}
+
+h2 .meta {
+	margin-right: 50px;
+}
+
+.meta, .tags, .post-edit-link, {
+	font-family: consolas, monospace;
+	font-size: .75em;
+}
+
+.meta {
+	padding: 5px 10px 0 30px;
+	margin-bottom: -5px;
+	text-align: right;	
+}
+
+.tags {
+	padding: 5px 10px 5px 30px;
+}
+.tags a {
+	padding: 3px;
+}
+
+/* -------------------------	targeting status posts	------------------------- */
+
+.status {
+	background-color: #F1FFCB;
+	color: #A7A097;
+	border-radius: 10px;
+	width: 625px;
+	margin: 5px 0 10px 50px;
+}
+
+.status-date, .status-category {
+	font-family: consolas, monospace;
+	letter-spacing:normal;
+	color: #C8C2B6;
+	font-size: .75em;
+	padding: 0 10px 0 0;
+}
+
+.status-meta {
+	float: left;
+}
+
+.status-date, .status-category {
+	margin: 0;
+	padding: 10px 20px 0 20px;
+}
+
+#innerWrapper .status .status-content p {
+	margin-left: 150px;
+}
+
+/* -------------------------	COMMENTS 	---------------------------------------- */
+
+ol.commentlist *{ list-style: none; }
+ol.commentlist li.comment { border-bottom: 1px solid #C8C2B6; padding: 10px; }
+ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
+ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+ol.commentlist li.comment div.comment-meta { font-size: 10px; }
+ol.commentlist li.comment div.comment-meta a { color: #ccc; }
+ol.commentlist li.comment div.reply { font-size: 11px; }
+ol.commentlist li.comment div.reply a { font-weight: bold; }
+ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
+ol.commentlist li.even { background: #fff; }
+ol.commentlist li.odd { background: #f6f6f6; }
+
+/* -------------------------	SIDEBARS	----------------------------------------- */
+
+#sidebar-right {
+	float: left;
+	width: 200px;
+	margin: 128px 0 0 20px;
+}
+
+#sidebar-left {
+	float: left;
+	height: 643px;
+	/*left margin tied to page wrap*/
+	margin: 63px 0 0 -1224px;
+/*	background-color: #0D1927;*/
+}
+
+#sidebar-left ul,ol,li {
+	padding: 0;
+}
+
+#sidebar-left .feature {
+	background-image: url(/images/nav/ripMain.png);
+	background-repeat: repeat-y;
+	background-position: -40px 0;	
+	width: 140px;
+	height: 90px;
+	padding-left: 10px;
+}
+
+#sidebar-left .feature:hover {
+	background-position: 0;		
+}
+
+.feature .seal{
+	width: 120px;
+	height: 55px;
+	background-repeat: no-repeat;
+	margin-top: 17px;
+	overflow: hidden;
+	float: left;
+}
+
+.feature .seal:hover {
+	background-position: 0 -100px;
+} 
+
+.feature img {
+	opacity: 0;
+}
+
+.feature img:hover {
+	opacity: 1;
+}
+
+/* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
+
+footer p {
+	clear: both;
+	font-family: consolas, monospace;
+	font-size: .75em;
+	padding: 5px 0 40px 0;
+	margin-left: 13px;
+	color: #2A5176;
+}
+
+footer p#breadcrumbs {
+	margin: 13px;
+	padding: 15px 0;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+footer a { color: #E4DDD0;}
+
+} /* END screen media */
+/* -------------------------	END @MEDIA SCREEN			------------------------- */
+
+
+/* -------------------------	BEGIN @MEDIA PRINT			------------------------- */
+
+@media print {
+	* {
+		font-family: Times New Roman, Serif;
+		font-size: 9pt;
+		color: #000 !important;
+		background: #fff !important;
+		text-decoration: none;
+		border: none !important;
+	}
+	
+	h1, nav, #badge, .meta-comments, .post-edit-link,
+	#respond, .tags,footer, .attachment-post-thumbnail {display: none;}
+	
+	h2,h3,h4,h5 {
+		font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
+	}
+	
+	h2, h2 em { font-size: 15pt;}
+	h3, h3 em { font-size: 13pt;}
+	h4, h4 em { font-size: 11pt;}
+	h5, h5 em { font-size: 9pt;}
+		
+	a {	text-decoration: none;}
+	
+	a:after {
+		content: " ("attr(href)") ";
+		font-size: 10pt;
+	}
+	
+	.breakBefore {
+		page-break-before: always;
+	}
+} /* END print media */
