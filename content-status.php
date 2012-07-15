@@ -27,6 +27,6 @@
 
 		<div class="status-content"><?php the_content(); ?></div>
 		
-		<div class="clearLeft"></div>
+		<div class="clear-left"></div>
 			
 </article>

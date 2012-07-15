@@ -6,3 +6,8 @@ Author: Jonathan Gabel
 Author URI: http://jonathangabel.com
 Version: v2.0
 */
+
+
+@import url('css/screen.css');
+@import url('css/print.css');
+@import url('css/ie.css');

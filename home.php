@@ -26,10 +26,10 @@
 <section>
 	<aside>
 		<h2><a id="news" href="#" >News</a></h2>
-		<div class="scroll-pane">
+		<!-- <div class="scroll-pane"> -->
 		<?php get_template_part('loop','status');?> 
 		<?php wp_reset_query();	?> 
-		</div>
+		<!-- </div> -->
 	</aside>
 		
 	<div id= "pictureblock">

@@ -4,3 +4,194 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "_fonts.scss";
+@import "_colors.scss";
+@import "_text.scss";
+@import "_wrappers.scss";
+@import "_navigation.scss";
+
+
+.clear {
+    clear: both;
+}
+.clear-left {
+    clear: left;
+}
+.clear-right {
+    clear: right;
+}
+
+body {
+    font-family: 'crimsonRoman';
+ 	color: $grey6;
+	background: $blue6;
+}
+
+p, li {
+	letter-spacing: .13em;
+	font-size: .9375em;
+}
+
+p {
+	line-height: 1.5em;
+	padding: 10px 20px;
+	em {
+    	font-family: 'HattoriHanzoLightItalic', Tahoma, Arial, Helvetica, sans-serif;
+    	letter-spacing: .18em;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $blue4;
+	&:hover { color: $orange; }
+}
+
+ul, ol, li {
+		font-size: 1em; /* 16 px */
+		padding: 0 20px 8px 20px;
+}
+
+ol li {
+    list-style-type: decimal;
+	list-style-position: inside;
+}
+
+dl {
+	padding: 0 20px;
+}
+dt {
+	font-family: 'CicleGordita', Tahoma, Arial, Helvetica, sans-serif;
+	padding: 5px 5px 5px 20px;
+}
+
+pre {
+	padding: 10px 0 10px 40px;
+	background-color: #A7A097;
+}
+code {
+	font-family: consolas, monospace;
+	letter-spacing: .13em;
+	font-size: 1em;	
+}
+pre code {
+	color: $lime1;
+}
+
+blockquote p {
+	padding: 10px 40px;
+	border: 1px solid white;
+	line-height: 1.2em;
+	text-align: justify;
+}
+
+.wp-post-image { /*featured image*/
+	float: left;
+	margin: 15px 30px 10px 12px;
+}
+
+
+.search-terms {
+    color: $blue5;
+}
+
+.link-list * {
+	line-height: 1.5em;
+	font-size: 18px;
+	font-family: 'CicleFina',Tahoma, Arial, Helvetica, sans-serif;	
+}
+
+/* --------------------			meta and tag info		------------------------- */
+
+h2 .meta, h3 .meta {
+	float: right;
+	margin: 0 10px 0 110px;
+	font-size: .75em;
+}
+
+h2 .meta {
+	margin-right: 50px;
+}
+
+.meta, .tags, .post-edit-link, {
+	font-family: consolas, monospace;
+	font-size: .75em;
+}
+
+.meta {
+	padding: 5px 10px 0 30px;
+	margin-bottom: -5px;
+	text-align: right;	
+}
+
+.tags {
+	padding: 5px 10px 5px 30px;
+}
+.tags a {
+	padding: 3px;
+}
+
+/* -------------------------	targeting status posts	------------------------- */
+
+.status {
+	background-color: $lime0;
+	color: #A7A097;
+	border-radius: 10px;
+	width: 625px;
+	margin: 5px 0 10px 50px;
+}
+
+.status-date, .status-category {
+	font-family: consolas, monospace;
+	letter-spacing:normal;
+	color: #C8C2B6;
+	font-size: .75em;
+	padding: 0 10px 0 0;
+}
+
+.status-meta {
+	float: left;
+}
+
+.status-date, .status-category {
+	margin: 0;
+	padding: 10px 20px 0 20px;
+}
+
+#innerWrapper .status .status-content p {
+	margin-left: 150px;
+}
+
+/* -------------------------	COMMENTS 	---------------------------------------- */
+
+ol.commentlist *{ list-style: none; }
+ol.commentlist li.comment { border-bottom: 1px solid #C8C2B6; padding: 10px; }
+ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
+ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+ol.commentlist li.comment div.comment-meta { font-size: 10px; }
+ol.commentlist li.comment div.comment-meta a { color: #ccc; }
+ol.commentlist li.comment div.reply { font-size: 11px; }
+ol.commentlist li.comment div.reply a { font-weight: bold; }
+ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
+ol.commentlist li.even { background: #fff; }
+ol.commentlist li.odd { background: #f6f6f6; }
+
+
+/* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
+
+footer p {
+	clear: both;
+	font-family: consolas, monospace;
+	font-size: .75em;
+	padding: 5px 0 40px 0;
+	margin-left: 13px;
+	color: $blue6;
+}
+
+footer p#breadcrumbs {
+	margin: 13px;
+	padding: 15px 0;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+footer a { color: #E4DDD0;}

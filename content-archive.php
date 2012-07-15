@@ -8,7 +8,7 @@
 	 */
 ?>
 
-<article class="clearLeft">
+<article class="clear-left">
 	
 	<a href=" <?php the_permalink(); ?>">
 <?php 

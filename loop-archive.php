@@ -16,7 +16,5 @@
 
 	endwhile; endif; 
 ?>
-<div class="clear"></div>
-
 <?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 	

@@ -1,4 +1,5 @@
-/*   
+/*  
+ original stylesheet before sass-- keep as reference
 Theme Name: Web12
 Theme URI: hhttp://jonathangabel.com
 Description: 2012 theme for jonathangabel.com
@@ -14,13 +15,14 @@ blue8	page: 			#162A3F
 
 blue7	H2-bkg:			#1D3852
 
-blue4 	main H1			#2A5176
+blue6 	main H1			#2A5176
         single bkg
 
 blue5 	H2:				#4383BF
-blue6	hover			#59AEFF
-blue7					#9BCAE1
-blue8					#B0E5FF
+blue4	hover			#59AEFF
+blue3					#9BCAE1
+blue2					#B0E5FF
+blue1
 
 red (link): 			#93221A
 orange (hover): 		#FFB444
@@ -211,7 +213,7 @@ header nav ul li {
 #contentWrap {
 	width: 844px;
 	min-height: 610px;
-	background-color: #F1FFCB;/*#F8F1E3;*/
+	background-color: $lime0;/*#F8F1E3;*/
 	border: 1px solid #847F77;
 	clear: both;
 	position: relative;
@@ -222,7 +224,7 @@ header nav ul li {
 
 .prev-next-links {  
 	padding: 0 0 5px 10px;
-	background-color: #F1FFCB;/*#F8F1E3;*/
+	background-color: $lime0;/*#F8F1E3;*/
 }
 
 .next-posts { float: left;}
@@ -243,7 +245,7 @@ header nav ul li {
 
 #mainSideNav {
 	float: right;
-	background-color: #F1FFCB;
+	background-color: $lime0;
 	padding-left: 20px;	
 }
 #mainSideNav ul li {
@@ -327,7 +329,7 @@ h2 .meta {
 /* -------------------------	targeting status posts	------------------------- */
 
 .status {
-	background-color: #F1FFCB;
+	background-color: $lime0;
 	color: #A7A097;
 	border-radius: 10px;
 	width: 625px;

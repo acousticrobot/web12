@@ -76,7 +76,7 @@
 <div id="pageWrap">
 		
 <header>
-	<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+	<p id="site-head"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></p>
 	
 	<nav>
 		<?php wp_nav_menu(array('menu' => 'Main Navigation Menu', 'show_home' => 'home'))?>

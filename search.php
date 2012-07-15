@@ -12,7 +12,7 @@
 	$allsearch = new WP_Query("s=$s&showposts=-1"); 
 	$key = wp_specialchars($s, 1); 
 	$count = $allsearch->post_count;
-	$search_terms = '<span class="search-terms">' . $key . '</span> &mdash; ' . $count . ' ' . 'articles';
+	$search_terms = '<span class="search-terms">"' . $key . '"</span> &mdash; ' . $count . ' ' . 'articles';
 	wp_reset_query();
 
 ?>

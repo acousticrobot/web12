@@ -1,0 +1,169 @@
+header {
+    font-family: 'CicleFina';
+    #site-head {
+        padding: 0;
+    	font-size: $p34;
+    	letter-spacing: .16em;
+    	margin: 0 0 13px 0;
+    	a { 
+    	    color: $blue8 ; 
+    	    &:hover { color: $orange; }
+    	}
+    }
+    nav {
+        ul, li {
+            padding: 0;
+        }
+        li {
+            float: left;
+        	width: 144px;
+        	margin: 0 8px 8px 0;
+        	text-align: center;
+        	text-transform: uppercase;
+        	letter-spacing: .1em;
+        }
+        ul li a {
+        	color: $blue9; 
+        	background-color: $blue5;
+        	font-size: $p21;
+        	line-height: 1.1em;
+        	display: block;
+        	padding-top: 1px; // why?
+        	&:hover {background-color: $blue4;}
+        }        
+    }
+}
+
+// -------------------------	MENU STYLES	 	------------------------ //
+
+#search { 
+    margin-top: -8px;
+    label {
+    	visibility: hidden;
+    	position: absolute;
+    }
+    #field {
+    	width: 144px;
+    	height: 24px;
+    	margin: 0 8px 8px 0;
+    	padding: 0 0 0 24px;
+    	float: left;
+    	background-image: url(/images/nav/genNav.png);
+    	background-repeat: no-repeat;
+    	overflow: hidden;
+    	&:hover {
+    	    background-position: 0 -100px;
+    	}
+    }
+    input {
+    	width: 116px;
+    	background: transparent;
+    	font-size: 1em; 
+    	font-family: 'CicleFina';
+    	text-align: left;
+    	letter-spacing: .1em;
+    	border: 0;
+    }
+}
+
+
+.prev-next-nav {
+    display: block;
+    padding: 5px;
+    height: 20px;
+    margin: -5px;
+	font-family: 'CicleFina';
+    background-color: $lime0;
+    &:first-child {
+        margin-bottom: 5px;
+    }
+    &:last-child {
+        margin-top: 10px;
+    }
+    .next-nav { float: left;}
+    .prev-nav { float: right;}
+}
+
+#badge {
+	position: absolute;
+	top: -88px;
+	right: -34px;
+	z-index: 10;
+	background-repeat: no-repeat;
+}	
+#badge:hover {
+	top: -92px;
+	right: -36px;	
+}
+
+#menu-main-side-navigation {
+    padding: 0;
+    .menu-item {
+        padding: 0;
+    }
+}
+
+#mainSideNav {
+	float: right;
+	background-color: $lime1;
+    font-family: 'CicleFina';
+	padding-left: 5px;	
+	ul li {
+    	margin-bottom: 18px;
+    }
+    ul li a {
+    	padding: 2px 2px 2px 8px;
+    	width: 79px; /* 89 - 10px padding */
+    }
+    ul li a {
+    	color: $blue9; 
+    	background-color: $blue5;
+    	font-size: $p21;
+    	line-height: 1.1em;
+    	display: block;
+    	padding-top: 1px; // why?
+    	&:hover {background-color: $blue4;}
+    }        
+}
+
+// -------------------------	DYNAMIC SIDEBARS	--------------------------------- //
+
+#sidebar-right {
+	float: left;
+	width: 200px;
+	margin: 128px 0 0 20px;
+}
+
+#sidebar-left {
+	float: left;
+	height: 643px;
+	/*left margin tied to page wrap*/
+	margin: 63px 0 0 -1224px;
+	ul,ol,li {
+    	padding: 0;
+    }
+    .feature {
+    	background-image: url(/images/nav/ripMain.png);
+    	background-repeat: repeat-y;
+    	background-position: -40px 0;	
+    	width: 140px;
+    	height: 90px;
+    	padding-left: 10px;
+    	&:hover { background-position: 0 }
+    	.seal{
+        	width: 120px;
+        	height: 55px;
+        	background-repeat: no-repeat;
+        	margin-top: 17px;
+        	overflow: hidden;
+        	float: left;
+        	&:hover { background-position: 0 -100px }
+        }
+        img {
+        	opacity: 0;
+        	&:hover { opacity: 1 }
+        }
+        
+    }	
+}
+
