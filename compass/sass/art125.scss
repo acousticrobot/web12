@@ -9,12 +9,11 @@ Tags: jonathan gabel, mainset
 notes: style sheet for ART 125 Topics in Contemporary Art
 */  
 
+@import "__web12_kit.scss";
+
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 
 body { color: #424242; background: #FF9216; }
-
-h1 a { color: #F55A00;}
-h1 a:hover { color: #FFFFFF;} 
 
 h2 {
 	background-color: transparent;
@@ -33,13 +32,6 @@ a:hover { color: $blue3;}
 
 p em, em { color: #7C6562; }
 
-/* -------------------------	HEADER/NAV	 	------------------------ */
-
-nav ul li a { color: #780404; background-color: $orange;}
-
-nav ul li a:hover { color: $blue4; background-color: $creamsicle;}
-
-#search #field { background-image: url(/images/nav/art125Nav.png); }
 
 /* -------------------------	CONTENT WRAP 	------------------------- */
 
@@ -97,3 +89,6 @@ footer p#breadcrumbs { border-bottom: 1px solid #BC5908; }
 footer p { color: #BC5908; }
 
 footer a:hover { color: #ED1C24; }
+
+@import "_nav-art125.scss";
+

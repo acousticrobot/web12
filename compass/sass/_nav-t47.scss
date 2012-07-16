@@ -1,0 +1,30 @@
+/* -------------------------	HEADER/NAV	 	------------------------ */
+
+nav {
+    ul li a {
+        @include web12_header_colors(t47,buttons);
+    }        
+}
+
+#search #field { 
+    @include web12_search_bkg(t47)
+}
+
+#badge {
+    background-image: url(/images/nav/badge-t47.png);
+}
+
+header {
+    #site-head { 
+    	a { 
+            @include web12_header_colors(t47,name)
+    	}
+    }
+}
+
+
+#sidebar-left {
+    .feature {
+    	background-image: web12_l_sidebar_bkg(blue1);
+    }
+}

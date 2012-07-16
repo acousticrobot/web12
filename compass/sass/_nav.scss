@@ -1,13 +1,27 @@
+// -------------------------	WP NAV MENUS 	------------------ //
+
+nav {
+    ul li a {
+    	font-size: $p21;
+    	line-height: 1.1em;
+    	display: block;
+    	padding-top: 1px;
+        @include web12_header_colors(main,buttons)
+    }        
+}
+
+
 header {
     font-family: 'CicleFina';
-    #site-head {
+        // jonathan gabel . com
+    #site-head { 
+        font-family: 'CicleFina';
         padding: 0;
     	font-size: $p34;
     	letter-spacing: .16em;
     	margin: 0 0 13px 0;
     	a { 
-    	    color: $blue8 ; 
-    	    &:hover { color: $orange; }
+            @include web12_header_colors(main,name)
     	}
     }
     nav {
@@ -22,17 +36,25 @@ header {
         	text-transform: uppercase;
         	letter-spacing: .1em;
         }
-        ul li a {
-        	color: $blue9; 
-        	background-color: $blue5;
-        	font-size: $p21;
-        	line-height: 1.1em;
-        	display: block;
-        	padding-top: 1px; // why?
-        	&:hover {background-color: $blue4;}
-        }        
     }
 }
+
+
+#mainSideNav {
+	float: right;
+	background-color: $lime1;
+    font-family: 'CicleFina';
+	padding-left: 10px;
+	margin-right: -1px;	
+	ul li {
+    	margin-bottom: 18px;
+    }
+    ul li a {
+    	padding: 2px 2px 2px 8px;
+    	width: 79px; /* 89 - 10px padding */
+    }
+}
+
 
 // -------------------------	MENU STYLES	 	------------------------ //
 
@@ -48,12 +70,9 @@ header {
     	margin: 0 8px 8px 0;
     	padding: 0 0 0 24px;
     	float: left;
-    	background-image: url(/images/nav/genNav.png);
     	background-repeat: no-repeat;
     	overflow: hidden;
-    	&:hover {
-    	    background-position: 0 -100px;
-    	}
+        @include web12_search_bkg(main)
     }
     input {
     	width: 116px;
@@ -63,6 +82,9 @@ header {
     	text-align: left;
     	letter-spacing: .1em;
     	border: 0;
+    	&:focus {
+    	    background-color: $blue0;
+    	}
     }
 }
 
@@ -79,23 +101,34 @@ header {
     }
     &:last-child {
         margin-top: 10px;
+        clear: both;
     }
     .next-nav { float: left;}
     .prev-nav { float: right;}
 }
 
-#badge {
-	position: absolute;
-	top: -88px;
-	right: -34px;
-	z-index: 10;
-	background-repeat: no-repeat;
-}	
-#badge:hover {
-	top: -92px;
-	right: -36px;	
-}
 
+#badge {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    top: -88px;
+    right: -34px;
+    z-index: 10;
+    background-image: url(/images/nav/badge-main.png);
+    background-repeat: no-repeat;
+    image {
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &:hover {
+    	top: -92px;
+    	right: -36px;	
+    };
+}
+	
 #menu-main-side-navigation {
     padding: 0;
     .menu-item {
@@ -103,28 +136,6 @@ header {
     }
 }
 
-#mainSideNav {
-	float: right;
-	background-color: $lime1;
-    font-family: 'CicleFina';
-	padding-left: 5px;	
-	ul li {
-    	margin-bottom: 18px;
-    }
-    ul li a {
-    	padding: 2px 2px 2px 8px;
-    	width: 79px; /* 89 - 10px padding */
-    }
-    ul li a {
-    	color: $blue9; 
-    	background-color: $blue5;
-    	font-size: $p21;
-    	line-height: 1.1em;
-    	display: block;
-    	padding-top: 1px; // why?
-    	&:hover {background-color: $blue4;}
-    }        
-}
 
 // -------------------------	DYNAMIC SIDEBARS	--------------------------------- //
 
@@ -135,17 +146,16 @@ header {
 }
 
 #sidebar-left {
-	float: left;
-	height: 643px;
-	/*left margin tied to page wrap*/
-	margin: 63px 0 0 -1224px;
+	top: $pagetop;
+	position: fixed;
 	ul,ol,li {
     	padding: 0;
     }
+    z-index: -1;
     .feature {
-    	background-image: url(/images/nav/ripMain.png);
+    	background-image: web12_l_sidebar_bkg(blue5);
     	background-repeat: repeat-y;
-    	background-position: -40px 0;	
+    	background-position: -30px 0;	
     	width: 140px;
     	height: 90px;
     	padding-left: 10px;

@@ -9,12 +9,25 @@ $blue2: #9BCAE1;	// -tokipona "sky blue"
 $blue1: #B0E5FF;					
 $blue0: #F0F8FF;    // -tokipona "alice blue"
 
+
+
+$brounge9: #682600;
+$brounge8: #843100;
+$brounge7: #A03B00;
+$brounge6: #BC4500;
+$brounge5: #D94F00;
+$brounge4: #F55A00;
+$brounge3: #FF9216;
+$brounge2: #FFB444; // a hover
+$brounge1: #FFDB77;
+$brounge0: #FDE8A3;
+
 $crimson: 	#93221A;    // #D8E7FF
-$orange : #FFB444; // link hover
+
 $page-white: #FFFFF0; // -tokipona "ivory"
 $titan-white: #F0EEFF; // -tokipona "titan white"
 
-$creamsicle: #FFDB77;
+$brounge1: #FFDB77;
 
 $lime2: #C5FF6D;
 $lime1: #D9FFA0;
@@ -22,6 +35,7 @@ $lime0: #F1FFCB;
 
 // toki pona badge colors:
 $pale-yellow: #FFFF77; // -tokipona "pale yellow"
+
 $brown-dk: #603813; // tp-badge
 $brown-lt: #A87C4F; //	tp-badge		
 
@@ -29,5 +43,9 @@ $brown-lt: #A87C4F; //	tp-badge
 
 $grey6: #56534E; // text color
 $grey5: #A7A097; // inner content h5
-
+$grey4: #C8C2B6; /// status posts
 $grey1: #EAE5DF;
+
+//wrappers
+$outer-bkg: $blue7;
+

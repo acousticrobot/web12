@@ -3,13 +3,12 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
-@import "_fonts.scss";
-@import "_colors.scss";
-@import "_text.scss";
-@import "_wrappers.scss";
-@import "_navigation.scss";
+@import "__web12_kit.scss";
+@import "__fonts.scss";
 
+@import "compass/reset";
+@import "_wrappers.scss";
+@import "_nav.scss";
 
 .clear {
     clear: both;
@@ -19,6 +18,10 @@
 }
 .clear-right {
     clear: right;
+}
+
+.debug {
+    color: $pale-yellow;
 }
 
 body {
@@ -36,7 +39,7 @@ p {
 	line-height: 1.5em;
 	padding: 10px 20px;
 	em {
-    	font-family: 'HattoriHanzoLightItalic', Tahoma, Arial, Helvetica, sans-serif;
+    	font-family: 'crimsonItalic';
     	letter-spacing: .18em;
 	}
 }
@@ -44,7 +47,7 @@ p {
 a {
 	text-decoration: none;
 	color: $blue4;
-	&:hover { color: $orange; }
+	&:hover { color: $brounge2; }
 }
 
 ul, ol, li {
@@ -61,16 +64,15 @@ dl {
 	padding: 0 20px;
 }
 dt {
-	font-family: 'CicleGordita', Tahoma, Arial, Helvetica, sans-serif;
+	font-family: 'crimsonBold';
 	padding: 5px 5px 5px 20px;
 }
 
 pre {
 	padding: 10px 0 10px 40px;
-	background-color: #A7A097;
+	font-family: consolas, monospace;
 }
 code {
-	font-family: consolas, monospace;
 	letter-spacing: .13em;
 	font-size: 1em;	
 }
@@ -88,6 +90,8 @@ blockquote p {
 .wp-post-image { /*featured image*/
 	float: left;
 	margin: 15px 30px 10px 12px;
+	width: $pthumb;
+	height: $pthumb;
 }
 
 
@@ -101,7 +105,9 @@ blockquote p {
 	font-family: 'CicleFina',Tahoma, Arial, Helvetica, sans-serif;	
 }
 
-/* --------------------			meta and tag info		------------------------- */
+h1 {
+    display: none;
+}
 
 h2 .meta, h3 .meta {
 	float: right;
@@ -135,7 +141,7 @@ h2 .meta {
 
 .status {
 	background-color: $lime0;
-	color: #A7A097;
+	color: $grey5;
 	border-radius: 10px;
 	width: 625px;
 	margin: 5px 0 10px 50px;
@@ -144,7 +150,7 @@ h2 .meta {
 .status-date, .status-category {
 	font-family: consolas, monospace;
 	letter-spacing:normal;
-	color: #C8C2B6;
+	color: $grey4;
 	font-size: .75em;
 	padding: 0 10px 0 0;
 }
@@ -165,7 +171,7 @@ h2 .meta {
 /* -------------------------	COMMENTS 	---------------------------------------- */
 
 ol.commentlist *{ list-style: none; }
-ol.commentlist li.comment { border-bottom: 1px solid #C8C2B6; padding: 10px; }
+ol.commentlist li.comment { border-bottom: 1px solid $grey4; padding: 10px; }
 ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
 ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
 ol.commentlist li.comment div.comment-meta { font-size: 10px; }
@@ -185,13 +191,13 @@ footer p {
 	font-size: .75em;
 	padding: 5px 0 40px 0;
 	margin-left: 13px;
-	color: $blue6;
+	color: $lime1;
 }
 
 footer p#breadcrumbs {
 	margin: 13px;
 	padding: 15px 0;
-	border-bottom: 1px solid #FFFFFF;
+	border-bottom: 1px solid $lime2;
 }
 
-footer a { color: #E4DDD0;}
+footer a { color: $blue1;}

@@ -1,0 +1,106 @@
+/*  
+Theme Name: Web12/ART125 color theme, Spring 2012
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com/students/art125
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+Tags: jonathan gabel, mainset
+notes: style sheet for ART 125 Topics in Contemporary Art
+*/
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+body {
+  color: #424242;
+  background: #FF9216; }
+
+h2 {
+  background-color: transparent;
+  color: #F55A00; }
+
+h3, h4 {
+  background-color: transparent;
+  color: #847F77;
+  border: none; }
+
+a {
+  color: #4383bf; }
+
+a:hover {
+  color: #59aeff; }
+
+p em, em {
+  color: #7C6562; }
+
+/* -------------------------	CONTENT WRAP 	------------------------- */
+#contentWrap {
+  background-color: #C6C6C6;
+  border: 2px solid white;
+  padding: 3px; }
+
+#mainSideNav {
+  background-color: #C6C6C6;
+  margin: 0 -3px 0 10px; }
+
+#mainSideNav ul li a {
+  background-color: #E4DDD0;
+  width: 89px;
+  /* room for "readings" */ }
+
+#mainSideNav ul li a:hover {
+  background-color: #FDE8A3; }
+
+/* -------------------------	INNER WRAPPER	------------------------- */
+#innerWrapper {
+  background-color: #D3D3D3; }
+
+li.class-listing {
+  border: 2px solid white;
+  margin: 5px 0;
+  padding-top: 20px; }
+
+.class-listing h3 {
+  margin-bottom: -5px; }
+
+/* --------------------		meta and tag info		--------------------- */
+h2 .meta, h3 .meta {
+  font-size: .75em;
+  float: right; }
+
+/* ------------		left side bar	------------------------------------- */
+#sidebar-left .feature {
+  background-image: url(/images/nav/ripArt125.png); }
+
+/* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
+footer p#breadcrumbs {
+  border-bottom: 1px solid #BC5908; }
+
+footer p {
+  color: #BC5908; }
+
+footer a:hover {
+  color: #ED1C24; }
+
+nav ul li a {
+  background-color: #ffb444;
+  color: #93221a; }
+  nav ul li a:hover {
+    background-color: #fde8a3;
+    color: #59aeff; }
+
+#search #field {
+  background-image: url(/images/nav/search-art125.png); }
+  #search #field:hover {
+    background-image: url(/images/nav/search-hover-art125.png); }
+  #search #field:focus {
+    background-image: url(/images/nav/search-hover-art125.png); }
+
+#badge {
+  background-image: url(/images/nav/badge-art125.png); }
+
+header #site-head a {
+  color: #93221a; }
+  header #site-head a:hover {
+    color: #59aeff; }
+
+#sidebar-left .feature {
+  background-image: url(/images/nav/rip-brounge2.png); }

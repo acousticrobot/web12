@@ -28,11 +28,13 @@
 
 <?php
 	get_sidebar('right');
-
 	get_sidebar('left');  
+
 ?>
 </div><!-- END outerWrap -->
+
 <?php 
+
 
 	$customID = get_custom_id();
 	if ($customID == "lab"){

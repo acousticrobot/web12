@@ -1,0 +1,95 @@
+// Web 12 includes for all web12 scss pages
+// All imports for every page
+// Variables 
+// Mixins
+// Functions
+
+@import "__colors.scss";
+
+// ---------------------------------------------------------------------- //
+// --------------------			VARIABLES		------------------------- //
+// ---------------------------------------------------------------------- //
+
+// --------------------			images      	------------------------- //
+
+$pthumb: 150px;
+
+// --------------------			text		    ------------------------- //
+
+$base_em: 1em;
+// pixel equivalents
+$p34: 2.125 * $base_em;
+$p24: 1.5 * $base_em;
+$p21: 1.3125  * $base_em;
+$p18: 1.125  * $base_em;
+$p16: .9375  * $base_em;
+
+// --------------------			layout		    ------------------------- //
+
+$pagetop: 110px;
+
+
+
+
+
+// ---------------------------------------------------------------------- //
+// --------------------			MIXINS		----------------------------- //
+// ---------------------------------------------------------------------- //
+
+@mixin web12_header_colors($selector:main,$pos:buttons) {
+    // $position: name, buttons
+    // button: text, background hover:text & hover:background
+    $b-tx:  $blue9;
+    $b-bk:  $blue5;
+    $bh-tx: $blue3;
+    $bh-bk: $blue4;
+    
+    @if $selector == t47 {
+        $b-tx:  $blue4;
+        $b-bk:  $blue1;
+        $bh-tx: $blue5;
+        $bh-bk: $page-white;        
+    } @else if $selector == art125 {
+        $b-tx:  $crimson;
+        $b-bk:  $brounge2;
+        $bh-tx: $blue3;
+        $bh-bk: $brounge0;        
+    }
+    
+    @if $pos == name {
+        color: $b-tx ; 
+        &:hover { color: $bh-tx; }
+    } @else if $pos == buttons {
+        background-color: $b-bk;
+        color: $b-tx;
+        &:hover {
+        	background-color: $bh-bk;
+        	color: $bh-tx;
+        }        
+    }
+}
+
+@mixin web12_search_bkg($selector:"main") {
+    background-image: url(/images/nav/search-#{$selector}.png);
+    &:hover {
+    	background-image: url(/images/nav/search-hover-#{$selector}.png);
+    }
+    &:focus {
+    	background-image: url(/images/nav/search-hover-#{$selector}.png);
+    }
+}
+
+
+// ---------------------------------------------------------------------- //
+// --------------------			FUNCTIONS	----------------------------- //
+// ---------------------------------------------------------------------- //
+
+    // left-sidebar 'rip' background image
+    // file naming convention rip-blue9.png
+@function web12_l_sidebar_bkg($c) {
+    @return url(/images/nav/rip-#{$c}.png);
+}
+
+
+
+

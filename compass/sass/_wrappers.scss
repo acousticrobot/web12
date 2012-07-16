@@ -1,6 +1,4 @@
 #outerWrap { // maintains floating left and right widget areas
-    width: 1500px; 
-    
     h2, h3, h4, h5 { 
         font-family: 'CicleFina';
     	letter-spacing: .075em;
@@ -8,7 +6,7 @@
     	padding: 5px 0 5px 13px;
     }
     h2 { 
-    	color: $blue8; 
+    	color: $outer-bkg; 
     	font-size: $p21;
     }
     h3 { font-size: $p21; }

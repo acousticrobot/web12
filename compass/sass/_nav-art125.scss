@@ -1,0 +1,29 @@
+
+nav {
+    ul li a {
+        @include web12_header_colors(art125,buttons);
+    }        
+}
+
+#search #field { 
+    @include web12_search_bkg(art125)
+}
+
+#badge {
+    background-image: url(/images/nav/badge-art125.png);
+}
+
+header {
+    #site-head { 
+    	a { 
+            @include web12_header_colors(art125,name)
+    	}
+    }
+}
+
+
+#sidebar-left {
+    .feature {
+    	background-image: web12_l_sidebar_bkg(brounge2);
+    }
+}

@@ -1,66 +1,87 @@
 <?php 
 /*
 *	Description: Outputs the custom navigation badge
-*	Called by: header.php
-*	v 1.0
+*		This has been stripped down for simplicity,
+*		Originally there was more info about the post from:
+*		the_post();
+* 		$link = $badge;
+*		$badge = get_the_title();
+*		rewind_posts();			
+*
+* 	CALLED BY: header.php
+*	TRIGGER: 
+*	CALLS TO:	
+*  	v 2.0	 
 */
-
+		// custom_id is set at the top of all templates
+	$badge_debug = false;
 	$badgeID = get_custom_id(); // in functions.php
-	$class = "";
 	switch ($badgeID) {
 		case 'home':
 		case 'mainset':
-			the_post();
-			$badge = 'mainset';
+			$class = 'mainset';
 			$link = "";
-			$class = get_the_title();
-			rewind_posts();
-			// for individual badges: 
-			//$link = $badge;
-			//$badge = get_the_title();
 			break;
 		case 'artworks':
-			$badge = 'artworks';
+			$class = 'artworks';
 			$link = $badge;
 			break;
 		case 't47':
 			$link = "projects/t47";
-			$badge = 't47';
+			$class = 't47';
 			break;
 		case 'art125':
 		case 'homework art125':
 			$link = "students/art125";
-			$badge = 'art125';
+			$class = 'art125';
 			break;
 		case 'dma105':
 		case 'homework dma105':
 			$link = "students/dma105";
-			$badge = 'dma105';
+			$class = 'dma105';
 			break;
 		case 'general':
 			$link = "archive";
-			$badge = 'gen';
+			$class = 'gen';
 			break;
 		case '404':
 			$link = "";
-			$badge = '404';
+			$class = '404';
 			break;
 		case 'search';
 			$link = "";
-			$badge = 'search';
+			$class = 'search';
 			break;
 		case 'lab';
 			$link = "category/lab";
-			$badge = 'lab';
+			$class = 'lab';
 			break;
 		default:
 			$link = "archive";
-			$badge = 'gen';		
+			$class = '';		
 	};
 ?>
 
 <div id="badge" class="<?php echo $class ?>">
-	<a href="/<?php echo $link ?>">
-		<img src="/images/nav/<?php echo $badge ?>Badge.png" alt="<?php the_title(); ?>"/>
-	</a>
+
+<a href="/<?php echo $link ?>">
+	<img src="/images/nav/badge-hoverspace.png" alt="<?php the_title(); ?>"/>
+</a>
+
+
+
+<?php if ($badge_debug) { ?>
+
+<pre class = "debug">
+ID = <?php echo $badgeID ?>
+
+badge = <?php echo $badge ?>
+
+link = <?php echo $link ?>
+
+class = <?php echo $class ?>
+</pre>
+		
+<?php 	} // endif ?>
+
 </div>

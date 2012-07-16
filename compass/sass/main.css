@@ -24,7 +24,7 @@ body { color: #E4DDD0; background: $blue9;}
 
 h1 a { color: $blue6; }
 
-h1 a:hover { color: $orange; }
+h1 a:hover { color: $brounge2; }
 
 h2 { color: #E4DDD0; background-color: transparent}
 
@@ -86,7 +86,7 @@ ul.children ul.children a {
 }
 
 link-list ul.index a:hover, ul.children ul.children a:hover {
-	color: $orange;
+	color: $brounge2;
 }
 
 /* ----- student/course listings ------ */
@@ -129,7 +129,7 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 }
 
 #innerWrapper .courseHover a {
-	color: $orange;
+	color: $brounge2;
 }
 
 .courseHover .course-seal {

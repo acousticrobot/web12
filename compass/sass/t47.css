@@ -13,46 +13,32 @@ Notes:
 	
 	To test alignment with page grid add to colorwrapper:
 	background-image:url(../images/t47_tokipona/lessonGrid.png); background-repeat:repeat-y;
-
-colors:
-
-blue0	p			 	#0D1927
-blue3 	H2,H3,H4	   	#2A5176
-blue4 	a			   	#4383BF
-blue7	bkg				#9BCAE1  -tokipona "sky blue"
-blue8	H1				#B0E5FF
-blue9	menu-bkg		#F0F8FF  -tokipona "alice blue"
-
-offwhite colorWraper	#FFFFF0  -tokipona "ivory"
-
-lav		menu:hover		#F0EEFF  -tokipona "titan white"
-orange1 a:hover: 		#FFB444
-orange2 boarders		#FFDB77
-green 	accent			#D9FFA0
-
-yellow 	badge			#FFFF77	 -tokipona "pale yellow"
-brown2	badge			#603813
-brown5	badge			#A87C4F
 */
 
+@import "_colors.scss";
 
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 
-body { color: #0D1927; background: #9BCAE1; }
+body { 
+    color: $blue8; 
+    background: $blue2; 
+}
 
-h1 a { color: #B0E5FF;}
+h1 a { 
+    color: $blue1;
+}
 
 h1 a:hover { color: #E4DDD0;} 
 
 h2 { 
-	border-bottom: 3px solid #D9FFA0;
+	border-bottom: 3px solid $lime1;
 	padding: 4px 0 5px 3px;
 }
 
 h2, h3, h4 {
 	background-color: transparent;
 	clear:both;
-	color: #56534E;-
+	color: $grey6;
 }
 
 p, ol.text li, ul.text li {
@@ -73,31 +59,16 @@ ul, li { padding: 0;}
 
 ol.text li, ul.text li {margin: 0 100px 5px 60px;}
 
-a { color: #4383BF; }
+a { color: $blue4; }
 
-/* -------------------------	HEADER/NAV	 	------------------------ */
-
-nav ul li a {
-    background-color: #B0E5FF;
-    color: #4383BF;
-}
-
-nav ul li a:hover {
-	background-color: #FFFFF0;
-	color: #4383BF;
-}
-
-#search #field { 
-	background-image: url(/images/nav/t47nav2.png);
-}
 
 /* -------------------------	CONTENT WRAP ------------------------- */
 
 #contentWrap {
 	width: 820px;
 	background-repeat:repeat-y;  
-	background-color: #FFFFF0; 
-	border: 2px solid #FFDB77;
+	background-color: $page-white; 
+	border: 2px solid $brounge1;
 	padding: 0 10px;
 	padding-bottom: 0;
 }
@@ -114,7 +85,7 @@ nav ul li a:hover {
 	clear: both;
 	background-color: #FFF;
 	padding: 10px 0 0 99px;															
-	border: 1px solid #D9FFA0;
+	border: 1px solid $lime1;
 }
 
 #innerWrapper h2, #innerWrapper h3 { margin-left: -80px;}
@@ -238,7 +209,7 @@ nav ul li a:hover {
 }
 
 #sideMenu ul {
-	border-bottom: 2px solid #FFDB77;
+	border-bottom: 2px solid $brounge1;
 	margin: 0;
 }
 
@@ -246,15 +217,15 @@ nav ul li a:hover {
  	margin: 0;
 	letter-spacing:normal;
 	color: #F30;
-	border: 2px solid #FFDB77;
+	border: 2px solid $brounge1;
 	border-bottom: none;
 	height: 25px;
-	background: #F0F8FF url(/images/nav/t47nav.png) no-repeat left top;	
+	background: $blue0 url(/images/nav/t47nav.png) no-repeat left top;	
 }
 
 #sideMenu li:hover {
 	background-position: 0 -90px;
-	background-color: #F0EEFF;
+	background-color: $titan-white;
 }
 
 #sideMenu a, #bottomMenu a {
@@ -262,12 +233,12 @@ nav ul li a:hover {
 	padding:3px 0 0 30px;
 	font-size: 1.125em ;
 	text-decoration: none;
-	color: #2A5176;
+	color: $blue6;
 	background-color: transparent;
 }
 
 #sideMenu a:hover, #bottomMenu a:hover {
-	color: #0D1927;
+	color: $blue9;
 	background-color: transparent;
 }
 
@@ -303,9 +274,9 @@ nav ul li a:hover {
 #bottomMenu li {
 	float: left;
 	width: 209px;
-	border-bottom: 2px solid #FFDB77;
+	border-bottom: 2px solid $brounge1;
 	margin: -2px;
-	background: #F0F8FF url(/images/nav/t47nav.png) no-repeat left top;
+	background: $blue0 url(/images/nav/t47nav.png) no-repeat left top;
 	background-position: 0 -60px;
 }
 
@@ -320,9 +291,9 @@ nav ul li a:hover {
 
 #bottomMenu li.right { background-position: 187px -30px; }
 
-#bottomMenu li.left:hover { background-position: -4px -150px; background-color: #F0EEFF; }
+#bottomMenu li.left:hover { background-position: -4px -150px; background-color: $titan-white; }
 
-#bottomMenu li.right:hover { background-position: 187px -120px; background-color: #F0EEFF;}
+#bottomMenu li.right:hover { background-position: 187px -120px; background-color: $titan-white;}
 
 #bottomMenu li.left a {
 	padding-right: 10px;
@@ -345,7 +316,7 @@ nav ul li a:hover {
 
 .link-list a{color: #89C234;}
 
-.link-list a:hover {color: #FFB444;}
+.link-list a:hover {color: $brounge2;}
 
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 	
@@ -356,3 +327,6 @@ footer p {
     text-align: justify;
 	letter-spacing: .15em;
 }
+
+
+//-----------

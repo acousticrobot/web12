@@ -16,26 +16,24 @@ Notes:
 */
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 body {
-  color: #0d1927;
+  color: #162a3f;
   background: #9bcae1; }
 
-h1 a {
-  color: #b0e5ff; }
+/*
+h1 a:hover { color: #E4DDD0;} 
 
-h1 a:hover {
-  color: #E4DDD0; }
-
-h2 {
-  border-bottom: 3px solid #d9ffa0;
-  padding: 4px 0 5px 3px; }
-
+h2 { 
+	border-bottom: 3px solid $lime1;
+	padding: 4px 0 5px 3px;
+}
+*/
 h2, h3, h4 {
   background-color: transparent;
   clear: both;
   color: #56534e; }
 
 p, ol.text li, ul.text li {
-  font-family: 'GarogierRegular', "Bookman Old Style", "Book Antiqua", Garamond, serif;
+  font-family: 'crimsonRoman';
   font-size: 1em;
   /* 16px */
   letter-spacing: 0.15em;
@@ -45,7 +43,7 @@ p {
   margin: 0 30px 10px 20px; }
 
 p em, em {
-  font-family: 'GarogierRegular', "Bookman Old Style", "Book Antiqua", Garamond, serif;
+  font-family: 'crimsonRoman';
   color: #847F77; }
 
 ul, li {
@@ -56,18 +54,6 @@ ol.text li, ul.text li {
 
 a {
   color: #4383bf; }
-
-/* -------------------------	HEADER/NAV	 	------------------------ */
-nav ul li a {
-  background-color: #b0e5ff;
-  color: #4383bf; }
-
-nav ul li a:hover {
-  background-color: #fffff0;
-  color: #4383bf; }
-
-#search #field {
-  background-image: url(/images/nav/t47nav2.png); }
 
 /* -------------------------	CONTENT WRAP ------------------------- */
 #contentWrap {
@@ -205,6 +191,7 @@ nav ul li a:hover {
   margin: 0; }
 
 #sideMenu li, #bottomMenu li {
+  font-family: 'CicleFina';
   margin: 0;
   letter-spacing: normal;
   color: #F30;
@@ -308,3 +295,33 @@ footer p {
   margin: 0 10px;
   text-align: justify;
   letter-spacing: .15em; }
+  footer p a {
+    color: #d9ffa0; }
+    footer p a:hover {
+      color: #4383bf; }
+
+/* -------------------------	HEADER/NAV	 	------------------------ */
+nav ul li a {
+  background-color: #b0e5ff;
+  color: #4383bf; }
+  nav ul li a:hover {
+    background-color: #fffff0;
+    color: #335c8f; }
+
+#search #field {
+  background-image: url(/images/nav/search-t47.png); }
+  #search #field:hover {
+    background-image: url(/images/nav/search-hover-t47.png); }
+  #search #field:focus {
+    background-image: url(/images/nav/search-hover-t47.png); }
+
+#badge {
+  background-image: url(/images/nav/badge-t47.png); }
+
+header #site-head a {
+  color: #4383bf; }
+  header #site-head a:hover {
+    color: #335c8f; }
+
+#sidebar-left .feature {
+  background-image: url(/images/nav/rip-blue1.png); }
