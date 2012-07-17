@@ -1,11 +1,13 @@
 <?php
-	/**
-	* 	Fallback content 
-	* 	Displays single post content, includes #innerWrapper
-	*
-	* 	Called by: page.php, single.php
-	*
-	*/
+/*
+*	Description: 	Main Fallback content
+*								Displays single post content, includes #innerWrapper
+*
+* 	CALLED BY: page.php, single.php
+*	TRIGGER: 
+*	CALLS TO:	
+*  	v 2.0	 
+*/
 ?>
   
 <h2>
@@ -17,13 +19,11 @@
 
 <div id="innerWrapper">	
 	
-	<?php 
+<?php 
 	if ( has_post_thumbnail() ) { 
 	  the_post_thumbnail();
 	} 
-	?>
-
-	
+?>
 
 	<?php the_content(); ?>
 

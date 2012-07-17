@@ -20,7 +20,7 @@
 		if(has_post_thumbnail()) {
 			the_post_thumbnail();
 		} else {
-			echo '<img class="wp-post-image" src="/images/nav/artworksThumbnail.png" alt="artwork" />';
+			echo '<img class="wp-post-image" src="/images/nav/badge-150-artworks.png" alt="artwork" />';
 		}
 ?></a>
 

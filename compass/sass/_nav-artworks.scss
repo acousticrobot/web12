@@ -1,0 +1,63 @@
+/*
+*	Description: ART125 navigation styles
+*
+* 	CALLED BY: template-course --> art125.css/scss   
+*  	v 2.0	 
+*/
+
+header {
+    #site-head { 
+    	a { 
+            @include web12_header_colors(artworks,name)
+    	}
+    }
+}
+
+nav {
+    ul li a {
+        @include web12_header_colors(artworks,buttons);
+        border: 1px solid $zeroptwhite1;
+    	margin: -1px;
+    	&:hover {
+    	    border: 1px solid $grwarm3;
+    	}
+    }        
+}
+
+#search #field { 
+    @include web12_search_bkg(artworks)
+}
+
+#badge {
+    background-image: url(/images/nav/badge-artworks.png);
+}
+
+#sidebar-left {
+    .feature {
+    	background-image: web12_l_sidebar_bkg(zeroptwhite3);
+    }
+}
+
+@include web12_zero_padding_side_nav($menu:"menu-custom-field-side-navigation");
+
+#mainSideNav {
+    background-color: $zeroptwhite7;
+}
+
+.prev-next-nav {
+    background-color: transparent;
+}
+
+//----------------------------------------------------------------------------//
+
+.feature .seal{
+	opacity: .15;
+}
+
+.feature .seal:hover {
+	opacity: .55;
+}
+
+.feature .seal.artworks{
+	opacity: 1;
+}

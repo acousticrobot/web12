@@ -3,7 +3,7 @@
 		$category = get_the_category(); 
 	
 		if(($category[0]) && ($category[0]->cat_name != 'Uncategorized' ) ){
-			echo '<div class="artmeta">Project:<a  href="'.get_category_link($category[0]->term_id ).'">'
+			echo '<div class="artmeta">Project: <a  href="'.get_category_link($category[0]->term_id ).'">'
 					.$category[0]->cat_name.'</a></div>';
 		}; 
 

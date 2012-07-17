@@ -1,0 +1,96 @@
+/* ------------		generated lists of pages & links	----------------- */
+
+link-list ul.children a {
+	color: $blue3;		
+}
+
+ul.children ul.children a {
+	color: $blue4;
+}
+
+link-list ul.index a:hover, ul.children ul.children a:hover {
+	color: $brounge2;
+}
+
+/* ----- student/course listings ------ */
+
+#innerWrapper ul.courses {
+	margin: 0;
+	padding: 0;
+}
+
+.course-link {
+	margin: 0 0 13px 0;
+	background-color: $blue8;
+	overflow: hidden;
+}
+
+.dma105 .course-seal {
+	background-image: url(/images/nav/seal-dma105.png);
+}
+
+.art125 .course-seal {
+	background-image: url(/images/nav/seal-art125.png);
+}
+
+.course-seal {
+	width: 55px;
+	height: 55px;
+	float: left;
+	background-repeat: no-repeat;
+}
+.courseHover {
+	background-color: $blue7;
+}
+
+.dma105 .courseHover {
+	background-color: $crimson;
+}
+
+.art125 .courseHover {
+	background-color: $blue4;
+}
+
+#innerWrapper .courseHover a {
+	color: $brounge2;
+}
+
+.courseHover .course-seal {
+	background-position: 0 -100px ;	
+}
+
+.courseHover .course-seal {
+	background-position: 0 -100px ;	
+}
+
+#innerWrapper .course h2 {
+	padding: 13px 0 13px 13px;
+	margin: 0 0 0 55px;
+	border: none;
+}
+
+.course-pages {
+	clear: both;
+}
+
+/*.archive-date {
+    font-family: consolas, monospace;
+    letter-spacing:normal;
+    float: right;
+    text-align: right;
+    color: #C8C2B6;
+    font-size: .65em;
+}
+*/
+.listDate {
+	font-family: consolas, monospace;
+	letter-spacing:normal;
+	float: right;
+	text-align: right;
+	color: #C8C2B6;
+	font-size: .75em;
+	padding-right:20px;
+}
+
+
+/* ----- END student/course listings ------ */

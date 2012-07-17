@@ -18,7 +18,6 @@
 <title><?php wp_title(''); ?></title>
 	
 <link rel="shortcut icon" href="/favicon.png">
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fonts.css">	
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	
@@ -33,7 +32,7 @@
  			include (TEMPLATEPATH . '/header-home.php' );
 		case 'mainset': 
 ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mainset.css">
 <?php
 			break;
 		case 'artworks': 

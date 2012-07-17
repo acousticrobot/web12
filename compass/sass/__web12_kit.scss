@@ -28,23 +28,26 @@ $p16: .9375  * $base_em;
 
 $pagetop: 110px;
 
-
-
-
-
 // ---------------------------------------------------------------------- //
 // --------------------			MIXINS		----------------------------- //
 // ---------------------------------------------------------------------- //
 
-@mixin web12_header_colors($selector:main,$pos:buttons) {
+@mixin web12_header_colors($selector:default,$pos:buttons) {
     // $position: name, buttons
     // button: text, background hover:text & hover:background
-    $b-tx:  $blue9;
+    // default
+    $b-tx:  $blue4;
     $b-bk:  $blue5;
-    $bh-tx: $blue3;
+    $bh-tx: $blue2;
     $bh-bk: $blue4;
-    
-    @if $selector == t47 {
+    $name-tx: $b-tx;
+    @if $selector == mainset {
+        $b-tx:  $blue4;
+        $b-bk:  $blue7;
+        $bh-tx: $blue3;
+        $bh-bk: $blue5;
+        $name-tx: $b-tx;
+    } @else if $selector == t47 {
         $b-tx:  $blue4;
         $b-bk:  $blue1;
         $bh-tx: $blue5;
@@ -54,10 +57,22 @@ $pagetop: 110px;
         $b-bk:  $brounge2;
         $bh-tx: $blue3;
         $bh-bk: $brounge0;        
+        $name-tx: $brounge2;
+    } @else if $selector == artworks {
+        $b-tx:  $grwarm3;
+        $b-bk:  $zeroptwhite2;
+        $bh-tx: $grwarm6;
+        $bh-bk: white;        
+        $name-tx: $b-tx;
+    } @else if $selector == dma105 {
+        $b-tx:  $crimson;
+        $b-bk:  $brounge6;
+        $bh-tx: $grwarm4;
+        $bh-bk: $brounge4;        
+        $name-tx: $b-tx;
     }
-    
     @if $pos == name {
-        color: $b-tx ; 
+        color: $name-tx ; 
         &:hover { color: $bh-tx; }
     } @else if $pos == buttons {
         background-color: $b-bk;
@@ -78,6 +93,16 @@ $pagetop: 110px;
     	background-image: url(/images/nav/search-hover-#{$selector}.png);
     }
 }
+
+@mixin web12_zero_padding_side_nav($menu:"menu-main-side-navigation") {
+    ##{$menu} {
+        padding: 0;
+        li, .menu-item {
+            padding: 0;
+        }
+    }
+}
+
 
 
 // ---------------------------------------------------------------------- //

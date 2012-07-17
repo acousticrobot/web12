@@ -1,0 +1,218 @@
+/*  
+Theme Name: Web12/home
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+Tags: jonathan gabel, home, slides
+notes: home-page only elements. Home page also loads mainset.css
+*/
+
+@import "__web12_kit.scss";
+@import "_nav-home.scss";
+@import "jsscroll.scss";
+
+/* -------------------------	BODY & MAIN STYLES		------------------------- */
+
+#contentWrap {
+    h2 {
+        padding: {
+            top: 0;
+            left: 0;
+        }
+    }
+    h3 {
+    	font-size: 1.125em; /* 18 px */
+    	text-transform: capitalize;
+    }
+    h4, h5 {
+    	font-size: 1em; /* 16 px */
+    	text-transform: capitalize;
+    	padding: 0;
+    }
+    h4{ color: #3B2314;}
+    p {
+    	color: #847F77;
+    	font-size: .875em; /* 14px */
+    	line-height: 1em;
+    	padding: 0;
+    }
+    ul, ol, li {
+    	padding: 0;
+    }    
+}
+
+
+/* -------------------------		CAROUSEL			------------------------- */
+
+#leftArrow {
+	background-image: url(/images/nav/carousel/homeNav.png);	
+	background-position: -201px 0;
+	width: 18px;
+	height: 144px;
+	float: left;
+	margin-left: -6px;
+	&:hover {
+    	background-position: -301px 0;	
+    }
+}
+
+#rightArrow {
+	background-image: url(/images/nav/carousel/homeNav.png);	
+	background-position: -201px -200px;
+	width: 18px;
+	height: 144px;
+	float: left;
+	&:hover {
+        background-position: -301px -200px;	
+    }
+}
+
+#cabinet {
+	width: 715px; /* total from: (3*233px + 2*8px) */
+	height: 144px;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	article {
+    	position: relative;
+    	.rip {
+        	position:absolute;
+        	background-image: url(/images/nav/carousel/homeRip.png);
+        	background-repeat: no-repeat;
+        	background-position: bottom left;
+        	width: 241px;
+        	height: 144px;
+        	bottom: 0px;
+        	left: 0px;
+        }
+    }
+}
+
+#carousel {
+	width: 1200px;
+	margin-left: -241px;
+	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+	* {
+    	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
+    }
+    .slide { 
+    	float: left; 
+    	width: 241px; /* 233px + 8px right margin */
+    	height: 144px;
+        background-color: $blue1; 
+        article {
+        	background-image: url(/images/nav/carousel/slideMain.png);
+        	width: 238;
+        	height: 144px;
+        	h2 {
+            	padding: 10px 8px 6px 8px;
+            	color: $blue9;
+            }
+            h3 {
+            	padding: 0px 8px 2px 8px;
+            	color: $blue9;
+            }
+            h4{
+            	color: $blue9;
+            	padding-left: 8px;
+            }
+            p {
+            	padding: 0 13px 0 8px;
+            	line-height: 15px;
+            }	
+        }
+        article.art125 {
+        	background-image: url(/images/nav/carousel/slideArt125.png);	
+        }
+        article.dma105 {
+        	background-image: url(/images/nav/carousel/slideDma105.png);	
+        }
+        article.lab {
+        	background-image: url(/images/nav/carousel/slideLab.png);	
+        }
+        article.t47 {
+        	background-image: url(/images/nav/carousel/slideT47.png);	
+        }
+    }
+    .slidehover {
+        article {
+        	background-position: 0 -200px;
+        	a {
+            	color: $brounge2;
+            }
+        }    
+    }
+}
+
+/* -------------------------		BELOW CAROUSEL			------------------------- */
+
+section {
+	clear: both;
+	padding: 21px;
+}
+
+#pictureblock {
+	width: 610px;
+	height: 377px;
+	background-color: $blue9;
+}
+
+
+/* -------------------------		SCROLL PANE			------------------------- */
+
+aside {
+	float: right;
+	width: 168px;	
+}
+
+aside h2 {
+	text-align: center;
+	padding-left: 0;
+}
+
+#news {
+	background-image: url(/images/nav/carousel/homeNav.png);	
+	background-position: 0 -198px;
+	background-repeat: no-repeat;
+	display: block;	
+	color: $blue4;
+	background-color: $blue6;
+}
+
+#news:hover {
+	background-position: 0 -298px;
+	background-color: $blue3;
+	color: $blue9;
+	
+}
+
+.scroll-pane {
+	height: 350px;
+	overflow: scroll;
+}
+
+aside article {
+	background-color: $page-white;
+	padding: 5px 8px 8px 13px;
+	border-bottom: 1px solid #999;
+}
+
+article.status {
+	background-color: $page-white;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 5px;
+	border-radius: 0;
+}
+
+.status-date, .status-category {
+	padding: 0 0 0 5px;
+}
+
+.status .status-content p {
+	clear: both;
+}
+

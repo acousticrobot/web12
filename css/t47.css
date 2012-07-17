@@ -57,15 +57,17 @@ a {
 
 /* -------------------------	CONTENT WRAP ------------------------- */
 #contentWrap {
-  width: 820px;
   background-repeat: repeat-y;
   background-color: #fffff0;
   border: 2px solid #ffdb77;
-  padding: 0 10px;
   padding-bottom: 0; }
+  #contentWrap h3 {
+    float: left; }
+  #contentWrap p {
+    clear: left;
+    padding-right: 120px; }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
-/* if intro paragraph has both h2 and h3, use pageTop to float left of sidemenu */
 #intro h3 {
   float: left; }
 
@@ -77,25 +79,20 @@ a {
   background-color: #FFF;
   padding: 10px 0 0 99px;
   border: 1px solid #d9ffa0; }
-
-#innerWrapper h2, #innerWrapper h3 {
-  margin-left: -80px; }
-
-#innerWrapper h3, #innerWrapper h4 {
-  text-transform: none;
-  border: none; }
-
-#innerWrapper h4 {
-  margin-left: -40px;
-  padding-top: 10px; }
-
-#innerWrapper p {
-  margin-left: 0; }
-
-#innerWrapper ul, #innerWrapper ol, #innerWrapper li {
-  font-size: 1em;
-  /* 16 px */
-  padding: 0; }
+  #innerWrapper h2, #innerWrapper h3 {
+    margin-left: -80px; }
+  #innerWrapper h3, #innerWrapper h4 {
+    text-transform: none;
+    border: none; }
+  #innerWrapper h4 {
+    margin-left: -40px;
+    padding-top: 10px; }
+  #innerWrapper p {
+    margin-left: 0; }
+  #innerWrapper ul, #innerWrapper ol, #innerWrapper li {
+    font-size: 1em;
+    /* 16 px */
+    padding: 0; }
 
 /* -------------------------	IMAGES	---------------------------------------- */
 .pictureBlock {
@@ -180,103 +177,6 @@ a {
   left: 200px;
   top: 185px; }
 
-/* ----------------		SIDE AND BOTTOM MENUS			------------------------- */
-#sideMenu {
-  margin: -2px -12px 20px 0px;
-  width: 125px;
-  float: right; }
-
-#sideMenu ul {
-  border-bottom: 2px solid #ffdb77;
-  margin: 0; }
-
-#sideMenu li, #bottomMenu li {
-  font-family: 'CicleFina';
-  margin: 0;
-  letter-spacing: normal;
-  color: #F30;
-  border: 2px solid #ffdb77;
-  border-bottom: none;
-  height: 25px;
-  background: #f0f8ff url(/images/nav/t47nav.png) no-repeat left top; }
-
-#sideMenu li:hover {
-  background-position: 0 -90px;
-  background-color: #f0eeff; }
-
-#sideMenu a, #bottomMenu a {
-  display: block;
-  padding: 3px 0 0 30px;
-  font-size: 1.125em;
-  text-decoration: none;
-  color: #2a5176;
-  background-color: transparent; }
-
-#sideMenu a:hover, #bottomMenu a:hover {
-  color: #0d1927;
-  background-color: transparent; }
-
-#sideMenu li.sub {
-  position: relative; }
-
-#sideMenu li.sub ul {
-  display: none;
-  width: 140px;
-  position: absolute;
-  top: -1px;
-  left: 100%;
-  margin: 0; }
-
-#sideMenu li.sub:hover ul {
-  display: block; }
-
-#sideMenu li.sub ul a {
-  background-position: 0 -30px;
-  text-align: right;
-  padding-right: 10px; }
-
-#sideMenu li.sub ul a:hover {
-  background-position: 0 -120px; }
-
-#bottomMenu ul {
-  margin: 0 -10px 10px -10px; }
-
-#bottomMenu li {
-  float: left;
-  width: 209px;
-  border-bottom: 2px solid #ffdb77;
-  margin: -2px;
-  background: #f0f8ff url(/images/nav/t47nav.png) no-repeat left top;
-  background-position: 0 -60px; }
-
-#bottomMenu li.spacer {
-  border: none;
-  background-color: transparent;
-  background-image: none;
-  width: 426px; }
-
-#bottomMenu li.left {
-  background-position: -4px -60px; }
-
-#bottomMenu li.right {
-  background-position: 187px -30px; }
-
-#bottomMenu li.left:hover {
-  background-position: -4px -150px;
-  background-color: #f0eeff; }
-
-#bottomMenu li.right:hover {
-  background-position: 187px -120px;
-  background-color: #f0eeff; }
-
-#bottomMenu li.left a {
-  padding-right: 10px;
-  text-align: right; }
-
-#bottomMenu li.right a {
-  padding-left: 10px;
-  text-align: left; }
-
 /* ------------		left side bar	------------------------------------- */
 #sidebar-left .feature {
   background-image: url(/images/nav/ripT47.png); }
@@ -325,3 +225,87 @@ header #site-head a {
 
 #sidebar-left .feature {
   background-image: url(/images/nav/rip-blue1.png); }
+
+/* ----------------		SIDE AND BOTTOM MENUS			------------------------- */
+#sideMenu {
+  margin-right: -5px;
+  width: 125px;
+  float: right; }
+  #sideMenu ul {
+    border-bottom: 2px solid #ffdb77;
+    margin: 0; }
+  #sideMenu li:hover {
+    background-position: 0 -90px;
+    background-color: #f0eeff; }
+  #sideMenu li.sub {
+    position: relative; }
+    #sideMenu li.sub ul {
+      display: none;
+      width: 140px;
+      position: absolute;
+      top: -1px;
+      left: 100%;
+      margin: 0; }
+      #sideMenu li.sub ul a {
+        background-position: 0 -30px;
+        text-align: right;
+        padding-right: 10px; }
+        #sideMenu li.sub ul a:hover {
+          background-position: 0 -120px; }
+  #sideMenu:hover ul {
+    display: block; }
+
+#sideMenu li, #bottomMenu li {
+  font-family: 'CicleFina';
+  margin: 0;
+  letter-spacing: normal;
+  color: #F30;
+  border: 2px solid #ffdb77;
+  border-bottom: none;
+  height: 25px;
+  background: #f0f8ff url(/images/nav/t47/t47nav.png) no-repeat left top; }
+
+#sideMenu a, #bottomMenu a {
+  display: block;
+  padding: 3px 0 0 30px;
+  font-size: 1.125em;
+  text-decoration: none;
+  color: #2a5176;
+  background-color: transparent; }
+  #sideMenu a:hover, #bottomMenu a:hover {
+    color: #0d1927;
+    background-color: transparent; }
+
+#bottomMenu {
+  clear: both; }
+  #bottomMenu ul {
+    margin-right: -6px;
+    margin-left: -3px; }
+  #bottomMenu li {
+    float: left;
+    width: 214px;
+    border-bottom: 2px solid #ffdb77;
+    margin: -2px;
+    background: #f0f8ff url(/images/nav/t47/t47nav.png) no-repeat left top;
+    background-position: 0 -60px; }
+  #bottomMenu li.spacer {
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    width: 426px; }
+  #bottomMenu li.left {
+    background-position: -4px -60px; }
+    #bottomMenu li.left:hover {
+      background-position: -4px -150px;
+      background-color: #f0eeff; }
+    #bottomMenu li.left a {
+      padding-right: 10px;
+      text-align: right; }
+  #bottomMenu li.right {
+    background-position: 187px -30px; }
+    #bottomMenu li.right:hover {
+      background-position: 187px -120px;
+      background-color: #f0eeff; }
+    #bottomMenu li.right a {
+      padding-left: 10px;
+      text-align: left; }

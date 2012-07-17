@@ -8,7 +8,7 @@
 
 @import "compass/reset";
 @import "_wrappers.scss";
-@import "_nav.scss";
+@import "_nav-screen.scss";
 
 .clear {
     clear: both;
@@ -26,7 +26,7 @@
 
 body {
     font-family: 'crimsonRoman';
- 	color: $grey6;
+ 	color: $grwarm7;
 	background: $blue6;
 }
 
@@ -141,7 +141,7 @@ h2 .meta {
 
 .status {
 	background-color: $lime0;
-	color: $grey5;
+	color: $grwarm5;
 	border-radius: 10px;
 	width: 625px;
 	margin: 5px 0 10px 50px;
@@ -150,7 +150,7 @@ h2 .meta {
 .status-date, .status-category {
 	font-family: consolas, monospace;
 	letter-spacing:normal;
-	color: $grey4;
+	color: $grwarm4;
 	font-size: .75em;
 	padding: 0 10px 0 0;
 }
@@ -171,7 +171,7 @@ h2 .meta {
 /* -------------------------	COMMENTS 	---------------------------------------- */
 
 ol.commentlist *{ list-style: none; }
-ol.commentlist li.comment { border-bottom: 1px solid $grey4; padding: 10px; }
+ol.commentlist li.comment { border-bottom: 1px solid $grwarm4; padding: 10px; }
 ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
 ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
 ol.commentlist li.comment div.comment-meta { font-size: 10px; }

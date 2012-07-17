@@ -1,0 +1,108 @@
+/*  
+Theme Name: Web12/artworks
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Tags: jonathan gabel, artworks, images
+
+*/
+
+@import "__web12_kit.scss";
+@import "_nav-artworks.scss";
+
+
+body {
+	color: $grwarm6;
+	background: $zeroptwhite1;
+}
+
+#contentWrap {
+	border: none;
+    h2, h3, h4 {
+    	color: $grwarm6;
+    	background-color: transparent;
+    }
+}
+
+
+#innerWrapper h3, #innerWrapper h4 {
+	border: none;
+}
+
+a { color: $greysteal;}
+
+a:hover { color: $blue2}
+
+.artmeta {
+	margin: 5px 0 5px 30px;
+}
+
+#contentWrap {
+	background-color: #FFFFFF; 
+	border: none;
+	padding: 3px;
+}
+
+
+#innerWrapper {	
+	background-color: #FFFFFF;
+	border: none;
+}
+
+	/* gallery styles */
+.gallery-links {
+	float: left;
+	padding:3px;
+}
+
+a.linkbutton {
+	display: block;
+	width: 150px; 
+	height: 150px; 
+	background-repeat: no-repeat;
+}
+
+p strong {
+    font-family: 'HattoriHanzoLight', Tahoma, Arial, Helvetica, sans-serif;
+    color: $grwarm6;
+}
+		
+#photo {
+	width: 720px;
+	height: 540px;
+	clear: both;
+	position: relative;
+	margin: auto;
+	img {
+    	position: absolute;
+    }
+}
+
+#gallery {
+	clear: both;
+	width: 788px;
+	margin: 10px auto;
+}
+
+.gallery-links {
+	opacity: .25;
+	&:hover {
+    	opacity: 1;
+	}
+}
+
+/* END gallery styles */
+
+
+footer p#breadcrumbs {
+	border-bottom: 1px solid $grwarm4;
+}
+
+footer a {
+    color: $greysteal;
+}
+	
+footer p {
+    color: $grwarm4;
+}

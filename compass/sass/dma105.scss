@@ -29,49 +29,33 @@ bc5908
 691BE2
 */
 
+
+@import "__web12_kit.scss";
+@import "_nav-dma105.scss";
+
+
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 
-body { color: #19060C; background: #5B0D1A; }
-
-h1 a { color: #780404;}
-h1 a:hover { color: #ED1C24;} 
+body { 
+    background: $cromson-dk; 
+}
 
 h2, h3, h4 {
 	background-color: transparent;
-	color: #349947;
 	border: none
-}
-
-a { color: #00A9EB; }
-
-a:hover { color: #691BE2;}
-
-p em, em { color: #7C6562; }
-
-/* -------------------------	HEADER/NAV	 	------------------------ */
-
-nav ul li a { color: #780404; background-color: #BC5908;}
-
-nav ul li a:hover { color: #691BE2; background-color: #91CE74;}
-
-#search #field { 
-	background-image: url(/images/nav/dma105Nav.png);
 }
 
 /* -------------------------	CONTENT WRAP 	------------------------- */
 
 #contentWrap {
-	background-color: #EAE5DF; 
-	border: 2px solid #00A9EB;
-	padding: 3px;
+	background-color: $brounge7; 
+	border-color: $brounge6;
+	h2 {
+	    color: $blue3;
+	}
 }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
-
-#innerWrapper {	
-	background-color: #FFF;
-	border: 1px solid #72A74E;
-}
 
 #mainSideNav { 
 	background-color: #EAE5DF;
@@ -82,7 +66,7 @@ nav ul li a:hover { color: #691BE2; background-color: #91CE74;}
 
 .due-date { margin: 10px;}
 
-/* -------------------------	GALLERY IMAGES	---------------------------------------- */
+/* -------------------------	GALLERY IMAGES	------------------------- */
 
 .gallery-links {
 	float: left;
@@ -116,19 +100,17 @@ a.linkbutton:hover { background-position: 0 -200px; }
 	margin: auto;
 }
 
-/* ------------		left side bar	------------------------------------- */
-
-#sidebar-left .feature {
-	background-image: url(/images/nav/ripDma105.png);
-}
-
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
 footer p {
-    color: #BC5908;
+    color: $brounge6;
 }
 
-footer a:hover {
-	color: #ED1C24;
-}
+footer p#breadcrumbs { border-bottom: 1px solid $brounge6; }
 
+footer a {
+    color: $brounge3;
+    &:hover {
+    	color: $blue3;
+    }
+}

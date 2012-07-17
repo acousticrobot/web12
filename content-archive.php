@@ -17,7 +17,7 @@
 		} else {
 			$type = get_post_type( $post );
 			if ($type == 'artworks') {
-				echo '<img class="wp-post-image" src="/images/nav/badge-150-artwork.png" alt="artwork" />';
+				echo '<img class="wp-post-image" src="/images/nav/badge-150-artworks.png" alt="artwork" />';
 			} else echo '<img class="wp-post-image" src="/images/nav/badge-150-post.png" alt="post" />';
 		}
 ?>

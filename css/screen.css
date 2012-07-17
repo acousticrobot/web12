@@ -149,11 +149,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 844px;
   min-height: 610px;
   background-color: #d9ffa0;
-  border: 1px solid #c5ff6d;
+  border: 2px solid #c5ff6d;
   clear: both;
   position: relative;
   float: left;
-  /* surrounds floating elements */ }
+  /* surrounds floating elements */
+  padding: 3px; }
 
 #innerWrapper {
   background-color: white;
@@ -166,6 +167,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   #innerWrapper h3 {
     border-top: 1px solid #4383bf; }
   #innerWrapper *:first-child, #innerWrapper h2 + h3 {
+    border: none; }
+  #innerWrapper .prev-next-nav + article h3 {
     border: none; }
   #innerWrapper h3 + p {
     padding-top: 5px; }
@@ -180,10 +183,10 @@ nav ul li a {
   display: block;
   padding-top: 1px;
   background-color: #335c8f;
-  color: #0d1927; }
+  color: #4383bf; }
   nav ul li a:hover {
     background-color: #4383bf;
-    color: #59aeff; }
+    color: #9bcae1; }
 
 header {
   font-family: 'CicleFina'; }
@@ -194,9 +197,9 @@ header {
     letter-spacing: .16em;
     margin: 0 0 13px 0; }
     header #site-head a {
-      color: #0d1927; }
+      color: #4383bf; }
       header #site-head a:hover {
-        color: #59aeff; }
+        color: #9bcae1; }
   header nav ul, header nav li {
     padding: 0; }
   header nav li {
@@ -211,14 +214,24 @@ header {
   float: right;
   background-color: #d9ffa0;
   font-family: 'CicleFina';
-  padding-left: 10px;
-  margin-right: -1px; }
+  margin: 0 -1px 0 10px; }
+  #mainSideNav ul {
+    margin: 0 -2px 0 10px; }
   #mainSideNav ul li {
     margin-bottom: 18px; }
   #mainSideNav ul li a {
     padding: 2px 2px 2px 8px;
-    width: 79px;
-    /* 89 - 10px padding */ }
+    width: 89px; }
+
+#menu-main-side-navigation {
+  padding: 0; }
+  #menu-main-side-navigation li, #menu-main-side-navigation .menu-item {
+    padding: 0; }
+
+#menu-student-side-navigation {
+  padding: 0; }
+  #menu-student-side-navigation li, #menu-student-side-navigation .menu-item {
+    padding: 0; }
 
 #search {
   margin-top: -8px; }
@@ -252,12 +265,12 @@ header {
 .prev-next-nav {
   display: block;
   padding: 5px;
-  height: 20px;
+  height: 17px;
   margin: -5px;
   font-family: 'CicleFina';
   background-color: #f1ffcb; }
   .prev-next-nav:first-child {
-    margin-bottom: 5px; }
+    margin-bottom: 0px; }
   .prev-next-nav:last-child {
     margin-top: 10px;
     clear: both; }
@@ -282,11 +295,6 @@ header {
   #badge:hover {
     top: -92px;
     right: -36px; }
-
-#menu-main-side-navigation {
-  padding: 0; }
-  #menu-main-side-navigation .menu-item {
-    padding: 0; }
 
 #sidebar-right {
   float: left;

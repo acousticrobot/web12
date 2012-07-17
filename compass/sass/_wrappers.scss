@@ -1,3 +1,6 @@
+// Page ==> wrappers
+
+
 #outerWrap { // maintains floating left and right widget areas
     h2, h3, h4, h5 { 
         font-family: 'CicleFina';
@@ -25,10 +28,11 @@
     width: 844px; // full width even w/o content
 	min-height: 610px;
 	background-color: $lime1;
-	border: 1px solid $lime2;
+	border: 2px solid $lime2;
 	clear: both;
 	position: relative;
 	float: left; /* surrounds floating elements */
+	padding: 3px;
 }
 
 #innerWrapper {	
@@ -46,6 +50,9 @@
 	*:first-child, h2 + h3 { 
 	    border: none; 
 	}
+	.prev-next-nav + article h3 {
+	    border: none;
+	} 
 	h3 + p {
 	    padding-top: 5px
 	}
@@ -53,6 +60,6 @@
 	    margin-left: 20px;
 	}
 	h5 {
-	    color: $grey5;
+	    color: $grwarm5;
 	}													
 }

@@ -4,25 +4,26 @@ Theme URI: http://jonathangabel.com
 Description: 2012 theme for jonathangabel.com/students/art125
 Author: Jonathan Gabel
 Author URI: http://jonathangabel.com
-Version: v1.1
+Version: v2.0
 Tags: jonathan gabel, mainset
 notes: style sheet for ART 125 Topics in Contemporary Art
 */  
 
 @import "__web12_kit.scss";
+@import "_nav-art125.scss";
 
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 
-body { color: #424242; background: #FF9216; }
+body { color: $grwarm8; background: $brounge3; }
 
 h2 {
 	background-color: transparent;
-	color: #F55A00;	
+	color: $brounge4;	
 }
 
 h3, h4 {
 	background-color: transparent;
-	color: #847F77;
+	color: $grwarm6;
 	border: none;
 }
 
@@ -30,35 +31,20 @@ a { color: $blue4; }
 
 a:hover { color: $blue3;}
 
-p em, em { color: #7C6562; }
+p em, em { color: $grwarm7; }
 
 
 /* -------------------------	CONTENT WRAP 	------------------------- */
 
 #contentWrap {
-	background-color: #C6C6C6; 
+	background-color: $zeroptwhite7; 
 	border: 2px solid white;
-	padding: 3px;
-}
-
-#mainSideNav { 
-	background-color: #C6C6C6;
-	margin: 0 -3px 0 10px;
-}
-
-#mainSideNav ul li a {
-	background-color: #E4DDD0;
-	width: 89px; /* room for "readings" */
-}
-
-#mainSideNav ul li a:hover {
-	background-color: #FDE8A3;
 }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
 
 #innerWrapper {	
-	background-color: #D3D3D3;
+	background-color: $zeroptwhite8;
 }
 
 li.class-listing {
@@ -71,24 +57,15 @@ li.class-listing {
 
 /* --------------------		meta and tag info		--------------------- */
 
-h2 .meta, h3 .meta {
-	font-size: .75em;
-	float: right;
-}
-
-/* ------------		left side bar	------------------------------------- */
-
-#sidebar-left .feature {
-	background-image: url(/images/nav/ripArt125.png);
-}
+//h2 .meta, h3 .meta {
+//  font-size: .75em;
+//  float: right;
+//}
 
 /* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
-footer p#breadcrumbs { border-bottom: 1px solid #BC5908; }
+footer p#breadcrumbs { border-bottom: 1px solid $brounge6; }
 
-footer p { color: #BC5908; }
+footer p { color: $brounge6; }
 
-footer a:hover { color: #ED1C24; }
-
-@import "_nav-art125.scss";
-
+footer a:hover { color: $blue0; }

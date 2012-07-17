@@ -1,0 +1,60 @@
+/*  
+Theme Name: Web12
+Theme URI: http://jonathangabel.com
+Description: 2012 theme for jonathangabel.com
+Author: Jonathan Gabel
+Author URI: http://jonathangabel.com
+Version: v1.1
+Tags: jonathan gabel, mainset
+notes: home-page and main-set pages style sheet
+*/
+
+@import "__web12_kit.scss";
+@import "_nav-mainset.scss";
+@import "_lists-mainset.scss";
+
+// -------------------------	BODY & MAIN STYLES		------------------------- //
+
+body { 
+    color: #E4DDD0;
+    background: $blue9;}
+
+#contentWrap { 
+	background-color: $blue8;
+	border-color: transparent;
+}
+
+#innerWrapper { 
+    background-color: $blue7;
+}
+
+#pageWrap h2 { 
+    color: $grwarm2; 
+    background-color: transparent
+}
+
+
+//pre {	background-color: $blue6; }
+
+
+
+.design-image {
+	float: left;
+	margin: 20px 30px 10px 0px;
+}
+
+
+/* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
+
+footer p#breadcrumbs { border-bottom: 1px solid $blue7; }
+
+footer p { color: $blue6; }
+
+footer a {
+    color: $blue3;
+    &:hover {
+        color: $blue1; 
+    }
+}
+
+

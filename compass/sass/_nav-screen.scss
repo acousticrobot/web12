@@ -6,7 +6,7 @@ nav {
     	line-height: 1.1em;
     	display: block;
     	padding-top: 1px;
-        @include web12_header_colors(main,buttons)
+        @include web12_header_colors(default,buttons)
     }        
 }
 
@@ -21,7 +21,7 @@ header {
     	letter-spacing: .16em;
     	margin: 0 0 13px 0;
     	a { 
-            @include web12_header_colors(main,name)
+            @include web12_header_colors(default,name)
     	}
     }
     nav {
@@ -39,22 +39,31 @@ header {
     }
 }
 
+#menu-custom-field-side-navigation { 
+//    margin: 0 -2px 0 10px;
+}
+
 
 #mainSideNav {
 	float: right;
 	background-color: $lime1;
     font-family: 'CicleFina';
-	padding-left: 10px;
-	margin-right: -1px;	
+    margin: 0 -1px 0 10px;
+    ul {
+        margin: 0 -2px 0 10px;
+    }
 	ul li {
     	margin-bottom: 18px;
     }
     ul li a {
     	padding: 2px 2px 2px 8px;
-    	width: 79px; /* 89 - 10px padding */
+    	width: 89px; // before: 79: 89 - 10px padding, for home? //
     }
 }
 
+@include web12_zero_padding_side_nav($menu:"menu-main-side-navigation");
+
+@include web12_zero_padding_side_nav($menu:"menu-student-side-navigation");
 
 // -------------------------	MENU STYLES	 	------------------------ //
 
@@ -92,12 +101,12 @@ header {
 .prev-next-nav {
     display: block;
     padding: 5px;
-    height: 20px;
+    height: 17px;
     margin: -5px;
 	font-family: 'CicleFina';
     background-color: $lime0;
     &:first-child {
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
     &:last-child {
         margin-top: 10px;
@@ -106,7 +115,6 @@ header {
     .next-nav { float: left;}
     .prev-nav { float: right;}
 }
-
 
 #badge {
     position: absolute;
@@ -129,13 +137,6 @@ header {
     };
 }
 	
-#menu-main-side-navigation {
-    padding: 0;
-    .menu-item {
-        padding: 0;
-    }
-}
-
 
 // -------------------------	DYNAMIC SIDEBARS	--------------------------------- //
 

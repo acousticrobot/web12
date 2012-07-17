@@ -1,0 +1,57 @@
+/*
+*	Description: mainset navigation styles
+*
+* 	CALLED BY: template-mainset --> mainset.css/scss   
+*  	v 2.0	 
+*/
+
+header {
+    #site-head { 
+    	a { 
+            @include web12_header_colors(mainset,name)
+    	}
+    }
+}
+
+nav {
+    ul li a {
+        @include web12_header_colors(mainset,buttons);
+    }        
+}
+
+#mainSideNav {
+    background-color: $blue8;
+}
+
+#search #field { 
+    @include web12_search_bkg(mainset)
+}
+
+#sidebar-left {
+    .feature {
+    	background-image: web12_l_sidebar_bkg(blue7);
+    }
+}
+
+#badge {
+    background-image: url(/images/nav/badge-mainset.png);
+}
+
+.prev-next-nav {
+    background-color: $blue6;
+    a {
+        color: $blue3;
+        &:hover {
+         color: $blue0;;   
+        }
+    }
+}
+
+//_________________________________________________________?
+
+.meta { font-size: 1.125em; margin: -25px 20px 5px 0; }
+
+.status {     
+  background-color: $blue6; 
+  color: #FFFFCB;
+}
