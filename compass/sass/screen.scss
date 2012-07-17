@@ -1,10 +1,18 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*
+*	Description: Main CSS for screen styles
+*
+* 	CALLED BY: all pages
+*   SCSS: screen.scss  
+*
+*  	v 2.0	 
+*   <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
+*/
+                        
+//	CALLS TO:   -> __web12_kit --> __colors
+//              -> __fonts, compass/reset, _wrappers, nav-screen
 
 @import "__web12_kit.scss";
-@import "__fonts.scss";
+@import "_fonts.scss";
 
 @import "compass/reset";
 @import "_wrappers.scss";
