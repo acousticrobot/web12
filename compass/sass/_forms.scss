@@ -1,0 +1,91 @@
+/*
+*	Description: scss partial -- forms
+*   SCSS: _forms.scss  
+*  	v 2.0	 
+*/
+// 	CALLED BY: screen
+
+
+#search { 
+    margin-top: -8px;
+    label {
+    	visibility: hidden;
+    	position: absolute;
+    }
+    #field {
+    	width: 144px;
+    	height: 24px;
+    	margin: 0 8px 8px 0;
+    	padding: 0 0 0 24px;
+    	float: left;
+    	background-repeat: no-repeat;
+    	overflow: hidden;
+        @include web12_search_bkg(main)
+    }
+    input {
+    	width: 116px;
+    	background: transparent;
+    	font-size: $p15; 
+    	font-family: 'CicleFina';
+    	text-align: left;
+    	letter-spacing: .1em;
+    	border: 0;
+    	&:focus {
+    	    background-color: $blue0;
+    	}
+    }
+}
+
+
+$cf7-width: 720px;
+$cf7-margin-h: 0px;
+$cf7-margin-v: 5px;
+$cf7-padding-h: 5px;
+$cf7-padding-v: 5px;
+
+$cf7-col1: 140px - ( 2 * $cf7-margin-h ) - ( 2 * $cf7-padding-h );
+$cf7-col2: 300px;
+$cf7-button-width: ($cf7-width / 3);
+$cf7-button-margin: $cf7-col1 + $cf7-padding-h;
+
+$cf7-text-field-width: $cf7-width - $cf7-col1 - 160px;
+
+div.wpcf7 {
+    background-color: $blue5;
+    width: $cf7-width;
+	form {
+	    p, p input, p textarea {
+	        font-family: 'CicleFina';
+	        font-size: tpx(18);
+	        margin: $cf7-margin-v $cf7-margin-h;
+	        padding: $cf7-padding-v $cf7-padding-h;
+	    }
+	    p.label {
+	        text-align: right;
+	        float: left;
+	        width: $cf7-col1;
+	    }
+	    p.input {
+	        input, textarea {
+                background-color: $blue1; 
+                width: $cf7-col2;
+	        }
+	        textarea {
+	            width: $cf7-text-field-width;
+	        } 
+	    }
+	    .watermark {
+	        color: white;
+	    }
+	    p input.button {
+	        font-family: 'CicleFina';
+	        font-size: tpx(18);
+	        width: $cf7-button-width;
+            margin-left: $cf7-button-margin;
+            height: 30px;
+            margin-bottom: 30px;
+            @include web12_hover_links(safe);
+	    }
+	}
+}
+
