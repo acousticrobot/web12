@@ -8,14 +8,14 @@
 header {
     #site-head { 
     	a { 
-            @include web12_header_colors(art125,name)
+            @include web12_hover_links(art125,name)
     	}
     }
 }
 
 nav {
     ul li a {
-        @include web12_header_colors(art125,buttons);
+        @include web12_hover_links(art125,buttons);
     }        
 }
 

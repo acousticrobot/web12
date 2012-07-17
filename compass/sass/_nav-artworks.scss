@@ -8,14 +8,14 @@
 header {
     #site-head { 
     	a { 
-            @include web12_header_colors(artworks,name)
+            @include web12_hover_links(artworks,name)
     	}
     }
 }
 
 nav {
     ul li a {
-        @include web12_header_colors(artworks,buttons);
+        @include web12_hover_links(artworks,buttons);
         border: 1px solid $zeroptwhite1;
     	margin: -1px;
     	&:hover {

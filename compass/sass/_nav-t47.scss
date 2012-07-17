@@ -2,7 +2,7 @@
 
 nav {
     ul li a {
-        @include web12_header_colors(t47,buttons);
+        @include web12_hover_links(t47,buttons);
     }        
 }
 
@@ -17,7 +17,7 @@ nav {
 header {
     #site-head { 
     	a { 
-            @include web12_header_colors(t47,name)
+            @include web12_hover_links(t47,name)
     	}
     }
 }

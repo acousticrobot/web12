@@ -12,7 +12,7 @@ nav {
     	line-height: 1.1em;
     	display: block;
     	padding-top: 1px;
-        @include web12_header_colors(default,buttons)
+        @include web12_hover_links(default,buttons)
     }        
 }
 
@@ -27,7 +27,7 @@ header {
     	letter-spacing: .16em;
     	margin: 0 0 13px 0;
     	a { 
-            @include web12_header_colors(default,name)
+            @include web12_hover_links(default,name)
     	}
     }
     nav {
@@ -72,37 +72,6 @@ header {
 @include web12_zero_padding_side_nav($menu:"menu-student-side-navigation");
 
 // -------------------------	MENU STYLES	 	------------------------ //
-
-#search { 
-    margin-top: -8px;
-    label {
-    	visibility: hidden;
-    	position: absolute;
-    }
-    #field {
-    	width: 144px;
-    	height: 24px;
-    	margin: 0 8px 8px 0;
-    	padding: 0 0 0 24px;
-    	float: left;
-    	background-repeat: no-repeat;
-    	overflow: hidden;
-        @include web12_search_bkg(main)
-    }
-    input {
-    	width: 116px;
-    	background: transparent;
-    	font-size: 1em; 
-    	font-family: 'CicleFina';
-    	text-align: left;
-    	letter-spacing: .1em;
-    	border: 0;
-    	&:focus {
-    	    background-color: $blue0;
-    	}
-    }
-}
-
 
 .prev-next-nav {
     display: block;

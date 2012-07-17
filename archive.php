@@ -3,13 +3,12 @@
 *	Description: Main Archive Template
 *
 * 	CALLED BY: 	triggered by keywords in content 
-*	TRIGGER: 	Category, Date and Tag searches
-*	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
+*		TRIGGER: 	Category, Date and Tag searches
+*		CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
 *  	v 2.0	 
 */
 	$templateID = 'mainset';
 ?>
-
 
 <?php get_header(); ?>
 

@@ -20,15 +20,6 @@
 
 $pthumb: 150px;
 
-// --------------------			text		    ------------------------- //
-
-$base_em: 1em;
-// pixel equivalents
-$p34: 2.125 * $base_em;
-$p24: 1.5 * $base_em;
-$p21: 1.3125  * $base_em;
-$p18: 1.125  * $base_em;
-$p16: .9375  * $base_em;
 
 // --------------------			layout		    ------------------------- //
 
@@ -38,21 +29,29 @@ $pagetop: 110px;
 // --------------------			MIXINS		----------------------------- //
 // ---------------------------------------------------------------------- //
 
-@mixin web12_header_colors($selector:default,$pos:buttons) {
+@mixin web12_hover_links($selector:default,$pos:buttons) {
     // $position: name, buttons
     // button: text, background hover:text & hover:background
     // default
-    $b-tx:  $blue4;
-    $b-bk:  $blue5;
-    $bh-tx: $blue2;
-    $bh-bk: $blue4;
-    $name-tx: $b-tx;
+    $b-tx:  $blue4; // text
+    $b-bk:  $blue5; // background
+    $bh-tx: $blue2; // hover-text
+    $bh-bk: $blue4; // hover-background
+    $soft-tx: $b-tx; //softer text color
+    @if $selector == safe {
+        // safe on all backgrounds, tested with contact form only so far
+        $b-tx:  $blue3;
+        $b-bk:  $blue7;
+        $bh-tx: $blue7;
+        $bh-bk: $blue3;
+        $soft-tx: $b-tx;
+    }
     @if $selector == mainset {
         $b-tx:  $blue4;
         $b-bk:  $blue7;
         $bh-tx: $blue3;
         $bh-bk: $blue5;
-        $name-tx: $b-tx;
+        $soft-tx: $b-tx;
     } @else if $selector == t47 {
         $b-tx:  $blue4;
         $b-bk:  $blue1;
@@ -63,22 +62,22 @@ $pagetop: 110px;
         $b-bk:  $brounge2;
         $bh-tx: $blue3;
         $bh-bk: $brounge0;        
-        $name-tx: $brounge2;
+        $soft-tx: $brounge2;
     } @else if $selector == artworks {
         $b-tx:  $grwarm3;
         $b-bk:  $zeroptwhite2;
         $bh-tx: $grwarm6;
         $bh-bk: white;        
-        $name-tx: $b-tx;
+        $soft-tx: $b-tx;
     } @else if $selector == dma105 {
         $b-tx:  $crimson;
         $b-bk:  $brounge6;
         $bh-tx: $grwarm4;
         $bh-bk: $brounge4;        
-        $name-tx: $b-tx;
+        $soft-tx: $b-tx;
     }
     @if $pos == name {
-        color: $name-tx ; 
+        color: $soft-tx ; 
         &:hover { color: $bh-tx; }
     } @else if $pos == buttons {
         background-color: $b-bk;
@@ -121,6 +120,22 @@ $pagetop: 110px;
     @return url(/images/nav/rip-#{$c}.png);
 }
 
+
+@function tpx($px:16, $base_em: 16) {
+    @return ($px / $base_em) + 0em;
+}
+
+// --------------------			text		    ------------------------- //
+
+
+$base_em: tpx();
+// pixel equivalents
+$p34: 2.125 * $base_em;
+$p24: 1.5 * $base_em;
+$p21: 1.3125  * $base_em;
+$p18: 1.125  * $base_em;
+$p16: $base_em;
+$p15: .9375  * $base_em;
 
 
 
