@@ -28,9 +28,12 @@ if (preg_match('/\/rambles$/', get_permalink())){
 	wp_reset_query();
 }?>
 
-<?php // Archive page-- lists excerpts
-if (preg_match('/\/archive$/', get_permalink())){
-		get_template_part('loop', 'foo');
+<?php // Archive page-- lists excerpts //(preg_match('/\/archive$/', get_permalink()))
+if (is_page('archive')){
+	if (have_posts()) :  
+	 	get_template_part( 'loop', 'archive'); 
+	else :  // does not have posts ?>
+	<h3>No posts found.</h3>
 }?>
 
 <?php // Students page-- lists students

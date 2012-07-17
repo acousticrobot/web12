@@ -15,6 +15,8 @@
 		get_template_part( 'content','archive');
 
 	endwhile; endif; 
+	
+	include (TEMPLATEPATH . '/inc/nav.php' ); 
+	
 ?>
-<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 	

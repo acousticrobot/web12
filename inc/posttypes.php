@@ -201,24 +201,6 @@ function artwork_icons() {
 		}
     </style>
 
-<?php }
+<?php } 	// END: Add new Custom Post Type icons
 	
-?>
-<?php
-// Make sure Artworks shows up in the category archive:
-// references:
-// http://www.billerickson.net/customize-the-wordpress-query/
-// http://wordpress.org/support/topic/custom-post-type-tagscategories-archive-page
-// http://designpx.com/tutorials/custom-post-types-author-archive/
-if (!is_admin()) { // admin having problems saving with this filter
-	add_filter('pre_get_posts', 'query_post_type');
-	function query_post_type($query) {
-		if ( $query->is_main_query() ) { // don't mess up the menu
-			if (is_category() || is_tag()) { 
-			    $query->set('post_type',array('post','artworks'));
-			};
-		};
-		return $query;
-	}
-}
 ?>

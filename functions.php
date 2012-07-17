@@ -103,6 +103,10 @@
 		// include custom post types
 	include_once( TEMPLATEPATH . '/inc/posttypes.php');
 
+		// add artworks to loops	
+	include_once( TEMPLATEPATH . '/inc/query-filter.php');
+	
+
 	function exclude_status() { //exclude 'status' type posts from the query
 		$args = array(
 			'tax_query' => array(
