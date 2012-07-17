@@ -25,7 +25,7 @@
     input {
     	width: 116px;
     	background: transparent;
-    	font-size: $p15; 
+    	font-size: tpx(15); 
     	font-family: 'CicleFina';
     	text-align: left;
     	letter-spacing: .1em;
@@ -75,7 +75,8 @@ div.wpcf7 {
 	        } 
 	    }
 	    .watermark {
-	        color: white;
+	        color: $blue3;
+	        font-family: 'CicleFinaItalic';
 	    }
 	    p input.button {
 	        font-family: 'CicleFina';
@@ -85,6 +86,21 @@ div.wpcf7 {
             height: 30px;
             margin-bottom: 30px;
             @include web12_hover_links(safe);
+	    }
+	    .wpcf7-not-valid-tip {
+	        border: none;
+	        color: $blue5;
+	        padding-left: 10px;
+	        background-color: transparent;
+	        font-family: 'CicleFinaItalic';
+	    }
+	    .wpcf7-response-output {
+	        border: none;
+	        font-family: 'CicleFinaItalic';
+	        font-size: tpx(20);
+	        color: $blue9;
+	        padding: 0 0 0 10px;
+	        margin: 0;
 	    }
 	}
 }

@@ -239,7 +239,8 @@ div.wpcf7 {
   div.wpcf7 form p.input textarea {
     width: 430px; }
   div.wpcf7 form .watermark {
-    color: white; }
+    color: #59aeff;
+    font-family: 'CicleFinaItalic'; }
   div.wpcf7 form p input.button {
     font-family: 'CicleFina';
     font-size: 1.125em;
@@ -252,6 +253,19 @@ div.wpcf7 {
     div.wpcf7 form p input.button:hover {
       background-color: #59aeff;
       color: #1d3852; }
+  div.wpcf7 form .wpcf7-not-valid-tip {
+    border: none;
+    color: #335c8f;
+    padding-left: 10px;
+    background-color: transparent;
+    font-family: 'CicleFinaItalic'; }
+  div.wpcf7 form .wpcf7-response-output {
+    border: none;
+    font-family: 'CicleFinaItalic';
+    font-size: 1.25em;
+    color: #0d1927;
+    padding: 0 0 0 10px;
+    margin: 0; }
 
 /*
 *	Description: scss partial -- navigation menus

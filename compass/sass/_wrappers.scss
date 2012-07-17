@@ -10,10 +10,10 @@
     }
     h2 { 
     	color: $outer-bkg; 
-    	font-size: $p21;
+    	font-size: tpx(21);
     }
-    h3 { font-size: $p21; }
-    h4, h5 { font-size: $p18; }    
+    h3 { font-size: tpx(21); }
+    h4, h5 { font-size: tpx(18); }    
 }
 
     // sets the page width, contains the header ( see _navigation.scss)
@@ -40,7 +40,7 @@
 	padding: 5px;	
 	min-height: 500px;
 	h1, h2 {
-    	font-size: $p24;
+    	font-size: tpx(24);
     	border-top: 1px solid #999;
     	margin-top: 10px;
 	}
