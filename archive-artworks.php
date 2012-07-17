@@ -3,7 +3,7 @@
 *	Description: Artworks loop -- lists artworks
 *
 * 	CALLED BY: 	url to /artworks 
-*	TRIGGER: 	call for custom type 'artworks'
+*	TRIGGER: 	url for custom type 'artworks' querries artworks custom post type
 *	CALLS TO:	HEADER, loop-artworks, FOOTER
 *	TODO: Once there are too many artworks?
 *  	v 2.0	 

@@ -1,7 +1,7 @@
 <?php
 /*
 *	Loop Name: Archive
-*	called by: 
+*	 
 *
 * 	CALLED BY: 	archive, taxonomy, search
 *	CALLS TO:	inc/nav, content-archive, inc/nav

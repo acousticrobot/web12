@@ -6,7 +6,7 @@
 	*	Called by: template-mainset
 	*	
 	*	*note* change cat=-60 to -4 below before upload!
-	*	v1.0
+	*z	v1.0
 	*/  
  ?>
 
@@ -30,10 +30,7 @@ if (preg_match('/\/rambles$/', get_permalink())){
 
 <?php // Archive page-- lists excerpts
 if (preg_match('/\/archive$/', get_permalink())){
-		// need previous / next links here! 	 
-		query_posts('posts_per_page=50');
-		get_template_part('loop', 'list');
-		wp_reset_query();
+		get_template_part('loop', 'foo');
 }?>
 
 <?php // Students page-- lists students

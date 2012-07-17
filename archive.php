@@ -4,6 +4,8 @@
 *
 * 	CALLED BY: 	triggered by keywords in content 
 *		TRIGGER: 	Category, Date and Tag searches
+*		NOTE: 	NOT triggered by jg.com/archive/ 
+*				This is handled by page archive, attached to template-mainset.php
 *		CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
 *  	v 2.0	 
 */
