@@ -96,18 +96,27 @@ blockquote p {
 	text-align: justify;
 }
 
-.wp-post-image { /*featured image*/
+//--------- IMAGES ------------------------------------//
+
+.wp-post-image {    //featured image
 	float: left;
 	margin: 15px 30px 10px 12px;
 	width: $pthumb;
 	height: $pthumb;
 }
 
-
-.search-terms {
-    color: $blue5;
+.seal{              // small bullet images
+	width: 120px;
+	height: 55px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	float: left;
+	&:hover { background-position: 0 -100px }
 }
 
+//--------- IMAGES ------------------------------------//
+
+//-----------------------?
 .link-list * {
 	line-height: 1.5em;
 	font-size: 18px;

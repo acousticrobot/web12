@@ -1,7 +1,7 @@
 <?php
 /*
 *	Loop Name: Archive
-*	 
+*	Description: For listing pages with 150 thumb and content excerpt	 
 *
 * 	CALLED BY: 	archive, taxonomy, search
 *	CALLS TO:	inc/nav, content-archive, inc/nav

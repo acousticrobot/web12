@@ -136,20 +136,12 @@ header {
     	height: 90px;
     	padding-left: 10px;
     	&:hover { background-position: 0 }
-    	.seal{
-        	width: 120px;
-        	height: 55px;
-        	background-repeat: no-repeat;
-        	margin-top: 17px;
-        	overflow: hidden;
-        	float: left;
-        	&:hover { background-position: 0 -100px }
-        }
         img {
         	opacity: 0;
         	&:hover { opacity: 1 }
         }
-        
+        .seal {
+            margin-top: 17px;
+        }
     }	
 }
-

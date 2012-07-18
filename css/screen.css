@@ -382,19 +382,12 @@ header {
     padding-left: 10px; }
     #sidebar-left .feature:hover {
       background-position: 0; }
-    #sidebar-left .feature .seal {
-      width: 120px;
-      height: 55px;
-      background-repeat: no-repeat;
-      margin-top: 17px;
-      overflow: hidden;
-      float: left; }
-      #sidebar-left .feature .seal:hover {
-        background-position: 0 -100px; }
     #sidebar-left .feature img {
       opacity: 0; }
       #sidebar-left .feature img:hover {
         opacity: 1; }
+    #sidebar-left .feature .seal {
+      margin-top: 17px; }
 
 .clear {
   clear: both; }
@@ -464,14 +457,19 @@ blockquote p {
   text-align: justify; }
 
 .wp-post-image {
-  /*featured image*/
   float: left;
   margin: 15px 30px 10px 12px;
   width: 150px;
   height: 150px; }
 
-.search-terms {
-  color: #335c8f; }
+.seal {
+  width: 120px;
+  height: 55px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  float: left; }
+  .seal:hover {
+    background-position: 0 -100px; }
 
 .link-list * {
   line-height: 1.5em;

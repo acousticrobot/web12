@@ -25,7 +25,7 @@
 	
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	
-	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?></span>
+	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
 

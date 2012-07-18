@@ -57,6 +57,52 @@ nav ul li a {
   background-color: #2a5176;
   color: #FFFFCB; }
 
+#contentWrap article.archive {
+  border-top: 3px solid #2a5176;
+  margin: 3px;
+  min-height: 55px; }
+  #contentWrap article.archive .seal {
+    width: 55px;
+    height: 55px;
+    padding: 0 5px; }
+  #contentWrap article.archive .meta-title {
+    font-family: 'CicleFinaItalic';
+    text-transform: lowercase;
+    color: #a7a097;
+    font-size: 0.813em; }
+  #contentWrap article.archive .bullet-archive-text {
+    margin-left: 65px; }
+  #contentWrap article.archive .archive-date {
+    font-size: 0.75em; }
+  #contentWrap article.archive .tags {
+    font-size: 1em; }
+
+article.archive.artworks:hover {
+  background-color: #f0f8ff;
+  color: #a7a097; }
+
+article.archive.post:hover {
+  background-color: #2a5176;
+  color: #a7a097; }
+
+article.archive.page:hover {
+  background-color: #0d1927;
+  color: #a7a097; }
+
+.seal {
+  background-image: url("/images/nav/seal-default.png"); }
+  .seal.artworks {
+    background-image: url("/images/nav/seal-artworks.png"); }
+  .seal.dma105 {
+    background-image: url("/images/nav/seal-dma105.png"); }
+  .seal.art125 {
+    background-image: url("/images/nav/seal-art125.png"); }
+  .seal.t47 {
+    background-image: url("/images/nav/seal-t47.png"); }
+
+.search-terms {
+  color: #335c8f; }
+
 /* ------------		generated lists of pages & links	----------------- */
 link-list ul.children a {
   color: #59aeff; }
@@ -68,6 +114,7 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
   color: #ffb444; }
 
 /* ----- student/course listings ------ */
+/* ----- archive page ------ */
 #innerWrapper ul.courses {
   margin: 0;
   padding: 0; }
@@ -148,6 +195,9 @@ body {
 #pageWrap h2 {
   color: #e4ddd0;
   background-color: transparent; }
+
+a {
+  color: #59aeff; }
 
 .design-image {
   float: left;

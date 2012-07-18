@@ -12,7 +12,7 @@
   
 <h2>
 	<?php the_title(); ?>
-	<?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 </h2>
 
 	<?php include (TEMPLATEPATH . '/inc/sidenav.php' ); ?>

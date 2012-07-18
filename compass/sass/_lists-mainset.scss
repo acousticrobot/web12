@@ -1,3 +1,70 @@
+//-- archive page --------------------------//
+
+#contentWrap article.archive {
+    border-top: 3px solid $blue6;
+    margin: 3px;
+    min-height: 55px;
+//    width: 740px;
+    .seal {
+        width: 55px;
+        height:55px;
+        padding: 0 5px;
+    }
+    .meta-title {
+        font-family: 'CicleFinaItalic';	
+    	text-transform: lowercase;
+    	color: $grwarm5;
+    	font-size: tpx(13);
+    }
+    .bullet-archive-text {
+        margin-left: 65px;
+    }
+    .archive-date {
+        font-size: tpx(12);
+    }
+    .tags {
+        font-size: tpx(16);
+    }
+}
+
+article.archive.artworks {
+    &:hover {
+        background-color: $blue0;
+        color: $grwarm5;
+    }
+}
+
+article.archive.post:hover {
+    background-color: $blue6;
+    color: $grwarm5;
+}
+
+article.archive.page:hover {
+    background-color: $blue9;
+    color: $grwarm5;
+}
+
+
+.seal {
+    background-image: url('/images/nav/seal-default.png');    
+    &.artworks {
+        background-image: url('/images/nav/seal-artworks.png');        
+    }
+    &.dma105 {
+        background-image: url('/images/nav/seal-dma105.png');
+    }
+    &.art125 {
+        background-image: url('/images/nav/seal-art125.png');
+    }
+    &.t47 {
+        background-image: url('/images/nav/seal-t47.png');
+    }
+}
+
+.search-terms {
+    color: $blue5;
+}
+
 /* ------------		generated lists of pages & links	----------------- */
 
 link-list ul.children a {
@@ -13,6 +80,9 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 }
 
 /* ----- student/course listings ------ */
+
+
+/* ----- archive page ------ */
 
 #innerWrapper ul.courses {
 	margin: 0;

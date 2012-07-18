@@ -23,4 +23,4 @@
 <span class="meta-comments">
 	<?php comments_popup_link('', '1 Comment', '% Comments', 'comments-link', ''); ?>
 </span>
-</div>
+</div> <!-- samiam -->
