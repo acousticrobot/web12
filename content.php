@@ -12,7 +12,7 @@
   
 <h2>
 	<?php the_title(); ?>
-	<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?>
 </h2>
 
 	<?php include (TEMPLATEPATH . '/inc/nav-side_menu.php' ); ?>
@@ -27,7 +27,7 @@
 
 	<?php the_content(); ?>
 
-	<?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?>
 
 	<?php edit_post_link('Edit this post','','.'); ?>
 

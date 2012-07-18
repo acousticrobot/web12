@@ -11,11 +11,11 @@
 
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
+	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
 
-	<?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?>
 
 	<?php edit_post_link('Edit this excerpt','',''); ?>
 

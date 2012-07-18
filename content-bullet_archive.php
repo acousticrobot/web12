@@ -44,7 +44,7 @@
 
 <?php 	if ($type != 'page') { ?>
 
-<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
+<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?></span>
 
 <?php
  		} else {
@@ -55,7 +55,7 @@
 		} 
 ?>
 
-<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?></span>
+<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 
 </div> <!--end bullet-archive-text-->
 </article>

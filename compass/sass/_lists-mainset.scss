@@ -12,11 +12,17 @@
     .meta-title {
         font-family: 'CicleFinaItalic';	
     	text-transform: lowercase;
-    	color: $grwarm5;
+    	color: $blue7;
     	font-size: tpx(13);
+    }
+    &:hover .meta-title {
+        color: $blue4;
     }
     .bullet-archive-text {
         margin-left: 65px;
+        h4, h5 {
+            padding: 0;
+        }
     }
     .archive-date {
         font-size: tpx(12);

@@ -68,10 +68,14 @@ nav ul li a {
   #contentWrap article.archive .meta-title {
     font-family: 'CicleFinaItalic';
     text-transform: lowercase;
-    color: #a7a097;
+    color: #1d3852;
     font-size: 0.813em; }
+  #contentWrap article.archive:hover .meta-title {
+    color: #4383bf; }
   #contentWrap article.archive .bullet-archive-text {
     margin-left: 65px; }
+    #contentWrap article.archive .bullet-archive-text h4, #contentWrap article.archive .bullet-archive-text h5 {
+      padding: 0; }
   #contentWrap article.archive .archive-date {
     font-size: 0.75em; }
   #contentWrap article.archive .tags {

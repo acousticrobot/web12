@@ -25,11 +25,11 @@
 	
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	
-	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
+	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
 
-	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?></span>
+	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 
 	<?php edit_post_link('Edit this excerpt','',''); ?>
 

@@ -9,11 +9,11 @@
 <article>
 	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-	<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?>
 
 	<?php the_content(); ?>
 
-	<?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?>
 
 	<?php edit_post_link('(content.php) Edit this entry','',''); ?>
 </article>
