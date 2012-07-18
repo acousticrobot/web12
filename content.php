@@ -1,12 +1,12 @@
 <?php
 /*
-*	Description: Main Fallback content
+*	Description: Main content file and fallback for other content pages. 
 *
 *	Displays single post content, includes #innerWrapper
 *
 * 	CALLED BY: page.php, single.php
 *	TRIGGER: 
-*	CALLS TO:	
+*	CALLS TO: Title, meta-title, side-menu  
 *  	v 2.0	 
 */
 ?>

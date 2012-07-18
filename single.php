@@ -4,8 +4,7 @@
 *
 * 	CALLED BY: posts, artworks, homeworks
 *	TRIGGER: Internal wp for all posts and custom post-types
-*	CALLS TO:	HEADER, loop --> content-@posttype, FOOTER
-*	NOTE: No call to main-side-nav 
+*	CALLS TO:	HEADER, loop --> content-@posttype, FOOTER 
 *  	v 2.0	 
 */
 	

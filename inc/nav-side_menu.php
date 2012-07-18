@@ -4,7 +4,7 @@
 *
 * 	CALLED BY: content.php, content-homework.php
 *	TRIGGER: custom field "nav-keys"
-*	CALLS TO:	HEADER, main side nav, loop-archive, FOOTER
+*	CALLS TO:
 *
 * 	nav-keys:		label|link,label|link
 *  	example:		slidelist|/slidelist.txt,slideshow|/slideshow.
