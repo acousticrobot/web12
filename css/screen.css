@@ -188,9 +188,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: #a7a097; }
 
 /*
-*	Description: scss partial -- forms
+* Description: scss partial -- forms including comment lists
 *   SCSS: _forms.scss  
-*  	v 2.0	 
+*   v 2.0  
 */
 #search {
   margin-top: -8px; }
@@ -266,6 +266,32 @@ div.wpcf7 {
     color: #0d1927;
     padding: 0 0 0 10px;
     margin: 0; }
+
+ol.commentlist * {
+  list-style: none; }
+ol.commentlist li.comment {
+  border-bottom: 1px solid #c8c2b6;
+  padding: 10px; }
+  ol.commentlist li.comment div.vcard cite.fn {
+    font-style: normal; }
+  ol.commentlist li.comment div.vcard img.avatar {
+    float: right;
+    margin: 0 0 10px 10px; }
+  ol.commentlist li.comment div.comment-meta {
+    font-size: 10px; }
+    ol.commentlist li.comment div.comment-meta a {
+      color: #ccc; }
+  ol.commentlist li.comment div.reply {
+    font-size: 11px; }
+    ol.commentlist li.comment div.reply a {
+      font-weight: bold; }
+  ol.commentlist li.comment ul.children {
+    list-style: none;
+    margin: 10px 0 0; }
+ol.commentlist li.even {
+  background: #fff; }
+ol.commentlist li.odd {
+  background: #f6f6f6; }
 
 /*
 *	Description: scss partial -- navigation menus
@@ -526,43 +552,6 @@ h2 .meta {
 
 #innerWrapper .status .status-content p {
   margin-left: 150px; }
-
-/* -------------------------	COMMENTS 	---------------------------------------- */
-ol.commentlist * {
-  list-style: none; }
-
-ol.commentlist li.comment {
-  border-bottom: 1px solid #c8c2b6;
-  padding: 10px; }
-
-ol.commentlist li.comment div.vcard cite.fn {
-  font-style: normal; }
-
-ol.commentlist li.comment div.vcard img.avatar {
-  float: right;
-  margin: 0 0 10px 10px; }
-
-ol.commentlist li.comment div.comment-meta {
-  font-size: 10px; }
-
-ol.commentlist li.comment div.comment-meta a {
-  color: #ccc; }
-
-ol.commentlist li.comment div.reply {
-  font-size: 11px; }
-
-ol.commentlist li.comment div.reply a {
-  font-weight: bold; }
-
-ol.commentlist li.comment ul.children {
-  list-style: none;
-  margin: 10px 0 0; }
-
-ol.commentlist li.even {
-  background: #fff; }
-
-ol.commentlist li.odd {
-  background: #f6f6f6; }
 
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 footer p {

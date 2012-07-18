@@ -1,41 +1,46 @@
 /*
-*	Description: scss partial -- forms
+* Description: scss partial -- forms including comment lists
 *   SCSS: _forms.scss  
-*  	v 2.0	 
+*   v 2.0  
 */
-// 	CALLED BY: screen
+//  CALLED BY: screen
+//  -search
+//  -contact form 7
+//  -comments
 
+//--------------------------        SEARCH      -------------------------//
 
 #search { 
     margin-top: -8px;
     label {
-    	visibility: hidden;
-    	position: absolute;
+      visibility: hidden;
+      position: absolute;
     }
     #field {
-    	width: 144px;
-    	height: 24px;
-    	margin: 0 8px 8px 0;
-    	padding: 0 0 0 24px;
-    	float: left;
-    	background-repeat: no-repeat;
-    	overflow: hidden;
+      width: 144px;
+      height: 24px;
+      margin: 0 8px 8px 0;
+      padding: 0 0 0 24px;
+      float: left;
+      background-repeat: no-repeat;
+      overflow: hidden;
         @include web12_search_bkg(main)
     }
     input {
-    	width: 116px;
-    	background: transparent;
-    	font-size: tpx(15); 
-    	font-family: 'CicleFina';
-    	text-align: left;
-    	letter-spacing: .1em;
-    	border: 0;
-    	&:focus {
-    	    background-color: $blue0;
-    	}
+      width: 116px;
+      background: transparent;
+      font-size: tpx(15); 
+      font-family: 'CicleFina';
+      text-align: left;
+      letter-spacing: .1em;
+      border: 0;
+      &:focus {
+          background-color: $blue0;
+      }
     }
 }
 
+//--------------------------    CONTACT FORM 7  -------------------------//
 
 $cf7-width: 720px;
 $cf7-margin-h: 0px;
@@ -53,55 +58,77 @@ $cf7-text-field-width: $cf7-width - $cf7-col1 - 160px;
 div.wpcf7 {
     background-color: $blue5;
     width: $cf7-width;
-	form {
-	    p, p input, p textarea {
-	        font-family: 'CicleFina';
-	        font-size: tpx(18);
-	        margin: $cf7-margin-v $cf7-margin-h;
-	        padding: $cf7-padding-v $cf7-padding-h;
-	    }
-	    p.label {
-	        text-align: right;
-	        float: left;
-	        width: $cf7-col1;
-	    }
-	    p.input {
-	        input, textarea {
+  form {
+      p, p input, p textarea {
+          font-family: 'CicleFina';
+          font-size: tpx(18);
+          margin: $cf7-margin-v $cf7-margin-h;
+          padding: $cf7-padding-v $cf7-padding-h;
+      }
+      p.label {
+          text-align: right;
+          float: left;
+          width: $cf7-col1;
+      }
+      p.input {
+          input, textarea {
                 background-color: $blue1; 
                 width: $cf7-col2;
-	        }
-	        textarea {
-	            width: $cf7-text-field-width;
-	        } 
-	    }
-	    .watermark {
-	        color: $blue3;
-	        font-family: 'CicleFinaItalic';
-	    }
-	    p input.button {
-	        font-family: 'CicleFina';
-	        font-size: tpx(18);
-	        width: $cf7-button-width;
+          }
+          textarea {
+              width: $cf7-text-field-width;
+          } 
+      }
+      .watermark {
+          color: $blue3;
+          font-family: 'CicleFinaItalic';
+      }
+      p input.button {
+          font-family: 'CicleFina';
+          font-size: tpx(18);
+          width: $cf7-button-width;
             margin-left: $cf7-button-margin;
             height: 30px;
             margin-bottom: 30px;
             @include web12_hover_links(safe);
-	    }
-	    .wpcf7-not-valid-tip {
-	        border: none;
-	        color: $blue5;
-	        padding-left: 10px;
-	        background-color: transparent;
-	        font-family: 'CicleFinaItalic';
-	    }
-	    .wpcf7-response-output {
-	        border: none;
-	        font-family: 'CicleFinaItalic';
-	        font-size: tpx(20);
-	        color: $blue9;
-	        padding: 0 0 0 10px;
-	        margin: 0;
-	    }
-	}
+      }
+      .wpcf7-not-valid-tip {
+          border: none;
+          color: $blue5;
+          padding-left: 10px;
+          background-color: transparent;
+          font-family: 'CicleFinaItalic';
+      }
+      .wpcf7-response-output {
+          border: none;
+          font-family: 'CicleFinaItalic';
+          font-size: tpx(20);
+          color: $blue9;
+          padding: 0 0 0 10px;
+          margin: 0;
+      }
+  }
+}
+
+//--------------------------        COMMENTS     -------------------------//
+
+ol.commentlist {
+     *{ list-style: none; }
+     li.comment { 
+         border-bottom: 1px solid $grwarm4; padding: 10px; 
+         div.vcard cite.fn { font-style: normal; }
+         div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+         div.comment-meta { 
+           font-size: 10px;
+           a { color: #ccc; }
+         }
+         div.reply { 
+           font-size: 11px; 
+           a { font-weight: bold; }
+         }
+         ul.children { list-style: none; margin: 10px 0 0; }   
+     }
+     li.even { background: #fff; }
+     li.odd { background: #f6f6f6; }
 }
 
