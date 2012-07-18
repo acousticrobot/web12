@@ -10,7 +10,7 @@
   
 <h2><?php the_title(); ?></h2>
 
-<?php include (TEMPLATEPATH . '/inc/sidenav.php' ); ?>
+<?php include (TEMPLATEPATH . '/inc/nav-side_menu.php' ); ?>
 
 <?php 
   if ( get_post_meta($post->ID, 'due_date', true) ) : 

@@ -23,8 +23,4 @@ if (!is_admin()) { // admin having problems saving with this filter
 
 
 
-
-
-
-
 ?>

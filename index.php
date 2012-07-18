@@ -22,7 +22,7 @@
 
 	<?php endwhile; ?>
 
-	<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/nav-prev_next.php' ); ?>
 
 	<?php else : ?>
 

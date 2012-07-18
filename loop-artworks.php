@@ -9,7 +9,7 @@
 *  	v 2.0	   
 */
 
-	include (TEMPLATEPATH . '/inc/nav.php' ); 	
+	include (TEMPLATEPATH . '/inc/nav-prev_next.php' ); 	
 
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 

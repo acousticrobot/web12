@@ -1,4 +1,12 @@
-[B][] [C][] [N][] [P][] [S][]
+[A][][B][] [C][][F][] [N][] [P][] [S][]
+## [A]
+
+### Archives
+
+There are several pages that are associated with the term 'archive'.
+  * Archive page: jg.com/archive handled by the template-archive and running its own logic.
+  * Archive.php handles queries from the search 
+
 ## [B]
 
 ### Badges
@@ -10,9 +18,18 @@ Mainset are all linked back to homepage.
 
 ### Custom Fields
 
-  * [nav-keys][nav-keys]: custom side navigation 
+There a several more custom fields on my local version, but I'd like to keep them all to a minimum.
+
+  * course keys: students something?
+  * due-date: cf used on homeworks
+  * intro-p: toki pona formatting issues I think
+  * is index page: used on mainset to list the pages associated with it.
+
+  * [nav-keys][nav-keys]: custom side menu navigation button
+  * subtitle: Originally for the toki pona head page, this is also used on the archive page for page listings. 
 
 ### Custom Taxonomies
+
 
 #### Artworks
 
@@ -20,13 +37,41 @@ Mainset are all linked back to homepage.
 
   * year
   * Dimensions
-  * Media (tags)
-  * Project
+  * Media
+  * Categories (was once Project)
+  * Tags
   * Featured Image
 
 archive-artworks.php
 
 content-artworks.php
+## F
+
+### Filters
+
+Filtering the query to accept different types:
+
+	$args = array(
+	    'numberposts'     => 20,
+	    'offset'          => ,
+	//    'category'        => ,
+	    'orderby'         => 'post_date',
+	    'order'           => 'DESC',
+	//    'include'         => ,
+	//    'exclude'         => ,
+	//    'meta_key'        => ,
+	//    'meta_value'      => ,
+	    'post_type'       => array('artworks','page','post'),
+	//    'post_mime_type'  => ,
+	//    'post_parent'     => ,
+	    'post_status'     => 'publish' );
+		
+	$posts_array = get_posts( $args );	
+
+Example found in inc/query-filter, used on archive page.
+
+(parameters listed here)[http://codex.wordpress.org/Template_Tags/get_posts]
+(or)[http://codex.wordpress.org/Function_Reference/wp_list_pages]
 
 ## [N]
 

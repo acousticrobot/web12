@@ -1,15 +1,18 @@
 <?php
-	/*
-	 * 	Displays the title and excerpt within the loop
-	 * 	
-	 * 	CALLED BY: 	template-archive
-	 *	CALLS TO:	inc/meta, inc/metalinks
-	 *  v 2.0	 
-	 */
+/*
+ * 	Discription: Use in a loop to display pages posts and artworks in a compact space
+ *  Compact view: bullet, title and post meta
+ *					pages can use custom field "subtitle" 
+ * 	
+ * 	CALLED BY: 	template-archive
+ *	CALLS TO:	inc/meta, inc/metalinks
+ *  v 2.0	 
+*/
 	
-	$type = get_post_type( $post );
-	$category = get_the_category();
-	$cat = $category[0]->cat_name; 
+	// Get info for content and style based on taxonomy and category
+	$type = get_post_type( $post ); // artworks, page, post
+	$category = get_the_category(); // array[t47, dma105, ...]
+	$cat = $category[0]->cat_name; // main category
 	if ($type == "artworks") {
 		$meta_title = " - artwork page";
 	} elseif ($type == "post") {
@@ -17,54 +20,43 @@
 	} else {
 		$meta_title = "";
 	}
-	
-	if ( !has_post_format( 'status')) :
-?>
+?>	
+
+<?php 	
+	// to add status types,  move this conditional inside the <article>, and add:
+	//	else: the_content() before the endif (within some styling, of course)
+	if ( !has_post_format( 'status')) : 
+	?>
+
 <article class="archive <?php echo $type?> clear-left">
 		
-		<div class="seal <?php echo $type . " " . $cat ?>">
-		<a href="<?php the_permalink(); ?>">
-			<img src="/images/nav/hoverspace-55.png" alt="<?php $type ?>"/>
-		</a></div>
+<div class="seal <?php echo $type . " " . $cat ?>">
+	<a href="<?php the_permalink(); ?>">
+		<img src="/images/nav/hoverspace-55.png" alt="<?php $type ?>"/>
+	</a>
+</div>
 	
-	<div class="bullet-archive-text">
+<div class="bullet-archive-text">
 		
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			<span class="meta-title"><?php echo $meta_title; ?></span>
-		</h3>
+	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<span class="meta-title"><?php echo $meta_title; ?></span>
+	</h3>
 
-		<div class="">
-<?php 			if ($type != 'page') { ?>
-				<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
-<?php 			} else {
-					$subtitle = get_post_meta($post->ID, 'subtitle', true);
-					if (!empty($subtitle)) {
-						echo "<h5>" . $subtitle . "</h5>";
-					}
-				} 
+<?php 	if ($type != 'page') { ?>
+
+<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta.php' ); ?></span>
+
+<?php
+ 		} else {
+			$subtitle = get_post_meta($post->ID, 'subtitle', true);
+			if (!empty($subtitle)) {
+				echo "<h5>" . $subtitle . "</h5>";
+			}
+		} 
 ?>
 
-		</div>
+<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?></span>
 
-		<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?></span>
-
-	</div> <!--end bullet-archive-text-->
-
+</div> <!--end bullet-archive-text-->
 </article>
-
-	<?php endif ?>
-	
-	
-	
-	<?php
-	
-	
-/*	
-	
-	
-	
-	
-	
-	
-	
-*/	?>
+<?php endif // not status ?>
