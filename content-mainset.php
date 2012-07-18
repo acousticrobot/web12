@@ -5,7 +5,6 @@
 	*
 	*	Called by: template-mainset
 	*	
-	*	*note* change cat=-60 to -4 below before upload!
 	*	v1.0
 	*/  
  ?>
