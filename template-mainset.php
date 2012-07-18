@@ -35,7 +35,7 @@ $templateID = 'mainset';
 			the_content(); 
 		endif; 
 			
-		include (TEMPLATEPATH . '/inc/mainsetContent.php' ); 
+		get_template_part( 'content','mainset');
 			
 			 // Does it have index-page as a custom field? list child pages
 		if (get_post_meta($post->ID, 'is_index_page', true ) == 'true') { 

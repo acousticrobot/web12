@@ -101,10 +101,10 @@
 	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 	
 		// include custom post types
-	include_once( TEMPLATEPATH . '/inc/posttypes.php');
+	include_once( TEMPLATEPATH . '/inc/fnx-posttypes.php');
 
 		// add artworks to loops	
-	include_once( TEMPLATEPATH . '/inc/query-filter.php');
+	include_once( TEMPLATEPATH . '/inc/fnx-query-filter.php');
 	
 
 	function exclude_status() { //exclude 'status' type posts from the query
@@ -180,7 +180,7 @@
 	}
 	
 		// include shortcode functions
-	include_once( TEMPLATEPATH . '/inc/shortcode.php');
+	include_once( TEMPLATEPATH . '/inc/fnx-shortcode.php');
 	
 
 	

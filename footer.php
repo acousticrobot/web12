@@ -17,7 +17,7 @@
 	
 	<?php 
 		if (is_page_template('template-t47.php')) { 
-	 		include (TEMPLATEPATH . '/inc/t47copyright.php' ); 
+	 		include (TEMPLATEPATH . '/inc/copyright-t47.php' ); 
 		} else	{ 
 			echo "<p class='copy'> &copy;" . date("Y") . " "; echo bloginfo('name'); echo "</p>"; 
 		}

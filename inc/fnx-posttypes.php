@@ -1,4 +1,11 @@
 <?php
+/*
+*	Description: Functions.php extention for adding additional post types
+*
+* 	CALLED BY: functions.php
+*	CREATES:	artworks, homeworks
+*  	v 2.0	 
+*/
 
 // Add new post type for artworks
 add_action('init', 'artwork_init');

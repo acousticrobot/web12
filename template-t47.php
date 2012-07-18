@@ -22,7 +22,7 @@
 ?>
 
 <nav id="sideMenu">
-	<?php include (TEMPLATEPATH . '/inc/t47sidemenu.php' ); ?>
+	<?php include (TEMPLATEPATH . '/inc/nav-side_menu.php' ); ?>
 </nav>														
 
 <?php
