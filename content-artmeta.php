@@ -25,6 +25,6 @@
 
 ?>
 
-<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/metalinks.php' ); ?></span>
+<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 
 <?php edit_post_link('Edit this artwork','','.'); ?>

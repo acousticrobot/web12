@@ -11,7 +11,7 @@
 
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
+	<span class ="listDate"><?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?></span>
 	
 	<?php the_excerpt(); ?>
 
