@@ -78,17 +78,7 @@ $count = sizeof($posts_array);
 
 ?>
 
-<!-- adapted from inc/nav -->
-<div class="prev-next-nav">
-	<?php if ($has_older) { ?>
-		<div class="next-nav"><a href=" <?php echo $next_alink ?> ">&laquo; Older Entries</a></div>			
-	<?php } ?>
-	<div class="prev-nav"><?php previous_posts_link(' Newer Entries &raquo;') ?></div>
-	<?php if ($has_newer) { ?>
-		<div class="prev-nav"><a href=" <?php echo $prev_alink ?> ">Newer Entries &raquo;</a></div>			
-	<?php } ?>
-</div>
-
+<?php include (TEMPLATEPATH . '/inc/nav-prev_next-cust.php' ); ?>
 <ul>
 
 <?php if ($debug) { ?>
@@ -115,7 +105,7 @@ wp_reset_query(); // needed for breadcrumbs to work
 ?>
 
 </ul>	
-<?php include (TEMPLATEPATH . '/inc/nav-prev_next.php' ); ?>						
+<?php include (TEMPLATEPATH . '/inc/nav-prev_next-cust.php' ); ?>
 </div>  <!-- innerWrapper  -->
 
 <?php get_footer(); ?>
