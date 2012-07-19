@@ -105,7 +105,9 @@
 
 		// add artworks to loops	
 	include_once( TEMPLATEPATH . '/inc/fnx-query-filter.php');
+	include_once( TEMPLATEPATH . '/inc/fnx-twelev_comments.php');
 	
+
 
 	function exclude_status() { //exclude 'status' type posts from the query
 		$args = array(
