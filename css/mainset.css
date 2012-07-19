@@ -186,7 +186,7 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 
 /* ----- END student/course listings ------ */
 body {
-  color: #E4DDD0;
+  color: #e4ddd0;
   background: #0d1927; }
 
 #contentWrap {
@@ -199,6 +199,9 @@ body {
 #pageWrap h2 {
   color: #e4ddd0;
   background-color: transparent; }
+
+p {
+  color: #e4ddd0; }
 
 a {
   color: #59aeff; }

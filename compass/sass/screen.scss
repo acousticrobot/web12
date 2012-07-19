@@ -29,28 +29,26 @@
     clear: right;
 }
 
+.emspace { // <div class="emspace"></div>
+	height: 1em;
+}
+
 .debug {
     color: $pale-yellow;
 }
 
 body {
-    font-family: 'crimsonRoman';
- 	color: $grwarm7;
-	background: $blue6;
+	background-color: $blue6;
+	font-size: 1em; // set base height for all fonts
+//	font-family: ;
 }
 
 p, li {
-	letter-spacing: .13em;
-	font-size: .9375em;
+	@include web12_font_text();
 }
 
 p {
-	line-height: 1.5em;
-	padding: 10px 20px;
-	em {
-    	font-family: 'crimsonItalic';
-    	letter-spacing: .18em;
-	}
+	padding: 5px 5px;
 }
 
 a {
@@ -60,8 +58,7 @@ a {
 }
 
 ul, ol, li {
-		font-size: 1em; /* 16 px */
-		padding: 0 20px 8px 20px;
+	padding: 0 20px 8px 20px;
 }
 
 ol li {
@@ -70,30 +67,81 @@ ol li {
 }
 
 dl {
-	padding: 0 20px;
+	padding-left: 20px;
 }
+
 dt {
 	font-family: 'crimsonBold';
+	color: $gwarm6;
+}
+
+dd {
 	padding: 5px 5px 5px 20px;
+	color: $gwarm5;
 }
 
-pre {
+pre.prettyprint {
 	padding: 10px 0 10px 40px;
-	font-family: consolas, monospace;
-}
-code {
+	background-color: $lime0;
+	@include web12_font_meta();
+	line-height: 1.5em;
 	letter-spacing: .13em;
-	font-size: 1em;	
-}
-pre code {
-	color: $lime1;
+	font-size: tpx(13);
+	span.pln { //plain
+		color: $gwarm6;
+	}
+	span.pun { // punctuation
+		color: #349947;
+	}
+	span.str { // string
+		color: $lime5;
+	}
+	span.kwd { // 
+		color: $blue4;
+	}
+	span.tag {
+		color: #754C28;
+	}
+	span.atn {
+		color: #F09B63;
+	}
+	span.atv {
+		color: $blue4;
+	}
 }
 
-blockquote p {
+code {
+	background: $lime0;
+	padding: 4px;
+	@include web12_font_meta(); // for in-line code
+}
+
+pre code {
+}
+
+blockquote, blockquote p {
+	color: $gwarm6;
+	letter-spacing: .1em;
 	padding: 10px 40px;
 	border: 1px solid white;
 	line-height: 1.2em;
 	text-align: justify;
+	em {
+		font-family: 'crimsonBold';		
+	}
+}
+
+table {
+	th {
+		background-color: $blue1;
+	}
+	tr {
+		background-color: $blue0;
+	}
+	td {
+		padding: 15px;
+		border: 4px solid white;
+	}
 }
 
 //--------- IMAGES ------------------------------------//
@@ -159,7 +207,7 @@ h2 .meta {
 
 .status {
 	background-color: $lime0;
-	color: $grwarm5;
+	color: $gwarm5;
 	border-radius: 10px;
 	width: 625px;
 	margin: 5px 0 10px 50px;
@@ -168,7 +216,7 @@ h2 .meta {
 .status-date, .status-category {
 	font-family: consolas, monospace;
 	letter-spacing:normal;
-	color: $grwarm4;
+	color: $gwarm4;
 	font-size: .75em;
 	padding: 0 10px 0 0;
 }

@@ -13,7 +13,10 @@
     	font-size: tpx(21);
     }
     h3 { font-size: tpx(21); }
-    h4, h5 { font-size: tpx(18); }    
+    h4, h5 { font-size: tpx(18); }
+    a {
+        font-family: 'CicleFina';
+	}
 }
 
     // sets the page width, contains the header ( see _navigation.scss)
@@ -47,7 +50,7 @@
 	h3 {
 	    border-top: 1px solid $blue4;
 	}	
-	*:first-child, h2 + h3 { 
+	h3:first-child, h2 + h3 { 
 	    border: none; 
 	}
 	.prev-next-nav + article h3 {
@@ -60,6 +63,6 @@
 	    margin-left: 20px;
 	}
 	h5 {
-	    color: $grwarm5;
+	    color: $gwarm5;
 	}													
 }

@@ -117,27 +117,22 @@ div#comments {
 }
 
 h2#comments-title {
-	padding: 30px 0 10px 10px;
+	padding: 30px 0 20px 10px;
 }
 
 ol.commentlist {
 	*{ 
 		list-style: none;
 	}
-	li.comment { 
+	li.comment { // wraps around nested comments
 		padding: 0;
 		margin-left: 30px;
-		background-color: $lime0;
-//		border: 1px solid $blue3;
-//		border-bottom: 1px solid $grwarm4;
-		article.comment {
+		article.comment { // wraps around each comment block
 			padding: 0; // keeps the title bar flush left
-//			padding-left: 20px;
 			margin-bottom: 20px;
 		} 
-		div.comment-author { // so-an-so says:
+		div.comment-author { // so-an-so on this date said:
 			background-color: $blue2;
-//			margin-left: -20px;
 			padding-left: 10px;
 			font-family: 'CicleFinaItalic';
 			.fn { // commenter's name
@@ -158,15 +153,11 @@ ol.commentlist {
 		time {
 			color: $blue4;
 			&:hover {
-				color: $brounge3;
+				color: white;
 			}
 		}
 		div.reply { // reply arrow
-//			background-color: $lime0;
-			font: {
-				family: 'Consolas';
-				size: tpx(13);
-			}
+			@include web12_font_meta();
 		}
 		div.comment-content {
 			margin: 0 0 0 -10px;
@@ -175,10 +166,97 @@ ol.commentlist {
 		ul.children { 
 			list-style: none; 
 			padding: 0 0 0 10px; 
-//			margin:0 0 10px 20px;
 		}  
 	}
 	li.even { background: white; }
 	li.odd { background: $blue0; }
 }
+
+
+
+
+$cf-width: 740px;
+$cf-margin-h: 10px;
+$cf-margin-v: 0px;
+$cf-padding-h: 10px;
+$cf-padding-v: 5px;
+
+$cf-col1: 100px;
+$cf-col2: 300px;
+$cf-text-field: 600px;
+$cf-button-width: ($cf-width / 3);
+$cf-button-margin: $cf-col1 + $cf-padding-h;
+
+div#respond {
+	background-color: $lime1;
+	font-family: 'CicleFina';
+	form {
+		p, input, textarea {
+			font-family: 'CicleFina';
+			font-size: tpx(18);
+			margin: $cf-margin-v $cf-margin-h;
+			padding: $cf-padding-v $cf-padding-h;
+		}
+	}
+	p.comment-notes { // remarks before comments form
+		
+	}
+	label {
+		text-align: right;
+		float: left;
+		width: $cf-col1;
+	}
+	span.required {
+   		position: absolute;
+		color: $brounge4;
+	}
+	input, textarea {
+		background-color: $blue0; 
+		width: $cf-col2;
+	}
+	textarea#comment {
+		@include web12_font_text();
+		font-size: tpx(14);
+		width: $cf-text-field;
+	} 
+	input#submit {
+		border: none;
+		width: $cf7-button-width;
+		margin-left: $cf7-button-margin;
+		@include web12_hover_links(t47);
+	}
+	p.form-allowed-tags {
+		font: {
+			family: 'Consolas';
+			size: tpx(13);
+		}
+	}
+}
+
+//	 p input.button {
+//		 font-family: 'CicleFina';
+//		 font-size: tpx(18);
+//		   height: 30px;
+//		   margin-bottom: 30px;
+//	 }
+//	 .wpcf7-not-valid-tip {
+//		 border: none;
+//		 color: $blue5;
+//		 padding-left: 10px;
+//		 background-color: transparent;
+//		 font-family: 'CicleFinaItalic';
+//	 }
+//	 .wpcf7-response-output {
+//		 border: none;
+//		 font-family: 'CicleFinaItalic';
+//		 font-size: tpx(20);
+//		 color: $blue9;
+//		 padding: 0 0 0 10px;
+//		 margin: 0;
+//	 }
+// }
+//}
+
+
+
 

@@ -29,7 +29,7 @@ $pagetop: 110px;
 // --------------------			MIXINS		----------------------------- //
 // ---------------------------------------------------------------------- //
 
-@mixin web12_hover_links($selector:default,$pos:buttons) {
+@mixin web12_hover_links($sub_theme:default,$pos:buttons) {
     // $position: name, buttons
     // button: text, background hover:text & hover:background
     // default
@@ -38,7 +38,7 @@ $pagetop: 110px;
     $bh-tx: $blue2; // hover-text
     $bh-bk: $blue4; // hover-background
     $soft-tx: $b-tx; //softer text color
-    @if $selector == safe {
+    @if $sub_theme == safe {
         // safe on all backgrounds, tested with contact form only so far
         $b-tx:  $blue3;
         $b-bk:  $blue7;
@@ -46,33 +46,33 @@ $pagetop: 110px;
         $bh-bk: $blue3;
         $soft-tx: $b-tx;
     }
-    @if $selector == mainset {
+    @if $sub_theme == mainset {
         $b-tx:  $blue4;
         $b-bk:  $blue7;
         $bh-tx: $blue3;
         $bh-bk: $blue5;
         $soft-tx: $b-tx;
-    } @else if $selector == t47 {
+    } @else if $sub_theme == t47 {
         $b-tx:  $blue4;
         $b-bk:  $blue1;
         $bh-tx: $blue5;
         $bh-bk: $page-white;        
-    } @else if $selector == art125 {
+    } @else if $sub_theme == art125 {
         $b-tx:  $crimson;
         $b-bk:  $brounge2;
         $bh-tx: $blue3;
         $bh-bk: $brounge0;        
         $soft-tx: $brounge2;
-    } @else if $selector == artworks {
-        $b-tx:  $grwarm3;
+    } @else if $sub_theme == artworks {
+        $b-tx:  $gwarm3;
         $b-bk:  $zeroptwhite2;
-        $bh-tx: $grwarm6;
+        $bh-tx: $gwarm6;
         $bh-bk: white;        
         $soft-tx: $b-tx;
-    } @else if $selector == dma105 {
+    } @else if $sub_theme == dma105 {
         $b-tx:  $crimson;
         $b-bk:  $brounge6;
-        $bh-tx: $grwarm4;
+        $bh-tx: $gwarm4;
         $bh-bk: $brounge4;        
         $soft-tx: $b-tx;
     }
@@ -89,13 +89,14 @@ $pagetop: 110px;
     }
 }
 
-@mixin web12_search_bkg($selector:"main") {
-    background-image: url(/images/nav/search-#{$selector}.png);
+@mixin web12_search_bkg($sub_theme:"main") {
+	// Use for the search bar, enter sub_theme
+    background-image: url(/images/nav/search-#{$sub_theme}.png);
     &:hover {
-    	background-image: url(/images/nav/search-hover-#{$selector}.png);
+    	background-image: url(/images/nav/search-hover-#{$sub_theme}.png);
     }
     &:focus {
-    	background-image: url(/images/nav/search-hover-#{$selector}.png);
+    	background-image: url(/images/nav/search-hover-#{$sub_theme}.png);
     }
 }
 
@@ -108,6 +109,39 @@ $pagetop: 110px;
     }
 }
 
+@mixin web12_font_text () {
+    font-family: 'crimsonRoman';
+ 	color: $gwarm7;
+	line-height: 1.5em;
+	letter-spacing: .13em;
+	font-size: tpx(16);
+	em, i {
+    	font-family: 'crimsonItalic';
+	 	color: $gwarm6;
+    	letter-spacing: .18em;
+	}
+	b, strong {
+		font-family: 'crimsonBold';
+	}
+	em strong, strong em {
+		font-family: 'CicleGorditaItalic';
+	}
+	abbr, acronym {
+		border-bottom: 2px dotted $lime3;
+	}
+	q {
+	 	color: $gwarm6;
+		letter-spacing: .1em;
+	}
+	strike {
+		color: $gwarm4;
+	}
+}
+
+@mixin web12_font_meta () {
+    font-family: consolas, monospace;
+	font-size: tpx(15);	
+}
 
 
 // ---------------------------------------------------------------------- //

@@ -72,6 +72,19 @@
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+
+<?php
+//------------------ COMMENT HACK ------------------------------------------------//	
+
+$comment_args = array(
+//'comment_notes_after' => '',
+);
+
+
+	comment_form($comment_args);
+
+//------------------ COMMENT HACK ------------------------------------------------//	
+
+?>	
 
 </div><!-- #comments -->
