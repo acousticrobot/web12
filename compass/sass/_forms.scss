@@ -112,19 +112,35 @@ div.wpcf7 {
 
 //--------------------------  COMMENTS: SUBMIT AND LIST     -------------------------//
 
+div#comments {
+	background-color: $blue0;
+}
+
+h2#comments-title {
+	padding: 30px 0 10px 10px;
+}
+
 ol.commentlist {
 	*{ 
-		list-style: none; 
+		list-style: none;
 	}
 	li.comment { 
-//		border-bottom: 1px solid $grwarm4; 
-		padding: 10px 0 10px; 
-		margin-left: 20px;
-		div.vcard { // so-an-so says:
+		padding: 0;
+		margin-left: 30px;
+		background-color: $lime0;
+//		border: 1px solid $blue3;
+//		border-bottom: 1px solid $grwarm4;
+		article.comment {
+			padding: 0; // keeps the title bar flush left
+//			padding-left: 20px;
+			margin-bottom: 20px;
+		} 
+		div.comment-author { // so-an-so says:
 			background-color: $blue2;
-			margin-left: 0;
+//			margin-left: -20px;
 			padding-left: 10px;
-			cite.fn { // commenter's name
+			font-family: 'CicleFinaItalic';
+			.fn { // commenter's name
 				font: {
 					size: tpx(20);
 					family: 'CicleFina';
@@ -135,25 +151,31 @@ ol.commentlist {
 			}          
 			img.avatar { // set at 55px / smaller for replies
 				float:right; 
-//				border: 1px solid $blue6;
+//				border: 1px solid $blue9;
 				margin: 0 0 10px 10px;
 			}
 		}
-		div.comment-meta, .reply { // date and time link
+		time {
+			color: $blue4;
+			&:hover {
+				color: $brounge3;
+			}
+		}
+		div.reply { // reply arrow
+//			background-color: $lime0;
 			font: {
 				family: 'Consolas';
 				size: tpx(13);
 			}
-			padding: 4px 0;
 		}
-		p {
-			margin: none;
+		div.comment-content {
+			margin: 0 0 0 -10px;
 			padding: 20px 5px;
 		}
 		ul.children { 
 			list-style: none; 
-			margin:  0;
-			padding: 0; 
+			padding: 0 0 0 10px; 
+//			margin:0 0 10px 20px;
 		}  
 	}
 	li.even { background: white; }
