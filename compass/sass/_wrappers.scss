@@ -14,9 +14,6 @@
     }
     h3 { font-size: tpx(21); }
     h4, h5 { font-size: tpx(18); }
-    a {
-        font-family: 'CicleFina';
-	}
 }
 
     // sets the page width, contains the header ( see _navigation.scss)
@@ -66,3 +63,10 @@
 	    color: $gwarm5;
 	}													
 }
+
+#contentWrap #respond { //WordPress comments and reply for
+	background-color: white;
+}
+
+
+

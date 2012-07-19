@@ -150,8 +150,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: 1.313em; }
 #outerWrap h4, #outerWrap h5 {
   font-size: 1.125em; }
-#outerWrap a {
-  font-family: 'CicleFina'; }
 
 #pageWrap {
   width: 844px;
@@ -189,6 +187,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin-left: 20px; }
   #innerWrapper h5 {
     color: #a7a097; }
+
+#contentWrap #respond {
+  background-color: white; }
 
 /*
 * Description: scss partial -- forms including comment lists
@@ -330,6 +331,7 @@ div#respond {
     position: absolute;
     color: #f55a00; }
   div#respond input, div#respond textarea {
+    border: 1px solid #a7a097;
     background-color: #f0f8ff;
     width: 300px; }
   div#respond textarea#comment {
@@ -339,7 +341,9 @@ div#respond {
     letter-spacing: .13em;
     font-size: 1em;
     font-size: 0.875em;
-    width: 600px; }
+    width: 670px;
+    margin-right: 0;
+    padding-right: 0; }
     div#respond textarea#comment em, div#respond textarea#comment i {
       font-family: 'crimsonItalic';
       color: #847f77;
@@ -357,14 +361,18 @@ div#respond {
       color: #c8c2b6; }
   div#respond input#submit {
     border: none;
-    width: 240px;
-    margin-left: 135px;
+    margin: 0px 10px;
+    width: 320px;
+    margin-left: 110px;
     background-color: #b0e5ff;
     color: #4383bf; }
     div#respond input#submit:hover {
       background-color: #fffff0;
       color: #335c8f; }
   div#respond p.form-allowed-tags {
+    text-align: right;
+    float: right;
+    color: #89c234;
     font-family: 'Consolas';
     font-size: 0.813em; }
 
@@ -374,6 +382,7 @@ div#respond {
 *  	v 2.0	 
 */
 nav ul li a {
+  font-family: 'CicleFina';
   font-size: 1.313em;
   line-height: 1.1em;
   display: block;

@@ -183,9 +183,9 @@ $cf-padding-v: 5px;
 
 $cf-col1: 100px;
 $cf-col2: 300px;
-$cf-text-field: 600px;
+$cf-text-field: 670px;
 $cf-button-width: ($cf-width / 3);
-$cf-button-margin: $cf-col1 + $cf-padding-h;
+
 
 div#respond {
 	background-color: $lime1;
@@ -211,6 +211,7 @@ div#respond {
 		color: $brounge4;
 	}
 	input, textarea {
+		border: 1px solid $gwarm5;
 		background-color: $blue0; 
 		width: $cf-col2;
 	}
@@ -218,45 +219,26 @@ div#respond {
 		@include web12_font_text();
 		font-size: tpx(14);
 		width: $cf-text-field;
+		margin-right: 0;
+		padding-right: 0;
 	} 
 	input#submit {
 		border: none;
-		width: $cf7-button-width;
-		margin-left: $cf7-button-margin;
+		margin: $cf-margin-v $cf-margin-h;
+		width: $cf-col2 + 2 * $cf-padding-h;
+		margin-left: $cf-col1 + $cf-margin-h;
 		@include web12_hover_links(t47);
 	}
 	p.form-allowed-tags {
+		text-align: right;
+		float: right;
+		color: $lime4;
 		font: {
 			family: 'Consolas';
-			size: tpx(13);
+			size: tpx(13);			
 		}
 	}
 }
-
-//	 p input.button {
-//		 font-family: 'CicleFina';
-//		 font-size: tpx(18);
-//		   height: 30px;
-//		   margin-bottom: 30px;
-//	 }
-//	 .wpcf7-not-valid-tip {
-//		 border: none;
-//		 color: $blue5;
-//		 padding-left: 10px;
-//		 background-color: transparent;
-//		 font-family: 'CicleFinaItalic';
-//	 }
-//	 .wpcf7-response-output {
-//		 border: none;
-//		 font-family: 'CicleFinaItalic';
-//		 font-size: tpx(20);
-//		 color: $blue9;
-//		 padding: 0 0 0 10px;
-//		 margin: 0;
-//	 }
-// }
-//}
-
 
 
 
