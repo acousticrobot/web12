@@ -27,7 +27,7 @@ if (!is_admin()) { // admin having problems saving with this filter
 
 
 // ARGUMENT RETURN FILTERS, to be used with get_posts( $args ) or WP_Query;
-
+// see README for full arguments possible
 
 	// Used by carousel
 function w12_filter_exclude_status() { //exclude 'status' type posts from the query
@@ -73,8 +73,8 @@ function w12_filter_combine_taxonomies_with_pagination() { // only use status po
 	return $args;
 }
 
-// Used in //from-need to move-// Archive-template
-function w12_filter_combine_taxonomies() { // only use status posts in the query
+// Reference: See real one on Archive-template
+function w12_filter_archive_page() { // only use status posts in the query
 	$args = array(
 	    'numberposts'     => 20, // +1 to check for next page
 	   	'offset'          => $off,
@@ -86,6 +86,23 @@ function w12_filter_combine_taxonomies() { // only use status posts in the query
 	return $args;
 }
 
+function w12_filter_child_pages($parent) {
+	$args = array(
+	    'numberposts'     => -1,
+	    'offset'          => 0,
+	    'orderby'         => 'menu_order',
+	    'order'           => 'DESC',
+	//    'include'         => ,
+	//    'exclude'         => ,
+	//    'meta_key'        => ,
+	//    'meta_value'      => ,
+	    'post_type'       => array('artworks','page','post'),
+	//    'post_mime_type'  => ,
+	   	'post_parent'     => $parent,
+	    'post_status'     => 'publish' );
+		
+		return $args;
+}
 
 
 

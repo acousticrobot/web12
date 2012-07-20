@@ -1,21 +1,13 @@
 <?php 
-	/* 	Loop for listing course content. Lists pages first, then posts (inc. status posts)
-	*
-	*
-	*  Called by: mainset-students page, template-course pages
-
-	*	------------------------------------------------------------------------------------
-	*	Pages must use custom-field 'course-keys' to list course contents
-
-	* 	course-keys:	post-category|title|page=ID
-
-	* 	local values:	dma105|Intro to Digital Media Arts|424, 
-						art125|Topics in Contemporary Art|374 
-
-	* 	remote values:	dma105|Intro to Digital Media Arts|468, 
-						art125|Topics in Contemporary Art|374 
-	*	v1.0 				
-	*/
+/*
+*	Description: Loop for listing course content. 
+*	Lists pages first, then posts (inc. status posts)
+*
+* 	CALLED BY: 	mainset-students page, template-course pages
+*	CALLS TO:
+*	TODO: Abstract to deal with all mainset pages	
+*  	v 2.0	   
+*/
 	
 wp_enqueue_script('hoverIntent');
 wp_enqueue_script('coursescript'); // big-clickable links
