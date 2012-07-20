@@ -27,7 +27,8 @@ nav ul li a {
     color: #59aeff; }
 
 #mainSideNav {
-  background-color: #162a3f; }
+  background-color: #162a3f;
+  margin: 0 -1px 0 10px; }
 
 #search #field {
   background-image: url(/images/nav/search-mainset.png); }

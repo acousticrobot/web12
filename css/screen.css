@@ -177,7 +177,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin-top: 10px; }
   #innerWrapper h3 {
     border-top: 1px solid #4383bf; }
-  #innerWrapper h3:first-child, #innerWrapper h2 + h3 {
+  #innerWrapper h2:first-child, #innerWrapper h3:first-child, #innerWrapper h2 + h3 {
     border: none; }
   #innerWrapper .prev-next-nav + article h3 {
     border: none; }
@@ -193,8 +193,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /*
 * Description: scss partial -- forms including comment lists
-*   SCSS: _forms.scss  
-*   v 2.0  
+*	SCSS: _forms.scss  
+*	v 2.0  
 */
 #search {
   margin-top: -8px; }
@@ -238,6 +238,7 @@ div.wpcf7 {
     float: left;
     width: 130px; }
   div.wpcf7 form p.input input, div.wpcf7 form p.input textarea {
+    border: none;
     background-color: #b0e5ff;
     width: 300px; }
   div.wpcf7 form p.input textarea {
@@ -246,16 +247,17 @@ div.wpcf7 {
     color: #59aeff;
     font-family: 'CicleFinaItalic'; }
   div.wpcf7 form p input.button {
+    border: none;
     font-family: 'CicleFina';
     font-size: 1.125em;
     width: 240px;
     margin-left: 135px;
     height: 30px;
     margin-bottom: 30px;
-    background-color: #1d3852;
-    color: #59aeff; }
+    background-color: #59aeff;
+    color: white; }
     div.wpcf7 form p input.button:hover {
-      background-color: #59aeff;
+      background-color: #b0e5ff;
       color: #1d3852; }
   div.wpcf7 form .wpcf7-not-valid-tip {
     border: none;
@@ -364,15 +366,16 @@ div#respond {
     margin: 0px 10px;
     width: 320px;
     margin-left: 110px;
-    background-color: #b0e5ff;
-    color: #4383bf; }
+    background-color: #59aeff;
+    color: white; }
     div#respond input#submit:hover {
-      background-color: #fffff0;
-      color: #335c8f; }
+      background-color: #b0e5ff;
+      color: #1d3852; }
   div#respond p.form-allowed-tags {
     text-align: right;
     float: right;
     color: #89c234;
+    padding-right: 18px;
     font-family: 'Consolas';
     font-size: 0.813em; }
 
@@ -415,11 +418,18 @@ header {
     text-transform: uppercase;
     letter-spacing: .1em; }
 
+ul#menu-custom-field-side-navigation.menu {
+  padding: 0; }
+
+li.menu.item {
+  padding: 0; }
+
 #mainSideNav {
   float: right;
+  clear: right;
   background-color: #d9ffa0;
   font-family: 'CicleFina';
-  margin: 0 -1px 0 10px; }
+  margin: -5px -1px 0 10px; }
   #mainSideNav ul {
     margin: 0 -2px 0 10px; }
   #mainSideNav ul li {
@@ -639,11 +649,8 @@ h1 {
 
 h2 .meta, h3 .meta {
   float: right;
-  margin: 0 10px 0 110px;
-  font-size: .75em; }
-
-h2 .meta {
-  margin-right: 50px; }
+  margin: 0 10px 0 0;
+  font-size: 0.625em; }
 
 .meta, .tags, .post-edit-link {
   font-family: consolas, monospace;

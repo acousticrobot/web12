@@ -8,10 +8,12 @@ Version: v1.1
 Tags: jonathan gabel, home, slides
 notes: home-page only elements. Home page also loads mainset.css
 */
-#mainSideNav {
+nav#mainSideNav ul {
   margin: 0; }
-  #mainSideNav ul li a {
-    width: 79px; }
+nav#mainSideNav ul li a {
+  width: 79px; }
+nav#mainSideNav nav#mainSideNav {
+  margin-left: 0; }
 
 /*
  * CSS Styles that are needed by jScrollPane for it to operate correctly.
@@ -104,19 +106,16 @@ notes: home-page only elements. Home page also loads mainset.css
 #contentWrap h2 {
   padding-top: 0;
   padding-left: 0; }
+#contentWrap h2.home-invisible-title {
+  color: #162a3f; }
 #contentWrap h3 {
   font-size: 1.125em;
-  /* 18 px */
   text-transform: capitalize; }
 #contentWrap h4, #contentWrap h5 {
   font-size: 1em;
-  /* 16 px */
-  text-transform: capitalize;
   padding: 0; }
-#contentWrap h4 {
-  color: #3B2314; }
 #contentWrap p {
-  color: #847F77;
+  color: #847f77;
   font-size: .875em;
   /* 14px */
   line-height: 1em;
@@ -155,7 +154,7 @@ notes: home-page only elements. Home page also loads mainset.css
     position: relative; }
     #cabinet article .rip {
       position: absolute;
-      background-image: url(/images/nav/carousel/homeRip.png);
+      background-image: url(/images/nav/rip-carousel.png);
       background-repeat: no-repeat;
       background-position: bottom left;
       width: 241px;
@@ -165,16 +164,12 @@ notes: home-page only elements. Home page also loads mainset.css
 
 #carousel {
   width: 1200px;
-  margin-left: -241px;
-  font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif; }
-  #carousel * {
-    font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif; }
+  margin-left: -241px; }
   #carousel .slide {
     float: left;
     width: 241px;
     /* 233px + 8px right margin */
-    height: 144px;
-    background-color: #b0e5ff; }
+    height: 144px; }
     #carousel .slide article {
       background-image: url(/images/nav/carousel/slideMain.png);
       width: 238;
@@ -183,8 +178,8 @@ notes: home-page only elements. Home page also loads mainset.css
         padding: 10px 8px 6px 8px;
         color: #0d1927; }
       #carousel .slide article h3 {
-        padding: 0px 8px 2px 8px;
-        color: #0d1927; }
+        font-family: 'CicleGordita';
+        padding: 0px 8px 2px 8px; }
       #carousel .slide article h4 {
         color: #0d1927;
         padding-left: 8px; }
@@ -199,9 +194,9 @@ notes: home-page only elements. Home page also loads mainset.css
       background-image: url(/images/nav/carousel/slideLab.png); }
     #carousel .slide article.t47 {
       background-image: url(/images/nav/carousel/slideT47.png); }
-  #carousel .slidehover article {
+  #carousel .slideHover article {
     background-position: 0 -200px; }
-    #carousel .slidehover article a {
+    #carousel .slideHover article a {
       color: #ffb444; }
 
 /* -------------------------		BELOW CAROUSEL			------------------------- */

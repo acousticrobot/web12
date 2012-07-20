@@ -15,7 +15,7 @@ Student chosen colors:
 66ff99
 1d1f6
 780404
-19060c
+19060c /black
 5b0d1a
 160e59
 00a9eb
@@ -56,7 +56,7 @@ nav ul li a {
   background-image: url(/images/nav/badge-dma105.png); }
 
 #sidebar-left .feature {
-  background-image: url(/images/nav/rip-brounge6.png); }
+  background-image: url(/images/nav/rip-brownge6.png); }
 
 #menu-custom-field-side-navigation {
   padding: 0; }
@@ -64,7 +64,8 @@ nav ul li a {
     padding: 0; }
 
 #mainSideNav {
-  background-color: #eeeeee; }
+  background-color: #a03b00;
+  margin: 0 -1px 0 10px; }
 
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 body {
@@ -79,17 +80,14 @@ h2, h3, h4 {
   background-color: #a03b00;
   border-color: #bc4500; }
   #contentWrap h2 {
-    color: #59aeff; }
+    color: #5B0D1A; }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
-#mainSideNav {
-  background-color: #EAE5DF;
-  border-bottom: 1px solid #72A74E;
-  border-left: 1px solid #72A74E;
-  margin: 0 -3px 0 10px; }
-
 .due-date {
   margin: 10px; }
+
+h2 .meta {
+  margin-right: 50px; }
 
 /* -------------------------	GALLERY IMAGES	------------------------- */
 .gallery-links {
