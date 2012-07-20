@@ -14,8 +14,8 @@ if (!is_admin()) { // admin having problems saving with this filter
 		if ( $query->is_main_query() ) { // don't mess up the menu
 			if (is_category() || is_tag()) { 
 			    $query->set('post_type',array('post','artworks'));
-			// } else if (is_page('archive')) {
-			//     $query->set('post_type',array('post','artworks'));
+			} else if (is_page('precent')) { 
+				$query->set('post_type',array('page','post','artworks'));
 			}
 		};
 		return $query;

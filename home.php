@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 	
-<h2>recent additions:</h2>
+<h2 class="home-invisible-title">Recent Additions</h2>
 
 <nav id="mainSideNav">
 	<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>

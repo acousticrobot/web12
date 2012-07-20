@@ -2,11 +2,9 @@
 /*
 *   Template Name: Main Set	
 *    
-*	Called by: projects, rambles, students, archive, links, contact   
-/*
 *	Description: Main Template for taxonomy searches
 *
-* 	CALLED BY: pages: projects, rambles, students, archive, links, contact
+* 	CALLED BY: pages: projects, students, archive, links, contact
 *	TRIGGER:
 *	CALLS TO:	HEADER, main side nav, loop, inc/mainsetContent, inc/childlist,  FOOTER
 *  	v 2.0	 

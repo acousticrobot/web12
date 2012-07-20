@@ -24,6 +24,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 	comments_template(); 
 
-endwhile; endif;
+endwhile; 
+else: echo "No Post buddy";
+endif;
 
 ?>

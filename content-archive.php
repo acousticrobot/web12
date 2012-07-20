@@ -23,9 +23,10 @@
 ?>
 	</a>
 	
-	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	
-	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
+	<?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?> 
+	</h3>
 	
 	<?php the_excerpt(); ?>
 
@@ -33,4 +34,5 @@
 
 	<?php edit_post_link('Edit this excerpt','',''); ?>
 
+	<div class="clear-left"></div>
 </article>

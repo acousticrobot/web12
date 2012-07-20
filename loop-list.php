@@ -1,10 +1,14 @@
 <?php
-	/*
-	*	Loop lists title and excerpt, includes status-posts
-	*	
-	*	called by: mainset-students, mainset-archive, archive.php 
-	*	v1.0
-	*/
+/*
+*	Description: Loop for listing posts
+*	Discriminates between status and regular posts
+*
+* 	CALLED BY: mainset-students
+*	TRIGGER: 
+*	CALLS TO:	content-<posttype>.php
+*  	v 2.0	 
+*/
+
 ?>
 
 

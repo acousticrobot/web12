@@ -1,39 +1,14 @@
 <?php 
-	/*
-	*	the meat of the mainset
-	*
-	*
-	*	Called by: template-mainset
-	*	
-	*	v1.0
-	*/  
+/*
+*    
+*	Description: Main Set Content
+*
+* 	CALLED BY: template-mainset
+*	TRIGGER:
+*	CALLS TO:	
+*  	v 2.0	 
+*/
  ?>
-
-<?php // Rambles page-- lists newest **need to exclude all student info**
-
-if (preg_match('/\/rambles$/', get_permalink())){
-		// array( 'post_type' => array( 'artworks','post') )
-	$query = new WP_Query( 'cat=-4' ); // exclude Students: off-line=60 on-line=4
-	while ( $query->have_posts() ) : $query->the_post();
-	if ( !has_post_format( 'status')) {
-		get_template_part( 'content','excerpt');
-	}
-	endwhile;	
-	wp_reset_query();
-	$query = new WP_Query( array( 'post_type' => array( 'artworks') ) );
-	while ( $query->have_posts() ) : $query->the_post();
-		get_template_part( 'content','excerpt');
-	endwhile;	
-	wp_reset_query();
-}?>
-
-<?php // Archive page-- lists excerpts
-if (preg_match('/\/archive$/', get_permalink())){
-		// need previous / next links here! 	 
-		query_posts('posts_per_page=50');
-		get_template_part('loop', 'list');
-		wp_reset_query();
-}?>
 
 <?php // Students page-- lists students
 
