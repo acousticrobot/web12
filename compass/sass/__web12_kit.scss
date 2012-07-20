@@ -39,11 +39,11 @@ $pagetop: 110px;
     $bh-bk: $blue4; // hover-background
     $soft-tx: $b-tx; //softer text color
     @if $sub_theme == safe {
-        // safe on all backgrounds, tested with contact form only so far
-        $b-tx:  $blue3;
-        $b-bk:  $blue7;
+        // safe on all backgrounds, tested contact page, collection page
+        $b-tx:  white;
+        $b-bk:  $blue3;
         $bh-tx: $blue7;
-        $bh-bk: $blue3;
+        $bh-bk: $blue1;
         $soft-tx: $b-tx;
     }
     @if $sub_theme == mainset {
@@ -59,10 +59,10 @@ $pagetop: 110px;
         $bh-bk: $page-white;        
     } @else if $sub_theme == art125 {
         $b-tx:  $crimson;
-        $b-bk:  $brounge2;
+        $b-bk:  $brownge2;
         $bh-tx: $blue3;
-        $bh-bk: $brounge0;        
-        $soft-tx: $brounge2;
+        $bh-bk: $brownge0;        
+        $soft-tx: $brownge2;
     } @else if $sub_theme == artworks {
         $b-tx:  $gwarm3;
         $b-bk:  $zeroptwhite2;
@@ -71,9 +71,9 @@ $pagetop: 110px;
         $soft-tx: $b-tx;
     } @else if $sub_theme == dma105 {
         $b-tx:  $crimson;
-        $b-bk:  $brounge6;
+        $b-bk:  $brownge6;
         $bh-tx: $gwarm4;
-        $bh-bk: $brounge4;        
+        $bh-bk: $brownge4;        
         $soft-tx: $b-tx;
     }
     @if $pos == name {

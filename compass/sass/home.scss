@@ -22,18 +22,19 @@ notes: home-page only elements. Home page also loads mainset.css
             left: 0;
         }
     }
+	h2.home-invisible-title { // Recent Additions kept for readers and spacing
+		color: $blue8;
+	}
     h3 {
-    	font-size: 1.125em; /* 18 px */
+    	font-size: tpx(18);
     	text-transform: capitalize;
     }
     h4, h5 {
-    	font-size: 1em; /* 16 px */
-    	text-transform: capitalize;
+    	font-size: tpx(16);
     	padding: 0;
     }
-    h4{ color: #3B2314;}
     p {
-    	color: #847F77;
+   		color: $gwarm6;
     	font-size: .875em; /* 14px */
     	line-height: 1em;
     	padding: 0;
@@ -79,7 +80,7 @@ notes: home-page only elements. Home page also loads mainset.css
     	position: relative;
     	.rip {
         	position:absolute;
-        	background-image: url(/images/nav/carousel/homeRip.png);
+        	background-image: url(/images/nav/rip-carousel.png);
         	background-repeat: no-repeat;
         	background-position: bottom left;
         	width: 241px;
@@ -93,15 +94,10 @@ notes: home-page only elements. Home page also loads mainset.css
 #carousel {
 	width: 1200px;
 	margin-left: -241px;
-	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
-	* {
-    	font-family: 'CicleFina', Tahoma, Arial, Helvetica, sans-serif;
-    }
     .slide { 
     	float: left; 
     	width: 241px; /* 233px + 8px right margin */
     	height: 144px;
-        background-color: $blue1; 
         article {
         	background-image: url(/images/nav/carousel/slideMain.png);
         	width: 238;
@@ -111,8 +107,8 @@ notes: home-page only elements. Home page also loads mainset.css
             	color: $blue9;
             }
             h3 {
+				font-family: 'CicleGordita';
             	padding: 0px 8px 2px 8px;
-            	color: $blue9;
             }
             h4{
             	color: $blue9;
@@ -136,11 +132,11 @@ notes: home-page only elements. Home page also loads mainset.css
         	background-image: url(/images/nav/carousel/slideT47.png);	
         }
     }
-    .slidehover {
+    .slideHover {
         article {
         	background-position: 0 -200px;
         	a {
-            	color: $brounge2;
+            	color: $brownge2;
             }
         }    
     }

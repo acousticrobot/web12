@@ -54,7 +54,7 @@ p {
 a {
 	text-decoration: none;
 	color: $blue4;
-	&:hover { color: $brounge2; }
+	&:hover { color: $brownge2; }
 }
 
 ul, ol, li {
@@ -177,12 +177,12 @@ h1 {
 
 h2 .meta, h3 .meta {
 	float: right;
-	margin: 0 10px 0 110px;
-	font-size: .75em;
+	margin: 0 10px 0 0;
+	font-size: tpx(10);
 }
 
 h2 .meta {
-	margin-right: 50px;
+//	margin-right: 50px;
 }
 
 .meta, .tags, .post-edit-link, {

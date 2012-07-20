@@ -16,7 +16,7 @@ Student chosen colors:
 66ff99
 1d1f6
 780404
-19060c
+19060c /black
 5b0d1a
 160e59
 00a9eb
@@ -48,23 +48,20 @@ h2, h3, h4 {
 /* -------------------------	CONTENT WRAP 	------------------------- */
 
 #contentWrap {
-	background-color: $brounge7; 
-	border-color: $brounge6;
+	background-color: $brownge7; 
+	border-color: $brownge6;
 	h2 {
-	    color: $blue3;
+	    color: #5B0D1A;
 	}
 }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
 
-#mainSideNav { 
-	background-color: #EAE5DF;
-	border-bottom: 1px solid #72A74E;
-	border-left: 1px solid #72A74E;
-	margin: 0 -3px 0 10px;
-}
-
 .due-date { margin: 10px;}
+
+h2 .meta {
+	margin-right: 50px;
+}
 
 /* -------------------------	GALLERY IMAGES	------------------------- */
 
@@ -103,13 +100,13 @@ a.linkbutton:hover { background-position: 0 -200px; }
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
 footer p {
-    color: $brounge6;
+    color: $brownge6;
 }
 
-footer p#breadcrumbs { border-bottom: 1px solid $brounge6; }
+footer p#breadcrumbs { border-bottom: 1px solid $brownge6; }
 
 footer a {
-    color: $brounge3;
+    color: $brownge3;
     &:hover {
     	color: $blue3;
     }

@@ -1,14 +1,14 @@
 /*
 * Description: scss partial -- forms including comment lists
-*   SCSS: _forms.scss  
-*   v 2.0  
+*	SCSS: _forms.scss  
+*	v 2.0  
 */
-//  CALLED BY: screen
-//  -search
-//  -contact form 7
-//  -comments
+//	CALLED BY: screen
+//	-search
+//	-contact form 7
+//	-comments
 
-//--------------------------        SEARCH      -------------------------//
+//--------------------------		SEARCH		-------------------------//
 
 #search { 
 	margin-top: -8px;
@@ -40,7 +40,7 @@
 	}
 }
 
-//--------------------------    CONTACT FORM 7  -------------------------//
+//--------------------------	CONTACT FORM 7	-------------------------//
 
 $cf7-width: 720px;
 $cf7-margin-h: 0px;
@@ -59,58 +59,60 @@ div.wpcf7 {
 	background-color: $blue5;
 	width: $cf7-width;
 	form {
-	 p, p input, p textarea {
-		 font-family: 'CicleFina';
-		 font-size: tpx(18);
-		 margin: $cf7-margin-v $cf7-margin-h;
-		 padding: $cf7-padding-v $cf7-padding-h;
-	 }
-	 p.label {
-		 text-align: right;
-		 float: left;
-		 width: $cf7-col1;
-	 }
-	 p.input {
-		 input, textarea {
-			   background-color: $blue1; 
-			   width: $cf7-col2;
-		 }
-		 textarea {
-			 width: $cf7-text-field-width;
-		 } 
-	 }
-	 .watermark {
-		 color: $blue3;
-		 font-family: 'CicleFinaItalic';
-	 }
-	 p input.button {
-		 font-family: 'CicleFina';
-		 font-size: tpx(18);
-		 width: $cf7-button-width;
-		   margin-left: $cf7-button-margin;
-		   height: 30px;
-		   margin-bottom: 30px;
-		   @include web12_hover_links(safe);
-	 }
-	 .wpcf7-not-valid-tip {
-		 border: none;
-		 color: $blue5;
-		 padding-left: 10px;
-		 background-color: transparent;
-		 font-family: 'CicleFinaItalic';
-	 }
-	 .wpcf7-response-output {
-		 border: none;
-		 font-family: 'CicleFinaItalic';
-		 font-size: tpx(20);
-		 color: $blue9;
-		 padding: 0 0 0 10px;
-		 margin: 0;
-	 }
+	p, p input, p textarea {
+		font-family: 'CicleFina';
+		font-size: tpx(18);
+		margin: $cf7-margin-v $cf7-margin-h;
+		padding: $cf7-padding-v $cf7-padding-h;
+	}
+	p.label {
+		text-align: right;
+		float: left;
+		width: $cf7-col1;
+	}
+	p.input {
+		input, textarea {
+			border: none;
+			background-color: $blue1; 
+			width: $cf7-col2;
+		}
+		textarea {
+			width: $cf7-text-field-width;
+		} 
+	}
+	.watermark {
+		color: $blue3;
+		font-family: 'CicleFinaItalic';
+	}
+	p input.button {
+		border: none;
+		font-family: 'CicleFina';
+		font-size: tpx(18);
+		width: $cf7-button-width;
+		margin-left: $cf7-button-margin;
+		height: 30px;
+		margin-bottom: 30px;
+		@include web12_hover_links(safe);
+	}
+	.wpcf7-not-valid-tip {
+		border: none;
+		color: $blue5;
+		padding-left: 10px;
+		background-color: transparent;
+		font-family: 'CicleFinaItalic';
+	}
+	.wpcf7-response-output {
+		border: none;
+		font-family: 'CicleFinaItalic';
+		font-size: tpx(20);
+		color: $blue9;
+		padding: 0 0 0 10px;
+		margin: 0;
+	}
  }
 }
 
-//--------------------------  COMMENTS: SUBMIT AND LIST     -------------------------//
+//--------------------------  COMMENTS: SUBMIT AND LIST		-------------------------//
 
 div#comments {
 	background-color: $blue0;
@@ -143,7 +145,7 @@ ol.commentlist {
 			}
 			.says { // says:
 				font-family: 'CicleFinaItalic';
-			}          
+			}		
 			img.avatar { // set at 55px / smaller for replies
 				float:right; 
 //				border: 1px solid $blue9;
@@ -207,8 +209,8 @@ div#respond {
 		width: $cf-col1;
 	}
 	span.required {
-   		position: absolute;
-		color: $brounge4;
+		position: absolute;
+		color: $brownge4;
 	}
 	input, textarea {
 		border: 1px solid $gwarm5;
@@ -227,12 +229,13 @@ div#respond {
 		margin: $cf-margin-v $cf-margin-h;
 		width: $cf-col2 + 2 * $cf-padding-h;
 		margin-left: $cf-col1 + $cf-margin-h;
-		@include web12_hover_links(t47);
+		@include web12_hover_links(safe);
 	}
-	p.form-allowed-tags {
+	p.form-allowed-tags { // comment before submit button
 		text-align: right;
 		float: right;
 		color: $lime4;
+		padding-right: 18px;
 		font: {
 			family: 'Consolas';
 			size: tpx(13);			

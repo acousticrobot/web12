@@ -46,16 +46,22 @@ header {
     }
 }
 
-#menu-custom-field-side-navigation { 
+ul#menu-custom-field-side-navigation.menu { 
+padding:0;
+//margin: 0;
 //    margin: 0 -2px 0 10px;
 }
 
+li.menu.item {
+	padding: 0;
+}
 
 #mainSideNav {
 	float: right;
+	clear: right;
 	background-color: $lime1;
     font-family: 'CicleFina';
-    margin: 0 -1px 0 10px;
+    margin: -5px -1px 0 10px;
     ul {
         margin: 0 -2px 0 10px;
     }

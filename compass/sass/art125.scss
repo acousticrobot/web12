@@ -14,11 +14,11 @@ notes: style sheet for ART 125 Topics in Contemporary Art
 
 /* -------------------------	BODY & MAIN STYLES		------------------------- */
 
-body { color: $gwarm8; background: $brounge3; }
+body { color: $gwarm8; background: $brownge3; }
 
 h2 {
 	background-color: transparent;
-	color: $brounge4;	
+	color: $brownge4;	
 }
 
 h3, h4 {
@@ -64,8 +64,8 @@ li.class-listing {
 
 /* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 
-footer p#breadcrumbs { border-bottom: 1px solid $brounge6; }
+footer p#breadcrumbs { border-bottom: 1px solid $brownge6; }
 
-footer p { color: $brounge6; }
+footer p { color: $brownge6; }
 
 footer a:hover { color: $blue0; }

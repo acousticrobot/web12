@@ -1,6 +1,11 @@
-#mainSideNav {
+nav#mainSideNav {
+	ul {
+		margin: 0;
+	}
     ul li a {
     	width: 79px; // squeeze in the carousel
     }
-    margin: 0;
+	nav#mainSideNav {
+		margin-left: 0;
+	}
 }

@@ -47,7 +47,7 @@
 	h3 {
 	    border-top: 1px solid $blue4;
 	}	
-	h3:first-child, h2 + h3 { 
+	h2:first-child, h3:first-child, h2 + h3 { 
 	    border: none; 
 	}
 	.prev-next-nav + article h3 {
