@@ -33,6 +33,13 @@
 	height: 1em;
 }
 
+div.empty-search { // issue with left sidebar when search is 0
+	width: 700px;
+	height: 500px;
+	clear: both;
+	background-color: red;
+}
+
 .debug {
     color: $pale-yellow;
 }

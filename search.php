@@ -35,12 +35,13 @@
 	else :  // does not have posts ?>
 
 	<h3>No posts found.</h3>
-					
+	<article class="clear-left"><!-- clear left menu --></div>							
 <div id="innerWrapper">
-			
+
 <?php 
 	endif; 
 ?>
+
 </div>  <!-- innerWrapper  -->
 
 <?php get_footer(); ?>

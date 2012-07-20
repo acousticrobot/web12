@@ -521,6 +521,12 @@ li.menu.item {
 .emspace {
   height: 1em; }
 
+div.empty-search {
+  width: 700px;
+  height: 500px;
+  clear: both;
+  background-color: red; }
+
 .debug {
   color: #ffff77; }
 
