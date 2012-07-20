@@ -1,12 +1,14 @@
 <?php
 /*
+*	******************** DEPRECIATED **************************
 *	Description: Loop for listing posts
 *	Discriminates between status and regular posts
 *
-* 	CALLED BY: mainset-students
+* 	WAS CALLED BY: mainset-students
 *	TRIGGER: 
-*	CALLS TO:	content-<posttype>.php
-*  	v 2.0	 
+*	CALLS TO:	content-excerpt / content-status 
+*  	v 1.0	 
+*	******************** DEPRECIATED **************************
 */
 
 ?>

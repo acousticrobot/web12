@@ -8,7 +8,7 @@
 ?>
 
 <?php
-$args = exclude_status();
+$args = w12_filter_exclude_status();
 $the_query = new WP_Query( $args );
 
 	if ( $the_query->have_posts() ) : $the_query->the_post(); ?>

@@ -104,40 +104,14 @@
 	include_once( TEMPLATEPATH . '/inc/fnx-posttypes.php');
 
 		// add artworks to loops	
-	include_once( TEMPLATEPATH . '/inc/fnx-query-filter.php');
-	include_once( TEMPLATEPATH . '/inc/fnx-twelev_comments.php');
+	include_once( TEMPLATEPATH . '/inc/fnx-filters.php');
+	
+	include_once( TEMPLATEPATH . '/inc/fnx-comments.php'); // right out of 2011 theme
+		// include shortcode functions
+	include_once( TEMPLATEPATH . '/inc/fnx-shortcode.php');
 	
 
 
-	function exclude_status() { //exclude 'status' type posts from the query
-		$args = array(
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'post_format',
-					'field'    => 'slug',
-					'operator' => 'NOT IN',
-					'terms'    => 'post-format-status'
-				)
-			)
-		);
-		return $args;
-		// now use: query_posts( $args );
-	}
-	
-	function display_statii() { // only use status posts in the query
-		$args = array( 
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'post_format',
-					'field'    => 'slug',
-					'operator' => 'IN',
-					'terms'    => 'post-format-status'
-				)
-			)
-		);
-		return $args;
-		// now use: query_posts( $args );
-	}
 	
 	function get_custom_id() {
 		//-> returns category, or templateID
@@ -181,8 +155,6 @@
 	    }
 	}
 	
-		// include shortcode functions
-	include_once( TEMPLATEPATH . '/inc/fnx-shortcode.php');
 	
 
 	

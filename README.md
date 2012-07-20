@@ -55,6 +55,25 @@ content-artworks.php
 
 ### Filters
 
+As far as I can tell, the best practice is:
+Main Query: use pre_get_post to alter the main query
+Additional queries: use get\_posts($args) or WP_Query
+DON'T use query\_posts()
+
+[best explanation so far](http://wordpress.stackexchange.com/questions/1753/when-should-you-use-wp-query-vs-query-posts-vs-get-posts)
+
+#### Main Query
+
+This is run in fnx-filters.php
+references:
+http://www.billerickson.net/customize-the-wordpress-query/
+http://wordpress.org/support/topic/custom-post-type-tagscategories-archive-page
+http://designpx.com/tutorials/custom-post-types-author-archive/
+http://codex.wordpress.org/Class_Reference/WP_Query
+
+
+#### Additional Queries
+
 Filtering the query to accept different types:
 
 	$args = array(

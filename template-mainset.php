@@ -15,25 +15,33 @@ $templateID = 'mainset';
 
 <?php get_header(); ?>
 		
-	<h2><?php the_title(); ?></h2>
+<h2><?php the_title(); ?></h2>
 		
-	<nav id="mainSideNav">
-		<?php 
-			if (preg_match('/\/students$/', get_permalink())) {
-				wp_nav_menu(array('menu' => 'Student Side Navigation'));
-			} else {
-		 		wp_nav_menu(array('menu' => 'Main Side Navigation'));
-			} 
-			?>
-	</nav> <!-- mainSideNav -->
+<nav id="mainSideNav"><?php wp_nav_menu(array('menu' => 'Main Side Navigation')); ?></nav>
 			
-	<div id="innerWrapper">	
+<div id="innerWrapper">	
 <?php 		
-		if (have_posts()) : the_post(); // list page's content
-			the_content(); 
-		endif; 
+	if (have_posts()) : the_post(); // list page's content
+	
+		the_content(); 
+	
+	endif; 
 			
-		get_template_part( 'content','mainset');
+if (is_page(learn)) {
+	// list all courses from 'course-keys' Custom Field
+	// includes a call to coursescript.js
+	get_template_part('loop', 'course');		
+}
+
+?>
+
+<?php // Links page -- list all links
+			if (preg_match('/\/links$/', get_permalink())){
+				echo '<div class="link-list">';
+				wp_list_bookmarks("show_description=1&title_before=<h3>&title_after=</h3>");
+				echo '</div>';
+			}
+			
 			
 			 // Does it have index-page as a custom field? list child pages
 		if (get_post_meta($post->ID, 'is_index_page', true ) == 'true') { 

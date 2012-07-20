@@ -17,8 +17,8 @@
 	*	v1.0 				
 	*/
 	
-	wp_enqueue_script('hoverIntent');
-	wp_enqueue_script('coursescript'); // big-clickable links
+wp_enqueue_script('hoverIntent');
+wp_enqueue_script('coursescript'); // big-clickable links
 
 	$coursesCF = get_post_meta($post->ID, 'course-keys', true);	
 
@@ -40,7 +40,7 @@
 
 	foreach ($courseList as $course ) {
 	
-		$courseInfo = explode('|', $course);
+		$courseInfo = explode('*', $course);
 		$slug = $courseInfo[0];
 		$title = $courseInfo[1];
 		$courseID = $courseInfo[2];

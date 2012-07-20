@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop for listing statii
+ * Loop for listing status posts
  *
  * called by: home.php 
  */
@@ -8,7 +8,7 @@
 
 <?php 
 
-	$set = display_statii(); 
+	$set = w12_filter_status_posts(); 
 	
  	$loop = new WP_Query( $set );
 
