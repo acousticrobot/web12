@@ -28,6 +28,12 @@ There a several more custom fields on my local version, but I'd like to keep the
   * [nav-keys][nav-keys]: custom side menu navigation button
   * subtitle: Originally for the toki pona head page, this is also used on the archive page for page listings. 
 
+### Categories
+
+	query_posts('category_name=projects');
+
+DEPRECIATED: Student news no longer a category, this can go on the top of the student page.
+
 ### Custom Taxonomies
 
 
