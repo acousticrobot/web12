@@ -91,16 +91,15 @@ function w12_filter_child_pages($parent) {
 	    'numberposts'     => -1,
 	    'offset'          => 0,
 	    'orderby'         => 'menu_order',
-	    'order'           => 'DESC',
+	    'order'           => 'ASC',
 	//    'include'         => ,
 	//    'exclude'         => ,
 	//    'meta_key'        => ,
 	//    'meta_value'      => ,
-	    'post_type'       => array('artworks','page','post'),
+	    'post_type'       => array('page'),
 	//    'post_mime_type'  => ,
 	   	'post_parent'     => $parent,
-	    'post_status'     => 'publish' );
-		
+	    'post_status'     => 'publish' );	
 		return $args;
 }
 

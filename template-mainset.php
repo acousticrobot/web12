@@ -11,7 +11,7 @@
 */
 
 $templateID = 'mainset';
-$post_id = get_the_ID(); // get the page ID for query of subpages
+$this_page_id = get_the_ID(); // get the page ID for query of subpages
 
 ?>
 
@@ -23,21 +23,31 @@ $post_id = get_the_ID(); // get the page ID for query of subpages
 <?php 		
 	if (have_posts()) : the_post(); // list page's content
 ?>
-	<section id="mainset-content">
-<?php	
-		the_content(); 
-	?>
-	</section>
-	<?php
+<section id="mainset-content">
+<?php the_content();
+?>
+</section>
+<?php
 	endif; 
-if (is_page(learn)) {
-	// list all courses from 'course-keys' Custom Field
-	// includes a call to coursescript.js
 
-	get_template_part('loop', 'mainset');
-	echo 'samiam';		
-}
+	wp_reset_query();
 
+	if (is_page(learn)) {
+
+		$args = w12_filter_child_pages($parent);
+		$posts_array = get_posts( $args );	
+
+		foreach( $posts_array as $post ) : 
+			if($post->post_parent != $this_page_id) continue;
+			
+			setup_postdata($post);
+
+			get_template_part( 'content','archive');		
+
+		endforeach;
+
+
+	} // end learn
 ?>
 
 <?php // Links page -- list all links
