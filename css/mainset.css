@@ -187,7 +187,7 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 
 /* ----- END student/course listings ------ */
 body {
-  color: #e4ddd0;
+  color: #ece4d8;
   background: #0d1927; }
 
 #contentWrap {
@@ -197,19 +197,28 @@ body {
 #innerWrapper {
   background-color: #1d3852; }
 
-#pageWrap h2 {
-  color: #e4ddd0;
+#pageWrap h2, h3 {
+  color: #f1ffcb;
   background-color: transparent; }
 
+section#mainset-content {
+  background-color: #2a5176;
+  width: 729px; }
+
 p {
-  color: #e4ddd0; }
+  color: #e4ddd0;
+  font-family: 'CicleGordita'; }
+  p em {
+    font-family: 'CicleFinaItalic'; }
 
 a {
   color: #59aeff; }
 
 .design-image {
   float: left;
-  margin: 20px 30px 10px 0px; }
+  margin: 15px 30px 10px 12px;
+  width: 150px;
+  height: 150px; }
 
 /* --------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 footer p#breadcrumbs {

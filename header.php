@@ -86,7 +86,7 @@
 	</nav>
 </header>
 		
-<div id="contentWrap">
+<div id="contentWrap" class="<?php echo $customID; ?>">
 			
 <?php include (TEMPLATEPATH . '/inc/badge.php' );  ?>		
 			

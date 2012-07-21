@@ -167,6 +167,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* surrounds floating elements */
   padding: 3px; }
 
+#contentWrap.mainset {
+  padding-top: 29px; }
+
 #innerWrapper {
   background-color: white;
   padding: 5px;
@@ -215,6 +218,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #search #field:focus {
       background-image: url(/images/nav/search-hover-main.png); }
   #search input {
+    border: none;
     width: 116px;
     background: transparent;
     font-size: 0.938em;

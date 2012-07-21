@@ -16,7 +16,7 @@ notes: home-page and main-set pages style sheet
 // -------------------------	BODY & MAIN STYLES		------------------------- //
 
 body { 
-    color: $gwarm2;
+    color: $gwarm1;
     background: $blue9;}
 
 #contentWrap { 
@@ -28,16 +28,25 @@ body {
     background-color: $blue7;
 }
 
-#pageWrap h2 { 
-    color: $gwarm2; 
+#pageWrap h2, h3 { 
+    color: $lime0; 
     background-color: transparent
 }
 
+section#mainset-content {
+	background-color: $blue6;
+	width: 729px;
+}
 
 //pre {	background-color: $blue6; }
 p {
     color: $gwarm2;
+	font-family: 'CicleGordita';
+	em {
+		font-family: 'CicleFinaItalic';
+	}
 }
+
 
 a {
     color: $blue3;
@@ -45,7 +54,11 @@ a {
 
 .design-image {
 	float: left;
-	margin: 20px 30px 10px 0px;
+//	margin: 20px 30px 10px 0px;
+	margin: 15px 30px 10px 12px;
+	width: $pthumb;
+	height: $pthumb;
+	
 }
 
 
