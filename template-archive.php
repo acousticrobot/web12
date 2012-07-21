@@ -14,8 +14,6 @@
 
 $templateID = 'mainset';
 
-$debug = False;
-
 global $a_page; // archive page    
 $np = 25; // number of posts per page
 $page_lim = 5; // sanity check: max number of pages to allow in query
@@ -43,9 +41,7 @@ if ($a_page > 0) {
 ?>
 
 <?php get_header(); ?>
-		
-<h2><?php the_title(); ?> page <?php echo $human_page; ?> </h2>
-		
+				
 <nav id="mainSideNav">
 <?php wp_nav_menu(array('menu' => 'Main Side Navigation')); ?>
 </nav> <!-- mainSideNav -->
@@ -79,19 +75,12 @@ $count = sizeof($posts_array);
 ?>
 
 <?php include (TEMPLATEPATH . '/inc/nav-prev_next-cust.php' ); ?>
+
+<h4><?php the_title(); ?> page <?php echo $human_page; ?> </h4>
+
 <ul>
 
-<?php if ($debug) { ?>
-<div class='debug'>
-<pre><code>
-	
-a(rchive)_page = <?php echo $a_page; ?> 
-count = <?php echo $count; ?> 
-offset = <?php echo $off; ?> 
-
-</code></pre>
-</div>	
-<?php } 
+<?php  
 
 
 foreach( $posts_array as $post ) : setup_postdata($post);

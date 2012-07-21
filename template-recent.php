@@ -16,7 +16,7 @@ get_header();
 $showed_main = false; // Displayed the main post
 $num_to_display = 10; // number of posts total to display
 $on_num = 0;
-$link_title = true; // need to trigger title as anchor down the line
+$link_title = true; // need to trigger title as anchor down the line in content.php
 
 ?>
 

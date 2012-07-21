@@ -25,7 +25,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 	comments_template(); 
 
 endwhile; 
-else: echo "No Post to show from the loop, buddy.";
+else: echo "Sorry, no post found.";
 endif;
 
 ?>
