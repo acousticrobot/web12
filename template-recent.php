@@ -1,12 +1,15 @@
 <?php 
 /*
-*	Description: Main Template for pages set to default template
-* 	CALLED BY: 	Single pages
+*   Template Name: Recent	
+*
+*	Description: Template for 'recent' main-page, displayed most recent post and archive of next several
+
+* 	CALLED BY: 	 /recent
 *	CALLS TO:	HEADER, main side nav, loop, inc/mainsetContent, inc/childlist,  FOOTER
 *  	v 2.0
 */
 	
-$templateID = "page"; // in functions.php, returns parent page ID or false
+$templateID = "recent"; // in functions.php, returns parent page ID or false
 
 get_header(); 
 

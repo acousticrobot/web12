@@ -11,14 +11,15 @@
 <div class="meta">
 <?php
 	$type = get_post_type();
-	
-	if ($type == 'artworks') { 
+	if ($type != 'page') :
+		if ($type == 'artworks') { 
 		
- 		if (get_the_term_list( $post->ID, 'year_made' ) != null ) { 
-			echo get_the_term_list( $post->ID, 'year_made', '', ', ', '' );	
-		};
+ 			if (get_the_term_list( $post->ID, 'year_made' ) != null ) { 
+				echo get_the_term_list( $post->ID, 'year_made', '', ', ', '' );	
+			};
 			
-	} else the_time('F jS, Y');
+		} else the_time('F jS, Y');
+	endif;
 ?>
 <span class="meta-comments">
 	<?php comments_popup_link('', '1 Comment', '% Comments', 'comments-link', ''); ?>

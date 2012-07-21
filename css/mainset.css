@@ -205,10 +205,10 @@ section#mainset-content {
   background-color: #2a5176;
   width: 729px; }
 
-p {
-  color: #e4ddd0;
+p, li {
+  color: #f4ede1;
   font-family: 'CicleGordita'; }
-  p em {
+  p em, li em {
     font-family: 'CicleFinaItalic'; }
 
 a {

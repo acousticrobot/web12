@@ -24,7 +24,7 @@ There a several more custom fields on my local version, but I'd like to keep the
   * due-date: cf used on homeworks
   * intro-p: toki pona formatting issues I think
   * is index page: used on mainset to list the pages associated with it.
-
+  * link: used on design pages to direct the title link to the website.
   * [nav-keys][nav-keys]: custom side menu navigation button
   * subtitle: Originally for the toki pona head page, this is also used on the archive page for page listings. 
 
