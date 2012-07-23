@@ -98,7 +98,7 @@ article.archive.page:hover {
   background-image: url("/images/nav/seal-default.png"); }
   .seal.artworks {
     background-image: url("/images/nav/seal-artworks.png"); }
-  .seal.dma105 {
+  .seal.dma, .seal.dma105 {
     background-image: url("/images/nav/seal-dma105.png"); }
   .seal.art125 {
     background-image: url("/images/nav/seal-art125.png"); }
