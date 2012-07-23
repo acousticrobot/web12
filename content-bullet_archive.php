@@ -11,14 +11,20 @@
 	
 	// Get info for content and style based on taxonomy and category
 	$type = get_post_type( $post ); // artworks, page, post
-	$category = get_the_category(); // array[t47, dma105, ...]
-	$cat = $category[0]->cat_name; // main category
-	if ($type == "artworks") {
-		$meta_title = " - artwork page";
-	} elseif ($type == "post") {
-		$meta_title = " - blog entry";
+	if ($type == 'page') {
+		$type = web12_pages_template();
 	} else {
-		$meta_title = "";
+		$category = get_the_category(); // array[t47, dma105, ...]
+		$cat = $category[0]->cat_name; // main category
+	}
+	if ($type == "artworks") {
+		$post_type_title = " - artwork page";
+	} elseif ($type == "post") {
+		$post_type_title = " - blog entry";
+	} else if ($type == "mainset"){
+		$post_type_title = "";
+	} else {
+		$post_type_title = $type;
 	}
 ?>	
 
@@ -39,7 +45,7 @@
 <div class="bullet-archive-text">
 		
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		<span class="meta-title"><?php echo $meta_title; ?></span>
+		<span class="meta-title"><?php echo $post_type_title; ?></span>
 	</h3>
 
 <?php 	if ($type != 'page') { ?>

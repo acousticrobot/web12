@@ -146,7 +146,7 @@
 	}
 	
 		
-		// called by template mainset, adapt for page.php?
+		// called by template mainset, template-archive, adapt for page.php?
 		// v1 used is_subpage from http://codex.wordpress.org/Conditional_Tags
 	function web12_pages_template() {
 	    global $post;	// load details outside the loop
