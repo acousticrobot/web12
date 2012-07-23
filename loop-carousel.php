@@ -20,7 +20,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 		<?php $category = get_the_category(); ?>
 
-	<article class="<?php echo $category[0]->cat_name; ?>">
+	<article class="<?php echo $category[0]->slug; ?>">
 	
 		<h4><?php the_time('F jS, Y') ?></h4>
 	

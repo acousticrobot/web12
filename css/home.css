@@ -171,7 +171,7 @@ nav#mainSideNav nav#mainSideNav {
     /* 233px + 8px right margin */
     height: 144px; }
     #carousel .slide article {
-      background-image: url(/images/nav/carousel/slideMain.png);
+      background-image: url(/images/nav/slide-main.png);
       width: 238;
       height: 144px; }
       #carousel .slide article h2 {
@@ -187,13 +187,13 @@ nav#mainSideNav nav#mainSideNav {
         padding: 0 13px 0 8px;
         line-height: 15px; }
     #carousel .slide article.art125 {
-      background-image: url(/images/nav/carousel/slideArt125.png); }
-    #carousel .slide article.dma105 {
-      background-image: url(/images/nav/carousel/slideDma105.png); }
-    #carousel .slide article.lab {
-      background-image: url(/images/nav/carousel/slideLab.png); }
+      background-image: url(/images/nav/slide-art125.png); }
+    #carousel .slide article.dma {
+      background-image: url(/images/nav/slide-dma.png); }
+    #carousel .slide article.fly {
+      background-image: url(/images/nav/slide-fly.png); }
     #carousel .slide article.t47 {
-      background-image: url(/images/nav/carousel/slideT47.png); }
+      background-image: url(/images/nav/slide-t47.png); }
   #carousel .slideHover article {
     background-position: 0 -200px; }
     #carousel .slideHover article a {

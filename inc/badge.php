@@ -15,7 +15,7 @@
 */
 		// custom_id is set at the top of all templates
 	$badge_debug = false;
-	$badgeID = get_custom_id(); // in functions.php
+	$badgeID = web12_get_custom_id(); // in functions.php
 	switch ($badgeID) {
 		case 'home':
 		case 'mainset':

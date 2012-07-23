@@ -113,9 +113,10 @@
 
 
 	
-	function get_custom_id() {
-		//-> returns category, or templateID
+	function web12_get_custom_id() {
+		//-> returns category slug, or templateID
 		//-> example: add to template page: $templateID = 'portfolio';
+		// used in header, inc/badge
 		
 		global $templateID;
 		if (is_home()) { return 'home'; }
@@ -129,7 +130,7 @@
 			}
 			elseif ($templateID == 'post') { 	
 				$category = get_the_category();			
-				return $category[0]->cat_name;
+				return $category[0]->slug;
 			}
 			elseif ($templateID == 'homework') {
 				if (get_the_terms( $post->ID, 'class' ) != null ) {

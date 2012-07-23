@@ -24,7 +24,7 @@
 <?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 		
 <?php 	
-	$customID = get_custom_id();
+	$customID = web12_get_custom_id();
 	$bodyID = "id='".$customID."'";
 
  	switch ($customID) {
@@ -43,8 +43,8 @@
   		case 't47':
   			include (TEMPLATEPATH . '/header-t47.php' );
   			break;
-		case 'dma105': 
-		case 'homework dma105'?>
+		case 'dma': 
+		case 'homework dma'?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/dma105.css">
 <?php
 			break;

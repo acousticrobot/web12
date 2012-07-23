@@ -99,7 +99,7 @@ notes: home-page only elements. Home page also loads mainset.css
     	width: 241px; /* 233px + 8px right margin */
     	height: 144px;
         article {
-        	background-image: url(/images/nav/carousel/slideMain.png);
+        	background-image: url(/images/nav/slide-main.png);
         	width: 238;
         	height: 144px;
         	h2 {
@@ -120,16 +120,16 @@ notes: home-page only elements. Home page also loads mainset.css
             }	
         }
         article.art125 {
-        	background-image: url(/images/nav/carousel/slideArt125.png);	
+        	background-image: url(/images/nav/slide-art125.png);	
         }
-        article.dma105 {
-        	background-image: url(/images/nav/carousel/slideDma105.png);	
+        article.dma {
+        	background-image: url(/images/nav/slide-dma.png);	
         }
-        article.lab {
-        	background-image: url(/images/nav/carousel/slideLab.png);	
+        article.fly {
+        	background-image: url(/images/nav/slide-fly.png);	
         }
         article.t47 {
-        	background-image: url(/images/nav/carousel/slideT47.png);	
+        	background-image: url(/images/nav/slide-t47.png);	
         }
     }
     .slideHover {
