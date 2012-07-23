@@ -9,7 +9,8 @@
 	*/
 		
 the_post();
-$templateID = get_the_title();
+$templateID = get_permalink();
+echo $templateID;
 rewind_posts();
 ?>
 

@@ -86,6 +86,8 @@ function w12_filter_archive_page() { // only use status posts in the query
 	return $args;
 }
 
+	// returns all subpages or parent
+	// called by template-mainset
 function w12_filter_child_pages($parent) {
 	$args = array(
 	    'numberposts'     => -1,

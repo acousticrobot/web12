@@ -11,21 +11,34 @@
 *  	v 2.0	 
 */
 
-$templateID = 'mainset';
+$templateID = web12_pages_template();
+
 $this_page_id = get_the_ID(); // get the page ID for query of subpages
 
 ?>
 
 <?php get_header(); ?>
+
+<?php 
+	if ($template_ID != "mainset") {
+?>
+<h2><?php the_title(); ?></h2>
+<?php
+	}
+ ?>
 				
 <nav id="mainSideNav"><?php wp_nav_menu(array('menu' => 'Main Side Navigation')); ?></nav>
 			
 <div id="innerWrapper">	
 <?php 		
-	if (have_posts()) : the_post(); // list page's content
+	if (have_posts()) : the_post(); // loop mainset page's content
 ?>
 <section id="mainset-content">
-<?php the_content();
+<?php 
+	if ( has_post_thumbnail() ) { 
+	  the_post_thumbnail();
+	} 
+	the_content();
 ?>
 </section>
 <?php
@@ -34,7 +47,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 	wp_reset_query();
 
 		// List top level sub-pages
-	if (is_page(learn) || is_page(projects)  || is_page(design)){
+	if (true) { //}(is_page(learn) || is_page(projects)  || is_page(design)){
 
 		$args = w12_filter_child_pages($parent);
 		$posts_array = get_posts( $args );	

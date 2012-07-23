@@ -6,8 +6,8 @@
 *  	v 2.0
 */
 	
-$templateID = "page"; // in functions.php, returns parent page ID or false
-	
+$templateID = "page"; // v1.: is_subpage(); in functions.php, returns parent page ID or false
+
 get_header(); 
 
 get_template_part( 'loop');
