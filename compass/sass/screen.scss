@@ -188,8 +188,8 @@ h2 .meta, h3 .meta {
 	font-size: tpx(10);
 }
 
-h2 .meta {
-//	margin-right: 50px;
+h2 .meta { // avoid hitting the badge
+	margin-right: 50px;
 }
 
 .meta, .tags, .post-edit-link, {

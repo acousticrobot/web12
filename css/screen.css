@@ -173,6 +173,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #innerWrapper {
   background-color: white;
   padding: 5px;
+  padding-right: 0px;
   min-height: 500px; }
   #innerWrapper h1, #innerWrapper h2 {
     font-size: 1.5em;
@@ -457,6 +458,7 @@ li.menu.item {
   padding: 5px;
   height: 17px;
   margin: -5px;
+  margin-right: 0;
   font-family: 'CicleFina';
   background-color: #f1ffcb; }
   .prev-next-nav:first-child {
@@ -661,6 +663,9 @@ h2 .meta, h3 .meta {
   float: right;
   margin: 0 10px 0 0;
   font-size: 0.625em; }
+
+h2 .meta {
+  margin-right: 50px; }
 
 .meta, .tags, .post-edit-link {
   font-family: consolas, monospace;

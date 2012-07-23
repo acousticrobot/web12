@@ -21,9 +21,9 @@ if (get_post_meta($post->ID, 'link', true ) != '') {
   
 <h2>
 	<?php if ($link_title) { ?>
-		<h3><a href="<?php echo $link; ?>"><?php the_title(); ?></a></h3>
+		<a href="<?php echo $link; ?>"><?php the_title(); ?></a>
 	<?php } else { ?>
-		<h2><?php the_title(); ?></h2>
+		<?php the_title(); ?>
 	<?php } ?>
 
 	<?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?>
