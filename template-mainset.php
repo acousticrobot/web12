@@ -2,7 +2,7 @@
 /*
 *   Template Name: Main Set	
 *    
-*	Description: Template for main level directory pages
+*	Description: Template for main level directory pages, and all pages under learn
 *
 * 	CALLED BY: projects, design, learn, links, contact
 *	note: template-archive impersonates the mainset for style, but has it's own logic

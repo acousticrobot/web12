@@ -77,7 +77,7 @@
 //------------------ COMMENT HACK ------------------------------------------------//	
 
 $comment_args = array(
-'comment_notes_after' => '<p class="form-allowed-tags">Add HTML attributes--<a href="/comments-and-html-tag-attributes">more info here</a>.</p>',
+'comment_notes_after' => '<p class="form-allowed-tags">Add HTML attributes--<a href="/using-html-in-comments">more info here</a>.</p>',
 );
 
 
