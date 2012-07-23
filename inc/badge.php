@@ -35,10 +35,10 @@
 			$link = "students/art125";
 			$class = 'art125';
 			break;
-		case 'dma105':
-		case 'homework dma105':
-			$link = "students/dma105";
-			$class = 'dma105';
+		case 'dma':
+		case 'homework dma':
+			$link = "students/dma";
+			$class = 'dma';
 			break;
 		case 'general':
 			$link = "archive";

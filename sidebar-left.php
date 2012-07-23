@@ -30,7 +30,7 @@
 		<?php $featured = array("home" 	=> "",
 								"t47"	=> "projects/T47",
 								"art125"=> "learn/Art125",
-								"dma105"=> "learn/Dma",
+								"dma"=> "learn/Dma",
 								"artworks" => "artworks"
 								); ?>
 

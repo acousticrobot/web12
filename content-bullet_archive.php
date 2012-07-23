@@ -21,7 +21,7 @@
 		$post_type_title = " - artwork page";
 	} elseif ($type == "post") {
 		$post_type_title = " - blog entry";
-	} else if ($cat == "mainset"){
+	} else if ($catdma == "mainset"){
 		$post_type_title = "";
 	} else {
 		$post_type_title = $cat;

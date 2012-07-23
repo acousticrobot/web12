@@ -57,8 +57,8 @@ article.archive.page:hover {
     &.artworks {
         background-image: url('/images/nav/seal-artworks.png');        
     }
-    &.dma105 {
-        background-image: url('/images/nav/seal-dma105.png');
+    &.dma {
+        background-image: url('/images/nav/seal-dma.png');
     }
     &.art125 {
         background-image: url('/images/nav/seal-art125.png');
@@ -102,43 +102,43 @@ link-list ul.index a:hover, ul.children ul.children a:hover {
 	overflow: hidden;
 }
 
-.dma105 .course-seal {
-	background-image: url(/images/nav/seal-dma105.png);
-}
+//.dma .course-seal {
+//	background-image: url(/images/nav/seal-dma.png);
+//}
+//
+//.art125 .course-seal {
+//	background-image: url(/images/nav/seal-art125.png);
+//}
 
-.art125 .course-seal {
-	background-image: url(/images/nav/seal-art125.png);
-}
-
-.course-seal {
-	width: 55px;
-	height: 55px;
-	float: left;
-	background-repeat: no-repeat;
-}
-.courseHover {
-	background-color: $blue7;
-}
-
-.dma105 .courseHover {
-	background-color: $crimson;
-}
-
-.art125 .courseHover {
-	background-color: $blue4;
-}
-
-#innerWrapper .courseHover a {
-	color: $brownge2;
-}
-
-.courseHover .course-seal {
-	background-position: 0 -100px ;	
-}
-
-.courseHover .course-seal {
-	background-position: 0 -100px ;	
-}
+//.course-seal {
+//	width: 55px;
+//	height: 55px;
+//	float: left;
+//	background-repeat: no-repeat;
+//}
+//.courseHover {
+//	background-color: $blue7;
+//}
+//
+//.dma .courseHover {
+//	background-color: $crimson;
+//}
+//
+//.art125 .courseHover {
+//	background-color: $blue4;
+//}
+//
+//#innerWrapper .courseHover a {
+//	color: $brownge2;
+//}
+//
+//.courseHover .course-seal {
+//	background-position: 0 -100px ;	
+//}
+//
+//.courseHover .course-seal {
+//	background-position: 0 -100px ;	
+//}
 
 #innerWrapper .course h2 {
 	padding: 13px 0 13px 13px;

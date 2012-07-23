@@ -9,10 +9,10 @@
 
 	* 	course-keys:	post-category|title|page=ID
 
-	* 	local values:	dma105|Intro to Digital Media Arts|424, 
+	* 	local values:	dma|Intro to Digital Media Arts|424, 
 						art125|Topics in Contemporary Art|374 
 
-	* 	remote values:	dma105|Intro to Digital Media Arts|468, 
+	* 	remote values:	dma|Intro to Digital Media Arts|468, 
 						art125|Topics in Contemporary Art|374 
 	*	v1.0 				
 	*/
@@ -30,7 +30,7 @@ wp_enqueue_script('coursescript'); // big-clickable links
 		} else {
 			$courseListType = 'single';
 			$courseList[0] = $coursesCF;			
-			// ex: $courseList[0] = "dma105|Intro to Digital Media Arts|424"...
+			// ex: $courseList[0] = "dma|Intro to Digital Media Arts|424"...
 		};
 ?>
 	

@@ -123,7 +123,7 @@
 
 		elseif ($templateID != "") {
 			if ($templateID == 468) { // DMA105: local (424?) remote 468
-				return 'dma105';
+				return 'dma';
 			}
 			elseif ($templateID == 374) { // ART125: local & Remote 374
 				return 'art125';

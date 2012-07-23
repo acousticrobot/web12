@@ -45,7 +45,7 @@
   			break;
 		case 'dma': 
 		case 'homework dma'?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/dma105.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/dma.css">
 <?php
 			break;
 		case 'art125': 

@@ -1,128 +1,74 @@
-/*  
-Theme Name: Web12/ART125 color theme, Spring 2012
-Theme URI: http://jonathangabel.com
-Description: 2012 theme for jonathangabel.com/students/art125
-Author: Jonathan Gabel
-Author URI: http://jonathangabel.com
-Version: v1.1
-Tags: jonathan gabel, mainset
-notes: Stylesheet for DMA 105 Intro to Digital Media Arts
-*/
-/*  
-dma105 color theme, Spring 2012
-
-Student chosen colors:
-66ff99
-1d1f6
-780404
-19060c /black
-5b0d1a
-160e59
-00a9eb
-ed1c24
-72a74e
-7c6562
-bc5908
-349947
-91ce74
-691BE2
-*/
 /*
-*	Description: ART125 navigation styles
-*
-* 	CALLED BY: template-course --> art125.css/scss   
-*  	v 2.0	 
+Syntax error: File to import not found or unreadable: _nav-dma.scss.
+              Load paths:
+                /Users/jonathan/Sites/web.12/wp-content/themes/web12Theme/compass/sass
+                /Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/frameworks/blueprint/stylesheets
+                /Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/frameworks/compass/stylesheets
+                Compass::SpriteImporter
+        on line 34 of /Users/jonathan/Sites/web.12/wp-content/themes/web12Theme/compass/sass/dma105.scss
+
+Backtrace:
+/Users/jonathan/Sites/web.12/wp-content/themes/web12Theme/compass/sass/dma105.scss:34
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/import_node.rb:64:in `rescue in import'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/import_node.rb:42:in `import'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/import_node.rb:25:in `imported_file'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:147:in `rescue in visit_import'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:152:in `visit_import'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/tree/root_node.rb:20:in `render'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/engine.rb:300:in `_render'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/sass-3.1.10/lib/sass/engine.rb:247:in `render'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `block in modified'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block in run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/bin/compass:44:in `call'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/bin/compass:19:in `load'
+/Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/bin/compass:19:in `<main>'
 */
-header #site-head a {
-  color: #93221a; }
-  header #site-head a:hover {
-    color: #c8c2b6; }
-
-nav ul li a {
-  background-color: #bc4500;
-  color: #93221a; }
-  nav ul li a:hover {
-    background-color: #f55a00;
-    color: #c8c2b6; }
-
-#search #field {
-  background-image: url(/images/nav/search-dma105.png); }
-  #search #field:hover {
-    background-image: url(/images/nav/search-hover-dma105.png); }
-  #search #field:focus {
-    background-image: url(/images/nav/search-hover-dma105.png); }
-
-#badge {
-  background-image: url(/images/nav/badge-dma105.png); }
-
-#sidebar-left .feature {
-  background-image: url(/images/nav/rip-brownge6.png); }
-
-#menu-custom-field-side-navigation {
-  padding: 0; }
-  #menu-custom-field-side-navigation li, #menu-custom-field-side-navigation .menu-item {
-    padding: 0; }
-
-#mainSideNav {
-  background-color: #a03b00;
-  margin: 0 -1px 0 10px; }
-
-/* -------------------------	BODY & MAIN STYLES		------------------------- */
-body {
-  background: #5b0d1a; }
-
-h2, h3, h4 {
-  background-color: transparent;
-  border: none; }
-
-/* -------------------------	CONTENT WRAP 	------------------------- */
-#contentWrap {
-  background-color: #a03b00;
-  border-color: #bc4500; }
-  #contentWrap h2 {
-    color: #5B0D1A; }
-
-/* -------------------------	INNER WRAPPER	------------------------- */
-.due-date {
-  margin: 10px; }
-
-/* -------------------------	GALLERY IMAGES	------------------------- */
-.gallery-links {
-  float: left;
-  padding: 3px; }
-
-a.linkbutton {
-  display: block;
-  width: 150px;
-  height: 150px;
-  background-repeat: no-repeat; }
-
-a.linkbutton:hover {
-  background-position: 0 -200px; }
-
-#photo {
-  width: 512px;
-  height: 512px;
-  clear: both;
-  position: relative;
-  margin: auto; }
-
-#photo img {
-  position: absolute; }
-
-#gallery {
-  clear: both;
-  width: 788px;
-  margin: auto; }
-
-/* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
-footer p {
-  color: #bc4500; }
-
-footer p#breadcrumbs {
-  border-bottom: 1px solid #bc4500; }
-
-footer a {
-  color: #ff9216; }
-  footer a:hover {
-    color: #59aeff; }
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: _nav-dma.scss.\A               Load paths:\A                 /Users/jonathan/Sites/web.12/wp-content/themes/web12Theme/compass/sass\A                 /Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Users/jonathan/.rvm/gems/ruby-1.9.2-p290@rails3tutorial/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 34 of /Users/jonathan/Sites/web.12/wp-content/themes/web12Theme/compass/sass/dma105.scss"; }

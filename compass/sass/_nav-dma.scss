@@ -8,23 +8,23 @@
 header {
     #site-head { 
     	a { 
-            @include web12_hover_links(dma105,name)
+            @include web12_hover_links(dma,name)
     	}
     }
 }
 
 nav {
     ul li a {
-        @include web12_hover_links(dma105,buttons);
+        @include web12_hover_links(dma,buttons);
     }        
 }
 
 #search #field { 
-    @include web12_search_bkg(dma105)
+    @include web12_search_bkg(dma)
 }
 
 #badge {
-    background-image: url(/images/nav/badge-dma105.png);
+    background-image: url(/images/nav/badge-dma.png);
 }
 
 #sidebar-left {
