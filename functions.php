@@ -116,7 +116,7 @@
 	function web12_get_custom_id() {
 		//-> returns category slug, or templateID
 		//-> example: add to template page: $templateID = 'portfolio';
-		// used in header, inc/badge
+		// used in header, inc/badge, footer
 		
 		global $templateID;
 		if (is_home()) { return 'home'; }

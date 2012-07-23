@@ -36,7 +36,7 @@
 <?php 
 
 
-	$customID = get_custom_id();
+	$customID = web12_get_custom_id();
 	if ($customID == "lab"){
 		$scripts = list_scriptkeys();
 		echo $scripts;
