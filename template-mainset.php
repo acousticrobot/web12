@@ -20,7 +20,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 <?php get_header(); ?>
 
 <?php 
-	if ($template_ID != "mainset") {
+	if ($templateID != "mainset") {
 ?>
 <h2><?php the_title(); ?></h2>
 <?php
