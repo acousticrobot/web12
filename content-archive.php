@@ -9,7 +9,7 @@
 
 	// set the title link for design pages to the actual website
 $link = get_permalink();
-if (is_page(design)) {
+if (is_page('design')) {
 	$link = get_post_meta($post->ID, 'link', true );
 }
 
@@ -17,7 +17,7 @@ if (is_page(design)) {
 
 <article class="clear-left">
 	
-<a href=" <?php $link; ?>">
+<a href=" <?php echo $link; ?>">
 <?php 
 		if(has_post_thumbnail()) {
 			the_post_thumbnail();
