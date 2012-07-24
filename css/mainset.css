@@ -184,6 +184,12 @@ p, li {
 a {
   color: #59aeff; }
 
+.page-subtitle {
+  font-family: 'CicleFina';
+  letter-spacing: .075em;
+  padding: 5px 0 5px 13px;
+  color: #a7a097; }
+
 .design-image {
   float: left;
   margin: 15px 30px 10px 12px;

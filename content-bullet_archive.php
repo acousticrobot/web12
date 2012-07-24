@@ -13,6 +13,7 @@
 	$type = get_post_type( $post ); // artworks, page, post
 	if ($type == 'page') {
 		$cat = web12_pages_template();
+		$subtitle = get_post_meta($post->ID, 'subtitle', true);
 	} else {
 		$category = get_the_category(); // array[t47, dma105, ...]
 		$cat = $category[0]->cat_name; // main category
@@ -21,7 +22,7 @@
 		$post_type_title = " - artwork page";
 	} elseif ($type == "post") {
 		$post_type_title = " - blog entry";
-	} else if ($catdma == "mainset"){
+	} else if ($cat == "mainset"){
 		$post_type_title = "";
 	} else {
 		$post_type_title = $cat;
@@ -48,16 +49,13 @@
 		<span class="meta-title"><?php echo $post_type_title; ?></span>
 	</h3>
 
-<?php 	if (!$is_page) { ?>
+<?php 	if ($type != 'page') { ?>
 
 <span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-title.php' ); ?></span>
 
 <?php
  		} else {
-			$subtitle = get_post_meta($post->ID, 'subtitle', true);
-			if (!empty($subtitle)) {
-				echo "<h5>" . $subtitle . "</h5>";
-			}
+				echo "<div class='page-subtitle'>" . $subtitle . "</div>";
 		} 
 ?>
 

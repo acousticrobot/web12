@@ -52,6 +52,13 @@ a {
     color: $blue3;
 }
 
+.page-subtitle { 	// used on archive page
+    font-family: 'CicleFina';
+	letter-spacing: .075em;
+	padding: 5px 0 5px 13px;
+	color: $gwarm5;	
+}
+
 .design-image {
 	float: left;
 //	margin: 20px 30px 10px 0px;
