@@ -45,9 +45,9 @@
 	wp_footer(); 
 
 ?>
-	
+	<?php if (!current_user_can('manage_options')) { ?>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/googleAnalytics.js"></script>
-	
+	<?php } ?>
 </body>
 
 </html>
