@@ -41,7 +41,7 @@
 				<div class="feature">
 					<div class="seal <?php echo $feature ?>"
 							style="background-image : url('/images/nav/seal-<?php echo $feature ?>.png');">
-							<?php // clear image here to make link work ?>
+							<?php // transparent image here to make link work ?>
 						<a class="feature-tag" href="/<?php print $link ?>">
 							<img src="/images/nav/sidebar-hoverspace.png" alt="<?php $feature ?>"/>
 						</a>

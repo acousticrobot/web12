@@ -147,21 +147,24 @@
 	
 		
 		// called by template mainset, template-archive, adapt for page.php?
-		// v1 used is_subpage from http://codex.wordpress.org/Conditional_Tags
+		// (v1 used is_subpage from http://codex.wordpress.org/Conditional_Tags)
+		// All top level mainset pages get an ID of "mainset"
+		// Learn-subpage take their own slug as ID (art125, dma, ...)
+		// Learn-subpage-subpage take parent slug as ID (art125, dma, ...)
 	function web12_pages_template() {
 	    global $post;	// load details outside the loop
 
 	    if ( is_page() && $post->post_parent ) {   	// test to see if the page has a parent
-			$parent_ID = $post->post_parent;		// return the ID of the parent post
-			$parent = get_page($parent_ID);
+			$parent_ID = $post->post_parent;		// get the ID of the parent post
+			$parent = get_page($parent_ID);			// lookup the parent page and
 			$parent = $parent->post_name;			// deal with parent via slug
-			if ($parent == 'learn') {				// use slug as $template_ID
+			if ($parent == 'learn') {				// learn subpages use slug as $template_ID
 				return $post->post_name;
 			} else {
 	        	return $parent;						// use parent slug as $template_ID
 			}
 	    } else {                                   	// there is no parent so ...
-	        return 'mainset';                         	// ... the answer to the question is false
+	        return 'mainset';                         	// ... use general ID 'mainset'
 	    }
 	}
 	

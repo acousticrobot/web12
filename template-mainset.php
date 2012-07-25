@@ -5,14 +5,14 @@
 *	Description: Template for main level directory pages, and all pages under learn
 *
 * 	CALLED BY: projects, design, learn, links, contact
-*	note: template-archive impersonates the mainset for style, but has it's own logic
+*	note: ID 'mainset' is also given by template-archive, taxonomy, search, and archive
 *	TRIGGER: Set the page's template to "Main Set"
 *	CALLS TO:	HEADER, main side nav, content loop, page Query, inc/childlist,  FOOTER
 *  	v 2.0	 
 */
 
 $templateID = web12_pages_template();
-
+echo $templateID;
 $this_page_id = get_the_ID(); // get the page ID for query of subpages
 
 ?>
@@ -47,23 +47,18 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 
 	wp_reset_query();
 
-		// List top level sub-pages
-	if (true) { //}(is_page(learn) || is_page(projects)  || is_page(design)){
+	// List top level sub-pages
+	$args = web12_filter_child_pages($parent);
+	$posts_array = get_posts( $args );	
 
-		$args = web12_filter_child_pages($parent);
-		$posts_array = get_posts( $args );	
+	foreach( $posts_array as $post ) : 
+		if($post->post_parent != $this_page_id) continue;
+		
+		setup_postdata($post);
 
-		foreach( $posts_array as $post ) : 
-			if($post->post_parent != $this_page_id) continue;
-			
-			setup_postdata($post);
+		get_template_part( 'content','archive');		
 
-			get_template_part( 'content','archive');		
-
-		endforeach;
-
-
-	} // end learn / projects pages
+	endforeach;
 	wp_reset_query();
 	
  		// Links page -- list all links

@@ -30,7 +30,6 @@ $link_title = true; // need to trigger title as anchor down the line in content.
 </nav> <!-- mainSideNav -->	
 
 <?php
-if (is_page('recent')) :
 	$args = array(
 	    'numberposts'     => 10, // +1 to check for next page
 	   	'offset'          => 0,
@@ -70,12 +69,6 @@ foreach( $posts_array as $post ) : setup_postdata($post);
 endforeach;
 
 wp_reset_query(); // needed for breadcrumbs to work
-
-else:
-	
-get_template_part( 'loop');
-
-endif;
 
 ?>
 </div> <!-- innerWrapper  -->
