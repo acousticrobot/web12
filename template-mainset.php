@@ -12,7 +12,6 @@
 */
 
 $templateID = web12_pages_template();
-echo $templateID;
 $this_page_id = get_the_ID(); // get the page ID for query of subpages
 
 ?>

@@ -40,11 +40,12 @@ if (is_page('design')) {
 	} else {
 		the_excerpt(); 	
 	}
-?>
 
+?>
 	<span class ="archive-date"><?php include (TEMPLATEPATH . '/inc/meta-links.php' ); ?></span>
 
-	<?php edit_post_link('Edit this excerpt','',''); ?>
+<?php 
+	edit_post_link('Edit this excerpt','',''); ?>
 
 	<div class="clear-left"></div>
 </article>

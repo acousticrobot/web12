@@ -8,43 +8,37 @@
 *  	v 2.0	 
 */
 
-	$templateID = 'mainset';
+$templateID = 'mainset';
+global $custom_title;
+$post_type = get_post_type();
+$post_object = get_post_type_object($post_type);
+if (have_posts()) {
+	$count = count($posts);
+	if ($count == 1) {
+		$count = 'one ' . $post_object->labels->singular_name;
+	} else {
+		$count .= ' ' . $post_object->labels->name;
+	}
+}
 
-	$taxonomy = get_query_var( 'taxonomy' );
-	$term = get_term_by( 'slug', get_query_var( 'term' ), $taxonomy );
+$taxonomy = get_query_var( 'taxonomy' );
+$term = get_term_by( 'slug', get_query_var( 'term' ), $taxonomy );
 
-	// build pretty search terms, ex: "Entries with Media: Ink on Paper"
-	$search_terms = "Entries ";
-	if ($taxonomy == 'year_made') {
-		$search_terms .= 'From the Year' ;
-	} else $search_terms .= 'with ' . $taxonomy;
-	$search_terms .= ": " . $term->name;
+// build pretty search terms, ex: "Entries with Media: Ink on Paper"
+$terms = $post_type;
+if ($taxonomy == 'year_made') {
+	$terms .= ' From the Year' ;
+} else {
+	$terms .= ' with ' . $taxonomy;	
+}
+$custom_title = $terms . ' <span class="search-terms">&lsquo;' . $term->name . '&rsquo;</span> &mdash; ' . $count;
 ?>
 
-<?php  	get_header(); ?>
+<?php  	
 
-<h2><?php echo $search_terms ?></h2>		
+	get_header();
+	get_template_part( 'loop', 'archive'); 
+	get_footer(); 
 
-<nav id="mainSideNav">
-	<?php wp_nav_menu(array('menu' => 'Main Side Navigation'))?>
-</nav> <!-- mainSideNav -->	
-
-<div id="innerWrapper">	
-
-<?php 	
-	if (have_posts()) :  
-
-	 	get_template_part( 'loop', 'archive'); 
-
-	else :  // does not have posts ?>
-
-<h3>No posts found.</h3>
-					
-<?php 
-	endif; 
 ?>
-
-</div>  <!-- innerWrapper  -->
-
-<?php get_footer(); ?>
 

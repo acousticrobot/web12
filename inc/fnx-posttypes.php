@@ -12,7 +12,7 @@ add_action('init', 'artwork_init');
 function artwork_init() 
 {
 	$artwork_labels = array(
-		'name' => _x('artwork', 'post type general name'),
+		'name' => _x('artworks', 'post type general name'),
 		'singular_name' => _x('artwork', 'post type singular name'),
 		'all_items' => __('All Artworks'),
 		'add_new' => _x('Add New Artwork', 'artwork'),
