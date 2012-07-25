@@ -20,6 +20,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 <?php get_header(); ?>
 
 <?php 
+		// top level pages titlebar is empty, subpages have a visible title
 	if ($templateID != "mainset") {
 ?>
 <h2><?php the_title(); ?></h2>
@@ -49,7 +50,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 		// List top level sub-pages
 	if (true) { //}(is_page(learn) || is_page(projects)  || is_page(design)){
 
-		$args = w12_filter_child_pages($parent);
+		$args = web12_filter_child_pages($parent);
 		$posts_array = get_posts( $args );	
 
 		foreach( $posts_array as $post ) : 

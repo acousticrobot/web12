@@ -30,7 +30,7 @@ if (!is_admin()) { // admin having problems saving with this filter
 // see README for full arguments possible
 
 	// Used by carousel
-function w12_filter_exclude_status() { //exclude 'status' type posts from the query
+function web12_filter_exclude_status() { //exclude 'status' type posts from the query
 	$args = array(
 		'tax_query' => array(
 			array(
@@ -45,7 +45,7 @@ function w12_filter_exclude_status() { //exclude 'status' type posts from the qu
 }
 
 	// Used in Loop-Status.php 
-function w12_filter_status_posts() { // only use status posts in the query
+function web12_filter_status_posts() { // only use status posts in the query
 	$args = array( 
 		'tax_query' => array(
 			array(
@@ -61,7 +61,7 @@ function w12_filter_status_posts() { // only use status posts in the query
 
 
 // Used in //from-need to move-// Archive-template
-function w12_filter_combine_taxonomies_with_pagination() { // only use status posts in the query
+function web12_filter_combine_taxonomies_with_pagination() { // only use status posts in the query
 	$args = array(
 	    'numberposts'     => $np + 1, // +1 to check for next page
 	   	'offset'          => $off,
@@ -74,7 +74,7 @@ function w12_filter_combine_taxonomies_with_pagination() { // only use status po
 }
 
 // Reference: See real one on Archive-template
-function w12_filter_archive_page() { // only use status posts in the query
+function web12_filter_archive_page() { // only use status posts in the query
 	$args = array(
 	    'numberposts'     => 20, // +1 to check for next page
 	   	'offset'          => $off,
@@ -88,7 +88,7 @@ function w12_filter_archive_page() { // only use status posts in the query
 
 	// returns all subpages or parent
 	// called by template-mainset
-function w12_filter_child_pages($parent) {
+function web12_filter_child_pages($parent) {
 	$args = array(
 	    'numberposts'     => -1,
 	    'offset'          => 0,

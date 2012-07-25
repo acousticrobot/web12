@@ -8,7 +8,7 @@
 
 <?php 
 
-	$set = w12_filter_status_posts(); 
+	$set = web12_filter_status_posts(); 
 	
  	$loop = new WP_Query( $set );
 
