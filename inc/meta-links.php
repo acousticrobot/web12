@@ -16,9 +16,12 @@
 */
 $post_type = get_post_type();
 
+if ($post_type != 'page') :
+
 ?>
 <div class="tags">
 <?php
+
 
 $category = get_the_category(); 
 
@@ -54,5 +57,9 @@ the_tags( ' Tags: ', '&bull;', '');
 ?>
 </div>  <!-- tags  -->
 
+<?php
+endif; // not page
+
+?>
 
 

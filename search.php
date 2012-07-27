@@ -10,8 +10,10 @@ $templateID = 'mainset'; // "search"; // --> alternate styling
 global $custom_title;
 
 // build pretty search terms, ex: "SEARCH RESULT FOR PAPER — 5 ARTICLES"
+
 $allsearch = new WP_Query("s=$s&showposts=-1"); 
-$key = wp_specialchars($s, 1); 
+$key = get_search_query();
+
 $count = $allsearch->post_count;
 if ($count == 1) {
 	$count = 'one article';
@@ -19,6 +21,9 @@ if ($count == 1) {
 	$count .= ' articles';
 }
 wp_reset_query();
+
+
+
 
 $search_terms = '<span class="search-terms">&lsquo;' . $key . '&rsquo;</span> &mdash; ' . $count;
 $custom_title = 'Search Result for ' . $search_terms;

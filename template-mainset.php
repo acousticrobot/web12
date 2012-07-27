@@ -47,7 +47,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 	wp_reset_query();
 
 	// List top level sub-pages
-	$args = web12_filter_child_pages($parent);
+	$args = web12_filter_child_pages($this_page_id);
 	$posts_array = get_posts( $args );	
 
 	foreach( $posts_array as $post ) : 
@@ -61,7 +61,7 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 	wp_reset_query();
 	
  		// Links page -- list all links
-	if (is_page(links)) {
+	if (is_page('links')) {
 				echo '<div class="link-list">';
 				wp_list_bookmarks("show_description=1&title_before=<h3>&title_after=</h3>");
 				echo '</div>';

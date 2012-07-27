@@ -1,38 +1,40 @@
 <?php
-		
-	// Load jQuery and javascripts
-	if ( !is_admin() ) {
-		wp_deregister_script('jquery');
-		wp_register_script(
-		'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"), false);
-		wp_enqueue_script('jquery');
+	function web12_register_scripts() {
+		// Load jQuery and javascripts
+		if ( !is_admin() ) {
+			wp_deregister_script('jquery');
+			wp_register_script(
+			'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"), false);
+			wp_enqueue_script('jquery');
 
-		wp_register_script(
-			'hoverIntent', get_bloginfo('template_directory') ."/js/jquery.hoverIntent.js");
-		wp_register_script(
-			'superfish', get_bloginfo('template_directory') . "/js/jquery.superfish.js");
-		wp_register_script(
-			't47script', get_bloginfo('template_directory') . "/js/t47.js");	
-		wp_register_script(
-			'mousewheel', get_bloginfo('template_directory') . "/js/jquery.mousewheel.js");
-		wp_register_script(
-			'jscrollpane', get_bloginfo('template_directory') . 	
-			"/js/jquery.jscrollpane.js");							
-		wp_register_script(
-			'homescript', get_bloginfo('template_directory') . "/js/homescript.js");							
-		wp_register_script(
-			'coursescript', get_bloginfo('template_directory') . "/js/coursescript.js");
-		wp_register_script(
-			'gallery', get_bloginfo('template_directory') . "/js/gallery.js");
-		wp_register_script(
-			'paper', get_bloginfo('template_directory') . "/js/paper.js");
-		wp_register_script(
-			'flypaper', get_bloginfo('template_directory') . "/js/flypaper.js");
-		wp_register_script(
-			'raphael', get_bloginfo('template_directory') . "/js/raphael.js");	
-		wp_register_script(
-			'fx', get_bloginfo('template_directory') . "/js/fx.js");				
+			wp_register_script(
+				'hoverIntent', get_bloginfo('template_directory') ."/js/jquery.hoverIntent.js");
+			wp_register_script(
+				'superfish', get_bloginfo('template_directory') . "/js/jquery.superfish.js");
+			wp_register_script(
+				't47script', get_bloginfo('template_directory') . "/js/t47.js");	
+			wp_register_script(
+				'mousewheel', get_bloginfo('template_directory') . "/js/jquery.mousewheel.js");
+			wp_register_script(
+				'jscrollpane', get_bloginfo('template_directory') . 	
+				"/js/jquery.jscrollpane.js");							
+			wp_register_script(
+				'homescript', get_bloginfo('template_directory') . "/js/homescript.js");							
+			wp_register_script(
+				'coursescript', get_bloginfo('template_directory') . "/js/coursescript.js");
+			wp_register_script(
+				'gallery', get_bloginfo('template_directory') . "/js/gallery.js");
+			wp_register_script(
+				'paper', get_bloginfo('template_directory') . "/js/paper.js");
+			wp_register_script(
+				'flypaper', get_bloginfo('template_directory') . "/js/flypaper.js");
+			wp_register_script(
+				'raphael', get_bloginfo('template_directory') . "/js/raphael.js");	
+			wp_register_script(
+				'fx', get_bloginfo('template_directory') . "/js/fx.js");				
+		}
 	}
+	add_action('init', 'web12_register_scripts');
 	
 		// Clean up the <head>
 	function removeHeadLinks() {

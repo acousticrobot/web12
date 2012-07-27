@@ -35,7 +35,7 @@ if (is_page('design')) {
 </h3>
 	
 <?php 
-	if (is_page(design)){
+	if (is_page('design')){
 		the_content();
 	} else {
 		the_excerpt(); 	
