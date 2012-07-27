@@ -119,6 +119,9 @@ notes: home-page only elements. Home page also loads mainset.css
             	line-height: 15px;
             }	
         }
+		article.artworks {
+        	background-image: url(/images/nav/slide-artworks.png);	
+		}
         article.art125 {
         	background-image: url(/images/nav/slide-art125.png);	
         }

@@ -13,14 +13,16 @@
 <?php 
 if (have_posts()) : while (have_posts()) : the_post(); 
 		
-	if ( !has_post_format( 'status')) : 	
+	if ( !has_post_format( 'status')) :
+		 
+		$type = get_post_type( $post );	
 ?>
 		
 <li class="slide" id="post-<?php the_ID(); ?>">
 
 		<?php $category = get_the_category(); ?>
 
-	<article class="<?php echo $category[0]->slug; ?>">
+	<article class="<?php echo $type . ' ' . $category[0]->slug; ?>">
 	
 		<h4><?php the_time('F jS, Y') ?></h4>
 	

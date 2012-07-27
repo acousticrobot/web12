@@ -186,6 +186,8 @@ nav#mainSideNav nav#mainSideNav {
       #carousel .slide article p {
         padding: 0 13px 0 8px;
         line-height: 15px; }
+    #carousel .slide article.artworks {
+      background-image: url(/images/nav/slide-artworks.png); }
     #carousel .slide article.art125 {
       background-image: url(/images/nav/slide-art125.png); }
     #carousel .slide article.dma {
