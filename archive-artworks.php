@@ -14,11 +14,11 @@ get_header();
 
 ?>
 
-<h2>Artworks: </h2>
+<h2>List of Artworks: </h2>
 
 <div id="innerWrapper">	
 
-<?php get_template_part('loop','artworks');	?>
+<?php get_template_part('loop','archive');	?>
 
 </div>  <!-- innerWrapper  -->
 	

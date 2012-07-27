@@ -48,8 +48,7 @@ nav ul li a {
     padding: 0; }
 
 #mainSideNav {
-  background-color: #eeeeee;
-  margin: 0 -1px 0 10px; }
+  background-color: #f7f7f7; }
 
 .prev-next-nav {
   background-color: transparent; }
@@ -67,14 +66,12 @@ body {
   color: #847f77;
   background: #f7f7f7; }
 
-#contentWrap {
-  border: none; }
-  #contentWrap h2, #contentWrap h3, #contentWrap h4 {
-    color: #847f77;
-    background-color: transparent; }
+#contentWrap h2, #contentWrap h3, #contentWrap h4 {
+  color: #847f77;
+  background-color: transparent; }
 
-#innerWrapper h3, #innerWrapper h4 {
-  border: none; }
+#innerWrapper h3 {
+  border-top: 1px solid #e4ddd0; }
 
 a {
   color: #789cae; }
@@ -87,12 +84,10 @@ a:hover {
 
 #contentWrap {
   background-color: #FFFFFF;
-  border: none;
-  padding: 3px; }
+  border: none; }
 
 #innerWrapper {
-  background-color: #FFFFFF;
-  border: none; }
+  background-color: #FFFFFF; }
 
 /* gallery styles */
 .gallery-links {

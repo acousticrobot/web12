@@ -18,7 +18,7 @@ body {
 }
 
 #contentWrap {
-	border: none;
+//	border: none;
     h2, h3, h4 {
     	color: $gwarm6;
     	background-color: transparent;
@@ -26,8 +26,9 @@ body {
 }
 
 
-#innerWrapper h3, #innerWrapper h4 {
-	border: none;
+#innerWrapper h3  {
+    border-top: 1px solid $gwarm2;
+//	margin: 5px;
 }
 
 a { color: $greysteal;}
@@ -41,13 +42,13 @@ a:hover { color: $blue2}
 #contentWrap {
 	background-color: #FFFFFF; 
 	border: none;
-	padding: 3px;
+//	padding: 3px;
 }
 
 
 #innerWrapper {	
 	background-color: #FFFFFF;
-	border: none;
+//	border: none;
 }
 
 	/* gallery styles */
