@@ -8,9 +8,9 @@
 *  	v 2.0	 
 */
 
-$templateID = 'mainset';
 global $custom_title;
 $post_type = get_post_type();
+$templateID = $post_type;
 $post_object = get_post_type_object($post_type);
 if (have_posts()) {
 	$count = count($posts);

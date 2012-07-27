@@ -35,11 +35,11 @@
 	padding: 3px;
 }
 
-#contentWrap.mainset {
+#contentWrap.mainset, #contentWrap.artworks {
 	padding-top: 29px;
 }
 
-#contentWrap.mainset h2 {
+#contentWrap.mainset h2, contentWrap.artworks h2 {
 	margin-top: -29px;
 }
 

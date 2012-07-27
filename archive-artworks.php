@@ -9,12 +9,12 @@
 *  	v 2.0	 
 */
 $templateID = 'artworks';
-
+global $custom_title;
+$custom_title = "List of Artworks:";
 get_header(); 
 ?>
 
 
-<h2>List of Artworks: </h2>
 
 <div id="innerWrapper">	
 
