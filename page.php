@@ -2,7 +2,7 @@
 /*
 *	Description: Main Template for pages set to default template
 * 	CALLED BY: 	Single pages
-*	CALLS TO:	HEADER, main side nav, loop, inc/mainsetContent, inc/childlist,  FOOTER
+*	CALLS TO:	HEADER, loop,  FOOTER
 *  	v 2.0
 */
 	
