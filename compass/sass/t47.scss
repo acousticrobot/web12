@@ -24,33 +24,16 @@ body {
     background: $blue2; 
 }
 
-/*
-h1 a:hover { color: #E4DDD0;} 
-
-h2 { 
-	border-bottom: 3px solid $lime1;
-	padding: 4px 0 5px 3px;
-}
-*/
-
-
 h2, h3, h4 {
 	background-color: transparent;
 	clear:both;
 	color: $gwarm7;
 }
 
-p, ol.text li, ul.text li {
-	font-family: 'crimsonRoman';
-	font-size: 1em; /* 16px */
-	letter-spacing: 0.15em;
-    line-height: 1.6em;
-}
-
 p { margin: 0 30px 10px 20px;}
 
 p em, em { 
-	font-family: 'crimsonRoman';//"GarogierRegular", "Bookman Old Style", "Book Antiqua", Garamond, serif;
+	font-family: 'crimsonRoman';
 	color: #847F77;
 }
 
