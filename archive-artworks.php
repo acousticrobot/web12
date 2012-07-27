@@ -5,14 +5,14 @@
 * 	CALLED BY: 	url to /artworks 
 *	TRIGGER: 	url for custom type 'artworks' querries artworks custom post type
 *	CALLS TO:	HEADER, loop-artworks, FOOTER
-*	TODO: Once there are too many artworks?
+*	TODO: Once there are too many artworks will need pagination similar to archive
 *  	v 2.0	 
 */
 $templateID = 'artworks';
 
 get_header(); 
-
 ?>
+
 
 <h2>List of Artworks: </h2>
 

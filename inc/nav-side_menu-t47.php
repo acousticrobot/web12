@@ -32,6 +32,6 @@ but also needs hoverIntent or superfish.
 			<li><a href="<?php echo ABSPATH . "/projects/t47/dictionaries/drawing_steps"?>">drawing</a></li>
 		</ul>
 	</li>               
-	<li><a href="<?php echo ABSPATH . "/projects/t47/gallery"?>">gallery</a></li>
+	<li><a href="<?php echo ABSPATH . "/projects/t47/gallery"?>">examples</a></li>
 	<li><a href="<?php echo ABSPATH . "/projects/t47/t47-links"?>">links</a></li>
 </ul>
