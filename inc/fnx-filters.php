@@ -105,7 +105,9 @@ function web12_filter_child_pages($parent) {
 		return $args;
 }
 
-
+function web12_filter_posts_from_artworks($type) {
+	// enter filter here...
+}
 
 
 
