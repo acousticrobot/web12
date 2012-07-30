@@ -87,7 +87,7 @@ function web12_filter_archive_page() { // only use status posts in the query
 }
 
 	// returns all subpages or parent
-	// called by template-mainset
+	// called by template-mainset, template-projects
 function web12_filter_child_pages($parent) {
 	$args = array(
 	    'numberposts'     => -1,
@@ -98,15 +98,20 @@ function web12_filter_child_pages($parent) {
 	//    'exclude'         => ,
 	//    'meta_key'        => ,
 	//    'meta_value'      => ,
-	    'post_type'       => array('page'),
+	    'post_type'       => 'page',
 	//    'post_mime_type'  => ,
 	   	'post_parent'     => $parent,
 	    'post_status'     => 'publish' );	
 		return $args;
 }
 
-function web12_filter_posts_from_artworks($type) {
-	// enter filter here...
+
+function web12_filter_posts_from_artworks($category,$type) {
+	$args = array(
+	    'numberposts'     => -1,
+	   'category'        => $category,
+	    'post_type'       => array($type) );
+	return $args;
 }
 
 

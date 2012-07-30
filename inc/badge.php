@@ -24,7 +24,7 @@
 			break;
 		case 'artworks':
 			$class = 'artworks';
-			$link = $badge;
+			$link = 'artworks/';
 			break;
 		case 't47':
 			$link = "projects/t47";

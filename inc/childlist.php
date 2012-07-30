@@ -3,7 +3,7 @@
 *	Description: Lists all child pages
 *
 *	CALLED BY: 	template-mainset: projects, t47
-*	TRIGGER: 	custom field
+*	TRIGGER: 	custom field "is_index_page"
 *	CALLS TO:	wp_list_pages
 *  	v 2.0	 
 */

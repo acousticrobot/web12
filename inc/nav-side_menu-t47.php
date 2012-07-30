@@ -3,7 +3,7 @@
 
 it may be possible to create an auto menu with: wp_nav_menu(array('menu' => 'T47 Side Navigation'))
 but also needs hoverIntent or superfish.
-
+also see http://codex.wordpress.org/Template_Tags/wp_list_pages#List_Sub-Pages
 	called by template-T47.php
 	v1.0
 */
