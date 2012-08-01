@@ -21,7 +21,6 @@ body {
 
 h2, h3, h4 {
   background-color: transparent;
-  clear: both;
   color: #56534e; }
 
 p {
@@ -40,17 +39,18 @@ ol.text li, ul.text li {
 a {
   color: #4383bf; }
 
+/* -------------------------	LESSONS STYLES------------------------ */
+#contentWrap #lessons p {
+  clear: left; }
+#contentWrap #lessons h3 {
+  float: left; }
+
 /* -------------------------	CONTENT WRAP ------------------------- */
 #contentWrap {
   background-repeat: repeat-y;
   background-color: #fffff0;
   border: 2px solid #ffdb77;
   padding-bottom: 0; }
-  #contentWrap h3 {
-    float: left; }
-  #contentWrap p {
-    clear: left;
-    padding-right: 120px; }
 
 /* -------------------------	INNER WRAPPER	------------------------- */
 #intro h3 {
@@ -59,22 +59,25 @@ a {
 #intro p {
   clear: left; }
 
-#innerWrapper {
+#innerWrapper h2, #innerWrapper h3 {
+  border: none; }
+
+#lessons #innerWrapper {
   clear: both;
   background-color: #FFF;
   padding: 10px 0 0 99px;
   border: 1px solid #d9ffa0; }
-  #innerWrapper h2, #innerWrapper h3 {
-    margin-left: -80px; }
-  #innerWrapper h3, #innerWrapper h4 {
+  #lessons #innerWrapper h2, #lessons #innerWrapper h3 {
+    margin-left: -80px;
+    clear: both; }
+  #lessons #innerWrapper h3, #lessons #innerWrapper h4 {
     text-transform: none;
     border: none; }
-  #innerWrapper h4 {
+  #lessons #innerWrapper h4 {
     margin-left: -40px;
-    padding-top: 10px; }
-  #innerWrapper p {
-    margin-left: 0; }
-  #innerWrapper ul, #innerWrapper ol, #innerWrapper li {
+    padding-top: 10px;
+    clear: both; }
+  #lessons #innerWrapper ul, #lessons #innerWrapper ol, #lessons #innerWrapper li {
     font-size: 1em;
     /* 16 px */
     padding: 0; }
@@ -97,10 +100,6 @@ a {
   width: 80px;
   padding: 0 1px; }
 
-.clear {
-  clear: both; }
-
-/* clear the side menu */
 #innerWrapper .pictureBlock p {
   font-family: Consolas,'Lucida Console','DejaVu Sans Mono',monospace;
   color: #847F77;

@@ -26,7 +26,7 @@ body {
 
 h2, h3, h4 {
 	background-color: transparent;
-	clear:both;
+//	clear:both;
 	color: $gwarm7;
 }
 
@@ -43,6 +43,19 @@ ol.text li, ul.text li {margin: 0 100px 5px 60px;}
 
 a { color: $blue4; }
 
+/* -------------------------	LESSONS STYLES------------------------ */
+
+#contentWrap #lessons {
+	p {
+	    clear: left;
+//	    padding-right: 120px;
+	}
+    // if intro paragraph has both h2 and h3 float left of sidemenu */
+	h3 {
+	    float: left;
+	}
+}
+
 
 /* -------------------------	CONTENT WRAP ------------------------- */
 
@@ -51,14 +64,6 @@ a { color: $blue4; }
 	background-color: $page-white; 
 	border: 2px solid $brownge1;
 	padding-bottom: 0;
-    // if intro paragraph has both h2 and h3 float left of sidemenu */
-	h3 {
-	    float: left;
-	}
-	p {
-	    clear: left;
-	    padding-right: 120px;
-	}
 }
 
 
@@ -68,13 +73,20 @@ a { color: $blue4; }
 
 #intro p { clear: left; }
 
-#innerWrapper {	
+#innerWrapper {
+	h2, h3 {
+		border: none;
+	}
+}
+
+#lessons #innerWrapper {
 	clear: both;
 	background-color: #FFF;
-	padding: 10px 0 0 99px;															
+	padding: 10px 0 0 99px;
 	border: 1px solid $lime1;
 	h2, h3 {
-	   margin-left: -80px; 
+		margin-left: -80px; 
+		clear: both;
 	}
 	h3, h4 {
     	text-transform: none;
@@ -83,9 +95,10 @@ a { color: $blue4; }
 	h4 {
     	margin-left: -40px; 
     	padding-top: 10px;
+		clear: both;
 	}
 	p { 
-    	margin-left: 0; 
+//    	margin-left: 0; 
     }
     ul, ol, li {
 		font-size: 1em; /* 16 px */
@@ -115,7 +128,7 @@ a { color: $blue4; }
 	padding: 0 1px;
 }
 
-.clear {clear: both; }	/* clear the side menu */
+// .clear {clear: both; }	/* clear the side menu */
 
 #innerWrapper .pictureBlock p{
 	font-family: Consolas,'Lucida Console','DejaVu Sans Mono',monospace;

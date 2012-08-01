@@ -1,6 +1,6 @@
 <?php
 	/*
-	*   Template Name: T47 Pages	
+	*   Template Name: T47 lessons Pages	
 	* 	uses custom fields: subtitle, intro_p, prvnxt-keys
 	* 
 	*	v1.5
@@ -11,7 +11,9 @@
 ?>
 
 <?php get_header(); the_post();?>
-		
+
+<div id="lessons">		
+
 <h2><?php the_title(); ?></h2>
 
 <?php
@@ -75,6 +77,8 @@
 			</ul>
 		</div>
 <?php ENDIF; ?>
+
+</div> <!-- lesson -->
 
 <?php get_footer(); ?>
 

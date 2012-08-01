@@ -11,18 +11,14 @@
 */
 
 global $post;
-$templateID = "projects";
-$post_ID = $post->post_name;
-$cat_ID = get_cat_ID( $post_ID );
+$templateID = "default";
+$project_name = $post->post_name;
+if ($project_name == 't47') {
+	$templateID = $project_name;
+}
+$cat_ID = get_cat_ID( $project_name );
 
 
-// get list of pages under 'learn'
-$learn_args = 'pagename=learn/'.$post_ID;
-$learn = new WP_Query($learn_args);
-if ($learn->have_posts()) : $learn->the_post(); 
-$learn_list = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
-endif;
-wp_reset_query();
 
 
 
@@ -37,43 +33,69 @@ get_header();
 
 <h2><?php the_title(); ?></h2>
 
-
-<div id="innerWrapper">
-<h3>Lessons:</h3>
-
-<ul class="sf-menu sf-vertical">  <!-- hover intent styles -->
+<?php 
+	if ($templateID == 'mainset') {
+?>
+	<nav id="mainSideNav"><?php wp_nav_menu(array('menu' => 'Main Side Navigation')); ?></nav>
 <?php
+	} elseif ($templateID == 't47') {
+?>
+	<nav id="sideMenu">
+		<?php include (TEMPLATEPATH . '/inc/nav-side_menu-t47.php' ); ?>
+	</nav>
+<?php
+	} 
+?>
 
-echo $learn_list;
+<?php
+if (have_posts()) : while (have_posts()) : the_post();
+	the_content();
+endwhile; endif;
 
-the_content();
+?>
+<div id="innerWrapper">
 
 
+<ul>  <!-- hover intent styles -->
+<?php
+// get list of pages under 'learn'
+$learn_args = 'pagename=learn/'.$project_name;
+$learn = new WP_Query($learn_args);
+if ($learn->have_posts()) : $learn->the_post(); 
+?>
+	<h3><a href="/learn/<?php echo $project_name ?>">Lessons</a></h3>
+<?php
+	$learn_list = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+	echo $learn_list;
+endif;
+wp_reset_query();
 ?>
 </ul>
 
-<h3>Artworks:</h3>
+
 <?php
 $artworks_args = web12_filter_posts_from_artworks($cat_ID,'artworks');
 $posts_array = get_posts( $artworks_args );
-foreach( $posts_array as $post ) : setup_postdata($post);
-
-	get_template_part( 'content','bullet_archive');		
-
-endforeach;
+if ($posts_array) :
+	echo '<h3>Artworks:</h3>';
+	foreach( $posts_array as $post ) : setup_postdata($post);
+		get_template_part( 'content','archive');		
+	endforeach;
+endif;
 wp_reset_query();
 ?>
 
 
-<h3>Posts:</h3>
 <?php
 $posts_args = web12_filter_posts_from_artworks($cat_ID,'post');
 $posts_array = get_posts( $posts_args );
-foreach( $posts_array as $post ) : setup_postdata($post);
+if ($posts_array):
+	echo '<h3>Posts:</h3>';
+	foreach( $posts_array as $post ) : setup_postdata($post);
+		get_template_part( 'content','archive');		
+	endforeach;
 
-	get_template_part( 'content','bullet_archive');		
-
-endforeach;
+endif;
 wp_reset_query();
 ?>
 
