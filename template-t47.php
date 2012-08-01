@@ -1,6 +1,6 @@
 <?php
 	/*
-	*   Template Name: T47 lessons Pages	
+	*   Template Name: T47 Pages	
 	* 	uses custom fields: subtitle, intro_p, prvnxt-keys
 	* 
 	*	v1.5
