@@ -4,8 +4,9 @@
 	* 	uses custom fields: subtitle, intro_p, prvnxt-keys
 	* 
 	*	v1.5
-	*/
-	
+	* links categories, local: category=9,21,20 remote: 17,26,27
+	*/                         
+	                           
 	$templateID = 't47';
 	
 ?>
@@ -45,11 +46,11 @@
 ?>	
 
 <?php 
-	if (preg_match('/\/projects\/t47\/t47-links$/', get_permalink())){
+	if (preg_match('/links$/', get_permalink())){
 		echo '<div class="link-list">';
-		 wp_list_bookmarks('show_description=1&category=9&title_before=<h3>&title_after=</h3>');
-		 wp_list_bookmarks('show_description=1&category=21&title_before=<h3>&title_after=</h3>');
-		 wp_list_bookmarks('show_description=1&category=20&title_before=<h3>&title_after=</h3>');
+		 wp_list_bookmarks('show_description=1&category=17&title_before=<h3>&title_after=</h3>');
+		 wp_list_bookmarks('show_description=1&category=26&title_before=<h3>&title_after=</h3>');
+		 wp_list_bookmarks('show_description=1&category=27&title_before=<h3>&title_after=</h3>');
 		echo '</div>';
 		}?>
 	

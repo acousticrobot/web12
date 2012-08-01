@@ -208,9 +208,18 @@ a { color: $blue4; }
 
 /* ------------		generated lists of pages & links	----------------- */
 
-.link-list a{color: #89C234;}
-
-.link-list a:hover {color: $brownge2;}
+.link-list  {
+	a {
+		color: #89C234;
+		&:hover {
+			color: $brownge2;
+		}
+	}
+	li {
+		clear: both;
+		list-style: none;
+	}
+}
 
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 	

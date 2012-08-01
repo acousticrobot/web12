@@ -168,9 +168,11 @@ a {
 /* ------------		generated lists of pages & links	----------------- */
 .link-list a {
   color: #89C234; }
-
-.link-list a:hover {
-  color: #ffb444; }
+  .link-list a:hover {
+    color: #ffb444; }
+.link-list li {
+  clear: both;
+  list-style: none; }
 
 /* -------------------------	FOOTER BREADCRUMBS AND (C)	------------------------- */
 footer p {
