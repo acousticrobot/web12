@@ -1,5 +1,7 @@
 <?php
 /*
+*	DEPRECIATED: REFERENCE ONLY
+*
 *	Custom header info for lab pages
 *	adds paper.js and adds the string found in the custom field 'script'
 *
@@ -56,6 +58,7 @@
 				$script = explode('*',$keys);
 				switch ($script[0]) {
 					case 'paper':
+					case 'fly':
 						wp_enqueue_script('paper');
 						break;
 					case 'raphael':

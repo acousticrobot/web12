@@ -61,7 +61,11 @@
 	
 ?>
 	
-<?php wp_head(); // add custom scripts before this line ?>
+<?php 
+	web12_custom_scripts();
+
+	wp_head(); // add custom scripts before this line 
+?>
 	
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>

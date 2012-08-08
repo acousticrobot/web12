@@ -26,6 +26,7 @@ There a several more custom fields on my local version, but I'd like to keep the
   * is index page: used on mainset to list the pages associated with it.
   * link: used on design pages to direct the title link to the website.
   * [nav-keys][nav-keys]: custom side menu navigation button
+  * [script-keys][script-keys]: used for adding javascript to posts.
   * subtitle: Originally for the toki pona head page, this is also used on the archive page for page listings. 
 
 ### Categories
@@ -178,6 +179,20 @@ classes:
   * design-image : floating thumbs
 
 ## [S]
+
+#### script-keys
+
+*Redesigned from what was header-lab.php*
+
+LIMITATIONS: 
+  * paperscript must be loaded as a string echo, after wp_head(), has not been implemented 
+  * script and page html alignment (canvass ID etc.) handled by user
+
+FORMAT: 
+	
+	type*name1,type*name2,...
+ 
+
 
 ### Shortcode
 

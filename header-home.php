@@ -16,6 +16,7 @@
 	wp_enqueue_script('jscrollpane');
 	wp_enqueue_script('mousewheel');
 
+	wp_enqueue_script('paper');
 	wp_enqueue_script('fly');
 
 	wp_register_script(

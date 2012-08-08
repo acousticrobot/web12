@@ -1,6 +1,6 @@
 <?php
 	function web12_register_scripts() {
-		// Load jQuery and javascripts
+		# Load jQuery and javascripts
 		if ( !is_admin() ) {
 			wp_deregister_script('jquery');
 			wp_register_script(
@@ -27,7 +27,10 @@
 			wp_register_script(
 				'paper', get_bloginfo('template_directory') . "/js/paper.js");
 			wp_register_script(
-				'flypaper', get_bloginfo('template_directory') . "/js/flypaper.js");
+				'fly', 
+				get_bloginfo('template_directory') . "/js/flypaper.js",
+				array('paper')
+			);
 			wp_register_script(
 				'raphael', get_bloginfo('template_directory') . "/js/raphael.js");	
 			wp_register_script(
@@ -35,8 +38,71 @@
 		}
 	}
 	add_action('init', 'web12_register_scripts');
+
+	function web12_add_script_deps($type) {
+		# called by web12_custom_scripts for each script
+		# takes script_key first arguement and loads dependencies
+		# handles flypaper but not paperscripts
+		$deps = array();
+		switch ($type) {
+			case 'js':
+				break;
+			case 'raphael':
+				wp_enqueue_script('raphael');
+				break;
+			case 'fx':
+				wp_enqueue_script('fx');
+				break;
+			case 'fly':
+				wp_enqueue_script('paper');
+				wp_enqueue_script('fly');
+				break;
+			default:
+				# error, no such script registered...
+				break;
+		}
+	}
+
+	function web12_add_custom_scripts($script) {
+		# called by web12_custom_scripts for each script
+		# registers script, enqueues in footer to allow for dependencies
+		wp_enqueue_script(
+			$script,
+			get_blog_info('template_directory').$script.'.js',
+			array(),
+			false,
+			true
+		);
+	}
+
+		# called by web12_custom_scripts for each script
+	function web12_custom_scripts() {
+		# get script keys
+		global $post;
+		$script_list = get_post_meta($post->ID,'script_keys',true);
+		if (!empty($script_list)) {
+			# split keys
+			$keys = explode(',', $script_list);
+			foreach ($keys as $key) {
+				$a_script = explode('*',$key);
+				$type = $a_script[0];
+				$script = $a_script[1];
+				if ($script[0] == 'paper') {
+					# add paperscript function here if needed...
+				} else {
+					# handle dependencies
+					web12_add_script_deps($script[0]);
+					# register and enqueue script
+					web12_add_custom_scripts($script[1]);
+				}
+			}
+		}
+	}
 	
-		// Clean up the <head>
+	
+	
+	
+		# Clean up the <head>
 	function removeHeadLinks() {
 	   	remove_action('wp_head', 'rsd_link');
 	   	remove_action('wp_head', 'wlwmanifest_link');
@@ -45,7 +111,7 @@
 	remove_action('wp_head', 'wp_generator');
     
 
-		// dynamic sidebar from: http://justintadlock.com/archives/2010/11/08/sidebars-in-wordpress
+		# dynamic sidebar from: http:#justintadlock.com/archives/2010/11/08/sidebars-in-wordpress
 	add_action( 'widgets_init', 'my_register_sidebars' );
 
 
@@ -96,38 +162,38 @@
 	  add_theme_support( 'post-thumbnails' ); 
 	}
 			
-	function home_page_menu_args( $args ) { // add home page to menu selections
+	function home_page_menu_args( $args ) { # add home page to menu selections
 		$args['show_home'] = true;
 		return $args;
 	}
 	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 	
-		// include custom post types
+		# include custom post types
 	include_once( TEMPLATEPATH . '/inc/fnx-posttypes.php');
 
-		// add artworks to loops	
+		# add artworks to loops	
 	include_once( TEMPLATEPATH . '/inc/fnx-filters.php');
 	
-	include_once( TEMPLATEPATH . '/inc/fnx-comments.php'); // right out of 2011 theme
-		// include shortcode functions
+	include_once( TEMPLATEPATH . '/inc/fnx-comments.php'); # right out of 2011 theme
+		# include shortcode functions
 	include_once( TEMPLATEPATH . '/inc/fnx-shortcode.php');
 	
 
 
 	
 	function web12_get_custom_id() {
-		//-> returns category slug, or templateID
-		//-> example: add to template page: $templateID = 'portfolio';
-		// used in header, inc/badge, footer
+		#-> returns category slug, or templateID
+		#-> example: add to template page: $templateID = 'portfolio';
+		# used in header, inc/badge, footer
 		
 		global $templateID;
 		if (is_home()) { return 'home'; }
 
 		elseif ($templateID != "") {
-			if ($templateID == 468) { // DMA105: local (424?) remote 468
+			if ($templateID == 468) { # DMA105: local (424?) remote 468
 				return 'dma';
 			}
-			elseif ($templateID == 374) { // ART125: local & Remote 374
+			elseif ($templateID == 374) { # ART125: local & Remote 374
 				return 'art125';
 			}
 			elseif ($templateID == 'post') { 	
@@ -148,29 +214,27 @@
 	}
 	
 		
-		// called by template mainset, template-archive, adapt for page.php?
-		// (v1 used is_subpage from http://codex.wordpress.org/Conditional_Tags)
-		// All top level mainset pages get an ID of "mainset"
-		// Learn-subpage take their own slug as ID (art125, dma, ...)
-		// Learn-subpage-subpage take parent slug as ID (art125, dma, ...)
+		# called by template mainset, template-archive, adapt for page.php?
+		# (v1 used is_subpage from http:#codex.wordpress.org/Conditional_Tags)
+		# All top level mainset pages get an ID of "mainset"
+		# Learn-subpage take their own slug as ID (art125, dma, ...)
+		# Learn-subpage-subpage take parent slug as ID (art125, dma, ...)
 	function web12_pages_template() {
-	    global $post;	// load details outside the loop
+	    global $post;	# load details outside the loop
 
-	    if ( is_page() && $post->post_parent ) {   	// test to see if the page has a parent
-			$parent_ID = $post->post_parent;		// get the ID of the parent post
-			$parent = get_page($parent_ID);			// lookup the parent page and
-			$parent = $parent->post_name;			// deal with parent via slug
-			if ($parent == 'learn') {				// learn subpages use slug as $template_ID
+	    if ( is_page() && $post->post_parent ) {   	# test to see if the page has a parent
+			$parent_ID = $post->post_parent;		# get the ID of the parent post
+			$parent = get_page($parent_ID);			# lookup the parent page and
+			$parent = $parent->post_name;			# deal with parent via slug
+			if ($parent == 'learn') {				# learn subpages use slug as $template_ID
 				return $post->post_name;
 			} else {
-	        	return $parent;						// use parent slug as $template_ID
+	        	return $parent;						# use parent slug as $template_ID
 			}
-	    } else {                                   	// there is no parent so ...
-	        return 'mainset';                         	// ... use general ID 'mainset'
+	    } else {                                   	# there is no parent so ...
+	        return 'mainset';                         	# ... use general ID 'mainset'
 	    }
 	}
 	
-	
-
 	
 ?>
