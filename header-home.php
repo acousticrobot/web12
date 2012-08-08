@@ -16,8 +16,7 @@
 	wp_enqueue_script('jscrollpane');
 	wp_enqueue_script('mousewheel');
 
-	wp_enqueue_script('paper');
-	wp_enqueue_script('flypaper');
+	wp_enqueue_script('fly');
 
 	wp_register_script(
 		'bobBee', get_bloginfo('template_directory') . "/js/fly.bobBee.js");
