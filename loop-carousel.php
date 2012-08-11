@@ -27,7 +27,19 @@ if (have_posts()) : while (have_posts()) : the_post();
 		<h4><?php the_time('F jS, Y') ?></h4>
 	
 		<h2>
-			<?php echo $category[0]->cat_name; ?>
+<?php 
+	switch ($category[0]->cat_name) {
+		case 't47':
+			echo 'sitelen';
+			break;
+		case 'contemporary art':
+			echo 'visual art';
+			break;
+		default:
+			echo $category[0]->cat_name;
+			break;
+	}
+ ?>
 		</h2>
 	
 		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
