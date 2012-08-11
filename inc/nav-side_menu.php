@@ -27,12 +27,17 @@
 			$linkInfo = explode('|', $link);
 			$label = $linkInfo[0];
 			$source = $linkInfo[1]; 
+			
+			if (preg_match("/THEMEFILE#/",$source)) {
+				$themefile = explode('#',$source);
+				$source = get_bloginfo('template_directory').$themefile[1]; 
+			}
 ?>
-		<li class="menu item">
-			<a href="<?php echo $source ?>"><?php echo $label ?></a>
-		</li>
-<?php			
-		}
+<li class="menu item">
+	<a href="<?php echo $source ?>"><?php echo $label ?></a>
+</li>	
+<?php				
+		} // end foreach
 ?>
 	</ul>
 	</div>

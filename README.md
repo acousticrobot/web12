@@ -145,7 +145,7 @@ Templates can call side menus on a per-project basis, if the menu needs to be cu
 		<?php include (TEMPLATEPATH . '/inc/t47sidemenu.php' ); ?>
 	</nav>														
 
-##### Per Page or Post Side Menu [nav-keys]
+##### Per Page or Post Side Menu using nav-keys [nav-keys]
 
 Any page can have a customized side-menu navigation link.
 
