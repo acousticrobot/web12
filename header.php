@@ -52,17 +52,15 @@
 		case 'homework art125'?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/art125.css">
 <?php
-			break;
-		case 'lab':
-			include (TEMPLATEPATH . '/header-lab.php' );
-			set_scriptkeys();			
-			break;	
   		};	
 	
 ?>
 	
 <?php 
-	web12_custom_scripts();
+		// load custom scripts, except on pages with multiple posts
+	if (($customID != 'home') && ($customID != 'mainset')) {
+		web12_custom_scripts();
+	}
 
 	wp_head(); // add custom scripts before this line 
 ?>

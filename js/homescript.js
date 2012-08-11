@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 // the Prestige carousel:
 	
-	var slideSpeed = 1000;
+	var slideSpeed = 1500;
 	var target = '.slide';
 	var hoverClass = 'slideHover';
 		
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
 //  flypaper animation:
 		
-	var canvas = document.getElementById('ctx');
+	var canvas = document.getElementById('homeCanvas');
 	paper.setup(canvas);
 	fly.init({width:610,height:377});
 	fly.debug = false;

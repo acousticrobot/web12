@@ -39,6 +39,17 @@
 	}
 	add_action('init', 'web12_register_scripts');
 
+	function web12_add_paperscript($script,$list) {	
+		#not implemented, saved from header-lab
+		
+		$list .= "<script type=\"text/paperscript\" src=\"";
+		$list .= get_bloginfo('template_directory') ."/js/". $script;
+		$list .= ".js\" data-paper-canvas=\"ctx\"></script>
+	"; // line feed
+	
+		return $list;
+	}
+
 	function web12_add_script_deps($type) {
 		# called by web12_custom_scripts for each script
 		# takes script_key first arguement and loads dependencies
@@ -68,20 +79,31 @@
 		# registers script, enqueues in footer to allow for dependencies
 		wp_enqueue_script(
 			$script,
-			get_blog_info('template_directory').$script.'.js',
+			get_bloginfo('template_directory').'/js/'.$script.'.js',
 			array(),
 			false,
-			true
+			true #loaded in the footer
 		);
 	}
 
-		# called by web12_custom_scripts for each script
 	function web12_custom_scripts() {
-		# get script keys
+		#		Uses script-keys custom field to add custom scripts
+		#		script-keys: type*URL,type*URL... 	
+		#		example: fly*fly.bobBee,js*post.test
+		# 		Scripts are added from theme /js folder		 
+		#		and are appended with .js
+		#		script names should be enqueue friendly (lowercase string)
+		#		types: js (for generic),raphael,paper,fx (to add dependencies)
+		#		type fly adds paper.js and flypaper.js as dependencies
+		#		type paper (not implememnted yet) also adds scripts as text/paperscript
+		#
+		#	Called by: header.php before wp_head()
+		
+			# get script keys
 		global $post;
-		$script_list = get_post_meta($post->ID,'script_keys',true);
+		$script_list = get_post_meta($post->ID,'script-keys',true);
 		if (!empty($script_list)) {
-			# split keys
+				# split keys
 			$keys = explode(',', $script_list);
 			foreach ($keys as $key) {
 				$a_script = explode('*',$key);
@@ -90,10 +112,10 @@
 				if ($script[0] == 'paper') {
 					# add paperscript function here if needed...
 				} else {
-					# handle dependencies
-					web12_add_script_deps($script[0]);
+						# handle dependencies
+					web12_add_script_deps($type);
 					# register and enqueue script
-					web12_add_custom_scripts($script[1]);
+					web12_add_custom_scripts($script);
 				}
 			}
 		}

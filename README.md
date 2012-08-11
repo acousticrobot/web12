@@ -187,12 +187,13 @@ classes:
 LIMITATIONS: 
   * paperscript must be loaded as a string echo, after wp_head(), has not been implemented 
   * script and page html alignment (canvass ID etc.) handled by user
+  * ignored on home and mainset pages to avoid calling on multiple posts
 
 FORMAT: 
 	
 	type*name1,type*name2,...
  
-
+Custom scripts are parsed in header.php. Dependencies are enqueued in wp_head(). Custom scripts are added in wp_foot()
 
 ### Shortcode
 

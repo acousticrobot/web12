@@ -9,7 +9,6 @@
 *	-wings beat as fast as frame updates					*
 *															*/
 //--------------------- BEGIN BobBee --------------------//
-
 fly.BobBee = function(args){
 	this.version = "0.3.5.5";
 	var args = args || {};

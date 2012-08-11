@@ -33,7 +33,7 @@
 	</aside>
 		
 	<div id= "pictureblock">
-		<canvas id="ctx" ></canvas>
+		<canvas id="homeCanvas" ></canvas>
 	</div>				
 </section>
 	

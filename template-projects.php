@@ -18,15 +18,6 @@ if ($project_name == 't47') {
 }
 $cat_ID = get_cat_ID( $project_name );
 
-
-
-
-
-// get list of posts
-
-// get list of artworks
-
-
 get_header(); 
 ?>
 	
