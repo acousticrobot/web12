@@ -1,13 +1,13 @@
 "use strict"
 //--------------------- BEGIN BobBee --------------------//
-/*															*
-* 				v 0.3.5.5									*
-* A simple bug that floats up and down using fly.Bob() 		*
-* 	-draggable												*
-*	-eyes follow mouse movements							*
-*	-bob and eyeblink follow realtime (fly v0.3.5 protocol)	*
-*	-wings beat as fast as frame updates					*
-*															*/
+/*															
+* 				v 0.3.5.5									
+* A simple bug that floats up and down using fly.Bob() 		
+* 	-draggable												
+*	-eyes follow mouse movements							
+*	-bob and eyeblink follow realtime (fly v0.3.5 protocol)	
+*	-wings beat as fast as frame updates					
+*/															
 //--------------------- BEGIN BobBee --------------------//
 fly.BobBee = function(args){
 	this.version = "0.3.5.5";
