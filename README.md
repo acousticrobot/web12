@@ -20,6 +20,7 @@ Mainset are all linked back to homepage.
 
 There a several more custom fields on my local version, but I'd like to keep them all to a minimum.
 
+  * add_comments: used on mainset learn subpages, set to true to enable comments
   * course keys: students something?
   * due-date: cf used on homeworks
   * intro-p: toki pona formatting issues I think
@@ -147,7 +148,7 @@ Templates can call side menus on a per-project basis, if the menu needs to be cu
 
 ##### Per Page or Post Side Menu using nav-keys [nav-keys]
 
-Any page can have a customized side-menu navigation link.
+Any page can have a customized side-menu navigation link. Uses pipe and not asterisk to avoid looking like comments in php with directory slashes. Can also use THEMEFILE# to direct to web12 theme
 
   * In Custom Fields:
 	  * Name: nav-keys
@@ -160,6 +161,10 @@ examples:
 	slides|/documents/art125/slides-min.pdf,
 	slidelist|/documents/art125/slidelist-min.html,
 	readings|/documents/art125/readings-min.pdf
+
+*flypaper*
+
+
 
 ## [P]
 
@@ -185,6 +190,7 @@ classes:
 *Redesigned from what was header-lab.php*
 
 LIMITATIONS: 
+  
   * paperscript must be loaded as a string echo, after wp_head(), has not been implemented 
   * script and page html alignment (canvass ID etc.) handled by user
   * ignored on home and mainset pages to avoid calling on multiple posts

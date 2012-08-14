@@ -35,14 +35,19 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 ?>
 <section id="mainset-content">
 <?php 
-	if ( has_post_thumbnail() ) { 
-	  the_post_thumbnail();
-	} 
-	the_content();
+		if ( has_post_thumbnail() ) { 
+		  the_post_thumbnail();
+		} 
+		the_content();
+		
+		
+		if (get_post_meta($post->ID, 'add_comments', true ) == 'true') { 
+			comments_template();
+		}
 ?>
 </section>
 <?php
-	endif; 
+	endif; // have_posts()
 
 	wp_reset_query();
 
@@ -68,10 +73,10 @@ $this_page_id = get_the_ID(); // get the page ID for query of subpages
 	}
 			
 			
-			 // Does it have index-page as a custom field? list child pages
-		if (get_post_meta($post->ID, 'is_index_page', true ) == 'true') { 
-			 include (TEMPLATEPATH . '/inc/childlist.php' );
-		}
+		 // Does it have index-page as a custom field? list child pages
+	if (get_post_meta($post->ID, 'is_index_page', true ) == 'true') { 
+		 include (TEMPLATEPATH . '/inc/childlist.php' );
+	}
 ?>
 	</div>  <!-- innerWrapper  -->
 		
