@@ -20,7 +20,7 @@ Mainset are all linked back to homepage.
 
 There a several more custom fields on my local version, but I'd like to keep them all to a minimum.
 
-  * add_comments: used on mainset learn subpages, set to true to enable comments
+  * add_comments: used on mainset learn subpages, set to true to enable comments (note: also must allow comments on the page)
   * course keys: students something?
   * due-date: cf used on homeworks
   * intro-p: toki pona formatting issues I think
