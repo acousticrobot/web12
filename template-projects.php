@@ -2,16 +2,16 @@
 /*
 *   Template Name: Projects	
 *    
-*	Description: Template for main level project pages
+* Description: Template for main level subpages under the projects page
 *
-* 	CALLED BY: pages under projects: t47
+* CALLED BY: pages under projects: t47
 *	TRIGGER: Set the page's template to "Projects"
 *	CALLS TO:	HEADER, main side nav, content loop, page Query, inc/childlist,  FOOTER
-*  	v 2.0	 
+*  	v 2.1	 
 */
 
 global $post;
-$templateID = "default";
+$templateID = "projects";
 $project_name = $post->post_name;
 if ($project_name == 't47') {
 	$templateID = $project_name;
@@ -25,7 +25,7 @@ get_header();
 <h2><?php the_title(); ?></h2>
 
 <?php 
-	if ($templateID == 'mainset') {
+	if ($templateID == 'projects') {
 ?>
 	<nav id="mainSideNav"><?php wp_nav_menu(array('menu' => 'Main Side Navigation')); ?></nav>
 <?php

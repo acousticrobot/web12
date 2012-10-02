@@ -1,4 +1,4 @@
-[A][] [B][] [C][] [F][] [N][] [P][] [S][]
+[A][] [B][] [C][] [F][] [N][] [P][] [S][] [T][]
 ## [A]
 
 ### Archives
@@ -229,4 +229,11 @@ so this:
 produces:
 
 		/images/t29/t29.1_1_s.jpg ... /images/t29/t29.1_5_s.jpg
+
+## [T]
+
+### t-47
+
+t-47 is located in two areas, under the projects tab, which includes all posts, and under the learn tab which includes the lessons.
+
 

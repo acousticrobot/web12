@@ -16,7 +16,8 @@
 	} ?>
 	
 	<?php 
-		if (is_page_template('template-t47.php')) { 
+		$customID = web12_get_custom_id();
+		if ($customID == 't47') { 
 	 		include (TEMPLATEPATH . '/inc/copyright-t47.php' ); 
 		} else	{ 
 			echo "<p class='copy'> &copy;" . date("Y") . " "; echo bloginfo('name'); echo "</p>"; 
@@ -36,7 +37,6 @@
 <?php 
 
 
-	$customID = web12_get_custom_id();
 	if ($customID == "lab"){
 		$scripts = list_scriptkeys();
 		echo $scripts;

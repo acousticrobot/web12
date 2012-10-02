@@ -1,10 +1,10 @@
 <?php
 /*
-*   Template Name: Main Set	
+* Template Name: Main Set	
 *    
-*	Description: Template for main level directory pages, and all pages under learn
+* Description: Template for main level directory pages, and all pages under learn
 *
-* 	CALLED BY: projects, design, learn, links, contact
+* CALLED BY: projects, design, learn, links, contact (main navigation pages)
 *	note: ID 'mainset' is also given by template-archive, taxonomy, search, and archive
 *	TRIGGER: Set the page's template to "Main Set"
 *	CALLS TO:	HEADER, main side nav, content loop, page Query, inc/childlist,  FOOTER
