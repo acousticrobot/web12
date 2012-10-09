@@ -232,8 +232,19 @@ produces:
 
 ## [T]
 
-### t-47
+### t47
 
-t-47 is located in two areas, under the projects tab, which includes all posts, and under the learn tab which includes the lessons.
+t47 is collected in two areas, under the projects tab and under the learn tab. The projects page collects everything that is labeled T47: lessons, posts, and artworks.
+
+#### t47 style
+
+All t47 pages are styled via t47.css except for the artworks. The t-47 style is triggered when the body has an ID = 't47'. This happens in several ways:
+
+Lessons: template-t47.php is hardcoded $templateID = 't47'
+posts: All posts are checked for category in functions.php, and this becomes the $templateID
+projects page: template-projects.php conditionally checks for t47 as the slug.
+
+
+
 
 

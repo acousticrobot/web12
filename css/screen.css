@@ -160,7 +160,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 844px;
   min-height: 610px;
   background-color: #d9ffa0;
-  border: 2px solid #c5ff6d;
+  border: 2px solid #bfee88;
   clear: both;
   position: relative;
   float: left;
@@ -382,7 +382,7 @@ div#respond {
   div#respond p.form-allowed-tags {
     text-align: right;
     float: right;
-    color: #89c234;
+    color: #90c74e;
     padding-right: 18px;
     font-family: 'Consolas';
     font-size: 0.813em; }
@@ -463,7 +463,7 @@ li.menu.item {
   margin: -5px;
   margin-right: 0;
   font-family: 'CicleFina';
-  background-color: #f1ffcb; }
+  background-color: #f2ffbb; }
   .prev-next-nav:first-child {
     margin-bottom: 0px; }
   .prev-next-nav:last-child {
@@ -594,7 +594,7 @@ dd {
 
 pre.prettyprint {
   padding: 10px 0 10px 40px;
-  background-color: #f1ffcb;
+  background-color: #f2ffbb;
   font-family: consolas, monospace;
   font-size: 0.938em;
   line-height: 1.5em;
@@ -605,7 +605,7 @@ pre.prettyprint {
   pre.prettyprint span.pun {
     color: #349947; }
   pre.prettyprint span.str {
-    color: #709d2d; }
+    color: #79ad4b; }
   pre.prettyprint span.kwd {
     color: #4383bf; }
   pre.prettyprint span.tag {
@@ -616,7 +616,7 @@ pre.prettyprint {
     color: #4383bf; }
 
 code {
-  background: #f1ffcb;
+  background: #f2ffbb;
   padding: 4px;
   font-family: consolas, monospace;
   font-size: 0.938em; }
@@ -687,7 +687,7 @@ h2 .meta {
 
 /* -------------------------	targeting status posts	------------------------- */
 .status {
-  background-color: #f1ffcb;
+  background-color: #f2ffbb;
   color: #a7a097;
   border-radius: 10px;
   width: 625px;
@@ -722,7 +722,7 @@ footer p {
 footer p#breadcrumbs {
   margin: 13px;
   padding: 15px 0;
-  border-bottom: 1px solid #c5ff6d; }
+  border-bottom: 1px solid #bfee88; }
 
 footer a {
   color: #b0e5ff; }
