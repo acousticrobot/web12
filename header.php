@@ -44,14 +44,20 @@
   			include (TEMPLATEPATH . '/header-t47.php' );
   			break;
 		case 'dma': 
-		case 'homework dma'?>
+		case 'homework dma':?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/dma.css">
 <?php
 			break;
 		case 'art125': 
-		case 'homework art125'?>
+		case 'homework art125':?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/art125.css">
 <?php
+			break;
+		case 'fly': 
+?>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fly.css">
+<?php
+
   		};	
 	
 ?>

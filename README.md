@@ -1,4 +1,4 @@
-[A][] [B][] [C][] [F][] [N][] [P][] [S][] [T][]
+[A][] [B][] [C][] [F][] [L][] [N][] [P][] [S][] [T][]
 ## [A]
 
 ### Archives
@@ -99,6 +99,30 @@ Example found in inc/query-filter, used on archive page.
 
 (parameters listed here)[http://codex.wordpress.org/Template_Tags/get_posts]
 (or)[http://codex.wordpress.org/Function_Reference/wp_list_pages]
+
+Also see under Loops
+
+## [L] 
+
+### Loops
+
+#### Homepage
+
+##### Carousel
+
+##### News
+
+#### Recent
+
+#### Projects
+
+#### Design
+
+#### Learn
+
+#### Archive page
+
+#### Links
 
 ## [N]
 
