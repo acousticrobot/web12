@@ -32,12 +32,14 @@ $pagetop: 110px;
 @mixin web12_hover_links($sub_theme:default,$pos:buttons) {
     // $position: name, buttons
     // button: text, background hover:text & hover:background
-    // default
+
+    // $sub_theme: default
     $b-tx:  $blue4; // text
     $b-bk:  $blue5; // background
     $bh-tx: $blue2; // hover-text
     $bh-bk: $blue4; // hover-background
     $soft-tx: $b-tx; //softer text color
+
     @if $sub_theme == safe {
         // safe on all backgrounds, tested contact page, collection page
         $b-tx:  white;
@@ -56,7 +58,13 @@ $pagetop: 110px;
         $b-tx:  $blue4;
         $b-bk:  $blue1;
         $bh-tx: $blue5;
-        $bh-bk: $page-white;        
+        $bh-bk: $page-white; 
+    } @else if $sub_theme == fly {
+        $b-tx:  $gwarm9;
+        $b-bk:  $flygreen;
+        $bh-tx: $brownge3;
+        $bh-bk: $flylightgreen; 
+        $soft-tx: $blue6;
     } @else if $sub_theme == art125 {
         $b-tx:  $crimson;
         $b-bk:  $brownge2;

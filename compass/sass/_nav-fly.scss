@@ -1,0 +1,42 @@
+/*
+*	Description: ART125 navigation styles
+*
+* 	CALLED BY: template-course --> art125.css/scss   
+*  	v 2.0	 
+*/
+
+header {
+    #site-head { 
+    	a { 
+            @include web12_hover_links(fly,name)
+    	}
+    }
+}
+
+nav {
+    ul li a {
+        @include web12_hover_links(fly,buttons);
+    }        
+}
+
+#search #field { 
+    @include web12_search_bkg(fly)
+}
+
+#badge {
+    background-image: url(/images/nav/badge-fly.png);
+}
+
+#sidebar-left {
+    .feature {
+    	background-image: web12_l_sidebar_bkg(flygreen);
+    }
+}
+
+@include web12_zero_padding_side_nav($menu:"menu-custom-field-side-navigation");
+
+#mainSideNav {
+    background-color: $flydarkgreen;
+    margin: 0 -1px 0 10px;
+}
+
