@@ -109,6 +109,7 @@ Also see under Loops
 #### Homepage
 
 ##### Carousel
+Carousel uses the main query for the home page, which is filtered in fnx-filters to include 'artworks' 'post' and 'page' types.  It then uses an if statement to skip status posts.  
 
 ##### News
 
@@ -121,6 +122,8 @@ Also see under Loops
 #### Learn
 
 #### Archive page
+
+Arguments are set on the archive page, collecting 'artworks', 'post' and 'pages' types.  The number of posts is limited, and offset by a GET value sent to the page.  This is also used to trigger a previous/next page if there are more posts.  Finally the loop calls for the content displayed by content-bullet_archive.
 
 #### Links
 

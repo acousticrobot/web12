@@ -4,7 +4,7 @@
 *
 * 	CALLED BY: 	home 
 *	CALLS TO:	Uses main query from home with pre_filter
-*  	v 2.0	   
+*  	v 2.1   
 */
  ?>
 
@@ -20,25 +20,45 @@ if (have_posts()) : while (have_posts()) : the_post();
 		
 <li class="slide" id="post-<?php the_ID(); ?>">
 
-		<?php $category = get_the_category(); ?>
-
-	<article class="<?php echo $type . ' ' . $category[0]->slug; ?>">
-	
+<?php 
+	if ($type != 'page') { // its a post or artwork, so it has a category
+		$category = get_the_category();
+		$class_category = $category[0]->slug;
+		switch ($category[0]->cat_name) {
+			case 't47':
+				$name = 'sitelen';
+				break;
+			case 'contemporary art':
+				$name = 'visual art';
+				break;
+			default:
+				$name = $category[0]->cat_name;
+				break;
+		}
+	} else { // it's a page, we have to figure out what kind
+		if (!$post->post_parent) {
+			$name = 'new page';
+		} else $name = get_the_title($post->post_parent);
+		$class_category = "page";
+		switch ($name) {
+			case 'Topics in Contemporary Art':
+				$name = 'visual art';
+				$class_category = "art125";
+				break;
+			case 'digital media':
+				$class_category = 'dma';
+				break;
+			default:
+				break;
+		}
+	}?>
+		
+		<article class="<?php echo $type . ' ' . $class_category; ?>">
 		<h4><?php the_time('F jS, Y') ?></h4>
 	
 		<h2>
 <?php 
-	switch ($category[0]->cat_name) {
-		case 't47':
-			echo 'sitelen';
-			break;
-		case 'contemporary art':
-			echo 'visual art';
-			break;
-		default:
-			echo $category[0]->cat_name;
-			break;
-	}
+	echo $name;
  ?>
 		</h2>
 	

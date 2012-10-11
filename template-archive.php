@@ -16,7 +16,7 @@ $templateID = 'mainset';
 
 global $a_page; // archive page    
 $np = 25; // number of posts per page
-$page_lim = 5; // sanity check: max number of pages to allow in query
+$page_lim = 6; // sanity check: max number of pages to allow in query
 $off = 0; // offset parameter for page (where to start query)
 // test get: http://web12/archive?apg=3
 

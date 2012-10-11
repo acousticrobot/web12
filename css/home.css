@@ -192,7 +192,7 @@ nav#mainSideNav nav#mainSideNav {
       background-image: url(/images/nav/slide-art125.png); }
     #carousel .slide article.dma {
       background-image: url(/images/nav/slide-dma.png); }
-    #carousel .slide article.fly {
+    #carousel .slide article.fly, #carousel .slide article.flypaper {
       background-image: url(/images/nav/slide-fly.png); }
     #carousel .slide article.t47 {
       background-image: url(/images/nav/slide-t47.png); }
