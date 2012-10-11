@@ -66,7 +66,6 @@ if (have_posts()) : while (have_posts()) : the_post();
 	
 		<?php the_excerpt(); ?>
 		
-		<div class="rip"></div>
 		
 	</article>
 </li>
@@ -78,6 +77,8 @@ endwhile; endif; ?>
 	
 	<?php  wp_reset_query(); ?>
 
+
 </ul><!-- carousel-->
+<div class="rip"></div>
 		
 

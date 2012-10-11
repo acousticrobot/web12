@@ -78,17 +78,18 @@ notes: home-page only elements. Home page also loads mainset.css
 	position: relative;
 	article {
     	position: relative;
-    	.rip {
-        	position:absolute;
-        	background-image: url(/images/nav/rip-carousel.png);
-        	background-repeat: no-repeat;
-        	background-position: bottom left;
-        	width: 241px;
-        	height: 144px;
-        	bottom: 0px;
-        	left: 0px;
-        }
-    }
+	}
+   	.rip {
+       	position:absolute;
+       	background-image: url(/images/nav/rip-carousel.png);
+       	background-repeat: repeat-x;
+       	background-position: bottom left;
+       	width: 800px;//241px;
+       	height: 144px;
+       	bottom: -2px;
+       	left: 2px;
+		z-index: 10;
+       }
 }
 
 #carousel {
@@ -117,6 +118,7 @@ notes: home-page only elements. Home page also loads mainset.css
             p {
             	padding: 0 13px 0 8px;
             	line-height: 15px;
+				color: $blue8;
             }	
         }
 		article.artworks {

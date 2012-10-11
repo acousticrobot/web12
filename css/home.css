@@ -152,15 +152,16 @@ nav#mainSideNav nav#mainSideNav {
   position: relative; }
   #cabinet article {
     position: relative; }
-    #cabinet article .rip {
-      position: absolute;
-      background-image: url(/images/nav/rip-carousel.png);
-      background-repeat: no-repeat;
-      background-position: bottom left;
-      width: 241px;
-      height: 144px;
-      bottom: 0px;
-      left: 0px; }
+  #cabinet .rip {
+    position: absolute;
+    background-image: url(/images/nav/rip-carousel.png);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    width: 800px;
+    height: 144px;
+    bottom: -2px;
+    left: 2px;
+    z-index: 10; }
 
 #carousel {
   width: 1200px;
@@ -185,7 +186,8 @@ nav#mainSideNav nav#mainSideNav {
         padding-left: 8px; }
       #carousel .slide article p {
         padding: 0 13px 0 8px;
-        line-height: 15px; }
+        line-height: 15px;
+        color: #162a3f; }
     #carousel .slide article.artworks {
       background-image: url(/images/nav/slide-artworks.png); }
     #carousel .slide article.art125 {
