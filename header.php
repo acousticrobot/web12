@@ -54,6 +54,7 @@
 <?php
 			break;
 		case 'fly': 
+		case 'flypaper':
 ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fly.css">
 <?php
