@@ -81,7 +81,10 @@
 
 <body <?php echo $bodyID; ?> >
 
-<h1><?php echo get_the_title(); ?></h1>	
+<h1><?php 
+		if ($customID == 'home') {
+			echo "jonathan gabel . com"
+		} else echo get_the_title(); ?></h1>	
 
 <div id="outerWrap">		
 <div id="pageWrap">
