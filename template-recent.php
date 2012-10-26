@@ -45,6 +45,10 @@ $link_title = true; // need to trigger title as anchor down the line in content.
 foreach( $posts_array as $post ) : setup_postdata($post);
 	if ( !has_post_format( 'status')) :
 		
+		// custom scripts haven't been loaded for most recent
+		// because it has just been querried, load them now:
+		web12_custom_scripts();
+		
 		if (!$showed_main) {
 			$type = get_post_type($post);
 			if ($type == 'post') { 

@@ -1,16 +1,16 @@
 "use strict"
 //--------------------- BEGIN BobBee --------------------//
-/*															
-* 				v 0.3.5.5									
-* A simple bug that floats up and down using fly.Bob() 		
-* 	-draggable												
-*	-eyes follow mouse movements							
-*	-bob and eyeblink follow realtime (fly v0.3.5 protocol)	
-*	-wings beat as fast as frame updates					
-*/															
+/*
+* v 0.4
+* A simple bug that floats up and down using fly.Bob()
+* 	-draggable
+*	-eyes follow mouse movements
+*	-bob and eyeblink follow realtime
+*	-wings beat as fast as frame updates
+*/
 //--------------------- BEGIN BobBee --------------------//
 fly.BobBee = function(args){
-	this.version = "0.3.5.5";
+	this.version = "0.4";
 	var args = args || {};
 	this.name = args.name || "BobBee";
 	fly.Ananda.call(this);
@@ -38,33 +38,33 @@ fly.BobBee.prototype.setStyle = function(args) {
 	this.style = args.style || {};
 	this.style.body = this.style.body ||
 		{
-			fillColor: "#89C234",
+			fillColor: fly.color.green[4] //"#89C234"
 		};
 	this.style.bodyShade = this.style.bodyShade ||
 		{
-			fillColor: "#658F26"
+			fillColor: fly.color.green[3] //"#658F26"
 		},
 	this.style.face = this.style.face ||
 		{ mask :
 			{
-				fillColor: "#A0FFA0"
+				fillColor: fly.color.green[8] //"#A0FFA0"
 			},
 		  iris :
 			{
-				fillColor: "#62664C"//"#9BCAE1"//
+				fillColor: fly.color.green[1] //"#62664C"
 			},
 		  pupils :
 			{
-				fillColor: "#333333",//"#1D3852",
+				fillColor: fly.color.grey[0]
 			},
 		  mouth :
 			{
-				fillColor: fly.colors.bkg[0]
+				fillColor: fly.color.background()
 			}
 		};
 	this.style.legs = this.style.legs ||	
 		{
-			strokeColor: "#658F26",
+			strokeColor: fly.color.green[1], //"#658F26"
 			strokeWidth: 2
 		};
 };
@@ -151,7 +151,7 @@ fly.BobBee.prototype.buildWing = function(top) {
 	} else {
 		var wing = new paper.Path([this.joints[4][1],this.joints[7][0],this.joints[8][1]])
 	}
-	wing.fillColor = "white";
+	wing.fillColor = fly.color.grey[7];
 	wing.opacity = .5;
 	wing.closePath();
 	wing.smooth();
@@ -288,8 +288,6 @@ fly.BobBee.prototype.updateDirection = function(args) {
 		this.rebuildFace();
 		return;
 	};	
-
-
 	
 	if (args.point.y > paper.view.bounds.bottomCenter.y && this.direction[1] != "down") {
 		this.direction[1] = "down";
@@ -310,8 +308,8 @@ fly.BobBee.prototype.blink = function(b) {
 fly.BobBee.prototype.info = function(){
 	// override Ananda info() to add other info,
 	var i = this.anandaInfo();
-	i.direction1 = {val: this.direction[0],type:"var"};
-	i.direction2 = {val: this.direction[1],type:"var"};
+	i.facing = {val: this.direction[0],type:"var"};
+	i.looking = {val: this.direction[1],type:"var"};
 	return i;
 }
 
@@ -331,7 +329,6 @@ fly.BobBee.prototype.grab = function(event) {
 fly.BobBee.prototype.drag = function(event) {
 	if (this.moving && this.dragable && fly.infoCtrlr.moving() == false) {
 		this.group.position = event.point.subtract(this.moveOrigin);
-		// this.draw();
 		this.Bob.move(this.handle.bounds.center);
 	};
 };
@@ -378,3 +375,4 @@ fly.Ananda.prototype.eventCall = function(e,args) {
 
 
 //--------------------- END BobBee -----------------------//
+

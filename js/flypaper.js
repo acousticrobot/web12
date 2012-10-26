@@ -1,101 +1,349 @@
 //--------------------- BEGIN FLYPAPER ---------------------//
 /*
-*			Namespace FLYPAPER
-*			abbreviated: fly
-*				v 0.3.6
+*	Author Jonathan Gabel
+*	website jonathangabel.com
+*	Namespace FLYPAPER
+*	abbreviated: fly
+*	version 0.4
 *								
 * flypaper init() creates a drawing and animation context
-* using the paper.js library
+* using the paper.js library. View README for more info.
 *	
-* fly.init() includes:
-* all internal variables for style, size etc.
-* three layers: background, stage, and info
-*	
-* - infoCtrlr() for info regarding all objects
-* - eventCtrlr() for pub/sub and event handling
-*
-//--------------------- BEGIN FLYPAPER --------------------//
-
-/* global paper */
+*/
+//--------------------------------------------------------//
 
 "use strict"
-
 var fly = fly == undefined ? {} : fly ;
 if (typeof fly !== "object") {
 	throw new Error("fly is not an object!");
 }
 
-//--------------------- BEGIN FLYPAPER INIT -----------------//
+//--------------------- BEGIN FLYPAPER INIT ----------------//
 /*
-*						FLYPAPER INIT v0.3.6
-*	inits the canvas for all drawing
+*	initializes the canvas for all drawing
 *	contains eventCtrlr and infoCtrlr	
-*	accepts args: {	
+*	accepts the following in args:	
 *		width: canvas width
 *		height: canvas height
-*		}			
+*		colorPalette: "standard","neon","pastel","custom"
+*		colorSet: [ ['red','#400000','#FF0000','#FFC0C0',],[.,.,.,.],...]
+*			colorSet is used when colorPalette is "custom"
+*		backgroundColor: "#F00F00", "red[4]"
+*		stageLayers: number of layers in fly.layers.stage[]
+*
+*	version 0.4			
 */
-//--------------------- BEGIN FLYPAPER INIT ---------------//
-
+//--------------------------------------------------------//
 
 fly.init = function (args) {
+
 	fly.name = "flypaper";
-	fly.version = "0.3.6";
+	fly.version = "0.4";
 	if (args === undefined) {
 		args = {};
 	};
 	fly.debug = false; // turns on extra debug info	
-	fly.width = args.width || 600; // canvas width
-	fly.height = args.height || 600; // canvas width
 	
-	paper.view.viewSize = new paper.Size(fly.width,fly.height);
-	
-	if (args.color === undefined) {
-		args.colors = {};
-	};
-	//	 TODO: CREATE COLOR FUNCTION THAT CREATES COLOR SET
-	fly.colors = {	// add any presets colors here
-		bkg: ["#00A9EB","#B0E5FF"], 
-		main: ["#FDE8A3","#8A8A39","#C6F063","#FF77CD"],
-		outln: ["#666666"],
-		selected: [],
-		info:{	title:	"#9BCAE1",	// sky blue
-				val:	"#89C234",	// apple green
-				btrue: "#66FF99",	// aqua
-				bfalse: "#3D9199", // dull aqua
-				event:	"#BC4500",
-				eventFiring: "#FF5E00",
-				version:"#8A8A39",	// pine green
-				info:	"#8A8A39",
-				screen: "#0D1927",	// skim mil
-				bar:	"black"
-			}
-	}; 
-	
-	fly.layers = {};	// add new layers to fly.layers
-						// init creates three layers:
-						// fly.layers.background w/ 1 colored square
-						// fly.layers.stage for main drawing
-						// fly.layers.info for info panel
+	if (args.width && args.height) {
+		fly.width = args.width; // canvas width
+		fly.height = args.height; // canvas width
+		paper.view.viewSize = new paper.Size(fly.width,fly.height);
+	} else {
+		console.log(paper.view);
+		fly.width = paper.view.viewSize.width;
+		fly.height = paper.view.viewSize.height;
+	}
 
-	fly.layers.background = paper.view.activeLayer;
-
-	var bkg = new paper.Path.Rectangle(paper.view.bounds);
-	if (fly.colors.bkg) {
-		bkg.fillColor = fly.colors.bkg[0];
-	};
-
-	fly.layers.backstage = new paper.Layer();	
-	fly.layers.stage = new paper.Layer(); 
-		// after info layer is created we step
-		// back to this one for all drawing
-	fly.layers.frontstage = new paper.Layer();
-
+//--------------------- BEGIN LAYERS INIT ----------------//
 /*
-*	CONTROLLERS -- Init InfoController and EventController 
+*	Initialize drawing layers in fly.layers
+*	Init creates layers in three parts:
+*	- fly.layers.background: 1 layer with 1 paper.Rectangle
+*		backRect, which is colored after fly.color init
+*	- fly.layers.stage: an array of layers for main drawing
+*		pass number of layers in args as stageLayers,
+*		defaults to one layer (fly.layers.stage[0])
+*	- fly.layers.infoLayer: 1 layer for info panel
+*
+*	version 0.4
 */
+//--------------------------------------------------------//
 
-	fly.layers.info = new paper.Layer();
+
+	fly.layers = (function() {
+		var background = paper.view.activeLayer,
+			backRect = new paper.Path.Rectangle(paper.view.bounds),
+			stage = [];
+			
+		if (args.stageLayers !== undefined && args.stagelayers > 0) {
+			for (var i=0; i < args.Stagelayers; i++) {
+				stage[i] = new paper.Layer();
+			};
+		} else {
+			stage[0] = new paper.Layer();
+		}
+		var infoLayer = new paper.Layer;	
+		return {
+			background : background,
+			backRect : backRect,
+			stage : stage,
+			infoLayer : infoLayer,
+		}
+	})();
+
+
+//--------------------- BEGIN COLORSPACE INIT ------------//
+/*
+*	Initialize color utility with methods for reading hex values
+*	and stored color presets.  Preset color arrays are made
+*	out of three values: darkest/saturated/lightest, two linear
+*	progression are made from the ends to the middle value.
+*	Color arrays default to 9 segments in length. 
+*	Presets can be altered and new sets made through the
+*	public method spectrum. example use:
+*		fly.color.rainbow = fly.color.spectrum('#FF0000','#00FF00','0000FF',13);
+*	This creates an 13 segment color spectrum, fly.color.rainbow[7] == '#00FF00' 
+*	common variables: 
+*		col is used for passed hex color values, ex. "#789ABC"
+*		cola for color arrays, [r,g,b] ex [0,127,255]
+*
+*	version 0.4
+*/
+//--------------------------------------------------------//
+
+	fly.color = (function() {
+
+		var name = "fly colors",
+			version = "0.3.9",
+			colorPresets = [],
+			bkgCol = args.backgroundColor !== undefined ?
+				args.backgroundColor : '#FFFFFF';
+		
+		if (args.colorPalette === undefined) {
+			args.colorPalette = "standard";
+		};
+		var palette = args.colorPalette;
+			
+		function limit(col){
+		    // limit col between 0 and 255
+		    // color is any int
+		    return col = Math.min(Math.max(col, 0),255);
+		};
+
+		function split(hexCol){
+		    // split a hex color into array [r,g,b]
+		    //assumes hex color w/ leading #
+		    var col = hexCol.slice(1);
+		    var col = parseInt(col,16);
+		    var r = (col >> 16);
+		    var g = ((col >> 8) & 0xFF);
+		    var b = (col & 0xFF);
+		    return([r,g,b]);
+		};
+
+		function splice(cola){
+			// takes a cola and returns the hex string value
+		    // cola is a color array [r,g,b], are all int
+		    var r = cola[0],
+		        g = cola[1],
+		        b = cola[2];
+		    var splice = ((r << 16) | (g << 8) | b ).toString(16);
+		    // if r < 10, pad with a zero in front
+		    while (splice.length < 6) {
+		        splice = "0" + splice
+		    }
+		    splice = "#" + splice;
+		    return splice;    
+		};
+
+		function mix(col1,col2,amt){
+		    // mixes 2 hex colors together, amt (0 to 1) determines ratio
+		    // amt defaults to .5, mixes 50/50
+
+		    var amt = amt !== undefined ? amt : 0.5; 
+		    var col1a = split(col1),
+		        col2a = split(col2);
+		    for (var i=0; i < col1a.length; i++) {
+		        col1a[i] = (col1a[i]*(1-amt)) + (col2a[i]*(amt));
+		    };
+		    return splice(col1a);
+		};
+		
+		function totalValue (col) {
+			// adds the R,G,B values together
+			var cola = split(col);
+			return cola[0] + cola[1] + cola[2];
+		}
+
+		function bispectrum(col1,col2,seg){
+			// takes two colors, returns array of seg sements
+			// each a hex color. sent colors are first and last 
+			// colors in the array
+			var seg = seg !== undefined ? seg : 5;
+		    if (seg < 3) {
+		        return [col1,col2];
+		    };
+		    var spec = [col1];
+		    for (var i=1; i < seg-1; i++) {
+		        spec.push(mix(col1,col2,i/(seg-1)))
+		    };
+		    spec.push(col2);
+		    return spec;
+		};
+
+		function trispectrum(col1,col2,col3,seg){
+			// takes three hex colors and creates a 9 segment spectrum
+			// made for bringing saturated colors to light and dark
+			// standard use: (lightest, saturated, darkest)
+			// sent colors are first, middle, and last of the array
+			// spectrum length defaults to 9, and will always be odd
+			var seg = seg !== undefined ? seg : 9;
+			var midseg = Math.ceil(seg/2);
+			var lights = bispectrum(col1,col2,midseg),
+				darks = bispectrum(col2,col3,midseg);
+				// remove duplicate color in middle and merge
+				lights.pop();
+				var spec = lights.concat(darks);	
+				return spec;
+		};
+		
+		function spectrum(name,col1,col2,col3,seg) {
+			// name: string for name of color set
+			// send two hex colors for a bispectrum
+			// three colors for a trispectrum
+			// possible args sent:
+			//	(name,col1,col2)
+			//	(name,col1,col2,seg)
+			//	(name,col1,col2,col3)
+			//	(name,col1,col2,col3,seg)
+			colorPresets.push(name);      
+			var spec;
+			if (col3 !== undefined) {
+				if (typeof col3 == "string" ) {
+					spec = trispectrum(col1,col2,col3,seg);
+				} else if (typeof col3 == "number" ) {
+					// col3 is actually seg
+					spec = bispectrum(col1,col2,col3);
+				} else seg = bispectrum(col1,col2);
+			};
+			return spec;
+		};
+		
+		function setPalette (colorSet) {
+			// colorSet is an array of color arrays, example:
+			// [ ['red','#400000','#FF0000','#FFC0C0',],[.,.,.,.],...]
+			for (var i=0; i < colorSet.length; i++) {
+				var spec = colorSet[i];
+				fly.color[spec[0]] = fly.color.spectrum(spec[0],spec[1],spec[2],spec[3]);	
+			};
+		}
+		
+		function background (col) {
+			bkgCol = col !== undefined ? col : bkgCol;
+			fly.layers.backRect.fillColor = bkgCol;
+			return bkgCol;
+		}
+
+		return {
+			// public vars
+			palette : palette,
+			// public methods 
+			mix : mix,
+			totalValue : totalValue,
+			spectrum : spectrum,
+			setPalette : setPalette,
+			background : background
+		};
+
+	})();
+
+	// check args passed on init for color palette info:	
+	
+		
+	// Populate the colorspace with a colorset:	
+	fly.initColorPalette = (function() { 
+							
+		switch(args.colorPalette) {
+
+			case "custom":
+				var set = args.colorSet;
+				break;
+
+			case "pastel":
+				var set = [
+					['red','#F04510','#FF7070','#FFD3C0',],
+					['orange','#F28614','#FFB444','#FFE8C0'],
+					['yellow','#CDB211','#FFFF70','#FFFFC0'],
+					['green','#42622D','#89C234','#C0FFC0'],
+					['blue','#00597C','#00A9EB','#B0E5FF'],
+					['purple','#6F006F','#9F3DBF','#FFC0FF'],
+					['grey','#383633','#A7A097','#FFFFFF']
+				];
+				break;
+				
+			case "sunny day":
+				var set = [
+					['red','#2F060D','#FF361F','#FFCFC5',],
+					['orange','#6D3200','#FF8125','#FFD1B6'],
+					['yellow','#D6FF43','#FFFA95','#F4FFDA'],
+					['green','#3B4D2A','#89C234','#A0FFA0'],
+					['blue','#1D3852','#00A9EB','#9BCAE1'],
+					['purple','#4C244C','#893DB3','#D0B8FF'],
+					['grey','#1E2421','#848179','#D3FFE9']
+				]
+				break;			
+
+			case "monotone":
+				var set = [
+					['red','#1B1414','#584444','#FFE7E3',],
+					['orange','#2A2620','#4D463A','#FFE9CC'],
+					['yellow','#313125','#808061','#FAFFE0'],
+					['green','#111611','#6E936E','#E7FFD3'],
+					['blue','#0A0A0D','#696991','#E5D9FF'],
+					['purple','#0D090D','#684E68','#FFE3EC'],
+					['grey','#000000','#808080','#FFFFFF']
+				];
+				break;
+
+			case "neon":
+				var set = [
+					['red','#6A0032','#FF0023','#FFC0F2',],
+					['orange','#BD2E00','#FFA500','#FFE8C0'],
+					['yellow','#ACFF02','#FFFF00','#FFFFC0'],
+					['green','#133B0F','#38FF41','#BFFF68'],
+					['blue','#010654','#013BFF','#4FFFF8'],
+					['purple','#3B034C','#9800B3','#CC5FFF'],
+					['grey','#0A0511','#696281','#E3E8FF']           
+				];
+				break;
+
+			case "standard":
+			default:
+				var set = [
+					['red','#400000','#FF0000','#FFC0C0',],
+					['orange','#402900','#FFA500','#FFE8C0'],
+					['yellow','#404000','#FFFF00','#FFFFC0'],
+					['green','#004000','#00FF00','#C0FFC0'],
+					['blue','#000040','#0000FF','#C0C0FF'],
+					['purple','#400040','#800080','#FFC0FF'],
+					['grey','#000000','#808080','#FFFFFF']
+				];
+		};
+
+		fly.color.setPalette(set);		
+		fly.color.background();
+		
+	})();
+		
+	
+//--------------------- BEGIN CONTROLLERS INIT ------------//
+/*
+*	Initialize InfoController and EventController
+*
+*	version 0.4
+*/
+//--------------------------------------------------------//
+
 	
 	fly.info = function() {
 		// fly namespace is the first member of fly.infoCtrlr
@@ -105,14 +353,16 @@ fly.init = function (args) {
 			i.debug = { val: fly.debug, type: "bool" };
 			i.width = { val: fly.width, type: "val" };
 			i.height = { val: fly.height, type: "val" };
-			i.keys = {val: "[i]nfo, [s]elect, [r]otate", type: "string" };
+			i.stage_layers = { val: fly.layers.stage.length, type: "val"};
+			i.color_palette = { val: fly.color.palette, type: "val"};
+//			i.keys = {val: "[i]nfo, [s]elect, [r]otate", type: "string" };
 			return i;
 	};
 							
 	fly.eventCtrlr = (function () {
-	// v0.3.6
-	// eventCtrlr is the main pub/sub object, paper events
-	// all publish through it, objects listening for events
+	// eventCtrlr is the main pub/sub object, 
+	// paper events all publish through it, 
+	// objects listening for events
 	// SUBSCRIBE to events with: 
 	//		fly.eventCtrlr.subscribe("event",this);
 	// See fly.Ananda.prototype.register for an example.
@@ -122,26 +372,21 @@ fly.init = function (args) {
 	// PUBLISH events with:
 	// fly.eventCtrlr.publish("mouse down",event);
 	// mouse and key events are handled with paper tools
-	// within flypaper.
+	// implemented within flypaper.
 	  
 	// IMPORTANT! On-frame events must be initaited
 	// in the main javascript on window load. Use:	
 	// paper.view.onFrame = fu*c*ion(event) {
 	//		fly.eventCtrlr.publish("frame");
 	//	};
-
-	// TODO: frame beats needs better implementation
-	// should it be every x frames or every x ms ?
 	
 		var name = "eventCtrlr",
-			version = "0.3.6",
-			events = {},
-			beats = [], // register for beats (2,4,8, etc.)
-			beat = 1,
-			maxBeats = 128,
-			frameRegex = /frame \d+/,
+			version = "0.4",
+			events = {},			
 			firing = {}, //  used by isFiring
 			firePulse = 10, // isFiring countdown
+			keyRegex = /.*-key$/, // for matching key events
+			lastKey = "",
 			errors = [];
 
 		function isFiring(e) {
@@ -157,26 +402,12 @@ fly.init = function (args) {
 			firing[e] = firePulse;
 		}
 
-		function frameBeats() {
-			if (beat > maxBeats) {
-				beat = 1
-			};
-			for (var i=0; i < beats.length; i++) {
-				if (beat % beats[i] === 0) {
-						// question, why does this work with "frame", not "frame "?
-					var frito = "frame" + beats[i];
-					publish(frito);
-				};
-			};
-			beat++;
-		}
-
 		function publish(e,args) {
 			if (fly.debug) {
 				isFiring(e);
-			};
-			if (e === "frame") {
-				frameBeats();
+				if (e.match(keyRegex)) {
+					lastKey = e;
+				};
 			};
 			if (events[e]) {
 				for (var i=0; i < events[e].length; i++) {
@@ -198,10 +429,6 @@ fly.init = function (args) {
 				// e = ["event","event",...], o = registering object 
 			for (var i=0, j = e.length; i < j ; i++) {							
 				if (!events[e[i]]) {
-					// check if its a beat:
-					if (e[i].match(frameRegex)) {
-						beats.push(e[i].slice(5))
-					};
 					// add to events
 					events[e[i]] = [o];
 					firing[e[i]] = firePulse;
@@ -232,8 +459,6 @@ fly.init = function (args) {
 			var i = {
 				name: name,
 				v: { val: version, type: "version" },
-				// beatCount: {val: beat, type: "val"},
-				// beats: {val: beats, type: "array"},
 				errors: {val: errors.length, type: "val"}
 			};
 			var event;
@@ -243,8 +468,10 @@ fly.init = function (args) {
 				} else {
 					var _t = "event";
 				};
-				i[event] = {val: events[event].length, type: _t};
+				var subs = events[event].length > 1 ? " subscribers" : " subscriber"
+				i[event] = {val: events[event].length + subs, type: _t};
 			}
+			i.last_key = {val: lastKey, type: "string"};
 			return i;
 		}
 		
@@ -275,34 +502,47 @@ fly.init = function (args) {
 	})();
 
 	fly.infoCtrlr = (function () {
-	// v 0.3.6
 	// new objects can register as a member with infoCtrlr 
 	// by sending the request: fly.infocontroller.register(this);
 	// optional second boolean parameter display: (this,false)
 	// will initialize this objects panel as open or closed.
 	// On frame events, infoCtrlr sends a request to members
 	// for an info packet.  v0.2 infopackets are of the form:
-	// { name: "name", info1:{val:"info",type:"val"},...}
+	// { name: "name", var1:{val: var1, type:"val"},var2:{..}..},
 	// infoCtrlr will attempt to match the type to a type in
-	// fly.colors.info for a color for that type.
+	// fly.color.info for a color for that type.
 			
 		var name = "infoCtrlr";
-		var version = "0.3.6";
+		var version = "0.4";
 		 // fly is members[0], infoCtlr is member[1] after infoCtrlr.init();
 		var members = [{obj:fly,display:false}];
+		args.info = args.info || {};
+		var keyTrigger = args.info.keyTrigger || 'i-key';
 		var style = {};
-			style.c1 = fly.colors.info.title || 'black';
-			style.c2 = fly.colors.info.val || 'red';
-			style.s = fly.colors.info.screen || 'grey';
-			style.sb = fly.colors.info.bar || 'white';
-			style.size = 10;
+			// base text colors:
+			style.titles = args.info.titleBar || fly.color.blue[9] || "#9BCAE1";
+			style.plain = fly.color.grey[4] || "#89C234";
+			// screen and bar colors:
+			style.screen = args.info.screen  || fly.color.grey[1] || "#0D1927";
+			style.screenBars = args.info.screenBars || fly.color.grey[0] || 'black';
+			// colors matching value types:
+			style.val = args.info.val || fly.color.green[2] || "#89C234";
+			style.string = args.info.string || fly.color.grey[4] || "#691BE2";
+			style.btrue = args.info.btrue || fly.color.orange[5] || "#66FF99";
+			style.bfalse = args.info.bfalse || fly.color.orange[3]|| "#3D9199";
+			style.event = args.info.event || fly.color.red[4]|| "#BC4500";
+			style.eventFiring = args.info.eventFiring || fly.color.red[7]|| "#FF5E00";
+			style.version = args.info.version || fly.color.grey[5] || "#8A8A39";
+			style.info = args.info.info || fly.color.purple[4] || "#8A8A39";
+			// font styles
+			style.size = args.info.size || 11;
 			style.spacing = style.size * 1.75;
 			style.offset = style.size;
-			style.opacity = .75;
+			style.opacity = args.info.opacity || .95;
 		var ibox = {};
 			ibox.handle = {}; // for move events
 			ibox.origin = new paper.Point(10,10);
-			ibox.txtOffset = [10,35];
+			ibox.txtOffset = [style.size,style.size * 3.5];
 			ibox.txtOrigin = ibox.origin.add(ibox.txtOffset);
 			ibox.txtLen = 0;	
 			ibox.txtWidth = 0;
@@ -319,13 +559,6 @@ fly.init = function (args) {
 			_time.frame = 0;
 			_time.time = 0;
 			_time.fps = {curr:0,ave:0};
-
-			// time.Ccur = 0;
-			// time.average = 0;
-			// time.fps = 0; // frames per second
-			// time._c = 0; // time counter
-			// time._t1 = 0; // time 1
-			// time._t2 = 0; // time 2
 		var device = {}; // for device detection
 			device.isIpad = navigator.userAgent.match(/iPad/i) !== null;	
 			device.isMobile = (function () {
@@ -338,6 +571,7 @@ fly.init = function (args) {
 			})();
 					
 		//------------------- registration --------------------//
+
 		function reset() {
 			ibox.txtWidth = 0;
 			updateInfo(true);
@@ -379,7 +613,7 @@ fly.init = function (args) {
 		function init() {
 			fly.infoCtrlr.register(this);
 			fly.eventCtrlr.subscribe(
-				["i-key","frame","mouse down","mouse drag","mouse up"],this
+				[keyTrigger,"frame","mouse down","mouse drag","mouse up"],this
 			);
 		}
 
@@ -400,10 +634,10 @@ fly.init = function (args) {
 			if (val === "openTitle") { 
 					// object name line, style as title	
 				_t += "\u25BC  " + key; // down triangle
-				text.fillColor = style.c1;
+				text.fillColor = style.titles;
 			} else if (val === "closedTitle") {
 				_t += "\u25B6 " + key; // right triangle
-				text.fillColor = style.c1;
+				text.fillColor = style.titles;
 				ibox.cursor.y += 2;
 			} else {	// styles for other items
 				var _s;	// style by type
@@ -412,10 +646,10 @@ fly.init = function (args) {
 				} else {
 					_s = val.type;
 				};
-				if (fly.colors.info[_s] !== undefined) {
-					text.fillColor = fly.colors.info[_s];
+				if (style[_s] !== undefined) {
+					text.fillColor = style[_s];
 				} else {
-					text.fillColor = style.c2;
+					text.fillColor = style.plain;
 				}
 				_t += key + ": " + val.val;
 			}
@@ -464,7 +698,7 @@ fly.init = function (args) {
 			for (var i=0; i < ibox.titleBars.length; i++) {
 				var _s = new paper.Size( ibox.txtWidth + 2 * style.offset, style.spacing);
 				var bar = new paper.Path.Rectangle(ibox.titleBars[i], _s);
-					bar.fillColor = style.sb;
+					bar.fillColor = style.screenBars;
 				bar.opacity = .50; 
 				infoGroup.bars.addChild(bar);
 			};			
@@ -474,17 +708,16 @@ fly.init = function (args) {
 			var _s2 = new paper.Size( ibox.boxWidth, 30);
 			var grip = new paper.Path.Rectangle(ibox.origin, _s2);
 			grip.name = "grip";
-			grip.fillColor = style.s; // needs fill to work!
+			grip.fillColor = style.plain; // needs a fill color to work!
 			grip.visible = false;
 			infoGroup.box.addChild(grip);
 						
 			for (var i=0; i < 7; i++) {
-				var from = new paper.Point(ibox.origin.x, ibox.origin.y + 3 * i + 2);
+				var from = new paper.Point(ibox.origin.x, ibox.origin.y + .3 * style.size * i + 2);
 				var to = new paper.Point(from.x + ibox.boxWidth, from.y);
 				var gripLine = new paper.Path.Line(from, to);
-				gripLine.strokeColor = 'black';
+				gripLine.strokeColor = style.screenBars;
 				gripLine.strokeWidth = 2;
-				gripLine.opacity = .4;
 				infoGroup.box.addChild(gripLine);
 			};
 		}
@@ -499,14 +732,14 @@ fly.init = function (args) {
 			var _r = new paper.Rectangle(ibox.origin, _s);
 			var clipper = new paper.Path.RoundRectangle(_r, 10);
 			var screen = new paper.Path.Rectangle(_r);
-			screen.fillColor = style.s;
+			screen.fillColor = style.screen;
 			screen.opacity = style.opacity; 
 			infoGroup.box.addChild(clipper);
 			infoGroup.box.addChild(screen);
 			infoGroup.box.clipped = true;
 			drawGrip();
 			drawBars();
-			fly.layers.info.visible = ibox.visible;
+			fly.layers.infoLayer.visible = ibox.visible;
 		}
 		
 		//------------------- animation ----------------------//
@@ -517,7 +750,7 @@ fly.init = function (args) {
 		
 		function grab(point){
 			// ignore if not visible, else animate arrows and dragging
-			if (!fly.layers.info.visible) {
+			if (!fly.layers.infoLayer.visible) {
 				return;
 			};
 			for (var i=0; i < infoGroup.bars.children.length; i++) {
@@ -584,7 +817,8 @@ fly.init = function (args) {
 			var i = {};
 			i.name = name;
 			i.version = { val: version, type: "version"};
-			i.members = { val: members.length, type:"val"}
+			i.origin_pt = { val: ibox.origin, type: "val"};
+			i.members = { val: members.length, type:"val"};
 			// i.width = { val: ibox.txtWidth.toFixed(2), type: "val" };
 			i.frame = { val: _time.frame, type: "val"};
 			i.time = { val: _time.time.toFixed(2), type: "val"};
@@ -628,7 +862,7 @@ fly.init = function (args) {
 			updateTime(args);
 			
 					// only update panel if visible or visibility has changed
-			if (fly.layers.info.visible || ibox.visible) { 
+			if (fly.layers.infoLayer.visible || ibox.visible) { 
 				if (infoGroup.box.hasChildren()) {
 					infoGroup.box.removeChildren();
 				}
@@ -646,9 +880,17 @@ fly.init = function (args) {
 		
 		function eventCall(e,args) {
 			switch (e) {
-			case "i-key" :
+			case keyTrigger :
 				if (fly.debug) {
 					toggleDisplay();
+					// make sure handle isn't off screen:
+					if (ibox.origin.x < 1 || ibox.origin.x > fly.height
+						|| ibox.origin.y < 1 || ibox.origin.y > fly.width) {
+						ibox.origin.x = 10;
+						ibox.origin.y = 10;
+						ibox.txtOrigin = ibox.origin.add(ibox.txtOffset);
+						resetBars();
+					};
 				};
 				break;
 			case "frame" :
@@ -670,9 +912,9 @@ fly.init = function (args) {
 
 		return {
 			moving: function () { return moving; },
-// temp patch
+// temp patch ???
 			fps : function () { return time.fps.ave; }, 
-//  temp patch 
+//  temp patch ???
 			isMobile :	function () {return device.isMobile},
 			isIpad : function () {return device.isIpad},
 			init: init,
@@ -689,27 +931,46 @@ fly.init = function (args) {
 			
 	fly.infoCtrlr.request(fly.eventCtrlr);
 
-	fly.layers.stage.activate(); // back to drawing layer
-	
-/*
-*	END CONTROLLERS -- InfoController and EventController
-*/
+//--------------------- END CONTROLLERS INIT ------------//	
 
 
+fly.layers.stage[0].activate(); // back to drawing layer
+
+
+//--------------------- BEGIN EVENT HANDLERS ------------//
 /*
-*	INIT EVENT HANDLER TOOLS -------------------------------//
-*		published to event controller
-*		NOTE: frame is handled by view, this must be
-*		initialized on the window load
-*		frameCounter takes "frame" events and breaks
-*		them into beats: every : 2,4,8,16,32,64,128
+*	published to event controller
+*	NOTE: frame is handled by view, this must be
+*	initialized on the window load
+*
+*	version 0.4
 */
+//--------------------------------------------------------//
+
 	fly.tool = new paper.Tool();
 	
 	fly.tool.onKeyDown = function (event) {
-		var pub_e = event.key + "-key";
+		var pub_e = "";
+		if (event.key.length == 1) {
+			if (event.modifiers.shift == true) {
+					pub_e += "shift-";
+			};
+			if (event.modifiers.control == true) {
+				// paper.js issue: event.key w/ control modify?
+				pub_e += "control-";
+			};
+			if (event.modifiers.option == true) {
+				pub_e += "option-";
+			};
+			if (event.modifiers.command == true) {
+				pub_e += "command-";
+			};
+			if (event.modifiers.capsLock == true) {
+				pub_e += "capsLock-";
+			};
+		};
+		pub_e += event.key + "-key";
 		var report = fly.eventCtrlr.publish(pub_e);
-		paper.view.draw();
 	};
 	
 	fly.tool.onMouseDown = function (event) {
@@ -728,9 +989,6 @@ fly.init = function (args) {
 		fly.eventCtrlr.publish("mouse move",event);
 	};
 
-/*
-*	END FLY TOOL --------------------------------------//
-*/
 
 }; // END flypaper init
 
@@ -740,10 +998,11 @@ fly.init = function (args) {
 
 //------------- BEGIN FLYPAPER MATH AND MOTION ------------//
 /*					
-*				Math and Motion	Methods
-*				v 0.3.6
+*	Math and Motion	Methods
+*
+*	versions 0.3 - 0.4
 */
-//------------- BEGIN FLYPAPER MATH AND MOTION ------------//
+//--------------------------------------------------------//
 
 fly.midpoint = function (p1,p2) {
 		// returns the point between two points
@@ -771,7 +1030,6 @@ fly.scatter = function (o,rect) {
 };
 
 fly.randomizePt = function (point,delta,constrain) {
-	// v 0.3.6
 	// adds variance delta to point
 	// constrain === "x" or "y" or default none
 	var c = constrain || "none";
@@ -800,11 +1058,19 @@ fly.eachCell = function (o,f) {
 };
 
 fly.gridPlot = function (c,r,rectangle,dir) {
-	// v.0.3.6
+	// v.0.4
 	// returns an array of arrays of points
 	// c + 1 columns by r + 1 rows inside paper.rectangle r
 	// last column and row run along right and bottom edges
-	// dir is a bool, false reverses the grid right to left
+	// dir is an optional string, which controls the direction
+	// (top down, left to right etc.) that the grid travels.
+	// Use this to quickly change the orientation of an object
+	// aligned to a grid.
+	// CHANGE: rectangle is a paper.rectangle, not a path, use
+	// this.handle.bounds to send bounds 
+	// note-to-self: this breaks junkaigo v 0.3.1 !!!
+	// TODO: accept both a rectangle and a path.Rectangle?
+	
 	var dir = dir || "down-left";
 	var rect = new paper.Path.Rectangle(rectangle);
 	var points = [];
@@ -838,7 +1104,6 @@ fly.gridPlot = function (c,r,rectangle,dir) {
 };
 
 fly.initArray = function (c,r) {
-	// v.0.3.0	
 	// init 3-d array
 	var a = [];
 	for (var x=0; x < c; x++) {
@@ -852,8 +1117,8 @@ fly.initArray = function (c,r) {
 
 //--------------------- BEGIN Swing -----------------------//
 /*					
-*				Motion: Swing
-*				v 0.3.3
+*	Motion: Swing
+*	version 0.3.3
 *	TODO: V0.3.4 using fly.infoCtrlr.fps()
 */
 //--------------------- BEGIN Swing -----------------------//
@@ -936,8 +1201,8 @@ fly.Swing.prototype.rotation = function () {
 
 //--------------------- BEGIN Scroll -----------------------//
 /*					
-*				Motion: Scroll
-*				v 0.3.6
+*	Motion: Scroll
+*	v 0.3.6
 *					
 *	Handles scrolling and object in one direction:
 *		"left","right","up","down"
@@ -1025,16 +1290,16 @@ fly.Scroll.prototype.reposition = function (point) {
 
 //--------------------- BEGIN Bob -----------------------//
 /*					
-*				Motion: Bob
-*				v 0.3.6
+*	Motion: Bob
+*	v 0.4
 *					
 *	Moves and object up and down repeatedly
 */
 //--------------------- BEGIN Bob -----------------------//
 
 fly.Bob = function (args){
-	this.name = args.name + " bob" || "bob";
-	this.version = "0.3.4";
+	this.name = args.name + "'s motion: bob" || "bob";
+	this.version = "0.4";
 	this.position = new paper.Point(args.position) || new paper.Point(0,0);
 	this.origin = new paper.Point(this.position);
 	this.speed = args.speed !== undefined ? args.speed : 5;
@@ -1046,7 +1311,9 @@ fly.Bob.prototype.info = function (){
 	var i = {};
 	i.name = this.name;
 	i.version = { val: this.version, type: "version"};
-	i.position = { val: this.position, type: "val" };
+	i.position = { val: 
+					"x: " + this.position.x.toFixed(0) +
+					", y: " + this.position.y.toFixed(0), type: "val" };
 	i.speed = { val: this.speed, type: "val" };
 	i.delta = {val: this.delta, type:"val"};
 	return i;
@@ -1085,8 +1352,8 @@ fly.Bob.prototype.update = function (time) {
 
 //--------------------- BEGIN ANANDA ---------------------//
 /*					
-*				abstract Class fly.Ananda
-*				v 0.3.6
+*	abstract Class fly.Ananda
+*	v 0.4
 *					
 * use as a drawing context and main handle for structures 
 * creates an object with and optional rectangle handle
@@ -1118,18 +1385,17 @@ fly.Ananda = function () {
 fly.Ananda.prototype.init = function (args){
 
 	args = typeof(args) !== 'undefined' ? args : -1;
-
 	var iA = {};	// initialization arguments
 		iA.n = "";	// name
 		iA.bld = "";	// build record
-		iA.dv = 50; // default size
-		
+		iA.ds = 50; // default size
+
 	function buildHandle() {
 		if (iA.Pt === undefined) { 
 			iA.Pt = new paper.Point(0,0); 
 		};
 		if (iA.Sz === undefined) { 
-			iA.Sz = new paper.Size(iA.dv,iA.dv); 
+			iA.Sz = new paper.Size(iA.ds,iA.ds); 
 		};
 		if (iA.Rect === undefined) { 
 			iA.Rect = new paper.Rectangle(iA.Pt,iA.Sz); 
@@ -1139,7 +1405,7 @@ fly.Ananda.prototype.init = function (args){
 
 		iA.handle.selected = false;
 
-		iA.handle.style = iA.style || {fillColor: fly.colors.main[0]};
+		iA.handle.style = iA.style || {fillColor: 'white'};
 
 		iA.handle.visible = iA.visible || false;	
 	}
@@ -1147,7 +1413,9 @@ fly.Ananda.prototype.init = function (args){
 	function initFromNum (n) {
 		if (args < 0) { // illegal value 
 						// or contructed w/ no parameters
-			iA.n = "NaNborn";
+			iA.n = "born";
+			iA.Sz = new paper.Size(100,100);
+			buildHandle();
 		} else {
 			iA.n = "Numborn";
 			iA.Sz = new paper.Size(n,n);
@@ -1244,7 +1512,6 @@ fly.Ananda.prototype.init = function (args){
 			iA.n = "Objborn";
 		};
 	}
-
 	switch (typeof args) {			
 		case "number" :
 			initFromNum(args);
@@ -1298,7 +1565,7 @@ fly.Ananda.prototype.anandaInfo = function () {
 							+ this.handle.bounds.height.toFixed(2), type: "val"};
 		};
 		i.group = {val: this.group._children.length, type: "val"};
-		i.dragable = {val: this.dragable, type: "val"};
+		i.dragable = {val: this.dragable, type: "bool"};
 		i.moving = { val: this.moving, type: "bool" };
 		i.selectable = { val: this.selectable, type: "bool" };
 		i.selected = { val: this.group.selected, type: "bool" };
@@ -1363,11 +1630,7 @@ fly.Ananda.prototype.grab = function (event) {
 };
 
 fly.Ananda.prototype.drag = function (event) {
-	if (this.handle) {
-		if (this.moving && this.dragable && fly.infoCtrlr.moving() === false) {
-			this.handle.position = event.point.subtract(this.moveOrigin);
-		};
-	};
+	// don't move it if it's under a visible info controller
 	if (this.moving && this.dragable && fly.infoCtrlr.moving() === false) {
 		this.group.position = event.point.subtract(this.moveOrigin);
 	};
@@ -1417,27 +1680,27 @@ fly.Ananda.prototype.eventCall = function (e,args) {
 
 //--------------------- BEGIN Pullbar ---------------------//
 /*					
-*				v 0.3.6
-* Pullbar extends Ananda, creates grabbable handles
+*	Pullbar extends Ananda, creates grabbable handles
 *					
-* adaptation of vektor.js from:
-* http://paperjs.org/tutorials/geometry/vector-geometry/
+* 	adaptation of vektor.js from:
+*	http://paperjs.org/tutorials/geometry/vector-geometry/
 *					
-* args = {	fixLength:bool,fixAngle:bool,
+* 	args = {	fixLength:bool,fixAngle:bool,
 *			this.visible: bool,
 *			vectorCtr:point,
 *			vector:point,	// length from center
 *			handle: see ananda // creates pullBall size
 *			color: #e4141b  // any valid color val
 *		 }			
-*					
+*
+*	version 0.3.6				
 */
 //--------------------- BEGIN Pullbar --------------------//
 
 fly.Pullbar = function (args){
-	this.version = "0.3.6";
+	this.version = "0.4";
 	var args = args || {};
-	args.name = args.name + " pullbar" || "pullbar";
+	args.name = args.name + "'s pullbar" || "pullbar";
 	if (args.handle === undefined) { 
 		args.handle = 10; // default size = 50;
 	};

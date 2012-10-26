@@ -24,7 +24,7 @@
 
 		foreach ($navLinks as $link ) {
 	
-			$linkInfo = explode('|', $link);
+			$linkInfo = explode('~', $link);
 			$label = $linkInfo[0];
 			$source = $linkInfo[1]; 
 			

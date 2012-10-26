@@ -173,24 +173,27 @@ Templates can call side menus on a per-project basis, if the menu needs to be cu
 		<?php include (TEMPLATEPATH . '/inc/t47sidemenu.php' ); ?>
 	</nav>														
 
-##### Per Page or Post Side Menu using nav-keys [nav-keys]
+##### nav-keys [nav-keys] for Per Page or Post Side Menu 
 
-Any page can have a customized side-menu navigation link. Uses pipe and not asterisk to avoid looking like comments in php with directory slashes. Can also use THEMEFILE# to direct to web12 theme
+Any page can have a customized side-menu navigation link. Uses '~' and not '*' to avoid looking like comments in php with directory slashes. Can also use THEMEFILE# to direct to web12 theme
 
   * In Custom Fields:
 	  * Name: nav-keys
-	  * Value: label|link,label|link
+	  * Value: label~link,label~link
 
 examples:
 
 *ART125*
 
-	slides|/documents/art125/slides-min.pdf,
-	slidelist|/documents/art125/slidelist-min.html,
-	readings|/documents/art125/readings-min.pdf
+	slides~/documents/art125/slides-min.pdf,
+	slidelist~/documents/art125/slidelist-min.html,
+	readings~/documents/art125/readings-min.pdf
 
 *flypaper*
 
+	the fly~THEMEFILE#/js/fly.bobBee.js,
+	the init~THEMEFILE#/js/posts/testpage.js,
+	on github~https://on github.com/josankapo/FlyPaper
 
 
 ## [P]

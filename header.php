@@ -83,7 +83,7 @@
 
 <h1><?php 
 		if ($customID == 'home') {
-			echo "jonathan gabel . com"
+			echo "jonathan gabel . com";
 		} else echo get_the_title(); ?></h1>	
 
 <div id="outerWrap">		
