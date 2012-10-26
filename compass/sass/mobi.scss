@@ -1,0 +1,30 @@
+/*
+*	Description: Mobile CSS for mobile devices 
+*
+* 	CALLED BY: all pages
+*   SCSS: mobi.scss  
+*
+*  	v 2.0 BETA 
+*   <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
+*/
+                        
+//	CALLS TO:   -> __web12_kit --> __colors
+//              -> __fonts, compass/reset, _wrappers, forms, nav-screen
+
+@import "__web12_kit.scss";
+@import "_fonts.scss";
+
+@import "compass/reset";
+//@import "_wrappers.scss";
+@import "_forms.scss";
+@import "_nav-screen.scss";
+
+.clear {
+    clear: both;
+}
+.clear-left {
+    clear: left;
+}
+.clear-right {
+    clear: right;
+}
